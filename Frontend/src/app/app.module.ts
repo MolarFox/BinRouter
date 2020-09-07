@@ -8,11 +8,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { ViewRoutesComponent } from './view-routes/view-routes.component';
+import { ViewHeatmapComponent } from './view-heatmap/view-heatmap.component';
+import { ViewBinsComponent } from './view-bins/view-bins.component';
+import { ViewFleetComponent } from './view-fleet/view-fleet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainmenuComponent
+    MainmenuComponent,
+    ViewRoutesComponent,
+    ViewHeatmapComponent,
+    ViewBinsComponent,
+    ViewFleetComponent
   ],
   imports: [
     BrowserModule,
