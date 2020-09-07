@@ -1,1 +1,9 @@
 /* CSS For Main Menu Bar */
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.mat-icon {
+    font-size: 150%;
+}
