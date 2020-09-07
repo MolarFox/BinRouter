@@ -40,9 +40,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-Frontend-demo/*
 
 # System Files
 .DS_Store
 Thumbs.db
-.vscode/settings.json
