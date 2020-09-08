@@ -15,7 +15,6 @@ import { ViewRoutesComponent } from './view-routes/view-routes.component';
 import { ViewHeatmapComponent } from './view-heatmap/view-heatmap.component';
 import { ViewBinsComponent } from './view-bins/view-bins.component';
 import { ViewFleetComponent } from './view-fleet/view-fleet.component';
-import { MapviewComponent } from './mapview/mapview.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { MapviewComponent } from './mapview/mapview.component';
     ViewRoutesComponent,
     ViewHeatmapComponent,
     ViewBinsComponent,
-    ViewFleetComponent,
-    MapviewComponent
+    ViewFleetComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +33,8 @@ import { MapviewComponent } from './mapview/mapview.component';
     MatIconModule,
     MatButtonModule,
     AgmCoreModule.forRoot({
-      apiKey: GMAPS_API_KEY
-    })
+      apiKey: GMAPS_API_KEY + '&libraries=visualization'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
