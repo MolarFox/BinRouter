@@ -15,6 +15,7 @@ import { ViewRoutesComponent } from './view-routes/view-routes.component';
 import { ViewHeatmapComponent } from './view-heatmap/view-heatmap.component';
 import { ViewBinsComponent } from './view-bins/view-bins.component';
 import { ViewFleetComponent } from './view-fleet/view-fleet.component';
+import { MapviewComponent } from './mapview/mapview.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     ViewRoutesComponent,
     ViewHeatmapComponent,
     ViewBinsComponent,
-    ViewFleetComponent
+    ViewFleetComponent,
+    MapviewComponent
   ],
   imports: [
     BrowserModule,
