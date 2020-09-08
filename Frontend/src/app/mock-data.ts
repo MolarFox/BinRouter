@@ -3,7 +3,7 @@
 
 import { Bin } from './bin';
 import { Vehicle } from './vehicle';
-import { Route } from './route';
+import { NavRoute } from './route';
 
 export const DUMMY_BINS: Bin[] = [
     // TODO: populate with dummy vals
@@ -13,6 +13,6 @@ export const DUMMY_VEHICLES: Vehicle[] = [
     // TODO: populate with dummy vals
 ]
 
-export const DUMMY_ROUTES: Route[] = [
+export const DUMMY_ROUTES: NavRoute[] = [
     // TODO: populate with dummy vals
 ]
