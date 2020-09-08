@@ -7,3 +7,7 @@ h2 {
 .mat-icon {
     font-size: 150%;
 }
+
+.mat-toolbar {
+    height: 50px;
+}
