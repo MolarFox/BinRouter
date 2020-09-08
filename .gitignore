@@ -46,3 +46,4 @@ Frontend-demo/*
 .DS_Store
 Thumbs.db
 .vscode/settings.json
+Frontend/src/app/gmaps_apikey.ts
