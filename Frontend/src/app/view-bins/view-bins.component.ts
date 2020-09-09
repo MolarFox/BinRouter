@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AgmMarker } from '@agm/core';
+import { MouseEvent } from '@agm/core';
+import { Bin } from '../bin';
 
 @Component({
   selector: 'app-view-bins',
@@ -13,10 +14,9 @@ export class ViewBinsComponent implements OnInit {
   start_zoom = 14;
 
   // TEMP CODE TO GET DUMMY BIN LOCS
-  markers: any[] = [];
+  markers: any[] = [];  // Can't find typedef
 
-  mapClicked($event: any) {
-    console.log($event)
+  mapClicked($event: MouseEvent) {
     this.markers.push({
       lat:   $event.coords.lat,
       lng:  $event.coords.lng,
@@ -25,8 +25,26 @@ export class ViewBinsComponent implements OnInit {
   }
 
   clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
+    let formatted_out: Bin[] = [];
+    for (let i=0; i < this.markers.length; i++){
+      let currmark = this.markers[i];
+      formatted_out.push(
+        {
+          serial: i,
+          lat: currmark.lat,
+          lng: currmark.lng,
+          address: "",
+          capacity: 1,
+          isdumb: false,
+          threshold: 40,
+          fullness: 0.75 
+        }
+      )
+    }
+    console.log(formatted_out)
   }
+
+  // END TEMP CODE
 
   constructor() { }
 

@@ -2,7 +2,7 @@
 export interface Bin {
     serial:     number,
     lat:        number,
-    lon:        number,
+    lng:        number,
     address:    string,
     capacity:   number,
     isdumb:     boolean
