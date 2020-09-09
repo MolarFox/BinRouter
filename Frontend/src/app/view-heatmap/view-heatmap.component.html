@@ -1,1 +1,6 @@
-<p>view-heatmap works!</p>
+<agm-map 
+    [latitude]="start_lat" 
+    [longitude]="start_lng" 
+    [zoom]="start_zoom">
+    (mapReady)="onMapLoad($event)"
+</agm-map>
