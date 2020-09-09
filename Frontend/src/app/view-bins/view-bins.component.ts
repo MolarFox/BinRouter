@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
+import { BinfetcherService } from '../binfetcher.service'
 import { Bin } from '../bin';
 
 @Component({
@@ -12,6 +13,8 @@ export class ViewBinsComponent implements OnInit {
   start_lat = -37.8142588;
   start_lng = 144.9666622;
   start_zoom = 14;
+
+  all_bins: Bin[] = [];
 
   // TEMP CODE TO GET DUMMY BIN LOCS
   markers: any[] = [];  // Can't find typedef
@@ -44,13 +47,31 @@ export class ViewBinsComponent implements OnInit {
       )
     }
     console.log(formatted_out)
+    console.log(this.markers[0])
   }
 
   // END TEMP CODE
 
-  constructor() { }
+  // Set instance bins variable, convert all to markers and display
+  process_markers(bins: Bin[]){
+    this.all_bins = bins;
+    bins.forEach(bin =>
+      this.markers.push(
+        {
+          draggable: false,
+          lat: bin.lat,
+          lng: bin.lng 
+        }
+      )
+    )
+
+  }
+
+  constructor(private binfetcher: BinfetcherService) { }
 
   ngOnInit(): void {
+    this.binfetcher.getAllBins()
+      .subscribe(bins_in => this.process_markers(bins_in));
   }
 
 }
