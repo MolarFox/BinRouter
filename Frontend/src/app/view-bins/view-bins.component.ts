@@ -22,6 +22,8 @@ export class ViewBinsComponent implements OnInit {
       lng:  $event.coords.lng,
       draggable: true
     });
+
+
   }
 
   clickedMarker(label: string, index: number) {
