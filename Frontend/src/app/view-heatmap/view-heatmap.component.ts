@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BinfetcherService } from '../binfetcher.service'
+import { Bin } from '../bin';
 
 @Component({
   selector: 'app-view-heatmap',
@@ -13,18 +15,36 @@ export class ViewHeatmapComponent implements OnInit {
   start_lng = 144.9666622;
   start_zoom = 14;
 
-  constructor() { }
+  all_bins: Bin[] = [];
+  datapoints: any[] = []; 
+
+  constructor(private binfetcher: BinfetcherService) { }
 
   ngOnInit(): void {
+    this.binfetcher.getAllBins()
+      .subscribe(bins_in => this.process_markers(bins_in));
   }
 
   onMapLoad(mapInstance: google.maps.Map) {
     this.map = mapInstance;
-
-    const coords: google.maps.LatLng[] = []; // TODO: can also be a google.maps.MVCArray with LatLng[] inside
     this.heatmap = new google.maps.visualization.HeatmapLayer({
         map: this.map,
-        data: coords
+        data: this.datapoints
     });
+    console.log(this.heatmap);
+  }
+
+  // Set instance bins variable, convert all to markers and display
+  process_markers(bins: Bin[]){
+    this.all_bins = bins;
+    bins.forEach(bin =>
+      this.datapoints.push(
+        {
+          lat: bin.lat,
+          lng: bin.lng 
+        }
+      )
+    )
+
   }
 }
