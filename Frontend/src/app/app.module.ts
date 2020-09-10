@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { ViewRoutesComponent } from './view-routes/view-routes.component';
 import { ViewHeatmapComponent } from './view-heatmap/view-heatmap.component';
 import { ViewBinsComponent } from './view-bins/view-bins.component';
 import { ViewFleetComponent } from './view-fleet/view-fleet.component';
+import { EditorBinsComponent } from './editor-bins/editor-bins.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     ViewRoutesComponent,
     ViewHeatmapComponent,
     ViewBinsComponent,
-    ViewFleetComponent
+    ViewFleetComponent,
+    EditorBinsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY + '&libraries=visualization'
     }),
