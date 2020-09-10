@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +36,8 @@ import { EditorBinsComponent } from './editor-bins/editor-bins.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY + '&libraries=visualization'
     }),
