@@ -5,7 +5,7 @@ export interface Bin {
     lng:        number,
     address:    string,
     capacity:   number,
-    isdumb:     boolean
+    is_smart:   boolean
     threshold:  number,
     fullness:   number
 }

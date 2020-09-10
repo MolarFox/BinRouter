@@ -12,7 +12,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96932295134278,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -22,7 +22,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97054603865357,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -32,7 +32,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97168329527588,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -42,7 +42,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9718120413086,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -52,7 +52,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97108248045654,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -62,7 +62,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96917274763794,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -72,7 +72,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96679094603272,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -82,7 +82,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96584680845947,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -92,7 +92,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96380832960816,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -102,7 +102,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96760633757324,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -112,7 +112,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96951607039185,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -122,7 +122,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9685504751465,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -132,7 +132,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96614721586914,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -142,7 +142,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96269591556322,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -152,7 +152,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96027119861375,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -162,7 +162,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95879061923753,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -172,7 +172,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95756753192674,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -182,7 +182,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95821126209032,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -192,7 +192,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9587691615654,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -202,7 +202,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96001370654832,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -212,7 +212,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95939143405687,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -222,7 +222,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9638345367771,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -232,7 +232,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96181751559791,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -242,7 +242,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95984340976295,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -252,7 +252,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96754671405373,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -262,7 +262,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95703245471535,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -272,7 +272,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9542858726841,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -282,7 +282,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95353485415993,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -292,7 +292,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9545004494053,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -302,7 +302,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95377088855324,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -312,7 +312,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9594581646533,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -322,7 +322,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95233421750976,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -332,7 +332,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9651575088501,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -342,7 +342,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96390801390714,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -352,7 +352,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96373098811216,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -362,7 +362,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9619929166705,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -372,7 +372,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9647448631198,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -382,7 +382,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96339839419431,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -392,7 +392,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96422987898893,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -402,7 +402,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96174615344114,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -412,7 +412,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96162430548597,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -422,7 +422,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9613614490025,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -432,7 +432,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96009216709217,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -442,7 +442,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9597542087563,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -452,7 +452,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9593961238861,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -462,7 +462,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96140108509144,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -472,7 +472,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9616263906487,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -482,7 +482,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96294693773757,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -492,7 +492,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9632741672374,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -502,7 +502,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96420704515356,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -512,7 +512,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96490441949743,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -522,7 +522,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96512972505468,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -532,7 +532,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9653121152677,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -542,7 +542,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96503316553014,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -552,7 +552,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96638275880582,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -562,7 +562,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96605016488797,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -572,7 +572,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96635057229764,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -582,7 +582,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96624112129211,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -592,7 +592,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96626701846662,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -602,7 +602,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96724379274102,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -612,7 +612,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96744227620812,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -622,7 +622,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.966519596307,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -632,7 +632,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9667239189148,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -642,7 +642,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9667556307003,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -652,7 +652,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96507656785698,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -662,7 +662,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96495855066033,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -672,7 +672,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96477079602928,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -682,7 +682,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9649156353161,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -692,7 +692,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96683253703492,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -702,7 +702,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96753424851474,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -712,7 +712,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96717483250674,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -722,7 +722,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96662229744967,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -732,7 +732,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96595710961398,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -742,7 +742,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9661163102143,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -752,7 +752,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9567844715029,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -762,7 +762,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.956441148749,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -772,7 +772,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95466016196312,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -782,7 +782,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95491765402855,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -792,7 +792,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9523856487185,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -802,7 +802,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95526097678245,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -812,7 +812,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95573304556908,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -822,7 +822,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9602391567141,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -832,7 +832,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95796464346947,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -842,7 +842,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95624802969994,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -852,7 +852,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95466016196312,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -862,7 +862,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95354436301292,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -872,7 +872,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95302937888206,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -882,7 +882,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95457433127464,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -892,7 +892,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9574282016665,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -902,7 +902,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95813630484642,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -912,7 +912,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95798610114159,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -922,7 +922,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96414445303978,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -932,7 +932,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96420882605614,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -942,7 +942,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96285699271263,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -952,7 +952,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95996020697655,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -962,7 +962,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96556065939964,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -972,7 +972,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96822141074242,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -982,7 +982,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96961615943016,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -992,7 +992,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97215228084187,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1002,7 +1002,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97210936549763,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1012,7 +1012,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9740834713326,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1022,7 +1022,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97389035228352,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1032,7 +1032,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97597174647908,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1042,7 +1042,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97544573818524,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1052,7 +1052,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97188376461347,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1062,7 +1062,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97557448421796,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1072,7 +1072,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9776344207414,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1082,7 +1082,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97870164369823,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1092,7 +1092,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97925954317333,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1102,7 +1102,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9678011462617,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1112,7 +1112,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97895913576366,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1122,7 +1122,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98039679979564,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1132,7 +1132,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9830614672691,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1142,7 +1142,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95126343699786,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1152,7 +1152,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94888163539264,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1162,7 +1162,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94913912745807,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1172,7 +1172,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94787312480304,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1182,7 +1182,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95031929942462,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1192,7 +1192,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9490532967696,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1202,7 +1202,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95182133647296,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1212,7 +1212,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94989507399515,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1222,7 +1222,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94914405547098,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1232,7 +1232,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94951486587524,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1242,7 +1242,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94712703429178,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1252,7 +1252,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95008819304422,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1262,7 +1262,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9530922671409,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1272,7 +1272,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94989507399515,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1282,7 +1282,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94854324065165,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1292,7 +1292,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9483715792747,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1302,7 +1302,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94768493376688,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1312,7 +1312,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95270602904276,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1322,7 +1322,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9564861199487,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1332,7 +1332,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96599335283327,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1342,7 +1342,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96891159624147,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1352,7 +1352,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97324604600954,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1362,7 +1362,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97526306718873,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1372,7 +1372,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97549910158205,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1382,7 +1382,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97629303545045,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1392,7 +1392,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97594971269655,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1402,7 +1402,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97652906984376,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1412,7 +1412,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97725863069581,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1422,7 +1422,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97468371004152,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1432,7 +1432,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97464079469728,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1442,7 +1442,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94945646920067,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1452,7 +1452,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94741799034935,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1462,7 +1462,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94683863320213,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1472,7 +1472,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94604469933373,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1482,7 +1482,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94587303795677,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1492,7 +1492,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94574429192406,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1502,7 +1502,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94621636071068,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1512,7 +1512,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94681717553001,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1522,7 +1522,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94979979195458,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1532,7 +1532,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97389430129368,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1542,7 +1542,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97194165313084,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1552,7 +1552,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97438782775242,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1562,7 +1562,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97069710814793,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1572,7 +1572,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96893757903416,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1582,7 +1582,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98292798125584,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1592,7 +1592,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9834429653867,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1602,7 +1602,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9793260879557,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1612,7 +1612,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98088355767692,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1622,7 +1622,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98161311852897,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1632,7 +1632,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9825572561022,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1642,7 +1642,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98398543660156,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1652,7 +1652,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98196841542236,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1662,7 +1662,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9807667857837,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1672,7 +1672,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97780562703124,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1682,7 +1682,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97814894978515,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1692,7 +1692,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9796509868335,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1702,7 +1702,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98372794453613,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1712,7 +1712,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98274089161865,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1722,7 +1722,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98274089161865,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1732,7 +1732,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98553038899414,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1742,7 +1742,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9845862514209,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1752,7 +1752,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97992038726807,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1762,7 +1762,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98239756886474,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1772,7 +1772,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98364211384765,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1782,7 +1782,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98608828846923,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1792,7 +1792,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98776198689453,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1802,7 +1802,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98733283345214,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1812,7 +1812,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98698951069824,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1822,7 +1822,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98302869604052,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1832,7 +1832,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98225621984423,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1842,7 +1842,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9801962833208,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1852,7 +1852,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98474530981005,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1862,7 +1862,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98465947912158,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1872,7 +1872,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98723439977587,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1882,7 +1882,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98920850561083,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1892,7 +1892,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9907534580034,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1902,7 +1902,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9897234897417,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1912,7 +1912,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9915259341997,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1922,7 +1922,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98980932043017,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1932,7 +1932,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99350004003466,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1942,7 +1942,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98963765905322,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1952,7 +1952,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9874918918413,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1962,7 +1962,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98950718996193,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1972,7 +1972,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9881338989463,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1982,7 +1982,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98607396242286,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -1992,7 +1992,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98658894655372,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2002,7 +2002,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98899220583107,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2012,7 +2012,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9907088196006,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2022,7 +2022,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99173878786232,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2032,7 +2032,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98362778780128,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2042,7 +2042,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98817681429054,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2052,7 +2052,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98796223756935,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2062,7 +2062,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98594521639015,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2072,7 +2072,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98864888307716,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2082,7 +2082,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98766183015968,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2092,7 +2092,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98564480898048,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2102,7 +2102,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99506472704078,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2112,7 +2112,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9948501503196,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2122,7 +2122,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99287604448463,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2132,7 +2132,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99253272173073,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2142,7 +2142,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99545096513893,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2152,7 +2152,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99459265825416,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2162,7 +2162,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99459265825416,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2172,7 +2172,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99197482225563,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2182,7 +2182,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99175355916924,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2192,7 +2192,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98977945333428,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2202,7 +2202,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98952196126885,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2212,7 +2212,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98977945333428,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2222,7 +2222,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99256895070977,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2232,7 +2232,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9939422417254,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2242,7 +2242,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98903394478083,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2252,7 +2252,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9935829712701,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2262,7 +2262,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99130845802546,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2272,7 +2272,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99242425697565,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2282,7 +2282,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.99474168556452,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2292,7 +2292,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98701692360163,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2302,7 +2302,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98502243719184,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2312,7 +2312,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9696976902552,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2322,7 +2322,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9699122669764,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2332,7 +2332,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96729443097786,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2342,7 +2342,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96527740979866,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2352,7 +2352,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9642045261927,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2362,7 +2362,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96278831983284,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2372,7 +2372,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9610717060633,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2382,7 +2382,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95998294482453,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2392,7 +2392,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95843799243195,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2402,7 +2402,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95689304003938,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2412,7 +2412,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95586307177766,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2422,7 +2422,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95204360614045,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2432,7 +2432,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95118529925568,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2442,7 +2442,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94968326220734,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2452,7 +2452,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94582746782527,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2462,7 +2462,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.945330619812,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2472,7 +2472,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94556997575984,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2482,7 +2482,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94514082231746,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2492,7 +2492,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94704333636966,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2502,7 +2502,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95361941414194,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2512,7 +2512,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94522476192475,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2522,7 +2522,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94440937038422,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2532,7 +2532,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94501018520356,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2542,7 +2542,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94320774074555,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2552,7 +2552,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94745635982514,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2562,7 +2562,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94543933864594,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2572,7 +2572,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94447231292725,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2582,7 +2582,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94419479366303,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2592,7 +2592,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94273567195893,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2602,7 +2602,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94222068782807,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2612,7 +2612,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94166278835297,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2622,7 +2622,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94166278835297,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2632,7 +2632,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94445228572846,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2642,7 +2642,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9472967123527,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2652,7 +2652,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.94755420441814,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2662,7 +2662,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95274696107097,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2672,7 +2672,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9543348288078,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2682,7 +2682,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95527896638103,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2692,7 +2692,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95690974946208,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2702,7 +2702,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9586345556613,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2712,7 +2712,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96013659270963,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2722,7 +2722,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95835535083373,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2732,7 +2732,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95917074237425,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2742,7 +2742,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95779745135863,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2752,7 +2752,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.95801202807982,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2762,7 +2762,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96902292830018,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2772,7 +2772,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97082537275818,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2782,7 +2782,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.972413240495,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2792,7 +2792,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97187394866273,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2802,7 +2802,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97651739658747,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2812,7 +2812,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97922106327448,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2822,7 +2822,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97840567173395,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2832,7 +2832,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97591658176813,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2842,7 +2842,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97424288334284,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2852,7 +2852,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97261210026178,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2862,7 +2862,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97033758701716,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2872,7 +2872,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96874971928034,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2882,7 +2882,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9674622589532,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2892,7 +2892,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9723975235406,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2902,7 +2902,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96651812137995,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2912,7 +2912,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.96394320072565,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2922,7 +2922,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9650160843316,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2932,7 +2932,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.965445237774,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2942,7 +2942,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.9707252566889,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2952,7 +2952,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97525275607504,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2962,7 +2962,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97821391482748,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2972,7 +2972,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.97920096774496,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2982,7 +2982,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98103095447257,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -2992,7 +2992,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98270465289787,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -3002,7 +3002,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.983992113225,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -3012,7 +3012,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98765884380785,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -3022,7 +3022,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.987143859677,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     },
@@ -3032,7 +3032,7 @@ export const DUMMY_BINS: Bin[] = [
         "lng": 144.98856006603685,
         "address": "",
         "capacity": 1,
-        "isdumb": false,
+        "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
     }

@@ -1,7 +1,26 @@
 agm-map {
     height: calc(100vh - 50px);
-    width: calc(100vw - 400px);
+    width: calc(100vw - 401px);
     float: left;
+}
+
+h2 {
+    font-weight: lighter;
+}
+
+mat-card {
+    height: calc(100vh - 50px);
+    width: 400px;
+    position: fixed;
+}
+
+mat-form-field, mat-checkbox {
+    padding-left: 15px;
+}
+
+mat-progress-bar {
+    padding-left: 15px;
+    width: 320px;
 }
 
 .editmenu {

@@ -10,9 +10,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -46,6 +48,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatFormFieldModule,
     MatCheckboxModule,
     MatCardModule,
+    MatInputModule,
+    MatProgressBarModule,
     MatSidenavModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY + '&libraries=visualization'
