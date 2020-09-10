@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <agm-map 
     [latitude]="start_lat" 
     [longitude]="start_lng" 
@@ -6,7 +7,7 @@
 
     <agm-marker
         *ngFor="let m of markers; let i=index"
-        (markerClick)="clickedMarker(m.label, i)"
+        (markerClick)="clickedMarker(i)"
         [latitude]="m.lat"
         [longitude]="m.lng"
         [label]="m.label"
@@ -16,5 +17,13 @@
 </agm-map>
 
 <div class=editmenu>
-    <app-editor-bins></app-editor-bins>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Bin Manager</mat-card-title>
+            <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngIf="selbin">{{selbin.serial}}</div>
+        </mat-card-content>
+    </mat-card>
 </div>

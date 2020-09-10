@@ -8,6 +8,7 @@ import { Bin } from '../bin';
   styleUrls: ['./view-heatmap.component.css']
 })
 export class ViewHeatmapComponent implements OnInit {
+  private mapOrPointLoaded = false;
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
   
@@ -27,11 +28,7 @@ export class ViewHeatmapComponent implements OnInit {
 
   onMapLoad(mapInstance: google.maps.Map) {
     this.map = mapInstance;
-    this.heatmap = new google.maps.visualization.HeatmapLayer({
-        map: this.map,
-        data: this.datapoints
-    });
-    console.log(this.heatmap);
+    this.renderHeatmap();
   }
 
   // Set instance bins variable, convert all to markers and display
@@ -45,6 +42,17 @@ export class ViewHeatmapComponent implements OnInit {
         }
       )
     )
+    this.renderHeatmap();
+  }
 
+  renderHeatmap(){
+    if (this.mapOrPointLoaded){
+      this.heatmap = new google.maps.visualization.HeatmapLayer({
+          map: this.map,
+          data: this.datapoints
+      });
+    }else{
+      this.mapOrPointLoaded = true;
+    }
   }
 }

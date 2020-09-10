@@ -15,7 +15,12 @@ export class ViewBinsComponent implements OnInit {
   start_zoom = 14;
 
   all_bins: Bin[] = [];
-  markers: any[] = [];  // Can't find typedef
+  markers: any[] = [];
+  selmarker: any;
+  selbin: Bin;
+
+  // Editor vars
+  subtitle = "Pick a bin to begin editing"
 
   constructor(private binfetcher: BinfetcherService) { }
 
@@ -44,7 +49,8 @@ export class ViewBinsComponent implements OnInit {
   }
 
   // Handles clicks to a marker
-  clickedMarker(label: string, index: number){
-    
+  clickedMarker(index: number){
+    this.selmarker = this.markers[index];
+    this.selbin = this.all_bins[index];
   }
 }
