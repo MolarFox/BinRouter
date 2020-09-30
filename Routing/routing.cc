@@ -31,31 +31,32 @@ namespace operations_research {
 	
 
 	// Gets the necessary parameters for the routing from the std
-	void readInput(DataModel* _data, int* _metaheuristic) {
+	void readInput(int argc, char *argv[], DataModel* _data, int* _metaheuristic) {
 		// READ ORDER: distance matrix, demands, vehicle capacities, metaheuristic type (int)
 
 		const int NUM_OF_INPUTS = 4;	// Number of parameters that this function will read from system input
 
-		// Declare input
-		string input[NUM_OF_INPUTS];
-
-		// Read inputs into input array
-		for (int i = 0; i < NUM_OF_INPUTS; i++) {
-			cin >> input[i];
+		// Checking if number of arguments is correct
+		if (argc != (NUM_OF_INPUTS + 1)) {
+			// invalid input
+			// TODO: print invalid output here to signify no solution found
+			return;
 		}
 
 		// parse distance matrix
 		vector<int64> tempVec = {};
 		string tempStr = "";
-		for (char ch : input[0])
+		char ch;
+		for (int i = 0; i < strlen(argv[1]); i++)
 		{
+			ch = argv[1][i];
 			// Number is finished being parsed. Add it to vector.
 			if (ch == ',') {
 				tempVec.push_back(stol(tempStr));
 				tempStr = "";
 			}
 			// Row of distance matrix is finished being parsed
-			else if (ch == '|') {
+			else if (ch == '-') {
 				tempVec.push_back(stol(tempStr));
 				_data->distance_matrix.push_back(tempVec);
 				tempVec.clear();
@@ -71,8 +72,9 @@ namespace operations_research {
 		// parse demands
 		tempVec.clear();
 		tempStr = "";
-		for (char ch : input[1])
+		for (int i = 0; i < strlen(argv[2]); i++)
 		{
+			ch = argv[2][i];
 			// Number is finished being parsed. Add it to vector.
 			if (ch == ',') {
 				tempVec.push_back(stol(tempStr));
@@ -89,8 +91,9 @@ namespace operations_research {
 		// parse vehicle capacities
 		tempVec.clear();
 		tempStr = "";
-		for (char ch : input[2])
+		for (int i = 0; i < strlen(argv[3]); i++)
 		{
+			ch = argv[3][i];
 			// Number is finished being parsed. Add it to vector.
 			if (ch == ',') {
 				tempVec.push_back(stol(tempStr));
@@ -108,7 +111,7 @@ namespace operations_research {
 		_data->num_vehicles = (int) _data->vehicle_capacities.size();
 
 		// parse metaheuristic
-		(*_metaheuristic) = stoi(input[3]);
+		(*_metaheuristic) = stoi(argv[4]);
 	}
 
 	void OutputSolution(const DataModel& data, const RoutingIndexManager& manager,
@@ -219,17 +222,14 @@ namespace operations_research {
 		OutputSolution(data, manager, routing, *solution);
 	}
 
-
-	
 }
 
 
-int main(int argc, char** argv) {
+int main(int argc, char* argv[]) {
 	operations_research::DataModel data;
 	int metaheuristic = -1;
-
 	
-	operations_research::readInput(&data, &metaheuristic);
+	operations_research::readInput(argc, argv, &data, &metaheuristic);
 	operations_research::VrpCapacity(data, metaheuristic);
 	return EXIT_SUCCESS;
 }
