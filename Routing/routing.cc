@@ -1,6 +1,6 @@
 /*
 Author: Anthony Grainger
-Date: Aug-2020
+Date created: Aug-2020
 
 ADAPTED FROM:
 https://developers.google.com/optimization/routing/cvrp
@@ -16,6 +16,8 @@ Under the APACHE 2.0 license.
 #include "ortools/constraint_solver/routing_index_manager.h"
 #include "ortools/constraint_solver/routing_parameters.h"
 
+#include <chrono>
+
 using namespace std;
 
 namespace operations_research {
@@ -30,10 +32,9 @@ namespace operations_research {
 
 	// Gets the necessary parameters for the routing from the std
 	void readInput(DataModel* _data, int* _metaheuristic) {
-		// READ ORDER: distance matrix, demands, vehicle capacities, vehicle number, metaheuristic type (int)
+		// READ ORDER: distance matrix, demands, vehicle capacities, metaheuristic type (int)
 
-
-		const int NUM_OF_INPUTS = 5;	// Number of parameters that this function will read from system input
+		const int NUM_OF_INPUTS = 4;	// Number of parameters that this function will read from system input
 
 		// Declare input
 		string input[NUM_OF_INPUTS];
@@ -104,16 +105,15 @@ namespace operations_research {
 		_data->vehicle_capacities = tempVec;
 
 		// parse vehicle number
-		_data->num_vehicles = stoi(input[3]);
+		_data->num_vehicles = (int) _data->vehicle_capacities.size();
 
 		// parse metaheuristic
-		(*_metaheuristic) = stoi(input[4]);
+		(*_metaheuristic) = stoi(input[3]);
 	}
 
 	void OutputSolution(const DataModel& data, const RoutingIndexManager& manager,
 		const RoutingModel& routing, const Assignment& solution) {
 		// Outputs the solution
-
 
 		int64 total_distance{ 0 };
 		int64 total_load{ 0 };
@@ -122,23 +122,32 @@ namespace operations_research {
 			int64 route_distance{ 0 };
 			int64 route_load{ 0 };
 			std::stringstream route;
-			route << "{";
 			while (routing.IsEnd(index) == false) {
 				int64 node_index = manager.IndexToNode(index).value();
 				route_load += data.demands[node_index];
-				route << node_index << ", ";		// Adding node to route
+				route << node_index << ",";		// Adding node to route
 				int64 previous_index = index;
 				index = solution.Value(routing.NextVar(index));
 				route_distance += routing.GetArcCostForVehicle(previous_index, index,
 					int64{ vehicle_id });
 			}
-			std::cout << route.str() << manager.IndexToNode(index).value() << "}";	// Output route
+			std::cout << route.str() << manager.IndexToNode(index).value() << endl;	// Output route
 			total_distance += route_distance;
 			total_load += route_load;
 		}
 	}
 
 	void VrpCapacity(DataModel data, int metaheuristic = -1) {
+		// testing consistency of input
+
+		// TODO: remove after testing
+		auto start = std::chrono::high_resolution_clock::now();
+
+		bool validInput = true;
+		if (data.num_vehicles != data.vehicle_capacities.size() || data.distance_matrix.size() != data.demands.size()) {
+			validInput = false;
+		}
+
 
 		// Create Routing Index Manager
 		RoutingIndexManager manager(data.distance_matrix.size(), data.num_vehicles,
@@ -202,14 +211,24 @@ namespace operations_research {
 		// Solve the problem.
 		const Assignment* solution = routing.SolveWithParameters(searchParameters);
 
+		// TODO: remove after testing
+		auto finish = std::chrono::high_resolution_clock::now();
+		//cout << "Time taken: " << std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count() << endl;
+
 		// Print solution on console.
 		OutputSolution(data, manager, routing, *solution);
 	}
-}  // namespace operations_research
+
+
+	
+}
+
 
 int main(int argc, char** argv) {
 	operations_research::DataModel data;
 	int metaheuristic = -1;
+
+	
 	operations_research::readInput(&data, &metaheuristic);
 	operations_research::VrpCapacity(data, metaheuristic);
 	return EXIT_SUCCESS;
