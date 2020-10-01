@@ -5,7 +5,10 @@
     [zoom]="start_zoom"
     (mapClick)="mapClicked($event)">
 
-    <agm-marker-cluster>
+    <agm-marker-cluster 
+        [averageCenter]=true 
+        [imagePath]="'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'"
+    >
         <agm-marker
             *ngFor="let m of markers; let i=index"
             (markerClick)="clickedMarker(i)"
