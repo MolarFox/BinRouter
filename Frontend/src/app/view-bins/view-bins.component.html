@@ -5,14 +5,16 @@
     [zoom]="start_zoom"
     (mapClick)="mapClicked($event)">
 
-    <agm-marker
-        *ngFor="let m of markers; let i=index"
-        (markerClick)="clickedMarker(i)"
-        [latitude]="m.lat"
-        [longitude]="m.lng"
-        [label]="m.label"
-        [markerDraggable]="m.draggable">
-    </agm-marker>
+    <agm-marker-cluster>
+        <agm-marker
+            *ngFor="let m of markers; let i=index"
+            (markerClick)="clickedMarker(i)"
+            [latitude]="m.lat"
+            [longitude]="m.lng"
+            [label]="m.label"
+            [markerDraggable]="m.draggable">
+        </agm-marker>
+    </agm-marker-cluster>
 
 </agm-map>
 
