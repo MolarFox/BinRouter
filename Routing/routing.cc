@@ -56,7 +56,7 @@ namespace operations_research {
 				tempStr = "";
 			}
 			// Row of distance matrix is finished being parsed
-			else if (ch == '-') {
+			else if (ch == '#') {
 				tempVec.push_back(stol(tempStr));
 				_data->distance_matrix.push_back(tempVec);
 				tempVec.clear();
@@ -118,25 +118,31 @@ namespace operations_research {
 		const RoutingModel& routing, const Assignment& solution) {
 		// Outputs the solution
 
-		int64 total_distance{ 0 };
-		int64 total_load{ 0 };
-		for (int vehicle_id = 0; vehicle_id < data.num_vehicles; ++vehicle_id) {
-			int64 index = routing.Start(vehicle_id);
-			int64 route_distance{ 0 };
-			int64 route_load{ 0 };
-			std::stringstream route;
-			while (routing.IsEnd(index) == false) {
-				int64 node_index = manager.IndexToNode(index).value();
-				route_load += data.demands[node_index];
-				route << node_index << ",";		// Adding node to route
-				int64 previous_index = index;
-				index = solution.Value(routing.NextVar(index));
-				route_distance += routing.GetArcCostForVehicle(previous_index, index,
-					int64{ vehicle_id });
+		if (routing.status() != 1)
+		{
+			cout << "Failed to find solution" << endl;
+		}
+		else {
+			int64 total_distance{ 0 };
+			int64 total_load{ 0 };
+			for (int vehicle_id = 0; vehicle_id < data.num_vehicles; ++vehicle_id) {
+				int64 index = routing.Start(vehicle_id);
+				int64 route_distance{ 0 };
+				int64 route_load{ 0 };
+				std::stringstream route;
+				while (routing.IsEnd(index) == false) {
+					int64 node_index = manager.IndexToNode(index).value();
+					route_load += data.demands[node_index];
+					route << node_index << ",";		// Adding node to route
+					int64 previous_index = index;
+					index = solution.Value(routing.NextVar(index));
+					route_distance += routing.GetArcCostForVehicle(previous_index, index,
+						int64{ vehicle_id });
+				}
+				std::cout << route.str() << manager.IndexToNode(index).value() << endl;	// Output route
+				total_distance += route_distance;
+				total_load += route_load;
 			}
-			std::cout << route.str() << manager.IndexToNode(index).value() << endl;	// Output route
-			total_distance += route_distance;
-			total_load += route_load;
 		}
 	}
 
@@ -221,7 +227,6 @@ namespace operations_research {
 		// Print solution on console.
 		OutputSolution(data, manager, routing, *solution);
 	}
-
 }
 
 
