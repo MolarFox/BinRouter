@@ -8,7 +8,6 @@ import { Bin } from '../bin';
   styleUrls: ['./view-heatmap.component.css']
 })
 export class ViewHeatmapComponent implements OnInit {
-  private mapOrPointLoaded = false;
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
   
@@ -17,7 +16,8 @@ export class ViewHeatmapComponent implements OnInit {
   start_zoom = 14;
 
   all_bins: Bin[] = [];
-  datapoints: any[] = []; 
+  //datapoints: google.maps.LatLng[] = []; 
+  datapoints: any[] = []; // for mixed / weighted dataset
 
   constructor(private binfetcher: BinfetcherService) { }
 
@@ -36,23 +36,18 @@ export class ViewHeatmapComponent implements OnInit {
     this.all_bins = bins;
     bins.forEach(bin =>
       this.datapoints.push(
-        {
-          lat: bin.lat,
-          lng: bin.lng 
-        }
+        {location: new google.maps.LatLng(bin.lat, bin.lng), weight: 30}
       )
     )
     this.renderHeatmap();
   }
 
+  // Render heatmap (to be called after map loaded)
   renderHeatmap(){
-    if (this.mapOrPointLoaded){
-      this.heatmap = new google.maps.visualization.HeatmapLayer({
-          map: this.map,
-          data: this.datapoints
-      });
-    }else{
-      this.mapOrPointLoaded = true;
-    }
+    this.heatmap = new google.maps.visualization.HeatmapLayer({
+        map: this.map,
+        data: this.datapoints,
+        radius: 35
+    });
   }
 }

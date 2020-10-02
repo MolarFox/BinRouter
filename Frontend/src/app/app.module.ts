@@ -53,7 +53,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatProgressBarModule,
     MatSidenavModule,
     AgmCoreModule.forRoot({
-      apiKey: GMAPS_API_KEY + '&libraries=visualization'
+      apiKey: GMAPS_API_KEY,
+      libraries: ['visualization']
     }),
     AgmMarkerClustererModule
   ],
