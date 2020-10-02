@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
@@ -16,6 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { AgmCoreModule } from '@agm/core';
+import { AgmMarkerClustererModule } from '@agm/markerclusterer'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,8 +55,9 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY + '&libraries=visualization'
     }),
+    AgmMarkerClustererModule
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

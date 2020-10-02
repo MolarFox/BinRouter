@@ -6,12 +6,33 @@ import { ViewHeatmapComponent } from './view-heatmap/view-heatmap.component';
 import { ViewBinsComponent    } from './view-bins/view-bins.component';
 import { ViewFleetComponent   } from './view-fleet/view-fleet.component';
 
+const appTitle: String = "BinRouter";
+
 const routes: Routes = [
   { path: '', redirectTo: '/routes', pathMatch: 'full' },
-  { path: 'routes',   component: ViewRoutesComponent  },
-  { path: 'heatmap',  component: ViewHeatmapComponent },
-  { path: 'bins',     component: ViewBinsComponent    },
-  { path: 'fleet',    component: ViewFleetComponent   }
+  { path: 'routes',   component: ViewRoutesComponent,    
+    data:{
+      title: appTitle + " - Routes"
+    }
+  },
+
+  { path: 'heatmap',  component: ViewHeatmapComponent,
+    data:{
+      title: appTitle + " - Heatmap"
+    }
+  },
+
+  { path: 'bins',     component: ViewBinsComponent,
+    data:{
+      title: appTitle + " - Bins"
+    }
+  },
+
+  { path: 'fleet',    component: ViewFleetComponent,
+    data:{
+      title: appTitle + " - Fleet"
+    }
+  }
 ];
 
 @NgModule({
