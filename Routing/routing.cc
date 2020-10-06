@@ -15,6 +15,7 @@ Under the APACHE 2.0 license.
 #include "ortools/constraint_solver/routing_enums.pb.h"
 #include "ortools/constraint_solver/routing_index_manager.h"
 #include "ortools/constraint_solver/routing_parameters.h"
+#include <stdlib.h>
 
 #include <chrono>
 
@@ -31,7 +32,7 @@ namespace operations_research {
 	
 
 	// Gets the necessary parameters for the routing from the std
-	void readInput(int argc, char *argv[], DataModel* _data, int* _metaheuristic) {
+	bool readInput(int argc, char *argv[], DataModel* _data, int* _metaheuristic) {
 		// READ ORDER: distance matrix, demands, vehicle capacities, metaheuristic type (int)
 
 		const int NUM_OF_INPUTS = 4;	// Number of parameters that this function will read from system input
@@ -39,8 +40,8 @@ namespace operations_research {
 		// Checking if number of arguments is correct
 		if (argc != (NUM_OF_INPUTS + 1)) {
 			// invalid input
-			// TODO: print invalid output here to signify no solution found
-			return;
+			cout << "Invalid number of inputs" << endl;
+			return false;
 		}
 
 		// parse distance matrix
@@ -112,6 +113,7 @@ namespace operations_research {
 
 		// parse metaheuristic
 		(*_metaheuristic) = stoi(argv[4]);
+		return true;
 	}
 
 	void OutputSolution(const DataModel& data, const RoutingIndexManager& manager,
@@ -120,7 +122,10 @@ namespace operations_research {
 
 		if (routing.status() != 1)
 		{
-			cout << "Failed to find solution" << endl;
+			for (int i = 0; i < data.num_vehicles; i++) {
+				cout << "-1" << endl;
+			}
+			return;
 		}
 		else {
 			int64 total_distance{ 0 };
@@ -215,17 +220,49 @@ namespace operations_research {
 			searchParameters.set_local_search_metaheuristic(
 				LocalSearchMetaheuristic::AUTOMATIC);
 		}
-		searchParameters.mutable_time_limit()->set_seconds(20);
+		searchParameters.mutable_time_limit()->set_seconds(20);	// TODO: Increase after testing
 
 		// Solve the problem.
 		const Assignment* solution = routing.SolveWithParameters(searchParameters);
 
 		// TODO: remove after testing
 		auto finish = std::chrono::high_resolution_clock::now();
-		//cout << "Time taken: " << std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count() << endl;
+		//cout << "Time taken: " << std::chrono::duration_cast<std::chrono::seconds>(finish - start).count() << endl;
 
 		// Print solution on console.
 		OutputSolution(data, manager, routing, *solution);
+	}
+
+	void randParams(DataModel& data, int n, int v) {
+		// Generates random parameters when given number of nodes (n), and number of vehicles (v)
+		std::default_random_engine generator;
+		std::uniform_int_distribution<int> distribution(0, 1000);
+		std::uniform_int_distribution<int> distribution2(0, 10);
+
+		vector<int64> line = {};
+		for (int i = 0; i < n; i++) {
+			line.clear();
+			for (int j = 0; j < n; j++) {
+				if (i == j) {
+					line.push_back(0);
+				}
+				else {
+					line.push_back(distribution(generator));
+				}
+			}
+			data.distance_matrix.push_back(line);
+		}
+
+
+		for (int i = 0; i < n; i++) {
+			data.demands.push_back(distribution2(generator));
+		}
+
+		for (int i = 0; i < v; i++) {
+			data.vehicle_capacities.push_back((int)(8 * n) / v);
+		}
+
+		data.num_vehicles = v;
 	}
 }
 
@@ -234,7 +271,10 @@ int main(int argc, char* argv[]) {
 	operations_research::DataModel data;
 	int metaheuristic = -1;
 	
-	operations_research::readInput(argc, argv, &data, &metaheuristic);
-	operations_research::VrpCapacity(data, metaheuristic);
+	if (operations_research::readInput(argc, argv, &data, &metaheuristic)) {
+		operations_research::VrpCapacity(data, metaheuristic);
+	}
+	/*operations_research::randParams(data, atoi(argv[1]), atoi(argv[2]));
+	operations_research::VrpCapacity(data, metaheuristic);*/
 	return EXIT_SUCCESS;
 }
