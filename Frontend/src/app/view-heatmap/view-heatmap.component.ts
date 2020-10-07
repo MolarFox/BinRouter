@@ -10,6 +10,8 @@ import { Bin } from '../bin';
 export class ViewHeatmapComponent implements OnInit {
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
+
+  private mapOrPointsLoaded: boolean = false; // true if at least one has loaded
   
   start_lat = -37.8142588;
   start_lng = 144.9666622;
@@ -47,7 +49,7 @@ export class ViewHeatmapComponent implements OnInit {
     this.heatmap = new google.maps.visualization.HeatmapLayer({
         map: this.map,
         data: this.datapoints,
-        radius: 35
+        radius: 25
     });
   }
 }
