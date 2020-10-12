@@ -3,6 +3,7 @@
 
 import { Bin } from './bin';
 import { Vehicle } from './vehicle';
+import { Depot } from './depot';
 import { NavRoute } from './route';
 
 export const DUMMY_BINS: Bin[] = [
@@ -3035,6 +3036,27 @@ export const DUMMY_BINS: Bin[] = [
         "is_smart": false,
         "threshold": 40,
         "fullness": 0.75
+    }
+]
+
+export const DUMMY_DEPOTS: Depot[] = [
+    {
+        "id":       0,
+        "lat":      -37.834535,
+        "lng":      144.986961,
+        "address": "254 Domain Rd"
+    },
+    {
+        "id":       1,
+        "lat":      -37.812121,
+        "lng":      144.955997,
+        "address": "295-307 William St"
+    },
+    {
+        "id":       2,
+        "lat":      -37.812884,
+        "lng":      144.970811,
+        "address": "113 Exhibition St"
     }
 ]
 
