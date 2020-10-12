@@ -3,7 +3,7 @@
 
 import { Bin } from './bin';
 import { Vehicle } from './vehicle';
-import {Depot } from './depot';
+import { Depot } from './depot';
 import { NavRoute } from './route';
 
 export const DUMMY_BINS: Bin[] = [
@@ -3040,7 +3040,24 @@ export const DUMMY_BINS: Bin[] = [
 ]
 
 export const DUMMY_DEPOTS: Depot[] = [
-    // TODO: populate with dummy vals
+    {
+        "id":       0,
+        "lat":      -37.834535,
+        "lng":      144.986961,
+        "address": "254 Domain Rd"
+    },
+    {
+        "id":       1,
+        "lat":      -37.812121,
+        "lng":      144.955997,
+        "address": "295-307 William St"
+    },
+    {
+        "id":       2,
+        "lat":      -37.812884,
+        "lng":      144.970811,
+        "address": "113 Exhibition St"
+    }
 ]
 
 export const DUMMY_VEHICLES: Vehicle[] = [

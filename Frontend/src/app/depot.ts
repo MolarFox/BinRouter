@@ -1,7 +1,7 @@
 // Struct for vehicles
 export interface Depot {
-    id:         string,
+    id:         number,
     lat:        number,
-    lng:        boolean,
-    address:    number
+    lng:        number,
+    address:    string
 }

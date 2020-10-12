@@ -15,7 +15,7 @@ export class FleetfetcherService {
     return of(DUMMY_DEPOTS);
   }
 
-  getDepot(id: string): Observable<Depot> {
+  getDepot(id: number): Observable<Depot> {
     return of(DUMMY_DEPOTS.find(chk_depot => chk_depot.id === id))
   }
 
