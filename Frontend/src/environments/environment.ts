@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serviceFetcherModes: 1      // 0 = fetch from actual server, 1 = fetch from github, 2 = use static dummy data
 };
 
 /*
