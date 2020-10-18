@@ -31,7 +31,6 @@ export class ViewBinsComponent implements OnInit {
 
   // Set instance bins variable, convert all to markers and display
   process_markers(bins: Bin[]){
-    console.log(bins)
     this.all_bins = bins;
     bins.forEach(bin =>
       this.markers.push(

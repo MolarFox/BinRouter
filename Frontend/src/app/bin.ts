@@ -13,7 +13,7 @@ export interface Bin {
 export interface BinRaw {
     location: {
         type:           string,
-        coordinates:    number[],
+        coordinates:    number[]
     },
     address: string,
     capacity: number
@@ -23,7 +23,7 @@ export interface BinResponse {
     dumbBins:   BinRaw[]
 }
 
-export function jsonToBin(res: BinRaw[]): Bin[] {
+export function jsonToBins(res: BinRaw[]): Bin[] {
     let outarray: Bin[] = []
     for (let i=0; i < res.length; i++){
         let record = res[i]

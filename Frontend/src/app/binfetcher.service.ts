@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Bin, BinResponse, jsonToBin } from './bin';
+import { Bin, BinResponse, jsonToBins } from './bin';
 import { DUMMY_BINS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
@@ -43,13 +43,15 @@ export class BinfetcherService {
 
       return this.http.get<BinResponse>(this.binsUrl)
       .pipe(
-        map(x => jsonToBin(x.dumbBins)),
+        map(x => jsonToBins(x.dumbBins)),
         catchError(handleError<Bin[]>('getAllBins', []))
       )
 
     }
   }
 
+
+  /*
   getBin(serial: number): Observable<Bin> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_BINS.find(chk_bin => chk_bin.serial === serial))
@@ -67,4 +69,5 @@ export class BinfetcherService {
 
     }
   }
+  */
 }
