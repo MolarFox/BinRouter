@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Vehicle } from './vehicle';
-import { Depot } from './depot';
+import { Vehicle, VehicleDepotResponse } from './vehicle';
+import { Depot, jsonToDepots } from './depot';
 import { DUMMY_VEHICLES, DUMMY_DEPOTS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { handleError } from './httpHelpers';
 
 @Injectable({
@@ -33,11 +33,9 @@ export class FleetfetcherService {
 
       }
 
-      //return of(this.depotcache);
-
-      // TODO: FIX WITH YI-SONG IMPLEMENTATION
-      return this.http.get<Depot[]>(this.fleetUrl)
+      return this.http.get<VehicleDepotResponse>(this.fleetUrl)
       .pipe(
+        map(x => jsonToDepots(x.depots)),
         catchError(handleError<Depot[]>('getAllDepots', []))
       )
 
@@ -71,11 +69,9 @@ export class FleetfetcherService {
 
       }
 
-      //return of(this.fleetcache);
-
-      // TODO: FIX WITH YI-SONG IMPLEMENTATION
-      return this.http.get<Vehicle[]>(this.fleetUrl)
+      return this.http.get<VehicleDepotResponse>(this.fleetUrl)
       .pipe(
+        map(x => x.fleetVehicles),
         catchError(handleError<Vehicle[]>('getAllFleet', []))
       )
       

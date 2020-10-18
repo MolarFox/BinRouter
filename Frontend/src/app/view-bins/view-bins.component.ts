@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
-import { BinfetcherService } from '../binfetcher.service'
+import { BinfetcherService } from '../binfetcher.service';
 import { Bin } from '../bin';
 
 @Component({
