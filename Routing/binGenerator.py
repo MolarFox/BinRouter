@@ -1,11 +1,12 @@
 from random import *
 from math import ceil
+from geopy.geocoders import Nominatim as geo
 
 class Bin:
-    minLong = 144.603674
-    maxLong = 144.746603
-    minLat = -37.911646
-    maxLat = -37.840319
+    minLong = 144.578325
+    maxLong = 144.812508
+    minLat = -37.932013
+    maxLat = -37.818680
 
     minCap = 100
     maxCap = 500
@@ -14,7 +15,10 @@ class Bin:
 
         self.lat = randrange(round(Bin.minLat * 10000), round(Bin.maxLat * 10000), 1) / 10000
         self.long = randrange(round(Bin.minLong * 10000), round(Bin.maxLong * 10000), 1) / 10000
-        self.address = "123 Fake St"
+        self.address = str(geolocator.reverse(str(self.lat) + ", " + str(self.long)))
+        l = geolocator.geocode(self.address)
+        self.lat = l.latitude
+        self.long = l.longitude
         self.capacity = randrange(Bin.minCap, Bin.maxCap, 1)
 
     def __str__(self):
@@ -44,6 +48,9 @@ class SmartBin(Bin):
 
 
 if __name__ == "__main__":
+    # geoPy initiation
+    geolocator = geo(user_agent="appname")
+
     while True:
         x = input("Number of regular bins to generate: ")
         #y = input("Number of smart bins to generate: ")
