@@ -1,17 +1,16 @@
 // Struct for vehicle depots
 export interface Depot {
-    id:         number,
+    id:         string,
     lat:        number,
     lng:        number,
     address:    string
 }
 
 export interface DepotRaw {
-    location: {
-        type:           string,
-        coordinates:    number[]
-    },
-    address: string
+    id:         string,
+    longitude:  number,
+    latitude:   number,
+    address:    string
 }
 
 export interface DepotResponse {
@@ -24,9 +23,9 @@ export function jsonToDepots(res: DepotRaw[]): Depot[] {
         let record = res[i];
         outarray.push(
             {
-                "id": i,
-                "lat": record.location.coordinates[1],
-                "lng": record.location.coordinates[0],
+                "id": record.id,
+                "lat": record.latitude,
+                "lng": record.longitude,
                 "address": record.address
             }
         )

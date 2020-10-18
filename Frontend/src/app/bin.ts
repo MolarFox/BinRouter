@@ -1,6 +1,7 @@
 // Struct for bins
 export interface Bin {
-    serial:     number,
+    serial:     string,
+    smartSerial:number,
     lat:        number,
     lng:        number,
     address:    string,
@@ -11,16 +12,19 @@ export interface Bin {
 }
 
 export interface BinRaw {
-    location: {
-        type:           string,
-        coordinates:    number[]
-    },
-    address: string,
-    capacity: number
+    id:                 string,
+    serialNumber:       number,
+    longitude:          number,
+    latitude:           number,
+    address:            string,
+    capacity:           number,
+    threshold:          number,
+    currentFullness:    number,
+    isSmart:            boolean
 }
 
 export interface BinResponse {
-    dumbBins:   BinRaw[]
+    bins:   BinRaw[]
 }
 
 export function jsonToBins(res: BinRaw[]): Bin[] {
@@ -29,14 +33,15 @@ export function jsonToBins(res: BinRaw[]): Bin[] {
         let record = res[i]
         outarray.push(
             {
-                "serial": i,
-                "lat": record.location.coordinates[1],
-                "lng": record.location.coordinates[0],
-                "address": record.address,
-                "capacity": record.capacity,
-                "is_smart": false,
-                "threshold": 40,
-                "fullness": 0.75
+                "serial":       record.id,
+                "smartSerial":  record.serialNumber,
+                "lat":          record.latitude,
+                "lng":          record.longitude,
+                "address":      record.address,
+                "capacity":     record.capacity,
+                "is_smart":     record.isSmart,
+                "threshold":    record.threshold,
+                "fullness":     record.currentFullness
             }
         )
     }

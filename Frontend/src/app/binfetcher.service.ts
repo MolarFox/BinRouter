@@ -43,7 +43,7 @@ export class BinfetcherService {
 
       return this.http.get<BinResponse>(this.binsUrl)
       .pipe(
-        map(x => jsonToBins(x.dumbBins)),
+        map(x => jsonToBins(x.bins)),
         catchError(handleError<Bin[]>('getAllBins', []))
       )
 

@@ -2,6 +2,7 @@ import { DepotRaw } from './depot';
 
 // Struct for vehicles
 export interface Vehicle {
+    id:         string,
     rego:       string,
     capacity:   number,
     available:  boolean,

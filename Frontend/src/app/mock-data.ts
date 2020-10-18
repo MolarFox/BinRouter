@@ -8,7 +8,8 @@ import { NavRoute } from './route';
 
 export const DUMMY_BINS: Bin[] = [
     {
-        "serial": 0,
+        "serial": String(0),
+        "smartSerial": 0,
         "lat": -37.811495635257366,
         "lng": 144.96932295134278,
         "address": "",
@@ -18,7 +19,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 1,
+        "serial": String(1),
+        "smartSerial": 0,
         "lat": -37.81117354183993,
         "lng": 144.97054603865357,
         "address": "",
@@ -28,7 +30,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 2,
+        "serial": String(2),
+        "smartSerial": 0,
         "lat": -37.8112413510972,
         "lng": 144.97168329527588,
         "address": "",
@@ -38,7 +41,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 3,
+        "serial": String(3),
+        "smartSerial": 0,
         "lat": -37.81261447515821,
         "lng": 144.9718120413086,
         "address": "",
@@ -48,7 +52,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 4,
+        "serial": String(4),
+        "smartSerial": 0,
         "lat": -37.81376720156546,
         "lng": 144.97108248045654,
         "address": "",
@@ -58,7 +63,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 5,
+        "serial": String(5),
+        "smartSerial": 0,
         "lat": -37.81459783149587,
         "lng": 144.96917274763794,
         "address": "",
@@ -68,7 +74,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 6,
+        "serial": String(6),
+        "smartSerial": 0,
         "lat": -37.81453002532125,
         "lng": 144.96679094603272,
         "address": "",
@@ -78,7 +85,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 7,
+        "serial": String(7),
+        "smartSerial": 0,
         "lat": -37.813580732337456,
         "lng": 144.96584680845947,
         "address": "",
@@ -88,7 +96,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 8,
+        "serial": String(8),
+        "smartSerial": 0,
         "lat": -37.81319084061156,
         "lng": 144.96380832960816,
         "address": "",
@@ -98,7 +107,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 9,
+        "serial": String(9),
+        "smartSerial": 0,
         "lat": -37.81047849336229,
         "lng": 144.96760633757324,
         "address": "",
@@ -108,7 +118,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 10,
+        "serial": String(10),
+        "smartSerial": 0,
         "lat": -37.809190093513884,
         "lng": 144.96951607039185,
         "address": "",
@@ -118,7 +129,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 11,
+        "serial": String(11),
+        "smartSerial": 0,
         "lat": -37.80846112048377,
         "lng": 144.9685504751465,
         "address": "",
@@ -128,7 +140,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 12,
+        "serial": String(12),
+        "smartSerial": 0,
         "lat": -37.807952530386984,
         "lng": 144.96614721586914,
         "address": "",
@@ -138,7 +151,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 13,
+        "serial": String(13),
+        "smartSerial": 0,
         "lat": -37.80763905760432,
         "lng": 144.96269591556322,
         "address": "",
@@ -148,7 +162,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 14,
+        "serial": String(14),
+        "smartSerial": 0,
         "lat": -37.80841889763092,
         "lng": 144.96027119861375,
         "address": "",
@@ -158,7 +173,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 15,
+        "serial": String(15),
+        "smartSerial": 0,
         "lat": -37.808842720278115,
         "lng": 144.95879061923753,
         "address": "",
@@ -168,7 +184,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 16,
+        "serial": String(16),
+        "smartSerial": 0,
         "lat": -37.809249587730875,
         "lng": 144.95756753192674,
         "address": "",
@@ -178,7 +195,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 17,
+        "serial": String(17),
+        "smartSerial": 0,
         "lat": -37.80997855297712,
         "lng": 144.95821126209032,
         "address": "",
@@ -188,7 +206,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 18,
+        "serial": String(18),
+        "smartSerial": 0,
         "lat": -37.81128389136662,
         "lng": 144.9587691615654,
         "address": "",
@@ -198,7 +217,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 19,
+        "serial": String(19),
+        "smartSerial": 0,
         "lat": -37.8129112939211,
         "lng": 144.96001370654832,
         "address": "",
@@ -208,7 +228,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 20,
+        "serial": String(20),
+        "smartSerial": 0,
         "lat": -37.81301300538973,
         "lng": 144.95939143405687,
         "address": "",
@@ -218,7 +239,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 21,
+        "serial": String(21),
+        "smartSerial": 0,
         "lat": -37.816223932650594,
         "lng": 144.9638345367771,
         "address": "",
@@ -228,7 +250,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 22,
+        "serial": String(22),
+        "smartSerial": 0,
         "lat": -37.81790207866253,
         "lng": 144.96181751559791,
         "address": "",
@@ -238,7 +261,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 23,
+        "serial": String(23),
+        "smartSerial": 0,
         "lat": -37.8153594183016,
         "lng": 144.95984340976295,
         "address": "",
@@ -248,7 +272,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 24,
+        "serial": String(24),
+        "smartSerial": 0,
         "lat": -37.81720709352806,
         "lng": 144.96754671405373,
         "address": "",
@@ -258,7 +283,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 25,
+        "serial": String(25),
+        "smartSerial": 0,
         "lat": -37.81851230411743,
         "lng": 144.95703245471535,
         "address": "",
@@ -268,7 +294,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 26,
+        "serial": String(26),
+        "smartSerial": 0,
         "lat": -37.818885217189816,
         "lng": 144.9542858726841,
         "address": "",
@@ -278,7 +305,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 27,
+        "serial": String(27),
+        "smartSerial": 0,
         "lat": -37.81712233879575,
         "lng": 144.95353485415993,
         "address": "",
@@ -288,7 +316,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 28,
+        "serial": String(28),
+        "smartSerial": 0,
         "lat": -37.81432537803898,
         "lng": 144.9545004494053,
         "address": "",
@@ -298,7 +327,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 29,
+        "serial": String(29),
+        "smartSerial": 0,
         "lat": -37.81268105468004,
         "lng": 144.95377088855324,
         "address": "",
@@ -308,7 +338,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 30,
+        "serial": String(30),
+        "smartSerial": 0,
         "lat": -37.81937753793747,
         "lng": 144.9594581646533,
         "address": "",
@@ -318,7 +349,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 31,
+        "serial": String(31),
+        "smartSerial": 0,
         "lat": -37.80971515577764,
         "lng": 144.95233421750976,
         "address": "",
@@ -328,7 +360,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 32,
+        "serial": String(32),
+        "smartSerial": 0,
         "lat": -37.80978395301097,
         "lng": 144.9651575088501,
         "address": "",
@@ -338,7 +371,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 33,
+        "serial": String(33),
+        "smartSerial": 0,
         "lat": -37.80952290063189,
         "lng": 144.96390801390714,
         "address": "",
@@ -348,7 +382,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 34,
+        "serial": String(34),
+        "smartSerial": 0,
         "lat": -37.80976871438835,
         "lng": 144.96373098811216,
         "address": "",
@@ -358,7 +393,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 35,
+        "serial": String(35),
+        "smartSerial": 0,
         "lat": -37.81132834122377,
         "lng": 144.9619929166705,
         "address": "",
@@ -368,7 +404,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 36,
+        "serial": String(36),
+        "smartSerial": 0,
         "lat": -37.81173519498032,
         "lng": 144.9647448631198,
         "address": "",
@@ -378,7 +415,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 37,
+        "serial": String(37),
+        "smartSerial": 0,
         "lat": -37.81302355041901,
         "lng": 144.96339839419431,
         "address": "",
@@ -388,7 +426,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 38,
+        "serial": String(38),
+        "smartSerial": 0,
         "lat": -37.81278198548672,
         "lng": 144.96422987898893,
         "address": "",
@@ -398,7 +437,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 39,
+        "serial": String(39),
+        "smartSerial": 0,
         "lat": -37.81012895720821,
         "lng": 144.96174615344114,
         "address": "",
@@ -408,7 +448,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 40,
+        "serial": String(40),
+        "smartSerial": 0,
         "lat": -37.80908455244779,
         "lng": 144.96162430548597,
         "address": "",
@@ -418,7 +459,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 41,
+        "serial": String(41),
+        "smartSerial": 0,
         "lat": -37.8078936085234,
         "lng": 144.9613614490025,
         "address": "",
@@ -428,7 +470,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 42,
+        "serial": String(42),
+        "smartSerial": 0,
         "lat": -37.807119845845605,
         "lng": 144.96009216709217,
         "address": "",
@@ -438,7 +481,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 43,
+        "serial": String(43),
+        "smartSerial": 0,
         "lat": -37.807213088676995,
         "lng": 144.9597542087563,
         "address": "",
@@ -448,7 +492,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 44,
+        "serial": String(44),
+        "smartSerial": 0,
         "lat": -37.80661374106595,
         "lng": 144.9593961238861,
         "address": "",
@@ -458,7 +503,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 45,
+        "serial": String(45),
+        "smartSerial": 0,
         "lat": -37.80593716214227,
         "lng": 144.96140108509144,
         "address": "",
@@ -468,7 +514,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 46,
+        "serial": String(46),
+        "smartSerial": 0,
         "lat": -37.806466957875735,
         "lng": 144.9616263906487,
         "address": "",
@@ -478,7 +525,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 47,
+        "serial": String(47),
+        "smartSerial": 0,
         "lat": -37.80540826874511,
         "lng": 144.96294693773757,
         "address": "",
@@ -488,7 +536,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 48,
+        "serial": String(48),
+        "smartSerial": 0,
         "lat": -37.80524297051455,
         "lng": 144.9632741672374,
         "address": "",
@@ -498,7 +547,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 49,
+        "serial": String(49),
+        "smartSerial": 0,
         "lat": -37.80693183972442,
         "lng": 144.96420704515356,
         "address": "",
@@ -508,7 +558,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 50,
+        "serial": String(50),
+        "smartSerial": 0,
         "lat": -37.807016606155436,
         "lng": 144.96490441949743,
         "address": "",
@@ -518,7 +569,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 51,
+        "serial": String(51),
+        "smartSerial": 0,
         "lat": -37.80652495950109,
         "lng": 144.96512972505468,
         "address": "",
@@ -528,7 +580,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 52,
+        "serial": String(52),
+        "smartSerial": 0,
         "lat": -37.80601211769276,
         "lng": 144.9653121152677,
         "address": "",
@@ -538,7 +591,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 53,
+        "serial": String(53),
+        "smartSerial": 0,
         "lat": -37.80550774913492,
         "lng": 144.96503316553014,
         "address": "",
@@ -548,7 +602,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 54,
+        "serial": String(54),
+        "smartSerial": 0,
         "lat": -37.805051269086114,
         "lng": 144.96638275880582,
         "address": "",
@@ -558,7 +613,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 55,
+        "serial": String(55),
+        "smartSerial": 0,
         "lat": -37.80502160005676,
         "lng": 144.96605016488797,
         "address": "",
@@ -568,7 +624,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 56,
+        "serial": String(56),
+        "smartSerial": 0,
         "lat": -37.80479272428682,
         "lng": 144.96635057229764,
         "address": "",
@@ -578,7 +635,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 57,
+        "serial": String(57),
+        "smartSerial": 0,
         "lat": -37.80365108041411,
         "lng": 144.96624112129211,
         "address": "",
@@ -588,7 +646,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 58,
+        "serial": String(58),
+        "smartSerial": 0,
         "lat": -37.803731093177625,
         "lng": 144.96626701846662,
         "address": "",
@@ -598,7 +657,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 59,
+        "serial": String(59),
+        "smartSerial": 0,
         "lat": -37.80298169351198,
         "lng": 144.96724379274102,
         "address": "",
@@ -608,7 +668,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 60,
+        "serial": String(60),
+        "smartSerial": 0,
         "lat": -37.80279095848483,
         "lng": 144.96744227620812,
         "address": "",
@@ -618,7 +679,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 61,
+        "serial": String(61),
+        "smartSerial": 0,
         "lat": -37.80210430830862,
         "lng": 144.966519596307,
         "address": "",
@@ -628,7 +690,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 62,
+        "serial": String(62),
+        "smartSerial": 0,
         "lat": -37.80251091181261,
         "lng": 144.9667239189148,
         "address": "",
@@ -638,7 +701,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 63,
+        "serial": String(63),
+        "smartSerial": 0,
         "lat": -37.802563262913885,
         "lng": 144.9667556307003,
         "address": "",
@@ -648,7 +712,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 64,
+        "serial": String(64),
+        "smartSerial": 0,
         "lat": -37.80279214559298,
         "lng": 144.96507656785698,
         "address": "",
@@ -658,7 +723,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 65,
+        "serial": String(65),
+        "smartSerial": 0,
         "lat": -37.80277519134478,
         "lng": 144.96495855066033,
         "address": "",
@@ -668,7 +734,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 66,
+        "serial": String(66),
+        "smartSerial": 0,
         "lat": -37.80382210887134,
         "lng": 144.96477079602928,
         "address": "",
@@ -678,7 +745,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 67,
+        "serial": String(67),
+        "smartSerial": 0,
         "lat": -37.80466556604358,
         "lng": 144.9649156353161,
         "address": "",
@@ -688,7 +756,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 68,
+        "serial": String(68),
+        "smartSerial": 0,
         "lat": -37.806269784108736,
         "lng": 144.96683253703492,
         "address": "",
@@ -698,7 +767,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 69,
+        "serial": String(69),
+        "smartSerial": 0,
         "lat": -37.806151109877916,
         "lng": 144.96753424851474,
         "address": "",
@@ -708,7 +778,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 70,
+        "serial": String(70),
+        "smartSerial": 0,
         "lat": -37.807248839236266,
         "lng": 144.96717483250674,
         "address": "",
@@ -718,7 +789,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 71,
+        "serial": String(71),
+        "smartSerial": 0,
         "lat": -37.807503137145794,
         "lng": 144.96662229744967,
         "address": "",
@@ -728,7 +800,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 72,
+        "serial": String(72),
+        "smartSerial": 0,
         "lat": -37.807693860003255,
         "lng": 144.96595710961398,
         "address": "",
@@ -738,7 +811,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 73,
+        "serial": String(73),
+        "smartSerial": 0,
         "lat": -37.808848899394555,
         "lng": 144.9661163102143,
         "address": "",
@@ -748,7 +822,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 74,
+        "serial": String(74),
+        "smartSerial": 0,
         "lat": -37.811842170251715,
         "lng": 144.9567844715029,
         "address": "",
@@ -758,7 +833,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 75,
+        "serial": String(75),
+        "smartSerial": 0,
         "lat": -37.80931625392693,
         "lng": 144.956441148749,
         "address": "",
@@ -768,7 +844,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 76,
+        "serial": String(76),
+        "smartSerial": 0,
         "lat": -37.80753619387712,
         "lng": 144.95466016196312,
         "address": "",
@@ -778,7 +855,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 77,
+        "serial": String(77),
+        "smartSerial": 0,
         "lat": -37.80601039396733,
         "lng": 144.95491765402855,
         "address": "",
@@ -788,7 +866,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 78,
+        "serial": String(78),
+        "smartSerial": 0,
         "lat": -37.8057560909174,
         "lng": 144.9523856487185,
         "address": "",
@@ -798,7 +877,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 79,
+        "serial": String(79),
+        "smartSerial": 0,
         "lat": -37.8039201704889,
         "lng": 144.95526097678245,
         "address": "",
@@ -808,7 +888,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 80,
+        "serial": String(80),
+        "smartSerial": 0,
         "lat": -37.80398798640701,
         "lng": 144.95573304556908,
         "address": "",
@@ -818,7 +899,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 81,
+        "serial": String(81),
+        "smartSerial": 0,
         "lat": -37.80414057199507,
         "lng": 144.9602391567141,
         "address": "",
@@ -828,7 +910,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 82,
+        "serial": String(82),
+        "smartSerial": 0,
         "lat": -37.80212302596919,
         "lng": 144.95796464346947,
         "address": "",
@@ -838,7 +921,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 83,
+        "serial": String(83),
+        "smartSerial": 0,
         "lat": -37.80110575497273,
         "lng": 144.95624802969994,
         "address": "",
@@ -848,7 +932,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 84,
+        "serial": String(84),
+        "smartSerial": 0,
         "lat": -37.80186870953358,
         "lng": 144.95466016196312,
         "address": "",
@@ -858,7 +943,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 85,
+        "serial": String(85),
+        "smartSerial": 0,
         "lat": -37.80113966423167,
         "lng": 144.95354436301292,
         "address": "",
@@ -868,7 +954,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 86,
+        "serial": String(86),
+        "smartSerial": 0,
         "lat": -37.80112270960415,
         "lng": 144.95302937888206,
         "address": "",
@@ -878,7 +965,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 87,
+        "serial": String(87),
+        "smartSerial": 0,
         "lat": -37.79968333461159,
         "lng": 144.95457433127464,
         "address": "",
@@ -888,7 +976,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 88,
+        "serial": String(88),
+        "smartSerial": 0,
         "lat": -37.798089551190444,
         "lng": 144.9574282016665,
         "address": "",
@@ -898,7 +987,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 89,
+        "serial": String(89),
+        "smartSerial": 0,
         "lat": -37.79793695310161,
         "lng": 144.95813630484642,
         "address": "",
@@ -908,7 +998,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 90,
+        "serial": String(90),
+        "smartSerial": 0,
         "lat": -37.799700289569515,
         "lng": 144.95798610114159,
         "address": "",
@@ -918,7 +1009,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 91,
+        "serial": String(91),
+        "smartSerial": 0,
         "lat": -37.79868298520591,
         "lng": 144.96414445303978,
         "address": "",
@@ -928,7 +1020,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 92,
+        "serial": String(92),
+        "smartSerial": 0,
         "lat": -37.797767399299886,
         "lng": 144.96420882605614,
         "address": "",
@@ -938,7 +1031,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 93,
+        "serial": String(93),
+        "smartSerial": 0,
         "lat": -37.79642791058485,
         "lng": 144.96285699271263,
         "address": "",
@@ -948,7 +1042,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 94,
+        "serial": String(94),
+        "smartSerial": 0,
         "lat": -37.796088795665,
         "lng": 144.95996020697655,
         "address": "",
@@ -958,7 +1053,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 95,
+        "serial": String(95),
+        "smartSerial": 0,
         "lat": -37.798784716272735,
         "lng": 144.96556065939964,
         "address": "",
@@ -968,7 +1064,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 96,
+        "serial": String(96),
+        "smartSerial": 0,
         "lat": -37.80076844407258,
         "lng": 144.96822141074242,
         "address": "",
@@ -978,7 +1075,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 97,
+        "serial": String(97),
+        "smartSerial": 0,
         "lat": -37.79944596479208,
         "lng": 144.96961615943016,
         "address": "",
@@ -988,7 +1086,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 98,
+        "serial": String(98),
+        "smartSerial": 0,
         "lat": -37.799483127194186,
         "lng": 144.97215228084187,
         "address": "",
@@ -998,7 +1097,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 99,
+        "serial": String(99),
+        "smartSerial": 0,
         "lat": -37.79995786583157,
         "lng": 144.97210936549763,
         "address": "",
@@ -1008,7 +1108,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 100,
+        "serial": String(100),
+        "smartSerial": 0,
         "lat": -37.801093835185384,
         "lng": 144.9740834713326,
         "address": "",
@@ -1018,7 +1119,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 101,
+        "serial": String(101),
+        "smartSerial": 0,
         "lat": -37.80533237258894,
         "lng": 144.97389035228352,
         "address": "",
@@ -1028,7 +1130,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 102,
+        "serial": String(102),
+        "smartSerial": 0,
         "lat": -37.80579012007464,
         "lng": 144.97597174647908,
         "address": "",
@@ -1038,7 +1141,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 103,
+        "serial": String(103),
+        "smartSerial": 0,
         "lat": -37.809358991137984,
         "lng": 144.97544573818524,
         "address": "",
@@ -1048,7 +1152,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 104,
+        "serial": String(104),
+        "smartSerial": 0,
         "lat": -37.80925727463567,
         "lng": 144.97188376461347,
         "address": "",
@@ -1058,7 +1163,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 105,
+        "serial": String(105),
+        "smartSerial": 0,
         "lat": -37.811800145158244,
         "lng": 144.97557448421796,
         "address": "",
@@ -1068,7 +1174,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 106,
+        "serial": String(106),
+        "smartSerial": 0,
         "lat": -37.81225785255195,
         "lng": 144.9776344207414,
         "address": "",
@@ -1078,7 +1185,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 107,
+        "serial": String(107),
+        "smartSerial": 0,
         "lat": -37.81657696893482,
         "lng": 144.97870164369823,
         "address": "",
@@ -1088,7 +1196,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 108,
+        "serial": String(108),
+        "smartSerial": 0,
         "lat": -37.81708549962601,
         "lng": 144.97925954317333,
         "address": "",
@@ -1098,7 +1207,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 109,
+        "serial": String(109),
+        "smartSerial": 0,
         "lat": -37.821323119150826,
         "lng": 144.9678011462617,
         "address": "",
@@ -1108,7 +1218,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 110,
+        "serial": String(110),
+        "smartSerial": 0,
         "lat": -37.81830595899197,
         "lng": 144.97895913576366,
         "address": "",
@@ -1118,7 +1229,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 111,
+        "serial": String(111),
+        "smartSerial": 0,
         "lat": -37.8168481857394,
         "lng": 144.98039679979564,
         "address": "",
@@ -1128,7 +1240,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 112,
+        "serial": String(112),
+        "smartSerial": 0,
         "lat": -37.815868113767394,
         "lng": 144.9830614672691,
         "address": "",
@@ -1138,7 +1251,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 113,
+        "serial": String(113),
+        "smartSerial": 0,
         "lat": -37.820275649727385,
         "lng": 144.95126343699786,
         "address": "",
@@ -1148,7 +1262,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 114,
+        "serial": String(114),
+        "smartSerial": 0,
         "lat": -37.8186823107144,
         "lng": 144.94888163539264,
         "address": "",
@@ -1158,7 +1273,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 115,
+        "serial": String(115),
+        "smartSerial": 0,
         "lat": -37.82080110505168,
         "lng": 144.94913912745807,
         "address": "",
@@ -1168,7 +1284,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 116,
+        "serial": String(116),
+        "smartSerial": 0,
         "lat": -37.8212757066455,
         "lng": 144.94787312480304,
         "address": "",
@@ -1178,7 +1295,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 117,
+        "serial": String(117),
+        "smartSerial": 0,
         "lat": -37.81118976619539,
         "lng": 144.95031929942462,
         "address": "",
@@ -1188,7 +1306,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 118,
+        "serial": String(118),
+        "smartSerial": 0,
         "lat": -37.809223271076995,
         "lng": 144.9490532967696,
         "address": "",
@@ -1198,7 +1317,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 119,
+        "serial": String(119),
+        "smartSerial": 0,
         "lat": -37.80803656765059,
         "lng": 144.95182133647296,
         "address": "",
@@ -1208,7 +1328,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 120,
+        "serial": String(120),
+        "smartSerial": 0,
         "lat": -37.806105274732964,
         "lng": 144.94989507399515,
         "address": "",
@@ -1218,7 +1339,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 121,
+        "serial": String(121),
+        "smartSerial": 0,
         "lat": -37.8047659372185,
         "lng": 144.94914405547098,
         "address": "",
@@ -1228,7 +1350,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 122,
+        "serial": String(122),
+        "smartSerial": 0,
         "lat": -37.80449453953959,
         "lng": 144.94951486587524,
         "address": "",
@@ -1238,7 +1361,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 123,
+        "serial": String(123),
+        "smartSerial": 0,
         "lat": -37.803901288706044,
         "lng": 144.94712703429178,
         "address": "",
@@ -1248,7 +1372,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 124,
+        "serial": String(124),
+        "smartSerial": 0,
         "lat": -37.80183287276174,
         "lng": 144.95008819304422,
         "address": "",
@@ -1258,7 +1383,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 125,
+        "serial": String(125),
+        "smartSerial": 0,
         "lat": -37.801629418884055,
         "lng": 144.9530922671409,
         "address": "",
@@ -1268,7 +1394,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 126,
+        "serial": String(126),
+        "smartSerial": 0,
         "lat": -37.80030695501874,
         "lng": 144.94989507399515,
         "address": "",
@@ -1278,7 +1405,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 127,
+        "serial": String(127),
+        "smartSerial": 0,
         "lat": -37.798950557227364,
         "lng": 144.94854324065165,
         "address": "",
@@ -1288,7 +1416,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 128,
+        "serial": String(128),
+        "smartSerial": 0,
         "lat": -37.800374774254486,
         "lng": 144.9483715792747,
         "address": "",
@@ -1298,7 +1427,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 129,
+        "serial": String(129),
+        "smartSerial": 0,
         "lat": -37.8011716456102,
         "lng": 144.94768493376688,
         "address": "",
@@ -1308,7 +1438,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 130,
+        "serial": String(130),
+        "smartSerial": 0,
         "lat": -37.7974754463576,
         "lng": 144.95270602904276,
         "address": "",
@@ -1318,7 +1449,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 131,
+        "serial": String(131),
+        "smartSerial": 0,
         "lat": -37.79663046592157,
         "lng": 144.9564861199487,
         "address": "",
@@ -1328,7 +1460,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 132,
+        "serial": String(132),
+        "smartSerial": 0,
         "lat": -37.7964749427808,
         "lng": 144.96599335283327,
         "address": "",
@@ -1338,7 +1471,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 133,
+        "serial": String(133),
+        "smartSerial": 0,
         "lat": -37.796661455204436,
         "lng": 144.96891159624147,
         "address": "",
@@ -1348,7 +1482,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 134,
+        "serial": String(134),
+        "smartSerial": 0,
         "lat": -37.796753998348855,
         "lng": 144.97324604600954,
         "address": "",
@@ -1358,7 +1493,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 135,
+        "serial": String(135),
+        "smartSerial": 0,
         "lat": -37.7973813540776,
         "lng": 144.97526306718873,
         "address": "",
@@ -1368,7 +1504,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 136,
+        "serial": String(136),
+        "smartSerial": 0,
         "lat": -37.79851736305472,
         "lng": 144.97549910158205,
         "address": "",
@@ -1378,7 +1515,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 137,
+        "serial": String(137),
+        "smartSerial": 0,
         "lat": -37.79904297323707,
         "lng": 144.97629303545045,
         "address": "",
@@ -1388,7 +1526,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 138,
+        "serial": String(138),
+        "smartSerial": 0,
         "lat": -37.800263730842836,
         "lng": 144.97594971269655,
         "address": "",
@@ -1398,7 +1537,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 139,
+        "serial": String(139),
+        "smartSerial": 0,
         "lat": -37.802400008106474,
         "lng": 144.97652906984376,
         "address": "",
@@ -1408,7 +1548,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 140,
+        "serial": String(140),
+        "smartSerial": 0,
         "lat": -37.8042310537262,
         "lng": 144.97725863069581,
         "address": "",
@@ -1418,7 +1559,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 141,
+        "serial": String(141),
+        "smartSerial": 0,
         "lat": -37.80609596093379,
         "lng": 144.97468371004152,
         "address": "",
@@ -1428,7 +1570,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 142,
+        "serial": String(142),
+        "smartSerial": 0,
         "lat": -37.80780824335318,
         "lng": 144.97464079469728,
         "address": "",
@@ -1438,7 +1581,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 143,
+        "serial": String(143),
+        "smartSerial": 0,
         "lat": -37.81248328620422,
         "lng": 144.94945646920067,
         "address": "",
@@ -1448,7 +1592,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 144,
+        "serial": String(144),
+        "smartSerial": 0,
         "lat": -37.81012691763072,
         "lng": 144.94741799034935,
         "address": "",
@@ -1458,7 +1603,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 145,
+        "serial": String(145),
+        "smartSerial": 0,
         "lat": -37.809448812020946,
         "lng": 144.94683863320213,
         "address": "",
@@ -1468,7 +1614,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 146,
+        "serial": String(146),
+        "smartSerial": 0,
         "lat": -37.80882155878758,
         "lng": 144.94604469933373,
         "address": "",
@@ -1478,7 +1625,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 147,
+        "serial": String(147),
+        "smartSerial": 0,
         "lat": -37.809126709674764,
         "lng": 144.94587303795677,
         "address": "",
@@ -1488,7 +1636,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 148,
+        "serial": String(148),
+        "smartSerial": 0,
         "lat": -37.81016082274773,
         "lng": 144.94574429192406,
         "address": "",
@@ -1498,7 +1647,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 149,
+        "serial": String(149),
+        "smartSerial": 0,
         "lat": -37.81043206312342,
         "lng": 144.94621636071068,
         "address": "",
@@ -1508,7 +1658,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 150,
+        "serial": String(150),
+        "smartSerial": 0,
         "lat": -37.81124577827211,
         "lng": 144.94681717553001,
         "address": "",
@@ -1518,7 +1669,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 151,
+        "serial": String(151),
+        "smartSerial": 0,
         "lat": -37.81351735226738,
         "lng": 144.94979979195458,
         "address": "",
@@ -1528,7 +1680,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 152,
+        "serial": String(152),
+        "smartSerial": 0,
         "lat": -37.81354931520682,
         "lng": 144.97389430129368,
         "address": "",
@@ -1538,7 +1691,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 153,
+        "serial": String(153),
+        "smartSerial": 0,
         "lat": -37.81563435428812,
         "lng": 144.97194165313084,
         "address": "",
@@ -1548,7 +1702,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 154,
+        "serial": String(154),
+        "smartSerial": 0,
         "lat": -37.813701881038774,
         "lng": 144.97438782775242,
         "address": "",
@@ -1558,7 +1713,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 155,
+        "serial": String(155),
+        "smartSerial": 0,
         "lat": -37.80076656926903,
         "lng": 144.97069710814793,
         "address": "",
@@ -1568,7 +1724,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 156,
+        "serial": String(156),
+        "smartSerial": 0,
         "lat": -37.804971217969054,
         "lng": 144.96893757903416,
         "address": "",
@@ -1578,7 +1735,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 157,
+        "serial": String(157),
+        "smartSerial": 0,
         "lat": -37.81056574223849,
         "lng": 144.98292798125584,
         "address": "",
@@ -1588,7 +1746,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 158,
+        "serial": String(158),
+        "smartSerial": 0,
         "lat": -37.79259394639045,
         "lng": 144.9834429653867,
         "address": "",
@@ -1598,7 +1757,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 159,
+        "serial": String(159),
+        "smartSerial": 0,
         "lat": -37.80582977136442,
         "lng": 144.9793260879557,
         "address": "",
@@ -1608,7 +1768,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 160,
+        "serial": String(160),
+        "smartSerial": 0,
         "lat": -37.80311715371738,
         "lng": 144.98088355767692,
         "address": "",
@@ -1618,7 +1779,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 161,
+        "serial": String(161),
+        "smartSerial": 0,
         "lat": -37.80182862543232,
         "lng": 144.98161311852897,
         "address": "",
@@ -1628,7 +1790,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 162,
+        "serial": String(162),
+        "smartSerial": 0,
         "lat": -37.800540074667914,
         "lng": 144.9825572561022,
         "address": "",
@@ -1638,7 +1801,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 163,
+        "serial": String(163),
+        "smartSerial": 0,
         "lat": -37.797522065162966,
         "lng": 144.98398543660156,
         "address": "",
@@ -1648,7 +1812,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 164,
+        "serial": String(164),
+        "smartSerial": 0,
         "lat": -37.79725077736974,
         "lng": 144.98196841542236,
         "address": "",
@@ -1658,7 +1823,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 165,
+        "serial": String(165),
+        "smartSerial": 0,
         "lat": -37.79714904419043,
         "lng": 144.9807667857837,
         "address": "",
@@ -1668,7 +1834,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 166,
+        "serial": String(166),
+        "smartSerial": 0,
         "lat": -37.796877755027324,
         "lng": 144.97780562703124,
         "address": "",
@@ -1678,7 +1845,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 167,
+        "serial": String(167),
+        "smartSerial": 0,
         "lat": -37.798539385514474,
         "lng": 144.97814894978515,
         "address": "",
@@ -1688,7 +1856,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 168,
+        "serial": String(168),
+        "smartSerial": 0,
         "lat": -37.799251501424415,
         "lng": 144.9796509868335,
         "address": "",
@@ -1698,7 +1867,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 169,
+        "serial": String(169),
+        "smartSerial": 0,
         "lat": -37.8011504436216,
         "lng": 144.98372794453613,
         "address": "",
@@ -1708,7 +1878,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 170,
+        "serial": String(170),
+        "smartSerial": 0,
         "lat": -37.801625171542945,
         "lng": 144.98274089161865,
         "address": "",
@@ -1718,7 +1889,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 171,
+        "serial": String(171),
+        "smartSerial": 0,
         "lat": -37.802032078761286,
         "lng": 144.98274089161865,
         "address": "",
@@ -1728,7 +1900,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 172,
+        "serial": String(172),
+        "smartSerial": 0,
         "lat": -37.796233439272086,
         "lng": 144.98553038899414,
         "address": "",
@@ -1738,7 +1911,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 173,
+        "serial": String(173),
+        "smartSerial": 0,
         "lat": -37.795894323459535,
         "lng": 144.9845862514209,
         "address": "",
@@ -1748,7 +1922,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 174,
+        "serial": String(174),
+        "smartSerial": 0,
         "lat": -37.79594930209236,
         "lng": 144.97992038726807,
         "address": "",
@@ -1758,7 +1933,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 175,
+        "serial": String(175),
+        "smartSerial": 0,
         "lat": -37.794326275843744,
         "lng": 144.98239756886474,
         "address": "",
@@ -1768,7 +1944,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 176,
+        "serial": String(176),
+        "smartSerial": 0,
         "lat": -37.79449583754348,
         "lng": 144.98364211384765,
         "address": "",
@@ -1778,7 +1955,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 177,
+        "serial": String(177),
+        "smartSerial": 0,
         "lat": -37.79388541360319,
         "lng": 144.98608828846923,
         "address": "",
@@ -1788,7 +1966,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 178,
+        "serial": String(178),
+        "smartSerial": 0,
         "lat": -37.79391932617663,
         "lng": 144.98776198689453,
         "address": "",
@@ -1798,7 +1977,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 179,
+        "serial": String(179),
+        "smartSerial": 0,
         "lat": -37.79581840544537,
         "lng": 144.98733283345214,
         "address": "",
@@ -1808,7 +1988,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 180,
+        "serial": String(180),
+        "smartSerial": 0,
         "lat": -37.79781916829386,
         "lng": 144.98698951069824,
         "address": "",
@@ -1818,7 +1999,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 181,
+        "serial": String(181),
+        "smartSerial": 0,
         "lat": -37.803990671611906,
         "lng": 144.98302869604052,
         "address": "",
@@ -1828,7 +2010,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 182,
+        "serial": String(182),
+        "smartSerial": 0,
         "lat": -37.80582167779575,
         "lng": 144.98225621984423,
         "address": "",
@@ -1838,7 +2021,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 183,
+        "serial": String(183),
+        "smartSerial": 0,
         "lat": -37.80744920073768,
         "lng": 144.9801962833208,
         "address": "",
@@ -1848,7 +2032,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 184,
+        "serial": String(184),
+        "smartSerial": 0,
         "lat": -37.80494008789245,
         "lng": 144.98474530981005,
         "address": "",
@@ -1858,7 +2043,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 185,
+        "serial": String(185),
+        "smartSerial": 0,
         "lat": -37.806364189428486,
         "lng": 144.98465947912158,
         "address": "",
@@ -1868,7 +2054,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 186,
+        "serial": String(186),
+        "smartSerial": 0,
         "lat": -37.80521134744512,
         "lng": 144.98723439977587,
         "address": "",
@@ -1878,7 +2065,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 187,
+        "serial": String(187),
+        "smartSerial": 0,
         "lat": -37.8048722728486,
         "lng": 144.98920850561083,
         "address": "",
@@ -1888,7 +2076,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 188,
+        "serial": String(188),
+        "smartSerial": 0,
         "lat": -37.80358377518398,
         "lng": 144.9907534580034,
         "address": "",
@@ -1898,7 +2087,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 189,
+        "serial": String(189),
+        "smartSerial": 0,
         "lat": -37.797615703360655,
         "lng": 144.9897234897417,
         "address": "",
@@ -1908,7 +2098,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 190,
+        "serial": String(190),
+        "smartSerial": 0,
         "lat": -37.79666619292922,
         "lng": 144.9915259341997,
         "address": "",
@@ -1918,7 +2109,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 191,
+        "serial": String(191),
+        "smartSerial": 0,
         "lat": -37.798429559731034,
         "lng": 144.98980932043017,
         "address": "",
@@ -1928,7 +2120,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 192,
+        "serial": String(192),
+        "smartSerial": 0,
         "lat": -37.80053198051956,
         "lng": 144.99350004003466,
         "address": "",
@@ -1938,7 +2131,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 193,
+        "serial": String(193),
+        "smartSerial": 0,
         "lat": -37.800328523058525,
         "lng": 144.98963765905322,
         "address": "",
@@ -1948,7 +2142,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 194,
+        "serial": String(194),
+        "smartSerial": 0,
         "lat": -37.80012506503708,
         "lng": 144.9874918918413,
         "address": "",
@@ -1958,7 +2153,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 195,
+        "serial": String(195),
+        "smartSerial": 0,
         "lat": -37.806635443750324,
         "lng": 144.98950718996193,
         "address": "",
@@ -1968,7 +2164,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 196,
+        "serial": String(196),
+        "smartSerial": 0,
         "lat": -37.80880544245594,
         "lng": 144.9881338989463,
         "address": "",
@@ -1978,7 +2175,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 197,
+        "serial": String(197),
+        "smartSerial": 0,
         "lat": -37.80880544245594,
         "lng": 144.98607396242286,
         "address": "",
@@ -1988,7 +2186,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 198,
+        "serial": String(198),
+        "smartSerial": 0,
         "lat": -37.810568519450044,
         "lng": 144.98658894655372,
         "address": "",
@@ -1998,7 +2197,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 199,
+        "serial": String(199),
+        "smartSerial": 0,
         "lat": -37.810839758328065,
         "lng": 144.98899220583107,
         "address": "",
@@ -2008,7 +2208,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 200,
+        "serial": String(200),
+        "smartSerial": 0,
         "lat": -37.81141613763552,
         "lng": 144.9907088196006,
         "address": "",
@@ -2018,7 +2219,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 201,
+        "serial": String(201),
+        "smartSerial": 0,
         "lat": -37.80948355397406,
         "lng": 144.99173878786232,
         "address": "",
@@ -2028,7 +2230,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 202,
+        "serial": String(202),
+        "smartSerial": 0,
         "lat": -37.81263669072808,
         "lng": 144.98362778780128,
         "address": "",
@@ -2038,7 +2241,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 203,
+        "serial": String(203),
+        "smartSerial": 0,
         "lat": -37.81321804971717,
         "lng": 144.98817681429054,
         "address": "",
@@ -2048,7 +2252,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 204,
+        "serial": String(204),
+        "smartSerial": 0,
         "lat": -37.81430296031752,
         "lng": 144.98796223756935,
         "address": "",
@@ -2058,7 +2263,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 205,
+        "serial": String(205),
+        "smartSerial": 0,
         "lat": -37.81454028238616,
         "lng": 144.98594521639015,
         "address": "",
@@ -2068,7 +2274,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 206,
+        "serial": String(206),
+        "smartSerial": 0,
         "lat": -37.81437076670069,
         "lng": 144.98864888307716,
         "address": "",
@@ -2078,7 +2285,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 207,
+        "serial": String(207),
+        "smartSerial": 0,
         "lat": -37.81579468636135,
         "lng": 144.98766183015968,
         "address": "",
@@ -2088,7 +2296,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 208,
+        "serial": String(208),
+        "smartSerial": 0,
         "lat": -37.81623541783314,
         "lng": 144.98564480898048,
         "address": "",
@@ -2098,7 +2307,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 209,
+        "serial": String(209),
+        "smartSerial": 0,
         "lat": -37.814235153872076,
         "lng": 144.99506472704078,
         "address": "",
@@ -2108,7 +2318,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 210,
+        "serial": String(210),
+        "smartSerial": 0,
         "lat": -37.81521834123575,
         "lng": 144.9948501503196,
         "address": "",
@@ -2118,7 +2329,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 211,
+        "serial": String(211),
+        "smartSerial": 0,
         "lat": -37.81542175767622,
         "lng": 144.99287604448463,
         "address": "",
@@ -2128,7 +2340,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 212,
+        "serial": String(212),
+        "smartSerial": 0,
         "lat": -37.81576078383146,
         "lng": 144.99253272173073,
         "address": "",
@@ -2138,7 +2351,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 213,
+        "serial": String(213),
+        "smartSerial": 0,
         "lat": -37.81623541783314,
         "lng": 144.99545096513893,
         "address": "",
@@ -2148,7 +2362,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 214,
+        "serial": String(214),
+        "smartSerial": 0,
         "lat": -37.81667614667369,
         "lng": 144.99459265825416,
         "address": "",
@@ -2158,7 +2373,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 215,
+        "serial": String(215),
+        "smartSerial": 0,
         "lat": -37.81698126509886,
         "lng": 144.99459265825416,
         "address": "",
@@ -2168,7 +2384,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 216,
+        "serial": String(216),
+        "smartSerial": 0,
         "lat": -37.817421989486526,
         "lng": 144.99197482225563,
         "address": "",
@@ -2178,7 +2395,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 217,
+        "serial": String(217),
+        "smartSerial": 0,
         "lat": -37.82046949588583,
         "lng": 144.99175355916924,
         "address": "",
@@ -2188,7 +2406,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 218,
+        "serial": String(218),
+        "smartSerial": 0,
         "lat": -37.81979148526904,
         "lng": 144.98977945333428,
         "address": "",
@@ -2198,7 +2417,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 219,
+        "serial": String(219),
+        "smartSerial": 0,
         "lat": -37.82158819978754,
         "lng": 144.98952196126885,
         "address": "",
@@ -2208,7 +2428,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 220,
+        "serial": String(220),
+        "smartSerial": 0,
         "lat": -37.822639088007165,
         "lng": 144.98977945333428,
         "address": "",
@@ -2218,7 +2439,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 221,
+        "serial": String(221),
+        "smartSerial": 0,
         "lat": -37.82260518862074,
         "lng": 144.99256895070977,
         "address": "",
@@ -2228,7 +2450,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 222,
+        "serial": String(222),
+        "smartSerial": 0,
         "lat": -37.82331707246608,
         "lng": 144.9939422417254,
         "address": "",
@@ -2238,7 +2461,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 223,
+        "serial": String(223),
+        "smartSerial": 0,
         "lat": -37.82762212843657,
         "lng": 144.98903394478083,
         "address": "",
@@ -2248,7 +2472,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 224,
+        "serial": String(224),
+        "smartSerial": 0,
         "lat": -37.82705098476832,
         "lng": 144.9935829712701,
         "address": "",
@@ -2258,7 +2483,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 225,
+        "serial": String(225),
+        "smartSerial": 0,
         "lat": -37.82976272311062,
         "lng": 144.99130845802546,
         "address": "",
@@ -2268,7 +2494,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 226,
+        "serial": String(226),
+        "smartSerial": 0,
         "lat": -37.82945765752209,
         "lng": 144.99242425697565,
         "address": "",
@@ -2278,7 +2505,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 227,
+        "serial": String(227),
+        "smartSerial": 0,
         "lat": -37.828949212071734,
         "lng": 144.99474168556452,
         "address": "",
@@ -2288,7 +2516,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 228,
+        "serial": String(228),
+        "smartSerial": 0,
         "lat": -37.83016947526665,
         "lng": 144.98701692360163,
         "address": "",
@@ -2298,7 +2527,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 229,
+        "serial": String(229),
+        "smartSerial": 0,
         "lat": -37.828620245333035,
         "lng": 144.98502243719184,
         "address": "",
@@ -2308,7 +2538,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 230,
+        "serial": String(230),
+        "smartSerial": 0,
         "lat": -37.82364639775614,
         "lng": 144.9696976902552,
         "address": "",
@@ -2318,7 +2549,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 231,
+        "serial": String(231),
+        "smartSerial": 0,
         "lat": -37.825104036748186,
         "lng": 144.9699122669764,
         "address": "",
@@ -2328,7 +2560,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 232,
+        "serial": String(232),
+        "smartSerial": 0,
         "lat": -37.824527764308705,
         "lng": 144.96729443097786,
         "address": "",
@@ -2338,7 +2571,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 233,
+        "serial": String(233),
+        "smartSerial": 0,
         "lat": -37.82340910496283,
         "lng": 144.96527740979866,
         "address": "",
@@ -2348,7 +2582,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 234,
+        "serial": String(234),
+        "smartSerial": 0,
         "lat": -37.82307011393463,
         "lng": 144.9642045261927,
         "address": "",
@@ -2358,7 +2593,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 235,
+        "serial": String(235),
+        "smartSerial": 0,
         "lat": -37.82435827155835,
         "lng": 144.96278831983284,
         "address": "",
@@ -2368,7 +2604,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 236,
+        "serial": String(236),
+        "smartSerial": 0,
         "lat": -37.82361249883238,
         "lng": 144.9610717060633,
         "address": "",
@@ -2378,7 +2615,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 237,
+        "serial": String(237),
+        "smartSerial": 0,
         "lat": -37.82500234193879,
         "lng": 144.95998294482453,
         "address": "",
@@ -2388,7 +2626,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 238,
+        "serial": String(238),
+        "smartSerial": 0,
         "lat": -37.82483285027838,
         "lng": 144.95843799243195,
         "address": "",
@@ -2398,7 +2637,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 239,
+        "serial": String(239),
+        "smartSerial": 0,
         "lat": -37.82588369229791,
         "lng": 144.95689304003938,
         "address": "",
@@ -2408,7 +2648,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 240,
+        "serial": String(240),
+        "smartSerial": 0,
         "lat": -37.825544712636216,
         "lng": 144.95586307177766,
         "address": "",
@@ -2418,7 +2659,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 241,
+        "serial": String(241),
+        "smartSerial": 0,
         "lat": -37.82249382561325,
         "lng": 144.95204360614045,
         "address": "",
@@ -2428,7 +2670,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 242,
+        "serial": String(242),
+        "smartSerial": 0,
         "lat": -37.821612434770906,
         "lng": 144.95118529925568,
         "address": "",
@@ -2438,7 +2681,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 243,
+        "serial": String(243),
+        "smartSerial": 0,
         "lat": -37.82168023444015,
         "lng": 144.94968326220734,
         "address": "",
@@ -2448,7 +2692,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 244,
+        "serial": String(244),
+        "smartSerial": 0,
         "lat": -37.81997607826449,
         "lng": 144.94582746782527,
         "address": "",
@@ -2458,7 +2703,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 245,
+        "serial": String(245),
+        "smartSerial": 0,
         "lat": -37.82151424874816,
         "lng": 144.945330619812,
         "address": "",
@@ -2468,7 +2714,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 246,
+        "serial": String(246),
+        "smartSerial": 0,
         "lat": -37.82126428988978,
         "lng": 144.94556997575984,
         "address": "",
@@ -2478,7 +2725,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 247,
+        "serial": String(247),
+        "smartSerial": 0,
         "lat": -37.826111832134664,
         "lng": 144.94514082231746,
         "address": "",
@@ -2488,7 +2736,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 248,
+        "serial": String(248),
+        "smartSerial": 0,
         "lat": -37.818653942954995,
         "lng": 144.94704333636966,
         "address": "",
@@ -2498,7 +2747,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 249,
+        "serial": String(249),
+        "smartSerial": 0,
         "lat": -37.81443422576821,
         "lng": 144.95361941414194,
         "address": "",
@@ -2508,7 +2758,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 250,
+        "serial": String(250),
+        "smartSerial": 0,
         "lat": -37.81463351108312,
         "lng": 144.94522476192475,
         "address": "",
@@ -2518,7 +2769,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 251,
+        "serial": String(251),
+        "smartSerial": 0,
         "lat": -37.809162918809506,
         "lng": 144.94440937038422,
         "address": "",
@@ -2528,7 +2780,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 252,
+        "serial": String(252),
+        "smartSerial": 0,
         "lat": -37.807399808253784,
         "lng": 144.94501018520356,
         "address": "",
@@ -2538,7 +2791,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 253,
+        "serial": String(253),
+        "smartSerial": 0,
         "lat": -37.806586050722146,
         "lng": 144.94320774074555,
         "address": "",
@@ -2548,7 +2802,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 254,
+        "serial": String(254),
+        "smartSerial": 0,
         "lat": -37.80716246323337,
         "lng": 144.94745635982514,
         "address": "",
@@ -2558,7 +2813,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 255,
+        "serial": String(255),
+        "smartSerial": 0,
         "lat": -37.804619432999914,
         "lng": 144.94543933864594,
         "address": "",
@@ -2568,7 +2824,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 256,
+        "serial": String(256),
+        "smartSerial": 0,
         "lat": -37.80229050544318,
         "lng": 144.94447231292725,
         "address": "",
@@ -2578,7 +2835,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 257,
+        "serial": String(257),
+        "smartSerial": 0,
         "lat": -37.80055040248385,
         "lng": 144.94419479366303,
         "address": "",
@@ -2588,7 +2846,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 258,
+        "serial": String(258),
+        "smartSerial": 0,
         "lat": -37.80214413280869,
         "lng": 144.94273567195893,
         "address": "",
@@ -2598,7 +2857,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 259,
+        "serial": String(259),
+        "smartSerial": 0,
         "lat": -37.80248321993046,
         "lng": 144.94222068782807,
         "address": "",
@@ -2608,7 +2868,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 260,
+        "serial": String(260),
+        "smartSerial": 0,
         "lat": -37.805128046052175,
         "lng": 144.94166278835297,
         "address": "",
@@ -2618,7 +2879,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 261,
+        "serial": String(261),
+        "smartSerial": 0,
         "lat": -37.80030597117745,
         "lng": 144.94166278835297,
         "address": "",
@@ -2628,7 +2890,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 262,
+        "serial": String(262),
+        "smartSerial": 0,
         "lat": -37.79847482825036,
         "lng": 144.94445228572846,
         "address": "",
@@ -2638,7 +2901,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 263,
+        "serial": String(263),
+        "smartSerial": 0,
         "lat": -37.79732186311917,
         "lng": 144.9472967123527,
         "address": "",
@@ -2648,7 +2912,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 264,
+        "serial": String(264),
+        "smartSerial": 0,
         "lat": -37.79538891061509,
         "lng": 144.94755420441814,
         "address": "",
@@ -2658,7 +2923,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 265,
+        "serial": String(265),
+        "smartSerial": 0,
         "lat": -37.79562629347134,
         "lng": 144.95274696107097,
         "address": "",
@@ -2668,7 +2934,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 266,
+        "serial": String(266),
+        "smartSerial": 0,
         "lat": -37.795456734366134,
         "lng": 144.9543348288078,
         "address": "",
@@ -2678,7 +2945,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 267,
+        "serial": String(267),
+        "smartSerial": 0,
         "lat": -37.79389677233888,
         "lng": 144.95527896638103,
         "address": "",
@@ -2688,7 +2956,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 268,
+        "serial": String(268),
+        "smartSerial": 0,
         "lat": -37.793727209264254,
         "lng": 144.95690974946208,
         "address": "",
@@ -2698,7 +2967,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 269,
+        "serial": String(269),
+        "smartSerial": 0,
         "lat": -37.79396459745977,
         "lng": 144.9586345556613,
         "address": "",
@@ -2708,7 +2978,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 270,
+        "serial": String(270),
+        "smartSerial": 0,
         "lat": -37.791997643674456,
         "lng": 144.96013659270963,
         "address": "",
@@ -2718,7 +2989,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 271,
+        "serial": String(271),
+        "smartSerial": 0,
         "lat": -37.789607311694226,
         "lng": 144.95835535083373,
         "address": "",
@@ -2728,7 +3000,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 272,
+        "serial": String(272),
+        "smartSerial": 0,
         "lat": -37.7898447131267,
         "lng": 144.95917074237425,
         "address": "",
@@ -2738,7 +3011,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 273,
+        "serial": String(273),
+        "smartSerial": 0,
         "lat": -37.78780981895612,
         "lng": 144.95779745135863,
         "address": "",
@@ -2748,7 +3022,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 274,
+        "serial": String(274),
+        "smartSerial": 0,
         "lat": -37.787402833397685,
         "lng": 144.95801202807982,
         "address": "",
@@ -2758,7 +3033,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 275,
+        "serial": String(275),
+        "smartSerial": 0,
         "lat": -37.789262080203834,
         "lng": 144.96902292830018,
         "address": "",
@@ -2768,7 +3044,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 276,
+        "serial": String(276),
+        "smartSerial": 0,
         "lat": -37.78946556814335,
         "lng": 144.97082537275818,
         "address": "",
@@ -2778,7 +3055,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 277,
+        "serial": String(277),
+        "smartSerial": 0,
         "lat": -37.790177771518785,
         "lng": 144.972413240495,
         "address": "",
@@ -2788,7 +3066,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 278,
+        "serial": String(278),
+        "smartSerial": 0,
         "lat": -37.79295418603359,
         "lng": 144.97187394866273,
         "address": "",
@@ -2798,7 +3077,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 279,
+        "serial": String(279),
+        "smartSerial": 0,
         "lat": -37.79047849492524,
         "lng": 144.97651739658747,
         "address": "",
@@ -2808,7 +3088,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 280,
+        "serial": String(280),
+        "smartSerial": 0,
         "lat": -37.788850598034266,
         "lng": 144.97922106327448,
         "address": "",
@@ -2818,7 +3099,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 281,
+        "serial": String(281),
+        "smartSerial": 0,
         "lat": -37.78695133966778,
         "lng": 144.97840567173395,
         "address": "",
@@ -2828,7 +3110,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 282,
+        "serial": String(282),
+        "smartSerial": 0,
         "lat": -37.7851537823247,
         "lng": 144.97591658176813,
         "address": "",
@@ -2838,7 +3121,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 283,
+        "serial": String(283),
+        "smartSerial": 0,
         "lat": -37.78400060931022,
         "lng": 144.97424288334284,
         "address": "",
@@ -2848,7 +3132,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 284,
+        "serial": String(284),
+        "smartSerial": 0,
         "lat": -37.7836953546181,
         "lng": 144.97261210026178,
         "address": "",
@@ -2858,7 +3143,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 285,
+        "serial": String(285),
+        "smartSerial": 0,
         "lat": -37.782169062246204,
         "lng": 144.97033758701716,
         "address": "",
@@ -2868,7 +3154,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 286,
+        "serial": String(286),
+        "smartSerial": 0,
         "lat": -37.78210122629813,
         "lng": 144.96874971928034,
         "address": "",
@@ -2878,7 +3165,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 287,
+        "serial": String(287),
+        "smartSerial": 0,
         "lat": -37.77993044308748,
         "lng": 144.9674622589532,
         "address": "",
@@ -2888,7 +3176,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 288,
+        "serial": String(288),
+        "smartSerial": 0,
         "lat": -37.77979476702006,
         "lng": 144.9723975235406,
         "address": "",
@@ -2898,7 +3187,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 289,
+        "serial": String(289),
+        "smartSerial": 0,
         "lat": -37.78294917117417,
         "lng": 144.96651812137995,
         "address": "",
@@ -2908,7 +3198,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 290,
+        "serial": String(290),
+        "smartSerial": 0,
         "lat": -37.78138894508452,
         "lng": 144.96394320072565,
         "address": "",
@@ -2918,7 +3209,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 291,
+        "serial": String(291),
+        "smartSerial": 0,
         "lat": -37.77789527592807,
         "lng": 144.9650160843316,
         "address": "",
@@ -2928,7 +3220,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 292,
+        "serial": String(292),
+        "smartSerial": 0,
         "lat": -37.778641510392355,
         "lng": 144.965445237774,
         "address": "",
@@ -2938,7 +3231,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 293,
+        "serial": String(293),
+        "smartSerial": 0,
         "lat": -37.77598405191831,
         "lng": 144.9707252566889,
         "address": "",
@@ -2948,7 +3242,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 294,
+        "serial": String(294),
+        "smartSerial": 0,
         "lat": -37.777510472003456,
         "lng": 144.97525275607504,
         "address": "",
@@ -2958,7 +3253,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 295,
+        "serial": String(295),
+        "smartSerial": 0,
         "lat": -37.77822279059068,
         "lng": 144.97821391482748,
         "address": "",
@@ -2968,7 +3264,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 296,
+        "serial": String(296),
+        "smartSerial": 0,
         "lat": -37.77866374627644,
         "lng": 144.97920096774496,
         "address": "",
@@ -2978,7 +3275,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 297,
+        "serial": String(297),
+        "smartSerial": 0,
         "lat": -37.78082241642273,
         "lng": 144.98103095447257,
         "address": "",
@@ -2988,7 +3286,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 298,
+        "serial": String(298),
+        "smartSerial": 0,
         "lat": -37.77824455966445,
         "lng": 144.98270465289787,
         "address": "",
@@ -2998,7 +3297,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 299,
+        "serial": String(299),
+        "smartSerial": 0,
         "lat": -37.781195519821765,
         "lng": 144.983992113225,
         "address": "",
@@ -3008,7 +3308,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 300,
+        "serial": String(300),
+        "smartSerial": 0,
         "lat": -37.7779053612931,
         "lng": 144.98765884380785,
         "address": "",
@@ -3018,7 +3319,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 301,
+        "serial": String(301),
+        "smartSerial": 0,
         "lat": -37.7763789493616,
         "lng": 144.987143859677,
         "address": "",
@@ -3028,7 +3330,8 @@ export const DUMMY_BINS: Bin[] = [
         "fullness": 0.75
     },
     {
-        "serial": 302,
+        "serial": String(302),
+        "smartSerial": 0,
         "lat": -37.77937000599125,
         "lng": 144.98856006603685,
         "address": "",
@@ -3041,19 +3344,19 @@ export const DUMMY_BINS: Bin[] = [
 
 export const DUMMY_DEPOTS: Depot[] = [
     {
-        "id":       0,
+        "id":       String(0),
         "lat":      -37.834535,
         "lng":      144.986961,
         "address": "254 Domain Rd"
     },
     {
-        "id":       1,
+        "id":       String(1),
         "lat":      -37.812121,
         "lng":      144.955997,
         "address": "295-307 William St"
     },
     {
-        "id":       2,
+        "id":       String(2),
         "lat":      -37.812884,
         "lng":      144.970811,
         "address": "113 Exhibition St"
