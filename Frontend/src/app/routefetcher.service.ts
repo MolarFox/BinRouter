@@ -12,7 +12,7 @@ export class RoutefetcherService {
 
   // Use appropriate url based on environment variable
   private routesUrl = (environment.serviceFetcherModes == 0) ? 'data/routes' : 
-    ''; // TODO: fill github test page for route test data
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes.json';
 
   // Rudimentary cache
   private routecache: NavRoute[] = undefined; // TODO: implement caching functionality

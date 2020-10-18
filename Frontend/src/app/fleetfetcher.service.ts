@@ -15,7 +15,7 @@ export class FleetfetcherService {
 
   // Use appropriate url based on environment variable
   private fleetUrl = (environment.serviceFetcherModes == 0) ? 'data/vehicles' : 
-    'https://raw.githubusercontent.com/MolarFox/BinRouter_Backend/master/WasteManagementApp/src/initial_data/fleet_vehicles.json?token=AB3LVUZAZOPNKBCN5WQATIC7STWHE';
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/vehicles.json';
 
   // Rudimentary caches
   private depotcache: Depot[]   = undefined; // TODO: implement caching functionality
@@ -44,7 +44,7 @@ export class FleetfetcherService {
     }
   }
 
-  getDepot(id: number): Observable<Depot> {
+  getDepot(id: string): Observable<Depot> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_DEPOTS.find(chk_depot => chk_depot.id === id))
     }else{  // HTTP fetch
