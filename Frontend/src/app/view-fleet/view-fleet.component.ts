@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewFleetComponent implements OnInit {
 
-
   // Editor vars
   subtitle = "Scroll through the list to select a vehicle";
 

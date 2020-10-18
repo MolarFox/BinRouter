@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { AgmCoreModule } from '@agm/core';
 import { AgmMarkerClustererModule } from '@agm/markerclusterer'
+import { AgmDirectionModule } from 'agm-direction';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,6 +53,7 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatInputModule,
     MatProgressBarModule,
     MatSidenavModule,
+    AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY,
       libraries: ['visualization']

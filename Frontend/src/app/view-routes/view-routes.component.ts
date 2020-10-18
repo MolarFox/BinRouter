@@ -1,5 +1,6 @@
+import { GoogleMapsAPIWrapper } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
-import {ILatLng} from '../../directives/directives-map.directive';
+import { GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-view-routes',
@@ -12,15 +13,17 @@ export class ViewRoutesComponent implements OnInit {
   start_lng = 144.9666622;
   start_zoom = 14;
 
-  origin: ILatLng = {
+  origin: any = {
     latitude: -37.907803,
     longitude: 145.133957
   };
 
-  destination: ILatLng = {
+  destination: any = {
     latitude: -37.8997609,
     longitude: 145.1292176
   };
+
+  waypoints: any = []
 
   displayDirections = true;
   zoom = 14; 
