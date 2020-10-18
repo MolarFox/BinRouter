@@ -1,5 +1,12 @@
 <agm-map 
     [latitude]="start_lat" 
     [longitude]="start_lng" 
-    [zoom]="start_zoom">
+    [zoom]="start_zoom"
+    >
+    
+    <agm-marker
+        [latitude]="origin.latitude"
+        [longitude]="origin.longitude">
+    </agm-marker>
+
 </agm-map>

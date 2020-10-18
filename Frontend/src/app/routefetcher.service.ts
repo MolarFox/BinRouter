@@ -27,9 +27,7 @@ export class RoutefetcherService {
     }else{  // HTTP fetch
       if (this.routecache === undefined){  // not yet fetched, fetch it
 
-      }
-
-      
+      }      
     }
   }
 

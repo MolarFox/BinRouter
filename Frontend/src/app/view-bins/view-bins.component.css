@@ -27,5 +27,6 @@ mat-progress-bar {
     height: calc(100vh - 50px);
     width: 400px;
     float: right;
+    position: relative;
     background-color: lightgrey;
 }
