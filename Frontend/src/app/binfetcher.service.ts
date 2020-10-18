@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Bin } from './bin';
+import { Bin, BinResponse, jsonToBin } from './bin';
 import { DUMMY_BINS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { handleError } from './httpHelpers';
 
 @Injectable({
@@ -41,8 +41,9 @@ export class BinfetcherService {
 
       // return of(this.binscache);
 
-      return this.http.get<Bin[]>(this.binsUrl)
+      return this.http.get<BinResponse>(this.binsUrl)
       .pipe(
+        map(x => jsonToBin(x.dumbBins)),
         catchError(handleError<Bin[]>('getAllBins', []))
       )
 
