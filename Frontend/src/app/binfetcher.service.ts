@@ -4,7 +4,8 @@ import { Bin } from './bin';
 import { DUMMY_BINS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { handleError } from './httpHelpers';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class BinfetcherService {
     'https://raw.githubusercontent.com/MolarFox/BinRouter_Backend/master/WasteManagementApp/src/initial_data/dumb_bins.json?token=AB3LVUZSQTX43ZGDQ2GVSM27STWWI';
 
   // Rudimentary cache
-  private binscache: Bin[] = undefined; // TODO: implement caching functionality
+  private bincache: Bin[] = undefined; // TODO: implement caching functionality
 
   constructor(
     private http: HttpClient
@@ -30,18 +31,11 @@ export class BinfetcherService {
   }
   */
 
-  private handleError<T>(operation = 'operation', result?: T){
-    return (error: any): Observable<T> => {
-      console.error(error); // log error to console
-      return of(result as T);
-    }
-  }
-
   getAllBins(): Observable<Bin[]> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_BINS);
     }else{  // HTTP fetch
-      if (this.binscache === undefined){  // not yet fetched, fetch it
+      if (this.bincache === undefined){  // not yet fetched, fetch it
 
       }
 
@@ -49,7 +43,7 @@ export class BinfetcherService {
 
       return this.http.get<Bin[]>(this.binsUrl)
       .pipe(
-        catchError(this.handleError<Bin[]>('httpReqBins', []))
+        catchError(handleError<Bin[]>('getAllBins', []))
       )
 
     }
@@ -59,10 +53,15 @@ export class BinfetcherService {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_BINS.find(chk_bin => chk_bin.serial === serial))
     }else{  // HTTP fetch
-      if (this.binscache === undefined){  // not yet fetched, fetch it
+      if (this.bincache === undefined){  // not yet fetched, fetch it
         
       }
-      
+
+      return this.http.get<Bin>(`${this.binsUrl}/${serial}`)
+      .pipe(
+        catchError(handleError<Bin>(`getBin serial=${serial}`))
+      )
+
       //return of(this.binscache.find(chk_bin => chk_bin.serial === serial));
 
     }

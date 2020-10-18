@@ -11,18 +11,35 @@ import { environment } from '../environments/environment'
 export class RoutefetcherService {
 
   // Use appropriate url based on environment variable
-  private routesUrl = 'data/routes' ? (environment.serviceFetcherModes == 0) : 
+  private routesUrl = (environment.serviceFetcherModes == 0) ? 'data/routes' : 
     ''; // TODO: fill github test page for route test data
+
+  // Rudimentary cache
+  private routecache: NavRoute[] = undefined; // TODO: implement caching functionality
 
   constructor(
     private http: HttpClient
   ) { }
 
   getAllRoutes(): Observable<NavRoute[]> {
-    return of(DUMMY_ROUTES);
+    if (environment.serviceFetcherModes === 2){  // fetch from static array
+      return of(DUMMY_ROUTES);
+    }else{  // HTTP fetch
+      if (this.routecache === undefined){  // not yet fetched, fetch it
+
+      }
+
+      
+    }
   }
 
   getRoute(id: number): Observable<NavRoute> {
-    return of(DUMMY_ROUTES.find(chk_route => chk_route.id === id))
+    if (environment.serviceFetcherModes === 2){  // fetch from static array
+      return of(DUMMY_ROUTES.find(chk_route => chk_route.id === id))
+    }else{  // HTTP fetch
+      if (this.routecache === undefined){  // not yet fetched, fetch it
+
+      }
+    }
   }
 }
