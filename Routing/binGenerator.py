@@ -2,10 +2,10 @@ from random import *
 from math import ceil
 
 class Bin:
-    minLong = 144.655251
-    maxLong = 144.667813
-    minLat = -37.891139
-    maxLat = -37.864839
+    minLong = 144.603674
+    maxLong = 144.746603
+    minLat = -37.911646
+    maxLat = -37.840319
 
     minCap = 100
     maxCap = 500
