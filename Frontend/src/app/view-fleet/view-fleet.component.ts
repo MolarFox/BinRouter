@@ -35,6 +35,7 @@ export class ViewFleetComponent implements OnInit {
       );
   }
 
+  // Triggered whenever user clicks on a vehicle in list view
   vehicleClick(veh: [Vehicle, VehicleExtra]): void {
     // Reset selection of previously selected vehicle
     if (this.selveh !== undefined){
@@ -45,6 +46,11 @@ export class ViewFleetComponent implements OnInit {
     this.selveh = veh
     this.selveh[1].selected = true;
     
+  }
+
+  // Reloads the page
+  reloadPage(): void {
+    location.reload();
   }
 
 }

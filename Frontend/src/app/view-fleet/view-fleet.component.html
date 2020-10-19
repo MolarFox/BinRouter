@@ -8,6 +8,13 @@
         </mat-card-header>
         <mat-card-content>
             <mat-list class=vehiclelist>
+                <div *ngIf="all_fleet.length === 0">
+                    <button 
+                    mat-stroked-button color="warn"
+                    (click)="reloadPage()">
+                        No vehicles loaded - refresh?
+                    </button>
+                </div>
                 <mat-list-item 
                 matRipple [matRippleColor]="primary" 
                 [disabled]="vehicle[1].selected"
