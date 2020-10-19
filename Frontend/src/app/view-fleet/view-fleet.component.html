@@ -7,10 +7,10 @@
             <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <mat-list>
+            <mat-list class=vehiclelist>
                 <mat-list-item *ngFor="let vehicle of all_fleet">
-                    <div mat-line>{{vehicle.rego}}</div>
-                    <div mat-line> {{vehicle.available}} </div>
+                    <div mat-line><b>{{vehicle.rego}}</b></div>
+                    <div mat-line>Cap: {{vehicle.capacity}} </div>
                 </mat-list-item>
             </mat-list>
         </mat-card-content>

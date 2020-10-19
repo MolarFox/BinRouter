@@ -10,9 +10,16 @@ mat-card {
     position: fixed;
 }
 
+.vehiclelist {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
 .editmenu {
     height: calc(100vh - 50px);
     width: 400px;
+    top: 0px;
     float: right;
     position: relative;
     background-color: lightgrey;
