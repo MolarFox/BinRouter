@@ -9,6 +9,22 @@ import { Vehicle } from '../vehicle';
 })
 export class ViewFleetComponent implements OnInit {
 
+  // Array of icon names corresponding to the 12 possible icons
+  veh_icons = [
+    "delete",
+    "airport_shuttle",
+    "local_shipping",
+    "agriculture",
+    "electric_car",
+    "two_wheeler",
+    "electric_bike",
+    "pedal_bike",
+    "rv_hookup",
+    "directions_boat",
+    "airplanemode_active",
+    "biotech"
+  ]
+
   all_fleet: [Vehicle, VehicleExtra][] = []; // Array of all vehicles
   selveh: [Vehicle, VehicleExtra]; // currently selected vehicle
 

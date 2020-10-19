@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <app-view-routes></app-view-routes>
 
 <div class=editmenu>
@@ -20,8 +21,11 @@
                 [disabled]="vehicle[1].selected"
                 *ngFor="let vehicle of all_fleet"
                 (click)="vehicleClick(vehicle)">
-                    <div mat-line><b>{{vehicle[0].rego}}</b></div>
-                    <div mat-line>Cap: {{vehicle[0].capacity}} </div>
+                    <mat-icon>{{veh_icons[vehicle[0].icon]}}</mat-icon>
+                    <div style="padding-left: 4px;">
+                        <div mat-line><b>{{vehicle[0].rego}}</b></div>
+                        <div mat-line>Cap: {{vehicle[0].capacity}} </div>
+                    </div>
                 </mat-list-item>
             </mat-list>
         </mat-card-content>
@@ -31,8 +35,13 @@
 <div class=infobar>
     <mat-card class=infobar_card>
         <mat-card-header>
-            <mat-card-title>AAAA</mat-card-title>
-            <mat-card-subtitle>anus</mat-card-subtitle>
+            <mat-card-title *ngIf="!selveh">No vehicle selected</mat-card-title>
+            <mat-card-title *ngIf="selveh">
+                <mat-icon style="top: 4px; position: relative;">
+                    {{veh_icons[selveh[0].icon]}}
+                </mat-icon>
+                Vehicle {{selveh[0].rego}}
+            </mat-card-title>
         </mat-card-header>
         <mat-card-content>
 
