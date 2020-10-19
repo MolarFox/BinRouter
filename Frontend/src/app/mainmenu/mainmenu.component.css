@@ -10,4 +10,6 @@ h2 {
 
 .mat-toolbar {
     height: 50px;
+    position: sticky;
+    z-index: 1000;
 }

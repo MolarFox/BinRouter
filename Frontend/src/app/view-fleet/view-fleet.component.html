@@ -1,18 +1,34 @@
 <app-view-routes></app-view-routes>
 
 <div class=editmenu>
-    <mat-card>
+    <mat-card class=editmenu_card>
         <mat-card-header>
             <mat-card-title>Fleet Manager</mat-card-title>
             <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <mat-list class=vehiclelist>
-                <mat-list-item *ngFor="let vehicle of all_fleet">
-                    <div mat-line><b>{{vehicle.rego}}</b></div>
-                    <div mat-line>Cap: {{vehicle.capacity}} </div>
+                <mat-list-item 
+                matRipple [matRippleColor]="primary" 
+                [disabled]="vehicle[1].selected"
+                *ngFor="let vehicle of all_fleet"
+                (click)="vehicleClick(vehicle)">
+                    <div mat-line><b>{{vehicle[0].rego}}</b></div>
+                    <div mat-line>Cap: {{vehicle[0].capacity}} </div>
                 </mat-list-item>
             </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class=infobar>
+    <mat-card class=infobar_card>
+        <mat-card-header>
+            <mat-card-title>AAAA</mat-card-title>
+            <mat-card-subtitle>anus</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
         </mat-card-content>
     </mat-card>
 </div>

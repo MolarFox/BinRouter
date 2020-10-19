@@ -16,6 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatListModule } from '@angular/material/list';
+import { MatRippleModule } from '@angular/material/core';
 import { AgmCoreModule } from '@agm/core';
 import { AgmMarkerClustererModule } from '@agm/markerclusterer'
 import { AgmDirectionModule } from 'agm-direction';
@@ -55,6 +56,7 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatProgressBarModule,
     MatSidenavModule,
     MatListModule,
+    MatRippleModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY,

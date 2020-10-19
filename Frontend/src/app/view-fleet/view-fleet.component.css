@@ -1,26 +1,43 @@
 app-view-routes {
-    height: calc(100vh - 50px - 120px);
+    height: calc(100vh - 200px);
     width: calc(100vw - 401px);
     float: left;
 }
 
-mat-card {
-    height: calc(100vh - 50px);
-    width: 400px;
-    position: fixed;
+mat-list-item {
+    float: left;
 }
 
 .vehiclelist {
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
     overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 0%;
+    top: 0;
 }
 
 .editmenu {
     height: calc(100vh - 50px);
     width: 400px;
-    top: 0px;
-    float: right;
-    position: relative;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
     background-color: lightgrey;
+}
+
+.editmenu_card {
+    height: inherit;
+    width: inherit;
+}
+
+.infobar {
+    height: 200px;
+    width: calc(100vw - 401px);
+    position: fixed;
+    bottom: 0px;
+}
+
+.infobar_card {
+    height: 200px;
 }
