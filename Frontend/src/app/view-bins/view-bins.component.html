@@ -43,7 +43,9 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>Address</mat-label>
-                    <textarea matInput [(ngModel)]="selbin.address"></textarea>
+                    <textarea 
+                    [mat-autosize]="true"
+                    matInput [(ngModel)]="selbin.address"></textarea>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">

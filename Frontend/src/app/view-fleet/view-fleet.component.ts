@@ -19,9 +19,9 @@ export class ViewFleetComponent implements OnInit {
     "two_wheeler",
     "electric_bike",
     "pedal_bike",
-    "rv_hookup",
     "directions_boat",
     "airplanemode_active",
+    "rv_hookup",
     "biotech"
   ]
 

@@ -1,5 +1,5 @@
 app-view-routes {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 80px);
     width: calc(100vw - 401px);
     float: left;
 }
@@ -32,12 +32,12 @@ mat-list-item {
 }
 
 .infobar {
-    height: 200px;
+    height: 80px;
     width: calc(100vw - 401px);
     position: fixed;
     bottom: 0px;
 }
 
 .infobar_card {
-    height: 200px;
+    height: 80px;
 }
