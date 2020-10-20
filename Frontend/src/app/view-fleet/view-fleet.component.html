@@ -5,8 +5,17 @@
     <mat-card class=editmenu_card>
 
         <mat-card-header>
+            
             <mat-card-title>Fleet Manager</mat-card-title>
-            <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+
+            <mat-card-subtitle *ngIf="all_fleet.length>0">
+                {{all_fleet.length}} vehicle(s) - {{add_vehicles.length}} new, {{del_vehicles.length}} deleted
+            </mat-card-subtitle>
+
+            <mat-card-subtitle *ngIf="all_fleet.length<1">
+                No vehicles currently loaded
+            </mat-card-subtitle>
+        
         </mat-card-header>
 
             <mat-list class=vehiclelist>

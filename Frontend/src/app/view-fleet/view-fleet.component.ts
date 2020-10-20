@@ -35,9 +35,6 @@ export class ViewFleetComponent implements OnInit {
   mod_vehicles: Vehicle[] = []; // Array of vehicles to modify with new values
   add_vehicles: Vehicle[] = []; // Array of vehicles to create
 
-  // Editor vars
-  subtitle = "Scroll through the list to select a vehicle";
-
   constructor(private fleetfetcher: FleetfetcherService) { }
 
   ngOnInit(): void {
@@ -73,7 +70,7 @@ export class ViewFleetComponent implements OnInit {
   // Triggered whenever user clicks on a vehicle in list view
   vehicleClick(veh: [Vehicle, VehicleExtra]): void {
     // Reset selection of previously selected vehicle
-    if (this.selveh !== undefined){
+    if (this.selveh){
       this.selveh[1].selected = false;
     }
 
@@ -85,13 +82,21 @@ export class ViewFleetComponent implements OnInit {
 
   // triggered whenever user clicks 'delete' on a given vehicle
   vehicleDelete(veh: [Vehicle, VehicleExtra]): void {
-    // Add vehicle to the deletion array
-    this.del_vehicles.push(this.selveh[0].id);
+    // Is vehicle an exising one? (new vehicles will not have an id assigned)
+    if (veh[0]._id){
+      // Add vehicle to the deletion array, if not a new vehicle
+      this.del_vehicles.push(veh[0]._id);
+    }
 
-    // Remove vehicle from the array
-    let remindex = this.all_fleet.findIndex(v => v[0].id === this.selveh[0].id);
+    // Remove vehicle from the main array
+    let remindex = this.all_fleet.findIndex(v => v[0].rego === veh[0].rego);
     this.all_fleet.splice(remindex, 1);
-    this.orig_fleet.splice(remindex, 1);
+    // Remove from original fleet, to keep all pointers in sync
+    if (veh[0]._id) this.orig_fleet.splice(remindex, 1);
+    // Remove from new array
+    else this.add_vehicles.splice(
+      this.add_vehicles.findIndex(v => v.rego === veh[0].rego),
+      1);
 
     // Unset selected vehicle
     this.selveh = undefined;
@@ -102,7 +107,7 @@ export class ViewFleetComponent implements OnInit {
     let newrego = regoGen(6);
     let newveh: [Vehicle, VehicleExtra] = [
       {
-        "id":         undefined,
+        "_id":         undefined,
         "rego":       newrego,
         "capacity":   2000,
         "available":  true,
