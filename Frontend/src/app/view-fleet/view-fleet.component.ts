@@ -171,7 +171,7 @@ export class ViewFleetComponent implements OnInit {
     ]
 
     // Check which records vary, to add to mod array
-    for (let i=0; i < this.all_fleet.length; i++){
+    for (let i=0; i < this.orig_fleet.length; i++){
       keys.forEach(key => {
         if (this.all_fleet[i][0][key] !== this.orig_fleet[i][0][key])
           this.mod_vehicles.push(this.all_fleet[i][0])

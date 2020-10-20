@@ -16,14 +16,13 @@
                 [waypoints]="routeset">
 
                 </agm-direction>
-
-                <agm-direction
-                *ngIf="veh.arr[i+1]"
-                [origin]="routeset[routeset.length-1].location"
-                [destination]="veh.arr[i+1][0].location">
-                </agm-direction>
             </div>
 
+        </div>
+    </div>
+
+    <div *ngIf="waypoints.length>0">
+        <div *ngFor="let veh of render_waypoints">
         </div>
     </div>
 </agm-map>

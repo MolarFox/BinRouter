@@ -5863,7 +5863,7 @@
               });
             };
 
-            for (var _i2 = 0; _i2 < this.all_fleet.length; _i2++) {
+            for (var _i2 = 0; _i2 < this.orig_fleet.length; _i2++) {
               _loop2(_i2);
             }
           } // Reloads the page
@@ -6273,47 +6273,21 @@
       /*! agm-direction */
       "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
 
-      function ViewRoutesComponent_div_2_div_1_div_1_agm_direction_2_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "agm-direction", 6);
-        }
-
-        if (rf & 2) {
-          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          var routeset_r4 = ctx_r7.$implicit;
-          var i_r5 = ctx_r7.index;
-
-          var veh_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r4[routeset_r4.length - 1].location)("destination", veh_r2.arr[i_r5 + 1][0].location);
-        }
-      }
-
       function ViewRoutesComponent_div_2_div_1_div_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "agm-direction", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_div_1_div_1_agm_direction_2_Template, 1, 2, "agm-direction", 5);
-
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var routeset_r4 = ctx.$implicit;
-          var i_r5 = ctx.index;
-
-          var veh_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+          var routeset_r5 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r4[0].location)("destination", routeset_r4[routeset_r4.length - 1].location)("waypoints", routeset_r4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", veh_r2.arr[i_r5 + 1]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5[0].location)("destination", routeset_r5[routeset_r5.length - 1].location)("waypoints", routeset_r5);
         }
       }
 
@@ -6321,17 +6295,17 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 3, 4, "div", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 2, 3, "div", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var veh_r2 = ctx.$implicit;
+          var veh_r3 = ctx.$implicit;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", veh_r2.arr);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", veh_r3.arr);
         }
       }
 
@@ -6350,6 +6324,30 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.render_waypoints);
+        }
+      }
+
+      function ViewRoutesComponent_div_3_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
+        }
+      }
+
+      function ViewRoutesComponent_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_3_div_1_Template, 1, 0, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.render_waypoints);
         }
       }
 
@@ -6404,8 +6402,8 @@
                   });
                 }
 
-                while (w.waypoints.length > 1) {
-                  var newchunk = w.waypoints.splice(0, 14);
+                while (w.waypoints.length > 0) {
+                  var newchunk = w.waypoints.splice(0, 15);
 
                   _this9.chunks.push(newchunk);
 
@@ -6479,9 +6477,9 @@
       ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ViewRoutesComponent,
         selectors: [["app-view-routes"]],
-        decls: 3,
-        vars: 4,
-        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints"], [3, "origin", "destination", 4, "ngIf"], [3, "origin", "destination"]],
+        decls: 4,
+        vars: 5,
+        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints"]],
         template: function ViewRoutesComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
@@ -6496,6 +6494,8 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_Template, 2, 1, "div", 2);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ViewRoutesComponent_div_3_Template, 2, 1, "div", 2);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
 
@@ -6503,6 +6503,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("latitude", ctx.start_lat)("longitude", ctx.start_lng)("zoom", ctx.start_zoom);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 

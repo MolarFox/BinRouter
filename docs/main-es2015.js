@@ -4889,7 +4889,7 @@ class ViewFleetComponent {
             "homeDepot"
         ];
         // Check which records vary, to add to mod array
-        for (let i = 0; i < this.all_fleet.length; i++) {
+        for (let i = 0; i < this.orig_fleet.length; i++) {
             keys.forEach(key => {
                 if (this.all_fleet[i][0][key] !== this.orig_fleet[i][0][key])
                     this.mod_vehicles.push(this.all_fleet[i][0]);
@@ -5086,37 +5086,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ViewRoutesComponent_div_2_div_1_div_1_agm_direction_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "agm-direction", 6);
-} if (rf & 2) {
-    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const routeset_r4 = ctx_r7.$implicit;
-    const i_r5 = ctx_r7.index;
-    const veh_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r4[routeset_r4.length - 1].location)("destination", veh_r2.arr[i_r5 + 1][0].location);
-} }
 function ViewRoutesComponent_div_2_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "agm-direction", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_div_1_div_1_agm_direction_2_Template, 1, 2, "agm-direction", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const routeset_r4 = ctx.$implicit;
-    const i_r5 = ctx.index;
-    const veh_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const routeset_r5 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r4[0].location)("destination", routeset_r4[routeset_r4.length - 1].location)("waypoints", routeset_r4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", veh_r2.arr[i_r5 + 1]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5[0].location)("destination", routeset_r5[routeset_r5.length - 1].location)("waypoints", routeset_r5);
 } }
 function ViewRoutesComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 3, 4, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 2, 3, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const veh_r2 = ctx.$implicit;
+    const veh_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", veh_r2.arr);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", veh_r3.arr);
 } }
 function ViewRoutesComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -5126,6 +5112,18 @@ function ViewRoutesComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.render_waypoints);
+} }
+function ViewRoutesComponent_div_3_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
+} }
+function ViewRoutesComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_3_div_1_Template, 1, 0, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.render_waypoints);
 } }
 class ViewRoutesComponent {
     constructor(routefetcher) {
@@ -5159,8 +5157,8 @@ class ViewRoutesComponent {
                     index = 0;
                     this.render_waypoints.push({ "veh": w.vehicle, "arr": [] });
                 }
-                while (w.waypoints.length > 1) {
-                    let newchunk = w.waypoints.splice(0, 14);
+                while (w.waypoints.length > 0) {
+                    let newchunk = w.waypoints.splice(0, 15);
                     this.chunks.push(newchunk);
                     this.render_waypoints[index].arr.push(newchunk);
                     //if (w.waypoints.length>0) this.render_waypoints[index].arr
@@ -5215,15 +5213,18 @@ class ViewRoutesComponent {
     }
 }
 ViewRoutesComponent.ɵfac = function ViewRoutesComponent_Factory(t) { return new (t || ViewRoutesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_routefetcher_service__WEBPACK_IMPORTED_MODULE_2__["RoutefetcherService"])); };
-ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 3, vars: 4, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints"], [3, "origin", "destination", 4, "ngIf"], [3, "origin", "destination"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
+ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 4, vars: 5, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "agm-map", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); })("mapReady", function ViewRoutesComponent_Template_agm_map_mapReady_1_listener($event) { return ctx.onMapLoad($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_Template, 2, 1, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ViewRoutesComponent_div_3_Template, 2, 1, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("latitude", ctx.start_lat)("longitude", ctx.start_lng)("zoom", ctx.start_zoom);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0);
     } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], agm_direction__WEBPACK_IMPORTED_MODULE_5__["AgmDirection"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });

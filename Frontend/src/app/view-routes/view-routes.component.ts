@@ -58,8 +58,8 @@ export class ViewRoutesComponent implements OnInit {
             this.render_waypoints.push({"veh": w.vehicle, "arr": []})
           }
 
-          while (w.waypoints.length > 1){
-            let newchunk=w.waypoints.splice(0, 14)
+          while (w.waypoints.length > 0){
+            let newchunk=w.waypoints.splice(0, 15)
             this.chunks.push(newchunk)
             this.render_waypoints[index].arr.push(
               newchunk
