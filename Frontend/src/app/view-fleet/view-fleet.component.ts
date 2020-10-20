@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FleetfetcherService } from '../fleetfetcher.service';
 import { Vehicle } from '../vehicle';
 import { Depot } from '../depot';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-view-fleet',
@@ -35,7 +36,10 @@ export class ViewFleetComponent implements OnInit {
   mod_vehicles: Vehicle[] = []; // Array of vehicles to modify with new values
   add_vehicles: Vehicle[] = []; // Array of vehicles to create
 
-  constructor(private fleetfetcher: FleetfetcherService) { }
+  constructor(
+    private fleetfetcher: FleetfetcherService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
     this.fleetfetcher.getAllFleet()
@@ -128,6 +132,12 @@ export class ViewFleetComponent implements OnInit {
 
   // Submits changes to the backend server, or notifies user of issues
   submitChanges(): void {
+    const dialogRef = this.dialog.open(ViewFleetPopup);
+    let popupresult = undefined;
+    dialogRef.afterClosed().subscribe(
+      x => popupresult = x
+    )
+
 
   }
 
@@ -142,9 +152,27 @@ export class ViewFleetComponent implements OnInit {
   }
 }
 
+
+// This export is the dialog box that pops to verify user changes
+@Component({
+  selector: './view-fleet-popup',
+  templateUrl: './view-fleet-popup.html',
+})
+export class ViewFleetPopup {
+  @Input() chk_result : ChkFail;
+}
+
+
 interface VehicleExtra {
   rego:     string,
   selected: boolean
+}
+
+interface ChkFail {
+  arrtype:  (0 | 1 | 2),  // 0 = new | 1 = modify | 2 = delete
+  error:    string,
+  failobj:  Vehicle,
+  failval:  any
 }
 
 // Adapted from https://stackoverflow.com/a/1349426

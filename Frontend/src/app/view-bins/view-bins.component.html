@@ -10,12 +10,11 @@
         [imagePath]="'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'"
     >
         <agm-marker
-            *ngFor="let m of markers; let i=index"
+            *ngFor="let bin of all_bins; let i=index"
             (markerClick)="clickedMarker(i)"
-            [latitude]="m.lat"
-            [longitude]="m.lng"
-            [label]="m.label"
-            [markerDraggable]="m.draggable">
+            [latitude]="bin[0].lat"
+            [longitude]="bin[0].lng"
+            (dragEnd)="draggedMarker(Longitude)">
         </agm-marker>
     </agm-marker-cluster>
 
@@ -29,50 +28,86 @@
         </mat-card-header>
         <mat-card-content>
             <div *ngIf="selbin">
-                <h2 style="padding-left: 15px;">Selected Bin ID: {{selbin.serial}}</h2>
-                
-                <mat-form-field appearance="outline">
-                    <mat-label>Latitude</mat-label>
-                    <input matInput [(ngModel)]="selmarker.lat" placeholder="Lat">
-                </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                    <mat-label>Longitude</mat-label>
-                    <input matInput [(ngModel)]="selmarker.lng" placeholder="Lng">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Address</mat-label>
-                    <textarea 
-                    [mat-autosize]="true"
-                    matInput [(ngModel)]="selbin.address"></textarea>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Bin Capacity</mat-label>
-                    <input matInput type="number" [(ngModel)]="selbin.capacity" min="1" max="256">
-                    <span matSuffix>Litre(s)</span>
-                </mat-form-field>
-                <br>
-                <mat-checkbox [(ngModel)]="selbin.is_smart" [checked]="selbin.is_smart">Smart Bin</mat-checkbox>
-                <br>
-                <mat-checkbox [(ngModel)]="selmarker.draggable" [checked]="selmarker.draggable">Draggable Marker</mat-checkbox>
-                <br><br>
-                <div *ngIf="selbin.is_smart">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Bin Fullness (debug)</mat-label>
-                        <input matInput type="number" [(ngModel)]="selbin.fullness" min="1" max="100">
-                        <span matSuffix>%</span>
+                <div *ngIf="selbin[0].is_smart">
+                    <h2 style="padding-left: 15px;">Smart Bin ID: {{selbin[0].smartSerial}}</h2>
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Latitude</mat-label>
+                        <input matInput 
+                        readonly="true"
+                        [value]="selbin[0].lat">
                     </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Longitude</mat-label>
+                        <input matInput 
+                        readonly="true"
+                        [value]="selbin[0].lng">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <textarea 
+                        [mat-autosize]="true"
+                        matInput 
+                        readonly="true"
+                        [value]="selbin[0].address"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Bin Capacity</mat-label>
+                        <input matInput type="number" 
+                        [value]="selbin[0].capacity" 
+                        readonly="true">
+                        <span matSuffix>Litre(s)</span>
+                    </mat-form-field>
+                    
                     <br>
                     <mat-progress-bar
                         class="example-margin"
                         [color]='accent'
                         [mode]='determinate'
-                        [value]="selbin.fullness">
+                        [value]="selbin[0].fullness">
                     </mat-progress-bar>
                     <span style="padding-left: 15px;">Fullness: {{selbin.fullness}}%</span>
                 </div>
+
+                <div *ngIf="!selbin[0].is_smart">
+                    <h2 style="padding-left: 15px;">Selected Bin is not Smart</h2>
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Latitude</mat-label>
+                        <input matInput [(ngModel)]="selbin[0].lat">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Longitude</mat-label>
+                        <input matInput [(ngModel)]="selbin[0].lng">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <textarea 
+                        [mat-autosize]="true"
+                        matInput [(ngModel)]="selbin[0].address"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Bin Capacity</mat-label>
+                        <input matInput type="number" [(ngModel)]="selbin[0].capacity" min="1" max="256">
+                        <span matSuffix>Litre(s)</span>
+                    </mat-form-field>
+                    <br>
+                    
+                    <mat-checkbox 
+                    [(ngModel)]="picker_active" 
+                    [checked]="picker_active"
+                    [colour]="primary">
+                        Pick Location
+                    </mat-checkbox>                    
+                </div>
+
             </div>
             <div *ngIf="!(selbin)"></div>
         </mat-card-content>

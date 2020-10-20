@@ -82,7 +82,7 @@ mat-list-item {
     -ms-user-select:none; 
     user-select:none;
     -o-user-select:none;
-    cursor: crosshair;
+    cursor: pointer;
     scale: 2;
     right: 20px;
 }

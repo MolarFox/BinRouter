@@ -12,7 +12,7 @@ export interface Bin {
 }
 
 export interface BinRaw {
-    id:                 string,
+    _id:                 string,
     serialNumber:       number,
     longitude:          number,
     latitude:           number,
@@ -33,7 +33,7 @@ export function jsonToBins(res: BinRaw[]): Bin[] {
         let record = res[i]
         outarray.push(
             {
-                "serial":       record.id,
+                "serial":       record._id,
                 "smartSerial":  record.serialNumber,
                 "lat":          record.latitude,
                 "lng":          record.longitude,

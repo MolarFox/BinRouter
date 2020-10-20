@@ -14,13 +14,12 @@ export class ViewBinsComponent implements OnInit {
   start_lng = 144.9666622;
   start_zoom = 14;
 
-  all_bins: Bin[] = [];
-  markers: any[] = [];
-  selmarker: any;
-  selbin: Bin;
+  all_bins: [Bin, BinExtra][] = [];
+  selbin: [Bin, BinExtra];
 
   // Editor vars
   subtitle = "Pick a bin to begin editing"
+  picker_active: boolean = false;
 
   constructor(private binfetcher: BinfetcherService) { }
 
@@ -31,14 +30,9 @@ export class ViewBinsComponent implements OnInit {
 
   // Set instance bins variable, convert all to markers and display
   process_markers(bins: Bin[]){
-    this.all_bins = bins;
     bins.forEach(bin =>
-      this.markers.push(
-        {
-          draggable: false,
-          lat: bin.lat,
-          lng: bin.lng 
-        }
+      this.all_bins.push(
+        [ bin,{ "draggable": false } ]
       )
     )
   }
@@ -48,9 +42,17 @@ export class ViewBinsComponent implements OnInit {
 
   }
 
+  // handles drag completions of marker
+  draggedMarker(e: any): void {
+    console.log(e);
+  }
+
   // Handles clicks to a marker
-  clickedMarker(index: number){
-    this.selmarker = this.markers[index];
+  clickedMarker(index: number): void {
     this.selbin = this.all_bins[index];
   }
+}
+
+interface BinExtra {
+  draggable: boolean
 }

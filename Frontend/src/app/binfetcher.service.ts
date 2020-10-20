@@ -14,7 +14,7 @@ export class BinfetcherService {
 
   // Use appropriate url based on environment variable
   private binsUrl = (environment.serviceFetcherModes === 0) ? 'data/bins' : 
-    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/bins.json';
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/bins1.json';
 
   // Rudimentary cache
   private bincache: Bin[] = undefined; // TODO: implement caching functionality

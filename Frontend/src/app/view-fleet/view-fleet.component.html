@@ -36,6 +36,7 @@
                 matRipple [matRippleColor]="primary" 
                 [disabled]="vehicle[1].selected"
                 *ngFor="let vehicle of all_fleet"
+                style="cursor: pointer;"
                 (click)="vehicleClick(vehicle)">
                     <mat-icon>{{veh_icons[vehicle[0].icon]}}</mat-icon>
                     <div style="padding-left: 4px;">
