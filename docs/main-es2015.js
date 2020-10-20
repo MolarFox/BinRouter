@@ -184,14 +184,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/slide-toggle */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/slide-toggle.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/dialog.js");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
-/* harmony import */ var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @agm/markerclusterer */ "./node_modules/@agm/markerclusterer/__ivy_ngcc__/fesm2015/agm-markerclusterer.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./mainmenu/mainmenu.component */ "./src/app/mainmenu/mainmenu.component.ts");
-/* harmony import */ var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./view-routes/view-routes.component */ "./src/app/view-routes/view-routes.component.ts");
-/* harmony import */ var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./view-heatmap/view-heatmap.component */ "./src/app/view-heatmap/view-heatmap.component.ts");
-/* harmony import */ var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./view-bins/view-bins.component */ "./src/app/view-bins/view-bins.component.ts");
-/* harmony import */ var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./view-fleet/view-fleet.component */ "./src/app/view-fleet/view-fleet.component.ts");
+/* harmony import */ var agm_direction__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! agm-direction */ "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
+/* harmony import */ var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @agm/markerclusterer */ "./node_modules/@agm/markerclusterer/__ivy_ngcc__/fesm2015/agm-markerclusterer.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./mainmenu/mainmenu.component */ "./src/app/mainmenu/mainmenu.component.ts");
+/* harmony import */ var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./view-routes/view-routes.component */ "./src/app/view-routes/view-routes.component.ts");
+/* harmony import */ var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./view-heatmap/view-heatmap.component */ "./src/app/view-heatmap/view-heatmap.component.ts");
+/* harmony import */ var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./view-bins/view-bins.component */ "./src/app/view-bins/view-bins.component.ts");
+/* harmony import */ var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./view-fleet/view-fleet.component */ "./src/app/view-fleet/view-fleet.component.ts");
+
 
 
 
@@ -226,13 +228,13 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"]] });
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["Title"]], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_23__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
             _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
@@ -249,22 +251,23 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"],
             _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"],
             _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"],
+            agm_direction__WEBPACK_IMPORTED_MODULE_22__["AgmDirectionModule"],
             _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
                 apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
                 libraries: ['visualization']
             }),
-            _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]
+            _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__["AgmMarkerClustererModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"],
-        _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_25__["MainmenuComponent"],
-        _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_26__["ViewRoutesComponent"],
-        _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_27__["ViewHeatmapComponent"],
-        _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_28__["ViewBinsComponent"],
-        _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_29__["ViewFleetComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"],
+        _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__["MainmenuComponent"],
+        _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__["ViewRoutesComponent"],
+        _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__["ViewHeatmapComponent"],
+        _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__["ViewBinsComponent"],
+        _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__["ViewFleetComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_23__["AppRoutingModule"],
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
         _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
@@ -280,24 +283,25 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"],
         _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"],
         _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"],
-        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]] }); })();
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"],
+        agm_direction__WEBPACK_IMPORTED_MODULE_22__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__["AgmMarkerClustererModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
                 declarations: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"],
-                    _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_25__["MainmenuComponent"],
-                    _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_26__["ViewRoutesComponent"],
-                    _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_27__["ViewHeatmapComponent"],
-                    _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_28__["ViewBinsComponent"],
-                    _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_29__["ViewFleetComponent"]
+                    _app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"],
+                    _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__["MainmenuComponent"],
+                    _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__["ViewRoutesComponent"],
+                    _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__["ViewHeatmapComponent"],
+                    _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__["ViewBinsComponent"],
+                    _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__["ViewFleetComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                     _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"],
-                    _app_routing_module__WEBPACK_IMPORTED_MODULE_23__["AppRoutingModule"],
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"],
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                     _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
                     _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
@@ -314,14 +318,15 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"],
                     _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"],
                     _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"],
+                    agm_direction__WEBPACK_IMPORTED_MODULE_22__["AgmDirectionModule"],
                     _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
                         apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
                         libraries: ['visualization']
                     }),
-                    _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]
+                    _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__["AgmMarkerClustererModule"]
                 ],
                 providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["Title"]],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"]]
             }]
     }], null, null); })();
 
@@ -4095,6 +4100,71 @@ const DUMMY_ROUTES = [
 
 /***/ }),
 
+/***/ "./src/app/route.ts":
+/*!**************************!*\
+  !*** ./src/app/route.ts ***!
+  \**************************/
+/*! exports provided: navToWaypoint */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navToWaypoint", function() { return navToWaypoint; });
+function navToWaypoint(nav) {
+    let waypointed = [];
+    nav.visitingOrder.forEach(x => waypointed.push({
+        location: new google.maps.LatLng({ lat: x.latitude, lng: x.longitude }),
+        stopover: true
+    }));
+    return {
+        vehicle: nav.vehicle,
+        waypoints: waypointed
+    };
+}
+/*
+// Struct for routes
+export interface NavRoute {
+        geocoded_waypoints: {
+            geocoder_status: string,
+            place_id: string,
+            types: string[],
+            partial_match: boolean
+        }[],
+        routes: {
+            bounds: any,
+            legs: any,
+            overview_polyline: any
+            warnings: [],
+            waypoint_order: number[],
+            summary: string,
+            copyrights: string
+        }[],
+        status: string
+}
+
+export interface NavRouteResponse {
+    binCollectionSchedules: {
+        routes: {
+            directions: google.maps.DirectionsResult[],
+            vehicle: string
+        }[],
+        timestamp: Date
+    }[],
+    depots: DepotRaw[]
+}
+*/
+/*
+export interface NavRouteResponse {
+    routes: {
+        directions: google.maps.DirectionsResult[]
+        vehicle:    string
+    }[],
+    timestamp:  Date
+}*/ 
+
+
+/***/ }),
+
 /***/ "./src/app/routefetcher.service.ts":
 /*!*****************************************!*\
   !*** ./src/app/routefetcher.service.ts ***!
@@ -4121,7 +4191,7 @@ class RoutefetcherService {
         this.http = http;
         // Use appropriate url based on environment variable
         this.routesUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].serviceFetcherModes == 0) ? 'data/routes' :
-            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes2.json';
+            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes3.json';
         // Rudimentary cache
         this.routecache = undefined; // TODO: implement caching functionality
     }
@@ -4129,7 +4199,7 @@ class RoutefetcherService {
         if (this.routecache === undefined) { // not yet fetched, fetch it
         }
         return this.http.get(this.routesUrl)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(convertRawRoot), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
     }
 }
 RoutefetcherService.ɵfac = function RoutefetcherService_Factory(t) { return new (t || RoutefetcherService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"])); };
@@ -4140,36 +4210,6 @@ RoutefetcherService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
                 providedIn: 'root'
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }]; }, null); })();
-// Performs transformations to make our route useable
-function convertRawRoot(nav) {
-    // New request field to be added
-    let newreqfield = {
-        "origin": {
-            "location": {}
-        },
-        "destination": {
-            "location": {}
-        },
-        "travelMode": "DRIVING"
-    };
-    // Rectify all bounds + add request field
-    nav.binCollectionSchedules.forEach(x => x.routes.forEach(y => y.directions.forEach(z => {
-        // @ts-ignore
-        z.request = newreqfield; // Add request field
-        z.routes.forEach(a => {
-            // Convert overview polyline into a string
-            // @ts-ignore
-            a.overview_polyline = a.overview_polyline.points;
-            // Add converted latlngbounds
-            a.bounds = new google.maps.LatLngBounds(
-            // @ts-ignore
-            a.bounds.southwest, 
-            // @ts-ignore
-            a.bounds.Northeast);
-        });
-    })));
-    return nav;
-}
 
 
 /***/ }),
@@ -4377,7 +4417,7 @@ class ViewBinsComponent {
     }
     // Set instance bins variable, convert all to markers and display
     process_markers(bins) {
-        this.orig_bins = bins;
+        this.orig_bins = JSON.parse(JSON.stringify(bins)); // deep copy
         bins.forEach(bin => this.all_bins.push([bin, { "draggable": false }]));
     }
     // Handles clicks on the map
@@ -4455,11 +4495,19 @@ class ViewBinsComponent {
         ];
         // Check which records vary, to add to mod array
         for (let i = 0; i < this.orig_bins.length; i++) {
+            let pushed = false;
             keys.forEach(key => {
-                if (this.all_bins[i][0][key] !== this.orig_bins[i][key])
-                    this.mod_bins.push(this.all_bins[i][0]);
+                if (this.all_bins[i][0][key] !== this.orig_bins[i][key]) {
+                    if (!pushed) {
+                        this.mod_bins.push(this.all_bins[i][0]);
+                        pushed = true;
+                    }
+                }
             });
+            while (this.all_bins[i][0]["is_smart"])
+                i++;
         }
+        console.log(this.mod_bins);
     }
 }
 ViewBinsComponent.ɵfac = function ViewBinsComponent_Factory(t) { return new (t || ViewBinsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_binfetcher_service__WEBPACK_IMPORTED_MODULE_1__["BinfetcherService"])); };
@@ -5016,16 +5064,30 @@ ViewHeatmapComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewRoutesComponent", function() { return ViewRoutesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _routefetcher_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routefetcher.service */ "./src/app/routefetcher.service.ts");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
+/* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../route */ "./src/app/route.ts");
+/* harmony import */ var _routefetcher_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routefetcher.service */ "./src/app/routefetcher.service.ts");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var agm_direction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! agm-direction */ "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
 
 
 
 
+
+
+
+function ViewRoutesComponent_agm_direction_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "agm-direction", 3);
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", ctx_r0.origin)("destination", ctx_r0.destination)("waypoints", ctx_r0.waypoints[0].waypoints);
+} }
 class ViewRoutesComponent {
     constructor(routefetcher) {
         this.routefetcher = routefetcher;
         this.map = null;
+        this.waypoints = [];
+        this.render_waypoints = {};
         this.start_lat = -37.8142588;
         this.start_lng = 144.9666622;
         this.start_zoom = 14;
@@ -5037,13 +5099,23 @@ class ViewRoutesComponent {
             lat: -37.8997609,
             lng: 145.1292176
         };
-        this.waypoints = [];
         this.displayDirections = true;
     }
     ngOnInit() {
         this.routefetcher.getAllRoutes()
             .subscribe(routes_in => {
             this.all_routes = routes_in;
+            routes_in.binCollectionSchedules.forEach(r => r.routes.forEach(p => this.waypoints.push(Object(_route__WEBPACK_IMPORTED_MODULE_1__["navToWaypoint"])(p))));
+            this.waypoints.forEach(w => {
+                while (w.waypoints.length > 1) {
+                    if (!this.render_waypoints[w.vehicle])
+                        this.render_waypoints[w.vehicle] = [];
+                    this.render_waypoints[w.vehicle].push(w.waypoints.splice(0, 14));
+                    if (w.waypoints.length > 0)
+                        this.render_waypoints[w.vehicle][this.render_waypoints[w.vehicle].length - 1].push(w.waypoints[0]);
+                }
+            });
+            console.log(this.render_waypoints);
             if (this.map !== null)
                 this.setupRenderer();
         });
@@ -5051,6 +5123,7 @@ class ViewRoutesComponent {
     // Handles clicks on the map
     mapClicked(e) {
         console.log(this.all_routes);
+        console.log(this.waypoints);
     }
     onMapLoad(mapInstance) {
         this.map = mapInstance;
@@ -5058,10 +5131,12 @@ class ViewRoutesComponent {
             this.setupRenderer();
     }
     setupRenderer() {
-        console.log(this.all_routes);
+        /*
+        console.log(this.all_routes)
         this.directionsRenderer = new google.maps.DirectionsRenderer();
         this.directionsService = new google.maps.DirectionsService();
         this.directionsRenderer.setMap(this.map);
+        */
         /*
         // This will generate a new request and log acceptable response
         this.directionsService.route(
@@ -5078,21 +5153,27 @@ class ViewRoutesComponent {
         }
         )
         */
+        /*
         // This will use the first route of first vehicle read in from backend
-        this.directionsRenderer.setDirections(this.all_routes.binCollectionSchedules[0].routes[0].directions[0]);
-        console.log(google.maps.geometry.encoding.decodePath(this.all_routes.binCollectionSchedules[0].routes[0].directions[0].routes[0].overview_polyline));
+        this.directionsRenderer.setDirections(
+          this.all_routes.binCollectionSchedules[0].routes[0].directions[0]
+        );
+        */
     }
 }
-ViewRoutesComponent.ɵfac = function ViewRoutesComponent_Factory(t) { return new (t || ViewRoutesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_routefetcher_service__WEBPACK_IMPORTED_MODULE_1__["RoutefetcherService"])); };
-ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 2, vars: 3, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
+ViewRoutesComponent.ɵfac = function ViewRoutesComponent_Factory(t) { return new (t || ViewRoutesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_routefetcher_service__WEBPACK_IMPORTED_MODULE_2__["RoutefetcherService"])); };
+ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 3, vars: 4, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [3, "origin", "destination", "waypoints", 4, "ngIf"], [3, "origin", "destination", "waypoints"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "agm-map", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); })("mapReady", function ViewRoutesComponent_Template_agm_map_mapReady_1_listener($event) { return ctx.onMapLoad($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_agm_direction_2_Template, 1, 3, "agm-direction", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("latitude", ctx.start_lat)("longitude", ctx.start_lng)("zoom", ctx.start_zoom);
-    } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_2__["AgmMap"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0);
+    } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], agm_direction__WEBPACK_IMPORTED_MODULE_5__["AgmDirection"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewRoutesComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -5100,7 +5181,7 @@ ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
                 templateUrl: './view-routes.component.html',
                 styleUrls: ['./view-routes.component.css']
             }]
-    }], function () { return [{ type: _routefetcher_service__WEBPACK_IMPORTED_MODULE_1__["RoutefetcherService"] }]; }, null); })();
+    }], function () { return [{ type: _routefetcher_service__WEBPACK_IMPORTED_MODULE_2__["RoutefetcherService"] }]; }, null); })();
 
 
 /***/ }),

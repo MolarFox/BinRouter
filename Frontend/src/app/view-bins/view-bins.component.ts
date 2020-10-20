@@ -35,7 +35,7 @@ export class ViewBinsComponent implements OnInit {
 
   // Set instance bins variable, convert all to markers and display
   process_markers(bins: Bin[]){
-    this.orig_bins = bins
+    this.orig_bins = JSON.parse(JSON.stringify(bins));  // deep copy
     bins.forEach(bin => 
       this.all_bins.push(
         [ bin,{ "draggable": false } ]
@@ -138,10 +138,17 @@ export class ViewBinsComponent implements OnInit {
 
     // Check which records vary, to add to mod array
     for (let i=0; i < this.orig_bins.length; i++){
+      let pushed = false;
       keys.forEach(key => {
-        if (this.all_bins[i][0][key] !== this.orig_bins[i][key])
-          this.mod_bins.push(this.all_bins[i][0])
+        if (this.all_bins[i][0][key] !== this.orig_bins[i][key]){
+          if (!pushed){
+            this.mod_bins.push(this.all_bins[i][0]);
+            pushed = true;
+          } 
+        }
       });
+
+      while(this.all_bins[i][0]["is_smart"]) i++;
     }
   }
 
