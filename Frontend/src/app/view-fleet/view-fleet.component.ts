@@ -98,8 +98,9 @@ export class ViewFleetComponent implements OnInit {
       this.add_vehicles.findIndex(v => v.rego === veh[0].rego),
       1);
 
-    // Unset selected vehicle
-    this.selveh = undefined;
+    // Unset selected vehicle (or next in list)
+    if (this.all_fleet.length < 1) this.selveh = undefined;
+    else this.vehicleClick(this.all_fleet[Math.max(0, remindex-1)]);
   }
 
   // triggered whenever user clicks 'new' from the editor view
@@ -123,6 +124,16 @@ export class ViewFleetComponent implements OnInit {
     this.all_fleet.push(newveh);
     this.add_vehicles.push(newveh[0]);
     this.vehicleClick(newveh);
+  }
+
+  // Submits changes to the backend server, or notifies user of issues
+  submitChanges(): void {
+
+  }
+
+  // Validates all changes made thus far - true if all pass
+  validateChanges(): boolean {
+    return true
   }
 
   // Reloads the page

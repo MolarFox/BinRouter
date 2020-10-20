@@ -3,6 +3,12 @@
 
 <div class=editmenu>
     <mat-card class=editmenu_card>
+        <button mat-mini-fab 
+        color="primary"
+        class="submitbutton"
+        (click)="submitChanges()">
+            <mat-icon>done_all</mat-icon>
+        </button>
 
         <mat-card-header>
             
@@ -51,12 +57,6 @@
                     view_carousel
                 </mat-icon>
                 No vehicle selected
-                <button mat-mini-fab 
-                    color="accent"
-                    style="bottom: 3px; left: 30px;"
-                    (click)="vehicleAdd()">
-                        <mat-icon>add</mat-icon>
-                </button>
             </mat-card-title>
 
             <div *ngIf="selveh">
@@ -114,16 +114,16 @@
                         Delete
                     </button>
 
-                    <button mat-mini-fab 
-                    color="accent"
-                    style="bottom: 6px; left: 30px;"
-                    (click)="vehicleAdd()">
-                        <mat-icon>add</mat-icon>
-                    </button>
-
                 </mat-card-content>
             </div>
             </div>
+
+            <button mat-mini-fab 
+            color="accent"
+            style="position: absolute; top: 14px; right: 12px;"
+            (click)="vehicleAdd()">
+                <mat-icon>add</mat-icon>
+            </button>
         </mat-card-header>
     
     </mat-card>
