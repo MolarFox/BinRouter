@@ -3,11 +3,12 @@
 
 <div class=editmenu>
     <mat-card class=editmenu_card>
+
         <mat-card-header>
             <mat-card-title>Fleet Manager</mat-card-title>
             <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
+
             <mat-list class=vehiclelist>
                 <div *ngIf="all_fleet.length === 0">
                     <button 
@@ -20,7 +21,8 @@
                 matRipple [matRippleColor]="primary" 
                 [disabled]="vehicle[1].selected"
                 *ngFor="let vehicle of all_fleet"
-                (click)="vehicleClick(vehicle)">
+                (click)="vehicleClick(vehicle)"
+                style="overflow-y: auto;">
                     <mat-icon>{{veh_icons[vehicle[0].icon]}}</mat-icon>
                     <div style="padding-left: 4px;">
                         <div mat-line><span class=regotxt>{{vehicle[0].rego}}</span></div>
@@ -28,7 +30,7 @@
                     </div>
                 </mat-list-item>
             </mat-list>
-        </mat-card-content>
+
     </mat-card>
 </div>
 

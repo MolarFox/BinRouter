@@ -11,9 +11,8 @@ mat-list-item {
 }
 
 .vehiclelist {
-    height: 100%;
-    overflow: scroll;
-    overflow-y: scroll;
+    max-height: calc(100vh - 132px);
+    overflow-y: auto;
     overflow-x: hidden;
     margin-top: 0%;
     top: 0;
@@ -29,8 +28,9 @@ mat-list-item {
 }
 
 .editmenu_card {
-    height: inherit;
-    width: inherit;
+    position: relative;
+    height: 100%;
+    width: 400px;
 }
 
 .infobar {
