@@ -31,3 +31,14 @@ mat-progress-bar {
     position: relative;
     background-color: lightgrey;
 }
+
+.submitbutton {
+    position: absolute;
+    right: 60px;
+}
+
+.newbutton {
+    position: absolute;
+    right: 60px;
+    bottom: 50px;
+}

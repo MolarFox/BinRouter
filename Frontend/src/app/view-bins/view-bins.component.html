@@ -22,10 +22,26 @@
 
 <div class=editmenu>
     <mat-card>
+
+        <button mat-mini-fab 
+        color="primary"
+        class="submitbutton"
+        (click)="submitChanges()">
+            <mat-icon>done_all</mat-icon>
+        </button>
+
+        <button mat-mini-fab 
+            color="accent"
+            class="newbutton"
+            (click)="binAdd()">
+                <mat-icon>add</mat-icon>
+        </button>
+
         <mat-card-header>
             <mat-card-title>Bin Manager</mat-card-title>
             <mat-card-subtitle>
-                {{all_bins.length}} bin(s) - {{add_bins.length}} new, {{del_bins.length}} deleted
+                {{all_bins.length}} bin(s) - {{add_bins.length}} new, {{del_bins.length}} deleted<br>
+
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -107,11 +123,20 @@
                     [checked]="picker_active"
                     [colour]="primary">
                         Pick New Location
-                    </mat-checkbox>                    
+                    </mat-checkbox>  
+                    
+                    <button mat-raised-button 
+                    color="warn"
+                    class="newbutton"
+                    style="right: 120px;"
+                    (click)="binDelete(selbin)">
+                        Delete
+                    </button>
+                    
                 </div>
 
             </div>
-            <div *ngIf="!(selbin)">
+            <div *ngIf="!(selbin)" style="position: relative; left: 16px;">
                 Pick a bin to begin editing
             </div>
         </mat-card-content>

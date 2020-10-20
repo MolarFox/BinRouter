@@ -131,7 +131,7 @@ export class ViewFleetComponent implements OnInit {
   }
 
   // Submits changes to the backend server, or notifies user of issues
-  submitChanges(): void {
+  openDialogue(): void {
     const dialogRef = this.dialog.open(ViewFleetPopup);
     let popupresult = undefined;
     dialogRef.afterClosed().subscribe(
@@ -143,7 +143,33 @@ export class ViewFleetComponent implements OnInit {
 
   // Validates all changes made thus far - true if all pass
   validateChanges(): boolean {
-    return true
+    return true // TODO
+  }
+
+  // Attempts to submit changes, flashes error message if server reports any fails
+  submitChanges(): void {
+    this.findChanges();
+    
+  }
+
+  // Only calculated just before user submission of all edits
+  findChanges(): void {
+    let keys = [
+      "_id",
+      "rego",
+      "capacity",
+      "available",
+      "icon",
+      "homeDepot"
+    ]
+
+    // Check which records vary, to add to mod array
+    for (let i=0; i < this.all_fleet.length; i++){
+      keys.forEach(key => {
+        if (this.all_fleet[i][0][key] !== this.orig_fleet[i][0][key])
+          this.mod_vehicles.push(this.all_fleet[i][0])
+      });
+    }
   }
 
   // Reloads the page

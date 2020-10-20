@@ -11,6 +11,7 @@ import { NavRoute, NavRouteResponse } from '../route';
 })
 export class ViewRoutesComponent implements OnInit {
 
+  private directionsService: google.maps.DirectionsService;
   private directionsRenderer: google.maps.DirectionsRenderer;
   private map: google.maps.Map = null;
 
@@ -42,7 +43,6 @@ export class ViewRoutesComponent implements OnInit {
     this.routefetcher.getAllRoutes()
       .subscribe(routes_in => {
         this.all_routes = routes_in;
-        console.log(this.all_routes)
         if (this.map !== null) this.setupRenderer();
       });
   }
@@ -60,10 +60,32 @@ export class ViewRoutesComponent implements OnInit {
   setupRenderer(): void {
     console.log(this.all_routes)
     this.directionsRenderer = new google.maps.DirectionsRenderer();
+    this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer.setMap(this.map);
+
+    /*
+    // This will generate a new request and log acceptable response
+    this.directionsService.route(
+      {
+        origin: new google.maps.LatLng(37.7699298, -122.4469157),
+        destination: new google.maps.LatLng(37.7683909618184, -122.51089453697205),
+        travelMode: google.maps.TravelMode["DRIVING"]
+      }, (resp, status) => {
+      if (status == 'OK'){
+        console.log("asdf")
+        console.log(resp)
+        this.directionsRenderer.setDirections(resp);
+      }
+    }
+    )
+    */
+    
+    // This will use the first route of first vehicle read in from backend
     this.directionsRenderer.setDirections(
       this.all_routes.binCollectionSchedules[0].routes[0].directions[0]
     );
+    console.log(google.maps.geometry.encoding.decodePath(
+      this.all_routes.binCollectionSchedules[0].routes[0].directions[0].routes[0].overview_polyline));
   }
 
 

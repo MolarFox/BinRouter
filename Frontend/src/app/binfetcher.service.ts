@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Bin, BinResponse, jsonToBins } from './bin';
+import { Bin, BinRaw, BinResponse, jsonToBins, binsToJson } from './bin';
 import { DUMMY_BINS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
@@ -50,6 +50,17 @@ export class BinfetcherService {
     }
   }
 
+  // Submits any changes to the server and responds with the response
+  submitChanges(newchg, modchg, delchg): Observable<any> {
+    let output = {
+      "dumbBinsDelete": delchg,
+      "dumbBinsCreate": binsToJson(newchg),
+      "dumbBinsUpdate": binsToJson(modchg)
+    }
+    output.dumbBinsCreate.forEach(x => delete x._id);   // id undefined - irrelevant to backend
+
+    return this.http.put<any>(this.binsUrl, output)
+  }
 
   /*
   getBin(serial: number): Observable<Bin> {

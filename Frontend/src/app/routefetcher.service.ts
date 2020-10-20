@@ -29,7 +29,53 @@ export class RoutefetcherService {
       }      
       return this.http.get<NavRouteResponse>(this.routesUrl)
       .pipe(
+        map(convertRawRoot),
         catchError(handleError<NavRouteResponse>('getAllRoutes'))
       )
   }
+}
+
+// Performs transformations to make our route useable
+function convertRawRoot(nav: NavRouteResponse): NavRouteResponse {
+  
+  // New request field to be added
+  let newreqfield = {
+    "origin": {
+      "location": {}
+    },
+    "destination": {
+      "location": {}
+    },
+    "travelMode": "DRIVING"
+  }
+  
+  // Rectify all bounds + add request field
+  nav.binCollectionSchedules.forEach(x => 
+    x.routes.forEach(y => 
+      y.directions.forEach(z => {
+
+        // @ts-ignore
+        z.request = newreqfield;  // Add request field
+
+        z.routes.forEach(a => {
+
+          // Convert overview polyline into a string
+          // @ts-ignore
+          a.overview_polyline = a.overview_polyline.points
+
+          // Add converted latlngbounds
+          a.bounds = new google.maps.LatLngBounds(
+            // @ts-ignore
+            a.bounds.southwest,
+            // @ts-ignore
+            a.bounds.Northeast
+          )
+
+        })  
+
+      })  
+    )  
+  )
+
+  return nav
 }

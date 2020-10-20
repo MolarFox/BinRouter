@@ -23,6 +23,14 @@ export interface BinRaw {
     isSmart:            boolean
 }
 
+export interface BinOut {
+    _id:        string,
+    latitude:   number,
+    longitude:  number,
+    address:    string,
+    capacity:   number
+}
+
 export interface BinResponse {
     bins:   BinRaw[]
 }
@@ -42,6 +50,23 @@ export function jsonToBins(res: BinRaw[]): Bin[] {
                 "is_smart":     record.isSmart,
                 "threshold":    record.threshold,
                 "fullness":     record.currentFullness
+            }
+        )
+    }
+    return outarray
+}
+
+export function binsToJson(bins: Bin[]): BinOut[] {
+    let outarray: BinOut[] = [];
+    for (let i=0; i < bins.length; i++){
+        let record = bins[i];
+        outarray.push(
+            {
+                "_id":          record.serial,
+                "latitude":     record.lat,
+                "longitude":    record.lng,
+                "address":      record.address,
+                "capacity":     record.capacity
             }
         )
     }
