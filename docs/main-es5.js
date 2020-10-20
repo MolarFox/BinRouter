@@ -603,8 +603,8 @@
           var record = bins[i];
           outarray.push({
             "_id": record.serial,
-            "latitude": record.lat,
-            "longitude": record.lng,
+            "latitude": Number(record.lat),
+            "longitude": Number(record.lng),
             "address": record.address,
             "capacity": record.capacity
           });
@@ -953,6 +953,21 @@
 
               return this.http.get("".concat(this.fleetUrl, "/").concat(rego)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])("getVehicle rego=".concat(rego)))); //return of(this.fleetcache.find(chk_vehicle => chk_vehicle.rego === rego));
             }
+          } // Submits any changes to the server and responds with the response
+
+        }, {
+          key: "submitChanges",
+          value: function submitChanges(newchg, modchg, delchg) {
+            var output = {
+              "fleetVehiclesDelete": delchg,
+              "fleetVehiclesCreate": newchg,
+              "fleetVehiclesUpdate": modchg
+            };
+            output.fleetVehiclesCreate.forEach(function (x) {
+              return delete x._id;
+            }); // id undefined - irrelevant to backend
+
+            return this.http.put(this.fleetUrl, output);
           }
         }]);
 
@@ -5125,8 +5140,6 @@
             for (var i = 0; i < this.orig_bins.length; i++) {
               _loop(i);
             }
-
-            console.log(this.mod_bins);
           }
         }]);
 
@@ -5832,6 +5845,9 @@
           key: "submitChanges",
           value: function submitChanges() {
             this.findChanges();
+            this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(function (x) {
+              return console.log(x);
+            });
           } // Only calculated just before user submission of all edits
 
         }, {
@@ -6257,15 +6273,83 @@
       /*! agm-direction */
       "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
 
-      function ViewRoutesComponent_agm_direction_2_Template(rf, ctx) {
+      function ViewRoutesComponent_div_2_div_1_div_1_agm_direction_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "agm-direction", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "agm-direction", 6);
+        }
+
+        if (rf & 2) {
+          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          var routeset_r4 = ctx_r7.$implicit;
+          var i_r5 = ctx_r7.index;
+
+          var veh_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r4[routeset_r4.length - 1].location)("destination", veh_r2.arr[i_r5 + 1][0].location);
+        }
+      }
+
+      function ViewRoutesComponent_div_2_div_1_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "agm-direction", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_div_1_div_1_agm_direction_2_Template, 1, 2, "agm-direction", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var routeset_r4 = ctx.$implicit;
+          var i_r5 = ctx.index;
+
+          var veh_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r4[0].location)("destination", routeset_r4[routeset_r4.length - 1].location)("waypoints", routeset_r4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", veh_r2.arr[i_r5 + 1]);
+        }
+      }
+
+      function ViewRoutesComponent_div_2_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 3, 4, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var veh_r2 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", veh_r2.arr);
+        }
+      }
+
+      function ViewRoutesComponent_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_Template, 2, 1, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", ctx_r0.origin)("destination", ctx_r0.destination)("waypoints", ctx_r0.waypoints[0].waypoints);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.render_waypoints);
         }
       }
 
@@ -6276,7 +6360,8 @@
           this.routefetcher = routefetcher;
           this.map = null;
           this.waypoints = [];
-          this.render_waypoints = {};
+          this.chunks = [];
+          this.render_waypoints = [];
           this.start_lat = -37.8142588;
           this.start_lng = 144.9666622;
           this.start_zoom = 14;
@@ -6305,16 +6390,33 @@
               });
 
               _this9.waypoints.forEach(function (w) {
+                // Get target array
+                var index = _this9.render_waypoints.find(function (x) {
+                  return x.veh === w.vehicle;
+                });
+
+                if (!index) {
+                  index = 0;
+
+                  _this9.render_waypoints.push({
+                    "veh": w.vehicle,
+                    "arr": []
+                  });
+                }
+
                 while (w.waypoints.length > 1) {
-                  if (!_this9.render_waypoints[w.vehicle]) _this9.render_waypoints[w.vehicle] = [];
+                  var newchunk = w.waypoints.splice(0, 14);
 
-                  _this9.render_waypoints[w.vehicle].push(w.waypoints.splice(0, 14));
+                  _this9.chunks.push(newchunk);
 
-                  if (w.waypoints.length > 0) _this9.render_waypoints[w.vehicle][_this9.render_waypoints[w.vehicle].length - 1].push(w.waypoints[0]);
+                  _this9.render_waypoints[index].arr.push(newchunk); //if (w.waypoints.length>0) this.render_waypoints[index].arr
+                  //  .push(w.waypoints[0])
+
                 }
               });
 
               console.log(_this9.render_waypoints);
+              console.log(_this9.chunks);
               if (_this9.map !== null) _this9.setupRenderer();
             });
           } // Handles clicks on the map
@@ -6379,7 +6481,7 @@
         selectors: [["app-view-routes"]],
         decls: 3,
         vars: 4,
-        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [3, "origin", "destination", "waypoints", 4, "ngIf"], [3, "origin", "destination", "waypoints"]],
+        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints"], [3, "origin", "destination", 4, "ngIf"], [3, "origin", "destination"]],
         template: function ViewRoutesComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
@@ -6392,7 +6494,7 @@
               return ctx.onMapLoad($event);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_agm_direction_2_Template, 1, 3, "agm-direction", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_Template, 2, 1, "div", 2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -6407,7 +6509,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0);
           }
         },
-        directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], agm_direction__WEBPACK_IMPORTED_MODULE_5__["AgmDirection"]],
+        directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], agm_direction__WEBPACK_IMPORTED_MODULE_5__["AgmDirection"]],
         styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"]
       });
       /*@__PURE__*/

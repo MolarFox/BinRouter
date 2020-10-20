@@ -63,8 +63,8 @@ export function binsToJson(bins: Bin[]): BinOut[] {
         outarray.push(
             {
                 "_id":          record.serial,
-                "latitude":     record.lat,
-                "longitude":    record.lng,
+                "latitude":     Number(record.lat),
+                "longitude":    Number(record.lng),
                 "address":      record.address,
                 "capacity":     record.capacity
             }

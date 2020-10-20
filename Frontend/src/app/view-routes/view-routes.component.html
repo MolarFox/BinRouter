@@ -7,10 +7,23 @@
     (mapClick)="mapClicked($event)"
     (mapReady)="onMapLoad($event)">
 
-    <agm-direction *ngIf="waypoints.length>0"
-    [origin]="origin" 
-    [destination]="destination"
-    [waypoints]="waypoints[0].waypoints">
-    </agm-direction>
+    <div *ngIf="waypoints.length>0">
+        <div *ngFor="let veh of render_waypoints">
+            <div *ngFor="let routeset of veh.arr; let i=index">
+                <agm-direction
+                [origin]="routeset[0].location"
+                [destination]="routeset[routeset.length-1].location"
+                [waypoints]="routeset">
 
+                </agm-direction>
+
+                <agm-direction
+                *ngIf="veh.arr[i+1]"
+                [origin]="routeset[routeset.length-1].location"
+                [destination]="veh.arr[i+1][0].location">
+                </agm-direction>
+            </div>
+
+        </div>
+    </div>
 </agm-map>

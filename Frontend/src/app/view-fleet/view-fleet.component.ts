@@ -149,6 +149,13 @@ export class ViewFleetComponent implements OnInit {
   // Attempts to submit changes, flashes error message if server reports any fails
   submitChanges(): void {
     this.findChanges();
+    this.fleetfetcher.submitChanges(
+      this.add_vehicles,
+      this.mod_vehicles,
+      this.del_vehicles
+    ).subscribe(
+      x => console.log(x)
+    )
     
   }
 

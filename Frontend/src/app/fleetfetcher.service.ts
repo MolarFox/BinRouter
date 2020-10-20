@@ -97,4 +97,16 @@ export class FleetfetcherService {
 
     }
   }
+
+  // Submits any changes to the server and responds with the response
+  submitChanges(newchg, modchg, delchg): Observable<any> {
+    let output = {
+      "fleetVehiclesDelete": delchg,
+      "fleetVehiclesCreate": newchg,
+      "fleetVehiclesUpdate": modchg
+    }
+    output.fleetVehiclesCreate.forEach(x => delete x._id);   // id undefined - irrelevant to backend
+
+    return this.http.put<any>(this.fleetUrl, output)
+  }
 }

@@ -16,8 +16,9 @@ export class ViewRoutesComponent implements OnInit {
   private map: google.maps.Map = null;
 
   waypoints: NavRouteWaypointed[] = [];
+  chunks = []
 
-  render_waypoints = {};
+  render_waypoints = [];
 
   start_lat = -37.8142588;
   start_lng = 144.9666622;
@@ -50,18 +51,26 @@ export class ViewRoutesComponent implements OnInit {
         );
 
         this.waypoints.forEach(w => {
+          // Get target array
+          let index = this.render_waypoints.find(x => x.veh === w.vehicle)
+          if (!index){
+            index = 0
+            this.render_waypoints.push({"veh": w.vehicle, "arr": []})
+          }
+
           while (w.waypoints.length > 1){
-            if (!this.render_waypoints[w.vehicle]) this.render_waypoints[w.vehicle] = [];
-            this.render_waypoints[w.vehicle].push(
-              w.waypoints.splice(0, 14)
+            let newchunk=w.waypoints.splice(0, 14)
+            this.chunks.push(newchunk)
+            this.render_waypoints[index].arr.push(
+              newchunk
             )
-            if (w.waypoints.length>0) this.render_waypoints[w.vehicle][
-              this.render_waypoints[w.vehicle].length-1
-            ].push(w.waypoints[0])
+            //if (w.waypoints.length>0) this.render_waypoints[index].arr
+            //  .push(w.waypoints[0])
           }
         })
         
         console.log(this.render_waypoints)
+        console.log(this.chunks)
         if (this.map !== null) this.setupRenderer();
       });
   }
