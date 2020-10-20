@@ -11,6 +11,9 @@ import { NavRoute, NavRouteResponse } from '../route';
 })
 export class ViewRoutesComponent implements OnInit {
 
+  private directionsRenderer: google.maps.DirectionsRenderer;
+  private map: google.maps.Map = null;
+
   start_lat = -37.8142588;
   start_lng = 144.9666622;
   start_zoom = 14;
@@ -37,12 +40,30 @@ export class ViewRoutesComponent implements OnInit {
 
   ngOnInit(): void {
     this.routefetcher.getAllRoutes()
-      .subscribe(routes_in => this.all_routes = routes_in);
+      .subscribe(routes_in => {
+        this.all_routes = routes_in;
+        console.log(this.all_routes)
+        if (this.map !== null) this.setupRenderer();
+      });
   }
 
    // Handles clicks on the map
    mapClicked(e: {coords: {lat: number, lng: number}}){
     console.log(this.all_routes);
+  }
+
+  onMapLoad(mapInstance: google.maps.Map) {
+    this.map = mapInstance;
+    if (this.all_routes) this.setupRenderer();
+  }
+
+  setupRenderer(): void {
+    console.log(this.all_routes)
+    this.directionsRenderer = new google.maps.DirectionsRenderer();
+    this.directionsRenderer.setMap(this.map);
+    this.directionsRenderer.setDirections(
+      this.all_routes.binCollectionSchedules[0].routes[0].directions[0]
+    );
   }
 
 

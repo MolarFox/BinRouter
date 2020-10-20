@@ -1,8 +1,10 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <agm-map 
     [latitude]="start_lat" 
     [longitude]="start_lng" 
     [zoom]="start_zoom"
-    (mapClick)="mapClicked($event)">
+    (mapClick)="mapClicked($event)"
+    (mapReady)="onMapLoad($event)">
 
 </agm-map>

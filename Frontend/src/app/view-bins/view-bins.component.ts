@@ -54,7 +54,7 @@ export class ViewBinsComponent implements OnInit {
 
   // handles drag completions of marker
   draggedMarker(e: any): void {
-    console.log(e);
+    
   }
 
   // Handles clicks to a marker

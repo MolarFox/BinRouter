@@ -4104,7 +4104,7 @@ class RoutefetcherService {
         if (this.routecache === undefined) { // not yet fetched, fetch it
         }
         return this.http.get(this.routesUrl)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(x => x[0]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
     }
 }
 RoutefetcherService.ɵfac = function RoutefetcherService_Factory(t) { return new (t || RoutefetcherService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"])); };
@@ -4327,7 +4327,6 @@ class ViewBinsComponent {
     }
     // handles drag completions of marker
     draggedMarker(e) {
-        console.log(e);
     }
     // Handles clicks to a marker
     clickedMarker(index) {
@@ -4440,6 +4439,8 @@ function ViewFleetComponent_mat_card_subtitle_10_Template(rf, ctx) { if (rf & 1)
 function ViewFleetComponent_mat_card_subtitle_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card-subtitle");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No vehicles currently loaded ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "(or all deleted) ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function ViewFleetComponent_div_13_Template(rf, ctx) { if (rf & 1) {
@@ -4447,7 +4448,7 @@ function ViewFleetComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_13_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.reloadPage(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " No vehicles loaded - refresh? ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Click to Refresh ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
@@ -4696,7 +4697,7 @@ ViewFleetComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Fleet Manager");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, ViewFleetComponent_mat_card_subtitle_10_Template, 2, 3, "mat-card-subtitle", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewFleetComponent_mat_card_subtitle_11_Template, 2, 0, "mat-card-subtitle", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewFleetComponent_mat_card_subtitle_11_Template, 4, 0, "mat-card-subtitle", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-list", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, ViewFleetComponent_div_13_Template, 3, 0, "div", 4);
@@ -4861,6 +4862,7 @@ __webpack_require__.r(__webpack_exports__);
 class ViewRoutesComponent {
     constructor(routefetcher) {
         this.routefetcher = routefetcher;
+        this.map = null;
         this.start_lat = -37.8142588;
         this.start_lng = 144.9666622;
         this.start_zoom = 14;
@@ -4877,18 +4879,34 @@ class ViewRoutesComponent {
     }
     ngOnInit() {
         this.routefetcher.getAllRoutes()
-            .subscribe(routes_in => this.all_routes = routes_in);
+            .subscribe(routes_in => {
+            this.all_routes = routes_in;
+            console.log(this.all_routes);
+            if (this.map !== null)
+                this.setupRenderer();
+        });
     }
     // Handles clicks on the map
     mapClicked(e) {
         console.log(this.all_routes);
     }
+    onMapLoad(mapInstance) {
+        this.map = mapInstance;
+        if (this.all_routes)
+            this.setupRenderer();
+    }
+    setupRenderer() {
+        console.log(this.all_routes);
+        this.directionsRenderer = new google.maps.DirectionsRenderer();
+        this.directionsRenderer.setMap(this.map);
+        this.directionsRenderer.setDirections(this.all_routes.binCollectionSchedules[0].routes[0].directions[0]);
+    }
 }
 ViewRoutesComponent.ɵfac = function ViewRoutesComponent_Factory(t) { return new (t || ViewRoutesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_routefetcher_service__WEBPACK_IMPORTED_MODULE_1__["RoutefetcherService"])); };
-ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 2, vars: 3, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
+ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 2, vars: 3, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "agm-map", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); })("mapReady", function ViewRoutesComponent_Template_agm_map_mapReady_1_listener($event) { return ctx.onMapLoad($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);

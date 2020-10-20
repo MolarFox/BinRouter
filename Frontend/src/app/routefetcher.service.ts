@@ -27,9 +27,8 @@ export class RoutefetcherService {
       if (this.routecache === undefined){  // not yet fetched, fetch it
 
       }      
-      return this.http.get<NavRouteResponse[]>(this.routesUrl)
+      return this.http.get<NavRouteResponse>(this.routesUrl)
       .pipe(
-        map(x => x[0]),
         catchError(handleError<NavRouteResponse>('getAllRoutes'))
       )
   }

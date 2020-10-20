@@ -19,7 +19,7 @@
             </mat-card-subtitle>
 
             <mat-card-subtitle *ngIf="all_fleet.length<1">
-                No vehicles currently loaded
+                No vehicles currently loaded <br>(or all deleted)
             </mat-card-subtitle>
         
         </mat-card-header>
@@ -29,7 +29,7 @@
                     <button 
                     mat-stroked-button color="warn"
                     (click)="reloadPage()">
-                        No vehicles loaded - refresh?
+                        Click to Refresh
                     </button>
                 </div>
                 <mat-list-item 

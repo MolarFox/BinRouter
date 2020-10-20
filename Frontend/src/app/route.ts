@@ -1,11 +1,12 @@
 import { DepotRaw } from './depot';
 
 // Struct for routes
-export interface NavRoute { // Renamed to avoid conflict
+export interface NavRoute {
         geocoded_waypoints: {
             geocoder_status: string,
             place_id: string,
-            types: string[]
+            types: string[],
+            partial_match: boolean
         }[],
         routes: {
             bounds: any,
@@ -20,9 +21,21 @@ export interface NavRoute { // Renamed to avoid conflict
 }
 
 export interface NavRouteResponse {
+    binCollectionSchedules: {
+        routes: {
+            directions: google.maps.DirectionsResult[],
+            vehicle: string
+        }[],
+        timestamp: Date
+    }[],
+    depots: DepotRaw[]
+}
+
+/*
+export interface NavRouteResponse {
     routes: {
-        directions: NavRoute[]
+        directions: google.maps.DirectionsResult[]
         vehicle:    string
     }[],
     timestamp:  Date
-}
+}*/

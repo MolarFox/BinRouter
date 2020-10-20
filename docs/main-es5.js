@@ -4379,9 +4379,7 @@
             if (this.routecache === undefined) {// not yet fetched, fetch it
             }
 
-            return this.http.get(this.routesUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (x) {
-              return x[0];
-            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
+            return this.http.get(this.routesUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
           }
         }]);
 
@@ -4885,9 +4883,7 @@
 
         }, {
           key: "draggedMarker",
-          value: function draggedMarker(e) {
-            console.log(e);
-          } // Handles clicks to a marker
+          value: function draggedMarker(e) {} // Handles clicks to a marker
 
         }, {
           key: "clickedMarker",
@@ -5150,6 +5146,10 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No vehicles currently loaded ");
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "(or all deleted) ");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
@@ -5170,7 +5170,7 @@
             return ctx_r6.reloadPage();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " No vehicles loaded - refresh? ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Click to Refresh ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5615,7 +5615,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, ViewFleetComponent_mat_card_subtitle_10_Template, 2, 3, "mat-card-subtitle", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewFleetComponent_mat_card_subtitle_11_Template, 2, 0, "mat-card-subtitle", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewFleetComponent_mat_card_subtitle_11_Template, 4, 0, "mat-card-subtitle", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5953,6 +5953,7 @@
           _classCallCheck(this, ViewRoutesComponent);
 
           this.routefetcher = routefetcher;
+          this.map = null;
           this.start_lat = -37.8142588;
           this.start_lng = 144.9666622;
           this.start_zoom = 14;
@@ -5974,7 +5975,9 @@
             var _this7 = this;
 
             this.routefetcher.getAllRoutes().subscribe(function (routes_in) {
-              return _this7.all_routes = routes_in;
+              _this7.all_routes = routes_in;
+              console.log(_this7.all_routes);
+              if (_this7.map !== null) _this7.setupRenderer();
             });
           } // Handles clicks on the map
 
@@ -5982,6 +5985,20 @@
           key: "mapClicked",
           value: function mapClicked(e) {
             console.log(this.all_routes);
+          }
+        }, {
+          key: "onMapLoad",
+          value: function onMapLoad(mapInstance) {
+            this.map = mapInstance;
+            if (this.all_routes) this.setupRenderer();
+          }
+        }, {
+          key: "setupRenderer",
+          value: function setupRenderer() {
+            console.log(this.all_routes);
+            this.directionsRenderer = new google.maps.DirectionsRenderer();
+            this.directionsRenderer.setMap(this.map);
+            this.directionsRenderer.setDirections(this.all_routes.binCollectionSchedules[0].routes[0].directions[0]);
           }
         }]);
 
@@ -5997,7 +6014,7 @@
         selectors: [["app-view-routes"]],
         decls: 2,
         vars: 3,
-        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick"]],
+        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"]],
         template: function ViewRoutesComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
@@ -6006,6 +6023,8 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) {
               return ctx.mapClicked($event);
+            })("mapReady", function ViewRoutesComponent_Template_agm_map_mapReady_1_listener($event) {
+              return ctx.onMapLoad($event);
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
