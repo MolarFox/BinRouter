@@ -17,6 +17,8 @@ export class ViewRoutesComponent implements OnInit {
 
   waypoints: NavRouteWaypointed[] = [];
 
+  render_waypoints = {};
+
   start_lat = -37.8142588;
   start_lng = 144.9666622;
   start_zoom = 14;
@@ -46,7 +48,20 @@ export class ViewRoutesComponent implements OnInit {
             this.waypoints.push(navToWaypoint(p))
           )
         );
-        console.log(this.waypoints)
+
+        this.waypoints.forEach(w => {
+          while (w.waypoints.length > 1){
+            if (!this.render_waypoints[w.vehicle]) this.render_waypoints[w.vehicle] = [];
+            this.render_waypoints[w.vehicle].push(
+              w.waypoints.splice(0, 14)
+            )
+            if (w.waypoints.length>0) this.render_waypoints[w.vehicle][
+              this.render_waypoints[w.vehicle].length-1
+            ].push(w.waypoints[0])
+          }
+        })
+        
+        console.log(this.render_waypoints)
         if (this.map !== null) this.setupRenderer();
       });
   }
