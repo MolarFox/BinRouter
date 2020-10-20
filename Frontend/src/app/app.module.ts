@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
 import { AgmMarkerClustererModule } from '@agm/markerclusterer'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -62,6 +63,7 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatSelectModule,
     MatSlideToggleModule,
     MatDialogModule,
+    AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY,
       libraries: ['visualization']

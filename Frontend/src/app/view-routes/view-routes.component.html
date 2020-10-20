@@ -1,6 +1,4 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyBkb7M2-KAlddjBYQrmDrh8G6QKmptfEDc"></script>
-
 
 <agm-map 
     [latitude]="start_lat" 
@@ -8,5 +6,11 @@
     [zoom]="start_zoom"
     (mapClick)="mapClicked($event)"
     (mapReady)="onMapLoad($event)">
+
+    <agm-direction *ngIf="waypoints.length>0"
+    [origin]="origin" 
+    [destination]="destination"
+    [waypoints]="waypoints[0].waypoints">
+    </agm-direction>
 
 </agm-map>

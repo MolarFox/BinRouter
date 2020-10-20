@@ -2,7 +2,7 @@ import { GoogleMapsAPIWrapper } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { RoutefetcherService } from '../routefetcher.service'
 import { GoogleMap } from '@angular/google-maps';
-import { NavRoute, NavRouteResponse } from '../route';
+import { NavRoute, NavRouteResponse, NavRouteWaypointed, navToWaypoint } from '../route';
 
 @Component({
   selector: 'app-view-routes',
@@ -14,6 +14,8 @@ export class ViewRoutesComponent implements OnInit {
   private directionsService: google.maps.DirectionsService;
   private directionsRenderer: google.maps.DirectionsRenderer;
   private map: google.maps.Map = null;
+
+  waypoints: NavRouteWaypointed[] = [];
 
   start_lat = -37.8142588;
   start_lng = 144.9666622;
@@ -31,10 +33,6 @@ export class ViewRoutesComponent implements OnInit {
     lng: 145.1292176
   };
 
-  waypoints: google.maps.DirectionsWaypoint[] = [
-    
-  ]
-
   displayDirections = true;
 
   constructor(private routefetcher: RoutefetcherService) { }
@@ -43,6 +41,12 @@ export class ViewRoutesComponent implements OnInit {
     this.routefetcher.getAllRoutes()
       .subscribe(routes_in => {
         this.all_routes = routes_in;
+        routes_in.binCollectionSchedules.forEach(r => 
+          r.routes.forEach(p =>
+            this.waypoints.push(navToWaypoint(p))
+          )
+        );
+        console.log(this.waypoints)
         if (this.map !== null) this.setupRenderer();
       });
   }
@@ -50,6 +54,7 @@ export class ViewRoutesComponent implements OnInit {
    // Handles clicks on the map
    mapClicked(e: {coords: {lat: number, lng: number}}){
     console.log(this.all_routes);
+    console.log(this.waypoints);
   }
 
   onMapLoad(mapInstance: google.maps.Map) {
@@ -58,11 +63,13 @@ export class ViewRoutesComponent implements OnInit {
   }
 
   setupRenderer(): void {
+
+    /*
     console.log(this.all_routes)
     this.directionsRenderer = new google.maps.DirectionsRenderer();
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer.setMap(this.map);
-
+    */
     /*
     // This will generate a new request and log acceptable response
     this.directionsService.route(
@@ -79,13 +86,12 @@ export class ViewRoutesComponent implements OnInit {
     }
     )
     */
-    
+    /*
     // This will use the first route of first vehicle read in from backend
     this.directionsRenderer.setDirections(
       this.all_routes.binCollectionSchedules[0].routes[0].directions[0]
     );
-    console.log(google.maps.geometry.encoding.decodePath(
-      this.all_routes.binCollectionSchedules[0].routes[0].directions[0].routes[0].overview_polyline));
+    */
   }
 
 

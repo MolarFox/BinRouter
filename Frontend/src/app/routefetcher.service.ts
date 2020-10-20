@@ -14,7 +14,7 @@ export class RoutefetcherService {
 
   // Use appropriate url based on environment variable
   private routesUrl = (environment.serviceFetcherModes == 0) ? 'data/routes' : 
-    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes2.json';
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes4.json';
 
   // Rudimentary cache
   private routecache: NavRoute[] = undefined; // TODO: implement caching functionality
@@ -29,12 +29,12 @@ export class RoutefetcherService {
       }      
       return this.http.get<NavRouteResponse>(this.routesUrl)
       .pipe(
-        map(convertRawRoot),
         catchError(handleError<NavRouteResponse>('getAllRoutes'))
       )
   }
 }
 
+/*
 // Performs transformations to make our route useable
 function convertRawRoot(nav: NavRouteResponse): NavRouteResponse {
   
@@ -79,3 +79,4 @@ function convertRawRoot(nav: NavRouteResponse): NavRouteResponse {
 
   return nav
 }
+*/

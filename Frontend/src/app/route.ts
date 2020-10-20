@@ -1,5 +1,46 @@
+import { Output } from '@angular/core';
 import { DepotRaw } from './depot';
 
+export interface NavRoute {
+    vehicle: string,
+    visitingOrder: {
+        longitude:  number,
+        latitude:   number
+    }[]
+}
+
+export interface NavRouteResponse {
+    depots: DepotRaw[],
+    binCollectionSchedules: {
+        routes: NavRoute[],
+        timestamp:  Date
+    }[]
+}
+
+export interface NavRouteWaypointed {
+    vehicle: string,
+    waypoints: google.maps.DirectionsWaypoint[]
+}
+
+export function navToWaypoint(nav: NavRoute): NavRouteWaypointed {
+    let waypointed: google.maps.DirectionsWaypoint[] = []
+    nav.visitingOrder.forEach(x =>
+        waypointed.push(
+            {
+                location: new google.maps.LatLng(
+                    {lat: x.latitude, lng:x.longitude}
+                ),
+                stopover: true
+            }
+        )    
+    )
+    return {
+        vehicle: nav.vehicle,
+        waypoints: waypointed
+    }
+}
+
+/*
 // Struct for routes
 export interface NavRoute {
         geocoded_waypoints: {
@@ -30,7 +71,7 @@ export interface NavRouteResponse {
     }[],
     depots: DepotRaw[]
 }
-
+*/
 /*
 export interface NavRouteResponse {
     routes: {
