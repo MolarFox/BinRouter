@@ -68,16 +68,26 @@
                     style="padding-left: 20px;">
                         <mat-label>capacity</mat-label>
                         <input matInput 
-                        [min]=1
-                        [max]=999999999
+                        type="number"
+                        min="0"
+                        max="999999999"
+                        step="5"
                         [(ngModel)]="selveh[0].capacity">
                     </mat-form-field>
                     
                     <mat-slide-toggle 
                     [(ngModel)]="selveh[0].available"
+                    color="primary"
                     style="padding-left: 20px; bottom: 4px;">
                         available
                     </mat-slide-toggle>
+
+                    <button mat-raised-button 
+                    color="warn"
+                    (click)="vehicleDelete(selveh)"
+                    style="bottom: 6px; left: 20px">
+                        Delete
+                    </button>
 
                 </mat-card-content>
             </div>

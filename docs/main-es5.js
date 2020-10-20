@@ -5175,7 +5175,7 @@
 
       function ViewFleetComponent_div_17_mat_option_14_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 24);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -5285,6 +5285,20 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "button", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_17_Template_button_click_21_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
+
+            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r15.vehicleDelete(ctx_r15.selveh);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, " Delete ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -5313,7 +5327,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("min", 1)("max", 999999999)("ngModel", ctx_r3.selveh[0].capacity);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r3.selveh[0].capacity);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -5329,6 +5343,12 @@
 
           this.veh_icons = ["delete", "airport_shuttle", "local_shipping", "agriculture", "electric_car", "two_wheeler", "electric_bike", "pedal_bike", "directions_boat", "airplanemode_active", "rv_hookup", "biotech"];
           this.all_fleet = []; // Array of all vehicles
+
+          this.del_vehicles = []; // Array of vehicles staged for deletion
+
+          this.mod_vehicles = []; // Array of vehicles to modify with new values
+
+          this.add_vehicles = []; // Array of vehicles to create
           // Editor vars
 
           this.subtitle = "Scroll through the list to select a vehicle";
@@ -5365,6 +5385,22 @@
 
             this.selveh = veh;
             this.selveh[1].selected = true;
+          } // triggered whenever user clicks 'delete' on a given vehicle
+
+        }, {
+          key: "vehicleDelete",
+          value: function vehicleDelete(veh) {
+            var _this5 = this;
+
+            // Add vehicle to the deletion array
+            this.del_vehicles.push(this.selveh[0].id); // Remove vehicle from the array
+
+            var remindex = this.all_fleet.findIndex(function (v) {
+              return v[0].id === _this5.selveh[0].id;
+            });
+            this.all_fleet.splice(remindex, 1); // Unset selected vehicle
+
+            this.selveh = undefined;
           } // Reloads the page
 
         }, {
@@ -5386,7 +5422,7 @@
         selectors: [["app-view-fleet"]],
         decls: 18,
         vars: 5,
-        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [1, "editmenu"], [1, "editmenu_card"], [1, "vehiclelist"], [4, "ngIf"], ["matRipple", "", 3, "matRippleColor", "disabled", "click", 4, "ngFor", "ngForOf"], [1, "infobar"], [1, "infobar_card"], ["mat-stroked-button", "", "color", "warn", 3, "click"], ["matRipple", "", 3, "matRippleColor", "disabled", "click"], [2, "padding-left", "4px"], ["mat-line", ""], [1, "regotxt"], [2, "top", "4px", "position", "relative"], [1, "infobar1"], [2, "overflow", "hidden"], [1, "infobar2"], ["appearance", "fill"], [3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [2, "padding-left", "20px"], ["matInput", "", 3, "min", "max", "ngModel", "ngModelChange"], [2, "padding-left", "20px", "bottom", "4px", 3, "ngModel", "ngModelChange"], [3, "value"]],
+        consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [1, "editmenu"], [1, "editmenu_card"], [1, "vehiclelist"], [4, "ngIf"], ["matRipple", "", 3, "matRippleColor", "disabled", "click", 4, "ngFor", "ngForOf"], [1, "infobar"], [1, "infobar_card"], ["mat-stroked-button", "", "color", "warn", 3, "click"], ["matRipple", "", 3, "matRippleColor", "disabled", "click"], [2, "padding-left", "4px"], ["mat-line", ""], [1, "regotxt"], [2, "top", "4px", "position", "relative"], [1, "infobar1"], [2, "overflow", "hidden"], [1, "infobar2"], ["appearance", "fill"], [3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [2, "padding-left", "20px"], ["matInput", "", "type", "number", "min", "0", "max", "999999999", "step", "5", 3, "ngModel", "ngModelChange"], ["color", "primary", 2, "padding-left", "20px", "bottom", "4px", 3, "ngModel", "ngModelChange"], ["mat-raised-button", "", "color", "warn", 2, "bottom", "6px", "left", "20px", 3, "click"], [3, "value"]],
         template: function ViewFleetComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
@@ -5437,7 +5473,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, ViewFleetComponent_mat_card_title_16_Template, 4, 0, "mat-card-title", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, ViewFleetComponent_div_17_Template, 21, 8, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, ViewFleetComponent_div_17_Template, 23, 6, "div", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5468,8 +5504,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.selveh);
           }
         },
-        directives: [_view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_2__["ViewRoutesComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardContent"], _angular_material_list__WEBPACK_IMPORTED_MODULE_4__["MatList"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButton"], _angular_material_list__WEBPACK_IMPORTED_MODULE_4__["MatListItem"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatRipple"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIcon"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatLine"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_10__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NgModel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_12__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["DefaultValueAccessor"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_13__["MatSlideToggle"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatOption"]],
-        styles: ["@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');\r\n\r\napp-view-routes[_ngcontent-%COMP%] {\r\n    height: calc(100vh - 65px);\r\n    width: calc(100vw - 401px);\r\n    float: left;\r\n}\r\n\r\nmat-list-item[_ngcontent-%COMP%] {\r\n    float: left;\r\n}\r\n\r\n.vehiclelist[_ngcontent-%COMP%] {\r\n    height: 100%;\r\n    overflow: scroll;\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-top: 0%;\r\n    top: 0;\r\n}\r\n\r\n.editmenu[_ngcontent-%COMP%] {\r\n    height: calc(100vh - 50px);\r\n    width: 400px;\r\n    right: 0px;\r\n    bottom: 0px;\r\n    position: fixed;\r\n    background-color: lightgrey;\r\n}\r\n\r\n.editmenu_card[_ngcontent-%COMP%] {\r\n    height: inherit;\r\n    width: inherit;\r\n}\r\n\r\n.infobar[_ngcontent-%COMP%] {\r\n    height: 65px;\r\n    width: calc(100vw - 401px);\r\n    position: fixed;\r\n    bottom: 0px;\r\n    overflow: hidden;\r\n}\r\n\r\n.infobar_card[_ngcontent-%COMP%] {\r\n    height: 65px;\r\n    min-width: 820px;\r\n}\r\n\r\n.infobar1[_ngcontent-%COMP%] {\r\n    float: left; \r\n    width: 220px;\r\n}\r\n\r\n.infobar2[_ngcontent-%COMP%] {\r\n    position: relative; \r\n    float: left;\r\n    bottom: 8px;\r\n    overflow-x: scroll;\r\n}\r\n\r\n.regotxt[_ngcontent-%COMP%] {\r\n    font-family: 'DM Mono';\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1mbGVldC92aWV3LWZsZWV0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEscUZBQXFGOztBQUVyRjtJQUNJLDBCQUEwQjtJQUMxQiwwQkFBMEI7SUFDMUIsV0FBVztBQUNmOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsa0JBQWtCO0lBQ2xCLGNBQWM7SUFDZCxNQUFNO0FBQ1Y7O0FBRUE7SUFDSSwwQkFBMEI7SUFDMUIsWUFBWTtJQUNaLFVBQVU7SUFDVixXQUFXO0lBQ1gsZUFBZTtJQUNmLDJCQUEyQjtBQUMvQjs7QUFFQTtJQUNJLGVBQWU7SUFDZixjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLDBCQUEwQjtJQUMxQixlQUFlO0lBQ2YsV0FBVztJQUNYLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsV0FBVztJQUNYLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLHNCQUFzQjtBQUMxQiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctZmxlZXQvdmlldy1mbGVldC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9RE0rTW9ubzp3Z2h0QDUwMCZkaXNwbGF5PXN3YXAnKTtcclxuXHJcbmFwcC12aWV3LXJvdXRlcyB7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA2NXB4KTtcclxuICAgIHdpZHRoOiBjYWxjKDEwMHZ3IC0gNDAxcHgpO1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbm1hdC1saXN0LWl0ZW0ge1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi52ZWhpY2xlbGlzdCB7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBvdmVyZmxvdzogc2Nyb2xsO1xyXG4gICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG4gICAgbWFyZ2luLXRvcDogMCU7XHJcbiAgICB0b3A6IDA7XHJcbn1cclxuXHJcbi5lZGl0bWVudSB7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA1MHB4KTtcclxuICAgIHdpZHRoOiA0MDBweDtcclxuICAgIHJpZ2h0OiAwcHg7XHJcbiAgICBib3R0b206IDBweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z3JleTtcclxufVxyXG5cclxuLmVkaXRtZW51X2NhcmQge1xyXG4gICAgaGVpZ2h0OiBpbmhlcml0O1xyXG4gICAgd2lkdGg6IGluaGVyaXQ7XHJcbn1cclxuXHJcbi5pbmZvYmFyIHtcclxuICAgIGhlaWdodDogNjVweDtcclxuICAgIHdpZHRoOiBjYWxjKDEwMHZ3IC0gNDAxcHgpO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYm90dG9tOiAwcHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4uaW5mb2Jhcl9jYXJkIHtcclxuICAgIGhlaWdodDogNjVweDtcclxuICAgIG1pbi13aWR0aDogODIwcHg7XHJcbn1cclxuXHJcbi5pbmZvYmFyMSB7XHJcbiAgICBmbG9hdDogbGVmdDsgXHJcbiAgICB3aWR0aDogMjIwcHg7XHJcbn1cclxuXHJcbi5pbmZvYmFyMiB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7IFxyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICBib3R0b206IDhweDtcclxuICAgIG92ZXJmbG93LXg6IHNjcm9sbDtcclxufVxyXG5cclxuLnJlZ290eHQge1xyXG4gICAgZm9udC1mYW1pbHk6ICdETSBNb25vJztcclxufVxyXG5cclxuIl19 */"]
+        directives: [_view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_2__["ViewRoutesComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardContent"], _angular_material_list__WEBPACK_IMPORTED_MODULE_4__["MatList"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButton"], _angular_material_list__WEBPACK_IMPORTED_MODULE_4__["MatListItem"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatRipple"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIcon"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatLine"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_10__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NgModel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_12__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NumberValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["DefaultValueAccessor"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_13__["MatSlideToggle"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatOption"]],
+        styles: ["@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');\r\n\r\napp-view-routes[_ngcontent-%COMP%] {\r\n    height: calc(100vh - 65px);\r\n    width: calc(100vw - 401px);\r\n    float: left;\r\n}\r\n\r\nmat-list-item[_ngcontent-%COMP%] {\r\n    float: left;\r\n}\r\n\r\n.vehiclelist[_ngcontent-%COMP%] {\r\n    height: 100%;\r\n    overflow: scroll;\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    margin-top: 0%;\r\n    top: 0;\r\n}\r\n\r\n.editmenu[_ngcontent-%COMP%] {\r\n    height: calc(100vh - 50px);\r\n    width: 400px;\r\n    right: 0px;\r\n    bottom: 0px;\r\n    position: fixed;\r\n    background-color: lightgrey;\r\n}\r\n\r\n.editmenu_card[_ngcontent-%COMP%] {\r\n    height: inherit;\r\n    width: inherit;\r\n}\r\n\r\n.infobar[_ngcontent-%COMP%] {\r\n    height: 65px;\r\n    width: calc(100vw - 401px);\r\n    position: fixed;\r\n    bottom: 0px;\r\n    overflow: hidden;\r\n}\r\n\r\n.infobar_card[_ngcontent-%COMP%] {\r\n    height: 65px;\r\n    min-width: 900px;\r\n}\r\n\r\n.infobar1[_ngcontent-%COMP%] {\r\n    float: left; \r\n    width: 220px;\r\n}\r\n\r\n.infobar2[_ngcontent-%COMP%] {\r\n    position: relative; \r\n    float: left;\r\n    bottom: 8px;\r\n}\r\n\r\n.regotxt[_ngcontent-%COMP%] {\r\n    font-family: 'DM Mono';\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1mbGVldC92aWV3LWZsZWV0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEscUZBQXFGOztBQUVyRjtJQUNJLDBCQUEwQjtJQUMxQiwwQkFBMEI7SUFDMUIsV0FBVztBQUNmOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsa0JBQWtCO0lBQ2xCLGNBQWM7SUFDZCxNQUFNO0FBQ1Y7O0FBRUE7SUFDSSwwQkFBMEI7SUFDMUIsWUFBWTtJQUNaLFVBQVU7SUFDVixXQUFXO0lBQ1gsZUFBZTtJQUNmLDJCQUEyQjtBQUMvQjs7QUFFQTtJQUNJLGVBQWU7SUFDZixjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLDBCQUEwQjtJQUMxQixlQUFlO0lBQ2YsV0FBVztJQUNYLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsV0FBVztBQUNmOztBQUVBO0lBQ0ksc0JBQXNCO0FBQzFCIiwiZmlsZSI6InNyYy9hcHAvdmlldy1mbGVldC92aWV3LWZsZWV0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1ETStNb25vOndnaHRANTAwJmRpc3BsYXk9c3dhcCcpO1xyXG5cclxuYXBwLXZpZXctcm91dGVzIHtcclxuICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDY1cHgpO1xyXG4gICAgd2lkdGg6IGNhbGMoMTAwdncgLSA0MDFweCk7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxubWF0LWxpc3QtaXRlbSB7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLnZlaGljbGVsaXN0IHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIG92ZXJmbG93OiBzY3JvbGw7XHJcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbiAgICBtYXJnaW4tdG9wOiAwJTtcclxuICAgIHRvcDogMDtcclxufVxyXG5cclxuLmVkaXRtZW51IHtcclxuICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDUwcHgpO1xyXG4gICAgd2lkdGg6IDQwMHB4O1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIGJvdHRvbTogMHB4O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmV5O1xyXG59XHJcblxyXG4uZWRpdG1lbnVfY2FyZCB7XHJcbiAgICBoZWlnaHQ6IGluaGVyaXQ7XHJcbiAgICB3aWR0aDogaW5oZXJpdDtcclxufVxyXG5cclxuLmluZm9iYXIge1xyXG4gICAgaGVpZ2h0OiA2NXB4O1xyXG4gICAgd2lkdGg6IGNhbGMoMTAwdncgLSA0MDFweCk7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBib3R0b206IDBweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbn1cclxuXHJcbi5pbmZvYmFyX2NhcmQge1xyXG4gICAgaGVpZ2h0OiA2NXB4O1xyXG4gICAgbWluLXdpZHRoOiA5MDBweDtcclxufVxyXG5cclxuLmluZm9iYXIxIHtcclxuICAgIGZsb2F0OiBsZWZ0OyBcclxuICAgIHdpZHRoOiAyMjBweDtcclxufVxyXG5cclxuLmluZm9iYXIyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsgXHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIGJvdHRvbTogOHB4O1xyXG59XHJcblxyXG4ucmVnb3R4dCB7XHJcbiAgICBmb250LWZhbWlseTogJ0RNIE1vbm8nO1xyXG59XHJcblxyXG4iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -5549,10 +5585,10 @@
         _createClass(ViewHeatmapComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this5 = this;
+            var _this6 = this;
 
             this.binfetcher.getAllBins().subscribe(function (bins_in) {
-              return _this5.process_markers(bins_in);
+              return _this6.process_markers(bins_in);
             });
           }
         }, {
@@ -5565,11 +5601,11 @@
         }, {
           key: "process_markers",
           value: function process_markers(bins) {
-            var _this6 = this;
+            var _this7 = this;
 
             this.all_bins = bins;
             bins.forEach(function (bin) {
-              return _this6.datapoints.push({
+              return _this7.datapoints.push({
                 location: new google.maps.LatLng(bin.lat, bin.lng),
                 weight: 30
               });
@@ -5707,10 +5743,10 @@
         _createClass(ViewRoutesComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this7 = this;
+            var _this8 = this;
 
             this.routefetcher.getAllRoutes().subscribe(function (routes_in) {
-              return _this7.all_routes = routes_in;
+              return _this8.all_routes = routes_in;
             });
           }
         }]);

@@ -43,7 +43,7 @@ mat-list-item {
 
 .infobar_card {
     height: 65px;
-    min-width: 820px;
+    min-width: 900px;
 }
 
 .infobar1 {
@@ -55,7 +55,6 @@ mat-list-item {
     position: relative; 
     float: left;
     bottom: 8px;
-    overflow-x: scroll;
 }
 
 .regotxt {

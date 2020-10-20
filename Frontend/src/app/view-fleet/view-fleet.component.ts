@@ -30,6 +30,10 @@ export class ViewFleetComponent implements OnInit {
   all_fleet:  [Vehicle, VehicleExtra][] = []; // Array of all vehicles
   selveh:     [Vehicle, VehicleExtra]; // currently selected vehicle
 
+  del_vehicles: string[] = [];  // Array of vehicles staged for deletion
+  mod_vehicles: Vehicle[] = []; // Array of vehicles to modify with new values
+  add_vehicles: Vehicle[] = []; // Array of vehicles to create
+
   // Editor vars
   subtitle = "Scroll through the list to select a vehicle";
 
@@ -67,6 +71,19 @@ export class ViewFleetComponent implements OnInit {
     this.selveh = veh
     this.selveh[1].selected = true;
     
+  }
+
+  // triggered whenever user clicks 'delete' on a given vehicle
+  vehicleDelete(veh: [Vehicle, VehicleExtra]): void {
+    // Add vehicle to the deletion array
+    this.del_vehicles.push(this.selveh[0].id);
+
+    // Remove vehicle from the array
+    let remindex = this.all_fleet.findIndex(v => v[0].id === this.selveh[0].id);
+    this.all_fleet.splice(remindex, 1);
+
+    // Unset selected vehicle
+    this.selveh = undefined;
   }
 
   // Reloads the page
