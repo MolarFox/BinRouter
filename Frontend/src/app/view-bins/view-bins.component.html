@@ -24,7 +24,9 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title>Bin Manager</mat-card-title>
-            <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+            <mat-card-subtitle>
+                {{all_bins.length}} bin(s) - {{add_bins.length}} new, {{del_bins.length}} deleted
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <div *ngIf="selbin">
@@ -104,7 +106,7 @@
                     [(ngModel)]="picker_active" 
                     [checked]="picker_active"
                     [colour]="primary">
-                        Pick Location
+                        Pick New Location
                     </mat-checkbox>                    
                 </div>
 

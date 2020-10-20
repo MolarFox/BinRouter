@@ -14,8 +14,13 @@ export class ViewBinsComponent implements OnInit {
   start_lng = 144.9666622;
   start_zoom = 14;
 
-  all_bins: [Bin, BinExtra][] = [];
+  all_bins: [Bin, BinExtra][] = [];   // Array of all bins
+  orig_bins: [Bin, BinExtra][] = [];  // Unmodified array of all bins
   selbin: [Bin, BinExtra];
+
+  del_bins: string[] = [];  // Array of dumb bins staged for deletion
+  mod_bins: Bin[] = [];     // Array of dumb bins to modify with new values
+  add_bins: Bin[] = [];     // Array of dumb bins to create
 
   // Editor vars
   subtitle = "Pick a bin to begin editing"
@@ -38,8 +43,13 @@ export class ViewBinsComponent implements OnInit {
   }
 
   // Handles clicks on the map
-  mapClicked(event: Event){
-
+  mapClicked(e: {coords: {lat: number, lng: number}}){
+    // Update selected bin location if picker enabled
+    if (this.picker_active){
+      this.picker_active = false;
+      this.selbin[0].lat = e.coords.lat;
+      this.selbin[0].lng = e.coords.lng;
+    }
   }
 
   // handles drag completions of marker
