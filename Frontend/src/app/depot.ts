@@ -3,11 +3,11 @@ export interface Depot {
     id:         string,
     lat:        number,
     lng:        number,
-    address:    string
+    address:    string,
 }
 
 export interface DepotRaw {
-    id:         string,
+    _id:         string,
     longitude:  number,
     latitude:   number,
     address:    string
@@ -23,7 +23,7 @@ export function jsonToDepots(res: DepotRaw[]): Depot[] {
         let record = res[i];
         outarray.push(
             {
-                "id": record.id,
+                "id": record._id,
                 "lat": record.latitude,
                 "lng": record.longitude,
                 "address": record.address

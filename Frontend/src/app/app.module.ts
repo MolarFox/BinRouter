@@ -17,6 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AgmCoreModule } from '@agm/core';
 import { AgmMarkerClustererModule } from '@agm/markerclusterer'
 import { AgmDirectionModule } from 'agm-direction';
@@ -57,6 +59,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatSidenavModule,
     MatListModule,
     MatRippleModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: GMAPS_API_KEY,

@@ -7,7 +7,7 @@ export interface Vehicle {
     capacity:   number,
     available:  boolean,
     icon:       number,
-    homeDepot:  number
+    homeDepot:  string
 }
 
 export interface VehicleDepotResponse {

@@ -15,7 +15,7 @@ export class FleetfetcherService {
 
   // Use appropriate url based on environment variable
   private fleetUrl = (environment.serviceFetcherModes == 0) ? 'data/vehicles' : 
-    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/vehicles.json';
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/vehicles1.json';
 
   // Rudimentary caches
   private depotcache: Depot[]   = undefined; // TODO: implement caching functionality

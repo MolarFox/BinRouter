@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');
+
 app-view-routes {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 65px);
     width: calc(100vw - 401px);
     float: left;
 }
@@ -32,12 +34,31 @@ mat-list-item {
 }
 
 .infobar {
-    height: 80px;
+    height: 65px;
     width: calc(100vw - 401px);
     position: fixed;
     bottom: 0px;
+    overflow: hidden;
 }
 
 .infobar_card {
-    height: 80px;
+    height: 65px;
+    min-width: 820px;
 }
+
+.infobar1 {
+    float: left; 
+    width: 220px;
+}
+
+.infobar2 {
+    position: relative; 
+    float: left;
+    bottom: 8px;
+    overflow-x: scroll;
+}
+
+.regotxt {
+    font-family: 'DM Mono';
+}
+

@@ -23,7 +23,7 @@
                 (click)="vehicleClick(vehicle)">
                     <mat-icon>{{veh_icons[vehicle[0].icon]}}</mat-icon>
                     <div style="padding-left: 4px;">
-                        <div mat-line><b>{{vehicle[0].rego}}</b></div>
+                        <div mat-line><span class=regotxt>{{vehicle[0].rego}}</span></div>
                         <div mat-line>Cap: {{vehicle[0].capacity}} </div>
                     </div>
                 </mat-list-item>
@@ -35,16 +35,54 @@
 <div class=infobar>
     <mat-card class=infobar_card>
         <mat-card-header>
-            <mat-card-title *ngIf="!selveh">No vehicle selected</mat-card-title>
-            <mat-card-title *ngIf="selveh">
+            
+            <mat-card-title *ngIf="!selveh">
                 <mat-icon style="top: 4px; position: relative;">
-                    {{veh_icons[selveh[0].icon]}}
+                    view_carousel
                 </mat-icon>
-                Vehicle {{selveh[0].rego}}
+                No vehicle selected
             </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
 
-        </mat-card-content>
+            <div *ngIf="selveh">
+            <div class=infobar1>
+                <mat-card-title style="overflow: hidden;">
+                    <mat-icon style="top: 4px; position: relative;">
+                        {{veh_icons[selveh[0].icon]}}
+                    </mat-icon>
+                    Vehicle <span class=regotxt>{{selveh[0].rego}}</span>
+                </mat-card-title>
+            </div>
+            <div class=infobar2>
+                <mat-card-content>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>home depot</mat-label>
+                        <mat-select [(ngModel)]="selveh[0].homeDepot">
+                          <mat-option *ngFor="let depot of all_depots" [value]="depot.id">
+                            {{depot.address}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field
+                    style="padding-left: 20px;">
+                        <mat-label>capacity</mat-label>
+                        <input matInput 
+                        [min]=1
+                        [max]=999999999
+                        [(ngModel)]="selveh[0].capacity">
+                    </mat-form-field>
+                    
+                    <mat-slide-toggle 
+                    [(ngModel)]="selveh[0].available"
+                    style="padding-left: 20px; bottom: 4px;">
+                        available
+                    </mat-slide-toggle>
+
+                </mat-card-content>
+            </div>
+            </div>
+        </mat-card-header>
+    
     </mat-card>
 </div>

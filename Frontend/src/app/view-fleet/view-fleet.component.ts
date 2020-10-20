@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FleetfetcherService } from '../fleetfetcher.service';
 import { Vehicle } from '../vehicle';
+import { Depot } from '../depot';
 
 @Component({
   selector: 'app-view-fleet',
@@ -25,8 +26,9 @@ export class ViewFleetComponent implements OnInit {
     "biotech"
   ]
 
-  all_fleet: [Vehicle, VehicleExtra][] = []; // Array of all vehicles
-  selveh: [Vehicle, VehicleExtra]; // currently selected vehicle
+  all_depots: Depot[];    // Array of all depots
+  all_fleet:  [Vehicle, VehicleExtra][] = []; // Array of all vehicles
+  selveh:     [Vehicle, VehicleExtra]; // currently selected vehicle
 
   // Editor vars
   subtitle = "Scroll through the list to select a vehicle";
@@ -49,6 +51,9 @@ export class ViewFleetComponent implements OnInit {
           )
         )  
       );
+
+    this.fleetfetcher.getAllDepots()
+      .subscribe(depots_in => this.all_depots = depots_in)
   }
 
   // Triggered whenever user clicks on a vehicle in list view
@@ -68,7 +73,6 @@ export class ViewFleetComponent implements OnInit {
   reloadPage(): void {
     location.reload();
   }
-
 }
 
 interface VehicleExtra {
