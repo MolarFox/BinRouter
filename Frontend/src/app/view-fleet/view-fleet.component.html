@@ -41,6 +41,12 @@
                     view_carousel
                 </mat-icon>
                 No vehicle selected
+                <button mat-mini-fab 
+                    color="accent"
+                    style="bottom: 3px; left: 30px;"
+                    (click)="vehicleAdd()">
+                        <mat-icon>add</mat-icon>
+                </button>
             </mat-card-title>
 
             <div *ngIf="selveh">
@@ -84,9 +90,16 @@
 
                     <button mat-raised-button 
                     color="warn"
-                    (click)="vehicleDelete(selveh)"
-                    style="bottom: 6px; left: 20px">
+                    style="bottom: 6px; left: 20px"
+                    (click)="vehicleDelete(selveh)">
                         Delete
+                    </button>
+
+                    <button mat-mini-fab 
+                    color="accent"
+                    style="bottom: 6px; left: 30px;"
+                    (click)="vehicleAdd()">
+                        <mat-icon>add</mat-icon>
                     </button>
 
                 </mat-card-content>

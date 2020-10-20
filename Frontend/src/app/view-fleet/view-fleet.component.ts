@@ -28,6 +28,7 @@ export class ViewFleetComponent implements OnInit {
 
   all_depots: Depot[];    // Array of all depots
   all_fleet:  [Vehicle, VehicleExtra][] = []; // Array of all vehicles
+  orig_fleet: [Vehicle, VehicleExtra][] = []; // Unmodified array of all vehicles
   selveh:     [Vehicle, VehicleExtra]; // currently selected vehicle
 
   del_vehicles: string[] = [];  // Array of vehicles staged for deletion
@@ -43,7 +44,7 @@ export class ViewFleetComponent implements OnInit {
     this.fleetfetcher.getAllFleet()
       .subscribe(fleet_in =>
         // add all fetched fleet vehicles to array with a spot for their extra data
-        fleet_in.forEach(v =>
+        fleet_in.forEach(v => {
           this.all_fleet.push(
             [
               v,
@@ -53,7 +54,16 @@ export class ViewFleetComponent implements OnInit {
               }
             ]
           )
-        )  
+          this.orig_fleet.push(   // seperate push for more efficient deep copy
+            [
+              v,
+              {
+                "rego":     v.rego,
+                "selected": false
+              }
+            ]
+          )
+        })
       );
 
     this.fleetfetcher.getAllDepots()
@@ -81,9 +91,33 @@ export class ViewFleetComponent implements OnInit {
     // Remove vehicle from the array
     let remindex = this.all_fleet.findIndex(v => v[0].id === this.selveh[0].id);
     this.all_fleet.splice(remindex, 1);
+    this.orig_fleet.splice(remindex, 1);
 
     // Unset selected vehicle
     this.selveh = undefined;
+  }
+
+  // triggered whenever user clicks 'new' from the editor view
+  vehicleAdd(): void {
+    let newrego = regoGen(6);
+    let newveh: [Vehicle, VehicleExtra] = [
+      {
+        "id":         undefined,
+        "rego":       newrego,
+        "capacity":   2000,
+        "available":  true,
+        "icon":       2,
+        "homeDepot":  undefined
+      },
+      {
+        "rego": newrego,
+        "selected": true
+      }
+    ]
+
+    this.all_fleet.push(newveh);
+    this.add_vehicles.push(newveh[0]);
+    this.vehicleClick(newveh);
   }
 
   // Reloads the page
@@ -95,4 +129,15 @@ export class ViewFleetComponent implements OnInit {
 interface VehicleExtra {
   rego:     string,
   selected: boolean
+}
+
+// Adapted from https://stackoverflow.com/a/1349426
+function regoGen(length: number) {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 }
