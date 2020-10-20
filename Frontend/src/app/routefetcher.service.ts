@@ -14,7 +14,7 @@ export class RoutefetcherService {
 
   // Use appropriate url based on environment variable
   private routesUrl = (environment.serviceFetcherModes == 0) ? 'data/routes' : 
-    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes.json';
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes2.json';
 
   // Rudimentary cache
   private routecache: NavRoute[] = undefined; // TODO: implement caching functionality
@@ -23,20 +23,14 @@ export class RoutefetcherService {
     private http: HttpClient
   ) { }
 
-  getAllRoutes(): Observable<NavRoute[]> {
-    if (environment.serviceFetcherModes === 2){  // fetch from static array
-      return of(DUMMY_ROUTES);
-    }else{  // HTTP fetch
+  getAllRoutes(): Observable<NavRouteResponse> {
       if (this.routecache === undefined){  // not yet fetched, fetch it
 
       }      
-
-      return this.http.get<NavRouteResponse>(this.routesUrl)
+      return this.http.get<NavRouteResponse[]>(this.routesUrl)
       .pipe(
-        map(x => x.binCollectionRoute),
-        catchError(handleError<NavRoute[]>('getAllRoutes', []))
+        map(x => x[0]),
+        catchError(handleError<NavRouteResponse>('getAllRoutes'))
       )
-
-    }
   }
 }

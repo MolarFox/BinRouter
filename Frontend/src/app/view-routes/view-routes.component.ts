@@ -2,7 +2,7 @@ import { GoogleMapsAPIWrapper } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { RoutefetcherService } from '../routefetcher.service'
 import { GoogleMap } from '@angular/google-maps';
-import { NavRoute } from '../route';
+import { NavRoute, NavRouteResponse } from '../route';
 
 @Component({
   selector: 'app-view-routes',
@@ -15,7 +15,7 @@ export class ViewRoutesComponent implements OnInit {
   start_lng = 144.9666622;
   start_zoom = 14;
 
-  all_routes: NavRoute[];
+  all_routes: NavRouteResponse
 
   origin: google.maps.LatLngLiteral = {
     lat: -37.907803,
@@ -32,16 +32,18 @@ export class ViewRoutesComponent implements OnInit {
   ]
 
   displayDirections = true;
-  zoom = 14; 
 
   constructor(private routefetcher: RoutefetcherService) { }
 
   ngOnInit(): void {
     this.routefetcher.getAllRoutes()
-    .subscribe(routes_in => this.all_routes = routes_in);
+      .subscribe(routes_in => this.all_routes = routes_in);
   }
 
-  
+   // Handles clicks on the map
+   mapClicked(e: {coords: {lat: number, lng: number}}){
+    console.log(this.all_routes);
+  }
 
 
 }

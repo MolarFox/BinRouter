@@ -60,6 +60,7 @@ export class ViewBinsComponent implements OnInit {
   // Handles clicks to a marker
   clickedMarker(index: number): void {
     this.selbin = this.all_bins[index];
+    this.picker_active = false;
   }
 }
 

@@ -185,15 +185,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/dialog.js");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
 /* harmony import */ var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @agm/markerclusterer */ "./node_modules/@agm/markerclusterer/__ivy_ngcc__/fesm2015/agm-markerclusterer.js");
-/* harmony import */ var agm_direction__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! agm-direction */ "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./mainmenu/mainmenu.component */ "./src/app/mainmenu/mainmenu.component.ts");
-/* harmony import */ var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./view-routes/view-routes.component */ "./src/app/view-routes/view-routes.component.ts");
-/* harmony import */ var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./view-heatmap/view-heatmap.component */ "./src/app/view-heatmap/view-heatmap.component.ts");
-/* harmony import */ var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./view-bins/view-bins.component */ "./src/app/view-bins/view-bins.component.ts");
-/* harmony import */ var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./view-fleet/view-fleet.component */ "./src/app/view-fleet/view-fleet.component.ts");
-
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./mainmenu/mainmenu.component */ "./src/app/mainmenu/mainmenu.component.ts");
+/* harmony import */ var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./view-routes/view-routes.component */ "./src/app/view-routes/view-routes.component.ts");
+/* harmony import */ var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./view-heatmap/view-heatmap.component */ "./src/app/view-heatmap/view-heatmap.component.ts");
+/* harmony import */ var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./view-bins/view-bins.component */ "./src/app/view-bins/view-bins.component.ts");
+/* harmony import */ var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./view-fleet/view-fleet.component */ "./src/app/view-fleet/view-fleet.component.ts");
 
 
 
@@ -228,13 +226,13 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"]] });
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["Title"]], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_23__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
             _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
@@ -251,23 +249,22 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"],
             _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"],
             _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"],
-            agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"],
             _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
                 apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
                 libraries: ['visualization']
             }),
             _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"],
-        _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__["MainmenuComponent"],
-        _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__["ViewRoutesComponent"],
-        _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__["ViewHeatmapComponent"],
-        _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__["ViewBinsComponent"],
-        _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__["ViewFleetComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"],
+        _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_25__["MainmenuComponent"],
+        _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_26__["ViewRoutesComponent"],
+        _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_27__["ViewHeatmapComponent"],
+        _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_28__["ViewBinsComponent"],
+        _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_29__["ViewFleetComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"],
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_23__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
         _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
@@ -283,25 +280,24 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"],
         _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"],
         _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"],
-        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"],
-        agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]] }); })();
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
                 declarations: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"],
-                    _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__["MainmenuComponent"],
-                    _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__["ViewRoutesComponent"],
-                    _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__["ViewHeatmapComponent"],
-                    _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__["ViewBinsComponent"],
-                    _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__["ViewFleetComponent"]
+                    _app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"],
+                    _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_25__["MainmenuComponent"],
+                    _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_26__["ViewRoutesComponent"],
+                    _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_27__["ViewHeatmapComponent"],
+                    _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_28__["ViewBinsComponent"],
+                    _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_29__["ViewFleetComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                     _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"],
-                    _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"],
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_23__["AppRoutingModule"],
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                     _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
                     _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
@@ -318,7 +314,6 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"],
                     _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"],
                     _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"],
-                    agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"],
                     _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
                         apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
                         libraries: ['visualization']
@@ -326,7 +321,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_22__["AgmMarkerClustererModule"]
                 ],
                 providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["Title"]],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_24__["AppComponent"]]
             }]
     }], null, null); })();
 
@@ -4086,14 +4081,10 @@ const DUMMY_ROUTES = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoutefetcherService", function() { return RoutefetcherService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var _mock_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mock-data */ "./src/app/mock-data.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _httpHelpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./httpHelpers */ "./src/app/httpHelpers.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-
-
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _httpHelpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./httpHelpers */ "./src/app/httpHelpers.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
 
 
@@ -4104,31 +4095,26 @@ class RoutefetcherService {
     constructor(http) {
         this.http = http;
         // Use appropriate url based on environment variable
-        this.routesUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serviceFetcherModes == 0) ? 'data/routes' :
-            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes.json';
+        this.routesUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].serviceFetcherModes == 0) ? 'data/routes' :
+            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes2.json';
         // Rudimentary cache
         this.routecache = undefined; // TODO: implement caching functionality
     }
     getAllRoutes() {
-        if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].serviceFetcherModes === 2) { // fetch from static array
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_mock_data__WEBPACK_IMPORTED_MODULE_2__["DUMMY_ROUTES"]);
+        if (this.routecache === undefined) { // not yet fetched, fetch it
         }
-        else { // HTTP fetch
-            if (this.routecache === undefined) { // not yet fetched, fetch it
-            }
-            return this.http.get(this.routesUrl)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(x => x.binCollectionRoute), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_5__["handleError"])('getAllRoutes', [])));
-        }
+        return this.http.get(this.routesUrl)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(x => x[0]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
     }
 }
-RoutefetcherService.ɵfac = function RoutefetcherService_Factory(t) { return new (t || RoutefetcherService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"])); };
+RoutefetcherService.ɵfac = function RoutefetcherService_Factory(t) { return new (t || RoutefetcherService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"])); };
 RoutefetcherService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: RoutefetcherService, factory: RoutefetcherService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RoutefetcherService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
@@ -4228,7 +4214,7 @@ function ViewBinsComponent_div_12_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("color", ctx_r8.accent)("mode", ctx_r8.determinate)("value", ctx_r8.selbin[0].fullness);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Fullness: ", ctx_r8.selbin.fullness, "%");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Fullness: ", ctx_r8.selbin[0].fullness, "%");
 } }
 function ViewBinsComponent_div_12_div_2_Template(rf, ctx) { if (rf & 1) {
     const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -4303,7 +4289,9 @@ function ViewBinsComponent_div_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r1.selbin[0].is_smart);
 } }
 function ViewBinsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Pick a bin to begin editing ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class ViewBinsComponent {
     constructor(binfetcher) {
@@ -4344,6 +4332,7 @@ class ViewBinsComponent {
     // Handles clicks to a marker
     clickedMarker(index) {
         this.selbin = this.all_bins[index];
+        this.picker_active = false;
     }
 }
 ViewBinsComponent.ɵfac = function ViewBinsComponent_Factory(t) { return new (t || ViewBinsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_binfetcher_service__WEBPACK_IMPORTED_MODULE_1__["BinfetcherService"])); };
@@ -4367,7 +4356,7 @@ ViewBinsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-content");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ViewBinsComponent_div_12_Template, 3, 2, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, ViewBinsComponent_div_13_Template, 1, 0, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, ViewBinsComponent_div_13_Template, 2, 0, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4865,8 +4854,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _routefetcher_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routefetcher.service */ "./src/app/routefetcher.service.ts");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
-/* harmony import */ var agm_direction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! agm-direction */ "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
-
 
 
 
@@ -4887,25 +4874,26 @@ class ViewRoutesComponent {
         };
         this.waypoints = [];
         this.displayDirections = true;
-        this.zoom = 14;
     }
     ngOnInit() {
         this.routefetcher.getAllRoutes()
             .subscribe(routes_in => this.all_routes = routes_in);
     }
+    // Handles clicks on the map
+    mapClicked(e) {
+        console.log(this.all_routes);
+    }
 }
 ViewRoutesComponent.ɵfac = function ViewRoutesComponent_Factory(t) { return new (t || ViewRoutesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_routefetcher_service__WEBPACK_IMPORTED_MODULE_1__["RoutefetcherService"])); };
-ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 3, vars: 6, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom"], [3, "origin", "destination", "waypoints"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
+ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 2, vars: 3, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "agm-map", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "agm-direction", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("latitude", ctx.start_lat)("longitude", ctx.start_lng)("zoom", ctx.start_zoom);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", ctx.origin)("destination", ctx.destination)("waypoints", ctx.waypoints);
-    } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_2__["AgmMap"], agm_direction__WEBPACK_IMPORTED_MODULE_3__["AgmDirection"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });
+    } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_2__["AgmMap"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewRoutesComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{

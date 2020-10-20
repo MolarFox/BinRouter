@@ -2,12 +2,7 @@
 <agm-map 
     [latitude]="start_lat" 
     [longitude]="start_lng" 
-    [zoom]="start_zoom">
-
-    <agm-direction 
-        [origin]="origin" 
-        [destination]="destination" 
-        [waypoints]="waypoints">
-    </agm-direction>
+    [zoom]="start_zoom"
+    (mapClick)="mapClicked($event)">
 
 </agm-map>
