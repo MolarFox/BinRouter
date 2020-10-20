@@ -48,7 +48,9 @@ mat-list-item {
 
 .infobar1 {
     float: left; 
-    width: 220px;
+    width: 250px;
+    position: relative;
+    bottom: 12px;
 }
 
 .infobar2 {
@@ -59,5 +61,24 @@ mat-list-item {
 
 .regotxt {
     font-family: 'DM Mono';
+}
+
+.regotxt_main {
+    font-family: 'DM Mono';
+    font-size: medium;
+    position: relative;
+    left: 8px;
+}
+
+.clicktext {
+    position: relative;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+    cursor: crosshair;
+    scale: 2;
+    right: 20px;
 }
 

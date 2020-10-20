@@ -30,8 +30,7 @@
                 matRipple [matRippleColor]="primary" 
                 [disabled]="vehicle[1].selected"
                 *ngFor="let vehicle of all_fleet"
-                (click)="vehicleClick(vehicle)"
-                style="overflow-y: auto;">
+                (click)="vehicleClick(vehicle)">
                     <mat-icon>{{veh_icons[vehicle[0].icon]}}</mat-icon>
                     <div style="padding-left: 4px;">
                         <div mat-line><span class=regotxt>{{vehicle[0].rego}}</span></div>
@@ -62,11 +61,20 @@
 
             <div *ngIf="selveh">
             <div class=infobar1>
-                <mat-card-title style="overflow: hidden;">
-                    <mat-icon style="top: 4px; position: relative;">
+                <mat-card-title style="overflow: visible;">
+                    <mat-icon 
+                    (click)="selveh[0].icon = (selveh[0].icon+1)%12"
+                    unselectable="on"
+                    onselectstart="return false;"
+                    onselectstart="return false;" 
+                    onmousedown="return false;"
+                    class="clicktext">
                         {{veh_icons[selveh[0].icon]}}
                     </mat-icon>
-                    Vehicle <span class=regotxt>{{selveh[0].rego}}</span>
+                    <mat-form-field appearance="fill" class="regotxt_main">
+                        <mat-label>VIN</mat-label>
+                        <input matInput [(ngModel)]="selveh[0].rego">
+                    </mat-form-field>
                 </mat-card-title>
             </div>
             <div class=infobar2>
