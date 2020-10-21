@@ -4201,7 +4201,7 @@ class RoutefetcherService {
         this.http = http;
         // Use appropriate url based on environment variable
         this.routesUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].serviceFetcherModes == 0) ? 'data/routes' :
-            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes3.json';
+            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes5.json';
         // Rudimentary cache
         this.routecache = undefined; // TODO: implement caching functionality
     }
@@ -5093,7 +5093,7 @@ function ViewRoutesComponent_div_2_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const routeset_r5 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5[0].location)("destination", routeset_r5[routeset_r5.length - 1].location)("waypoints", routeset_r5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5.start)("destination", routeset_r5.end)("waypoints", routeset_r5.waypoints);
 } }
 function ViewRoutesComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -5130,7 +5130,6 @@ class ViewRoutesComponent {
         this.routefetcher = routefetcher;
         this.map = null;
         this.waypoints = [];
-        this.chunks = [];
         this.render_waypoints = [];
         this.start_lat = -37.8142588;
         this.start_lng = 144.9666622;
@@ -5154,19 +5153,42 @@ class ViewRoutesComponent {
                 // Get target array
                 let index = this.render_waypoints.find(x => x.veh === w.vehicle);
                 if (!index) {
-                    index = 0;
                     this.render_waypoints.push({ "veh": w.vehicle, "arr": [] });
+                    index = this.render_waypoints.length - 1;
                 }
                 while (w.waypoints.length > 0) {
-                    let newchunk = w.waypoints.splice(0, 15);
-                    this.chunks.push(newchunk);
+                    let newchunk = w.waypoints.splice(0, 14);
                     this.render_waypoints[index].arr.push(newchunk);
-                    //if (w.waypoints.length>0) this.render_waypoints[index].arr
-                    //  .push(w.waypoints[0])
+                }
+                // Partition into start, end, waypoints
+                for (let p = 0; p < this.render_waypoints[index].arr.length; p++) {
+                    let starttemp;
+                    let endtemp;
+                    let waypointtemp = this.render_waypoints[index].arr[p];
+                    if (waypointtemp.length === 1) {
+                        starttemp = waypointtemp[0];
+                        endtemp = waypointtemp[0];
+                        waypointtemp = [];
+                    }
+                    else {
+                        starttemp = waypointtemp.splice(0, 1);
+                        // Is final leg?
+                        if (p == this.render_waypoints[index].arr.length - 1) {
+                            endtemp = waypointtemp.splice(waypointtemp.length - 1, 1)[0];
+                        }
+                        else {
+                            endtemp = JSON.parse(JSON.stringify(this.render_waypoints[index].arr[p + 1][0]));
+                        }
+                    }
+                    this.render_waypoints[index].arr[p] = {
+                        "start": starttemp.location ? starttemp.location : starttemp[0].location,
+                        "end": (endtemp.location) ? endtemp.location : endtemp[0].location,
+                        "waypoints": waypointtemp
+                    };
                 }
             });
+            console.log(this.all_routes);
             console.log(this.render_waypoints);
-            console.log(this.chunks);
             if (this.map !== null)
                 this.setupRenderer();
         });

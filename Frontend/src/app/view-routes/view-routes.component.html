@@ -11,9 +11,9 @@
         <div *ngFor="let veh of render_waypoints">
             <div *ngFor="let routeset of veh.arr; let i=index">
                 <agm-direction
-                [origin]="routeset[0].location"
-                [destination]="routeset[routeset.length-1].location"
-                [waypoints]="routeset">
+                [origin]="routeset.start"
+                [destination]="routeset.end"
+                [waypoints]="routeset.waypoints">
 
                 </agm-direction>
             </div>

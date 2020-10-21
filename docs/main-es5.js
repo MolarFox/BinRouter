@@ -4509,7 +4509,7 @@
 
           this.http = http; // Use appropriate url based on environment variable
 
-          this.routesUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].serviceFetcherModes == 0 ? 'data/routes' : 'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes3.json'; // Rudimentary cache
+          this.routesUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].serviceFetcherModes == 0 ? 'data/routes' : 'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes5.json'; // Rudimentary cache
 
           this.routecache = undefined; // TODO: implement caching functionality
         }
@@ -6287,7 +6287,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5[0].location)("destination", routeset_r5[routeset_r5.length - 1].location)("waypoints", routeset_r5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5.start)("destination", routeset_r5.end)("waypoints", routeset_r5.waypoints);
         }
       }
 
@@ -6358,7 +6358,6 @@
           this.routefetcher = routefetcher;
           this.map = null;
           this.waypoints = [];
-          this.chunks = [];
           this.render_waypoints = [];
           this.start_lat = -37.8142588;
           this.start_lng = 144.9666622;
@@ -6394,27 +6393,50 @@
                 });
 
                 if (!index) {
-                  index = 0;
-
                   _this9.render_waypoints.push({
                     "veh": w.vehicle,
                     "arr": []
                   });
+
+                  index = _this9.render_waypoints.length - 1;
                 }
 
                 while (w.waypoints.length > 0) {
-                  var newchunk = w.waypoints.splice(0, 15);
+                  var newchunk = w.waypoints.splice(0, 14);
 
-                  _this9.chunks.push(newchunk);
+                  _this9.render_waypoints[index].arr.push(newchunk);
+                } // Partition into start, end, waypoints
 
-                  _this9.render_waypoints[index].arr.push(newchunk); //if (w.waypoints.length>0) this.render_waypoints[index].arr
-                  //  .push(w.waypoints[0])
 
+                for (var p = 0; p < _this9.render_waypoints[index].arr.length; p++) {
+                  var starttemp = void 0;
+                  var endtemp = void 0;
+                  var waypointtemp = _this9.render_waypoints[index].arr[p];
+
+                  if (waypointtemp.length === 1) {
+                    starttemp = waypointtemp[0];
+                    endtemp = waypointtemp[0];
+                    waypointtemp = [];
+                  } else {
+                    starttemp = waypointtemp.splice(0, 1); // Is final leg?
+
+                    if (p == _this9.render_waypoints[index].arr.length - 1) {
+                      endtemp = waypointtemp.splice(waypointtemp.length - 1, 1)[0];
+                    } else {
+                      endtemp = JSON.parse(JSON.stringify(_this9.render_waypoints[index].arr[p + 1][0]));
+                    }
+                  }
+
+                  _this9.render_waypoints[index].arr[p] = {
+                    "start": starttemp.location ? starttemp.location : starttemp[0].location,
+                    "end": endtemp.location ? endtemp.location : endtemp[0].location,
+                    "waypoints": waypointtemp
+                  };
                 }
               });
 
+              console.log(_this9.all_routes);
               console.log(_this9.render_waypoints);
-              console.log(_this9.chunks);
               if (_this9.map !== null) _this9.setupRenderer();
             });
           } // Handles clicks on the map

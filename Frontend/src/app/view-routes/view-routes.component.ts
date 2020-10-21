@@ -16,7 +16,6 @@ export class ViewRoutesComponent implements OnInit {
   private map: google.maps.Map = null;
 
   waypoints: NavRouteWaypointed[] = [];
-  chunks = []
 
   render_waypoints = [];
 
@@ -54,23 +53,49 @@ export class ViewRoutesComponent implements OnInit {
           // Get target array
           let index = this.render_waypoints.find(x => x.veh === w.vehicle)
           if (!index){
-            index = 0
             this.render_waypoints.push({"veh": w.vehicle, "arr": []})
+            index = this.render_waypoints.length-1
           }
 
           while (w.waypoints.length > 0){
-            let newchunk=w.waypoints.splice(0, 15)
-            this.chunks.push(newchunk)
+            let newchunk=w.waypoints.splice(0, 14)
             this.render_waypoints[index].arr.push(
               newchunk
             )
-            //if (w.waypoints.length>0) this.render_waypoints[index].arr
-            //  .push(w.waypoints[0])
+          }
+
+          // Partition into start, end, waypoints
+          for (let p=0; p < this.render_waypoints[index].arr.length; p++){
+            let starttemp;
+            let endtemp;
+            let waypointtemp = this.render_waypoints[index].arr[p];
+            
+            if (waypointtemp.length === 1){
+              starttemp = waypointtemp[0]
+              endtemp = waypointtemp[0]
+              waypointtemp = []
+            }else{
+              starttemp = waypointtemp.splice(0,1);
+
+              // Is final leg?
+              if (p == this.render_waypoints[index].arr.length-1){
+                endtemp = waypointtemp.splice(waypointtemp.length-1, 1)[0]
+              }else{
+                endtemp = JSON.parse(JSON.stringify(this.render_waypoints[index].arr[p+1][0]))
+              }
+            }
+
+            this.render_waypoints[index].arr[p] = {
+              "start":    starttemp.location ? starttemp.location : starttemp[0].location,
+              "end":      (endtemp.location) ? endtemp.location : endtemp[0].location,
+              "waypoints":waypointtemp
+            }
+
           }
         })
         
+        console.log(this.all_routes)
         console.log(this.render_waypoints)
-        console.log(this.chunks)
         if (this.map !== null) this.setupRenderer();
       });
   }
