@@ -4126,15 +4126,25 @@ const DUMMY_ROUTES = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navToWaypoint", function() { return navToWaypoint; });
 function navToWaypoint(nav) {
-    let waypointed = [];
-    nav.visitingOrder.forEach(x => waypointed.push({
-        location: new google.maps.LatLng({ lat: x.latitude, lng: x.longitude }),
-        stopover: true
-    }));
-    return {
-        vehicle: nav.vehicle,
-        waypoints: waypointed
-    };
+    try {
+        let waypointed = [];
+        nav.visitingOrder.forEach(x => waypointed.push({
+            location: new google.maps.LatLng({ lat: x.latitude, lng: x.longitude }),
+            stopover: true
+        }));
+        return {
+            vehicle: nav.vehicle,
+            waypoints: waypointed
+        };
+    }
+    catch (err) {
+        if (err.name == 'ReferenceError') {
+            location.reload();
+        }
+        else {
+            throw err;
+        }
+    }
 }
 /*
 // Struct for routes
@@ -4496,6 +4506,11 @@ class ViewBinsComponent {
     // Attempts to submit changes, flashes error message if server reports any fails
     submitChanges() {
         this.findChanges();
+        // Pop a message and do nothing if nothing to submit
+        if ((this.mod_bins.length == 0) && (this.add_bins.length == 0) && (this.del_bins.length == 0)) {
+            this._snackBar.open("No changes to submit", "", { duration: 2000 });
+            return;
+        }
         this.binfetcher.submitChanges(this.add_bins, this.mod_bins, this.del_bins).subscribe(x => {
             console.log(x);
             if (x.status == 201) {
@@ -4900,6 +4915,11 @@ class ViewFleetComponent {
     // Attempts to submit changes, flashes error message if server reports any fails
     submitChanges() {
         this.findChanges();
+        // Pop a message and do nothing if nothing to submit
+        if ((this.mod_vehicles.length == 0) && (this.add_vehicles.length == 0) && (this.del_vehicles.length == 0)) {
+            this._snackBar.open("No changes to submit", "", { duration: 2000 });
+            return;
+        }
         this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(x => {
             console.log(x);
             if (x.status == 201) {
@@ -5071,9 +5091,19 @@ class ViewHeatmapComponent {
     }
     // Set instance bins variable, convert all to markers and display
     process_markers(bins) {
-        this.all_bins = bins;
-        bins.forEach(bin => this.datapoints.push({ location: new google.maps.LatLng(bin.lat, bin.lng), weight: 30 }));
-        this.renderHeatmap();
+        try {
+            this.all_bins = bins;
+            bins.forEach(bin => this.datapoints.push({ location: new google.maps.LatLng(bin.lat, bin.lng), weight: 30 }));
+            this.renderHeatmap();
+        }
+        catch (err) {
+            if (err.name == 'ReferenceError') {
+                location.reload();
+            }
+            else {
+                throw err;
+            }
+        }
     }
     // Render heatmap (to be called after map loaded)
     renderHeatmap() {

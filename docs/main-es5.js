@@ -4398,20 +4398,28 @@
       });
 
       function navToWaypoint(nav) {
-        var waypointed = [];
-        nav.visitingOrder.forEach(function (x) {
-          return waypointed.push({
-            location: new google.maps.LatLng({
-              lat: x.latitude,
-              lng: x.longitude
-            }),
-            stopover: true
+        try {
+          var waypointed = [];
+          nav.visitingOrder.forEach(function (x) {
+            return waypointed.push({
+              location: new google.maps.LatLng({
+                lat: x.latitude,
+                lng: x.longitude
+              }),
+              stopover: true
+            });
           });
-        });
-        return {
-          vehicle: nav.vehicle,
-          waypoints: waypointed
-        };
+          return {
+            vehicle: nav.vehicle,
+            waypoints: waypointed
+          };
+        } catch (err) {
+          if (err.name == 'ReferenceError') {
+            location.reload();
+          } else {
+            throw err;
+          }
+        }
       }
       /*
       // Struct for routes
@@ -5120,7 +5128,16 @@
           value: function submitChanges() {
             var _this4 = this;
 
-            this.findChanges();
+            this.findChanges(); // Pop a message and do nothing if nothing to submit
+
+            if (this.mod_bins.length == 0 && this.add_bins.length == 0 && this.del_bins.length == 0) {
+              this._snackBar.open("No changes to submit", "", {
+                duration: 2000
+              });
+
+              return;
+            }
+
             this.binfetcher.submitChanges(this.add_bins, this.mod_bins, this.del_bins).subscribe(function (x) {
               console.log(x);
 
@@ -5887,7 +5904,16 @@
           value: function submitChanges() {
             var _this7 = this;
 
-            this.findChanges();
+            this.findChanges(); // Pop a message and do nothing if nothing to submit
+
+            if (this.mod_vehicles.length == 0 && this.add_vehicles.length == 0 && this.del_vehicles.length == 0) {
+              this._snackBar.open("No changes to submit", "", {
+                duration: 2000
+              });
+
+              return;
+            }
+
             this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(function (x) {
               console.log(x);
 
@@ -6213,14 +6239,22 @@
           value: function process_markers(bins) {
             var _this10 = this;
 
-            this.all_bins = bins;
-            bins.forEach(function (bin) {
-              return _this10.datapoints.push({
-                location: new google.maps.LatLng(bin.lat, bin.lng),
-                weight: 30
+            try {
+              this.all_bins = bins;
+              bins.forEach(function (bin) {
+                return _this10.datapoints.push({
+                  location: new google.maps.LatLng(bin.lat, bin.lng),
+                  weight: 30
+                });
               });
-            });
-            this.renderHeatmap();
+              this.renderHeatmap();
+            } catch (err) {
+              if (err.name == 'ReferenceError') {
+                location.reload();
+              } else {
+                throw err;
+              }
+            }
           } // Render heatmap (to be called after map loaded)
 
         }, {
