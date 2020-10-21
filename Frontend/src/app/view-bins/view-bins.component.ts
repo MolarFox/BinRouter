@@ -3,6 +3,7 @@ import { MouseEvent } from '@agm/core';
 import { BinfetcherService } from '../binfetcher.service';
 import { Bin } from '../bin';
 import { HttpResponse } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-view-bins',
@@ -27,7 +28,10 @@ export class ViewBinsComponent implements OnInit {
   subtitle = "Pick a bin to begin editing"
   picker_active: boolean = false;
 
-  constructor(private binfetcher: BinfetcherService) { }
+  constructor(
+    private binfetcher: BinfetcherService,
+    private _snackBar: MatSnackBar
+    ) { }
 
   ngOnInit(): void {
     this.binfetcher.getAllBins()
@@ -118,7 +122,20 @@ export class ViewBinsComponent implements OnInit {
       this.mod_bins,
       this.del_bins
     ).subscribe(
-      x => console.log(x)
+      x => {
+        console.log(x)
+        if (x.status == 201) {
+          this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
+          setTimeout(null, 1800);
+          location.reload();
+        }
+        else if (x.status == 400){
+          this._snackBar.open("Some edits did not pass - changes were not saved", "", {duration: 2000})
+        }
+        else{
+          this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+        }
+      }
     )
 
   }

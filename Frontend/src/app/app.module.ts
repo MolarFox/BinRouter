@@ -18,6 +18,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AgmCoreModule } from '@agm/core';
@@ -57,6 +58,7 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatCardModule,
     MatInputModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     MatSidenavModule,
     MatListModule,
     MatRippleModule,

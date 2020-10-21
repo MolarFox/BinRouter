@@ -3,6 +3,9 @@ import { FleetfetcherService } from '../fleetfetcher.service';
 import { Vehicle } from '../vehicle';
 import { Depot } from '../depot';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SELECT_PANEL_INDENT_PADDING_X } from '@angular/material/select';
+import { timeInterval } from 'rxjs/operators';
 
 @Component({
   selector: 'app-view-fleet',
@@ -38,7 +41,8 @@ export class ViewFleetComponent implements OnInit {
 
   constructor(
     private fleetfetcher: FleetfetcherService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -154,7 +158,20 @@ export class ViewFleetComponent implements OnInit {
       this.mod_vehicles,
       this.del_vehicles
     ).subscribe(
-      x => console.log(x)
+      x => {
+        console.log(x);
+        if (x.status == 201) {
+          this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
+          setTimeout(null, 1800);
+          this.reloadPage()
+        }
+        else if (x.status == 400){
+          this._snackBar.open("Some edits did not pass - changes were not saved", "", {duration: 2000})
+        }
+        else{
+          this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+        }
+      }
     )
     
   }
@@ -178,7 +195,6 @@ export class ViewFleetComponent implements OnInit {
           if (!changed){
             changed = true
             this.mod_vehicles.push(this.all_fleet[i][0])
-            console.log(this.all_fleet[i][0])
           }
       });
     }

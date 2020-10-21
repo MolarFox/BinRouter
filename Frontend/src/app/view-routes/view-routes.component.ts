@@ -49,6 +49,8 @@ export class ViewRoutesComponent implements OnInit {
           )
         );
 
+        console.log(this.all_routes)
+
         this.waypoints.forEach(w => {
           // Get target array
           let index = this.render_waypoints.find(x => x.veh === w.vehicle)
@@ -94,8 +96,6 @@ export class ViewRoutesComponent implements OnInit {
           }
         })
         
-        console.log(this.all_routes)
-        console.log(this.render_waypoints)
         if (this.map !== null) this.setupRenderer();
       });
   }

@@ -433,73 +433,79 @@
       /* harmony import */
 
 
-      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/snack-bar.js");
+      /* harmony import */
+
+
+      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! @angular/material/slide-toggle */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/slide-toggle.js");
       /* harmony import */
 
 
-      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! @angular/material/dialog */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/dialog.js");
       /* harmony import */
 
 
-      var _agm_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _agm_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! @agm/core */
       "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
       /* harmony import */
 
 
-      var agm_direction__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      var agm_direction__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! agm-direction */
       "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
       /* harmony import */
 
 
-      var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! @agm/markerclusterer */
       "./node_modules/@agm/markerclusterer/__ivy_ngcc__/fesm2015/agm-markerclusterer.js");
       /* harmony import */
 
 
-      var _app_routing_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+      var _app_routing_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
       /*! ./app-routing.module */
       "./src/app/app-routing.module.ts");
       /* harmony import */
 
 
-      var _app_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      var _app_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! ./app.component */
       "./src/app/app.component.ts");
       /* harmony import */
 
 
-      var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+      var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! ./mainmenu/mainmenu.component */
       "./src/app/mainmenu/mainmenu.component.ts");
       /* harmony import */
 
 
-      var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+      var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
       /*! ./view-routes/view-routes.component */
       "./src/app/view-routes/view-routes.component.ts");
       /* harmony import */
 
 
-      var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+      var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
       /*! ./view-heatmap/view-heatmap.component */
       "./src/app/view-heatmap/view-heatmap.component.ts");
       /* harmony import */
 
 
-      var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+      var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
       /*! ./view-bins/view-bins.component */
       "./src/app/view-bins/view-bins.component.ts");
       /* harmony import */
 
 
-      var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+      var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
       /*! ./view-fleet/view-fleet.component */
       "./src/app/view-fleet/view-fleet.component.ts");
 
@@ -509,23 +515,23 @@
 
       AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
         type: AppModule,
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_26__["AppComponent"]]
       });
       AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
         factory: function AppModule_Factory(t) {
           return new (t || AppModule)();
         },
         providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["Title"]],
-        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_15__["MatProgressBarModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_16__["MatListModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"], agm_direction__WEBPACK_IMPORTED_MODULE_22__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
+        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_25__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_15__["MatProgressBarModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_16__["MatListModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__["MatSlideToggleModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_22__["AgmCoreModule"].forRoot({
           apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
           libraries: ['visualization']
-        }), _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__["AgmMarkerClustererModule"]]]
+        }), _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_24__["AgmMarkerClustererModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"], _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__["MainmenuComponent"], _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__["ViewRoutesComponent"], _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__["ViewHeatmapComponent"], _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__["ViewBinsComponent"], _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__["ViewFleetComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_15__["MatProgressBarModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_16__["MatListModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"], agm_direction__WEBPACK_IMPORTED_MODULE_22__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__["AgmMarkerClustererModule"]]
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_26__["AppComponent"], _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_27__["MainmenuComponent"], _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_28__["ViewRoutesComponent"], _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_29__["ViewHeatmapComponent"], _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_30__["ViewBinsComponent"], _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_31__["ViewFleetComponent"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_25__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_15__["MatProgressBarModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_16__["MatListModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__["MatSlideToggleModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_22__["AgmCoreModule"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_24__["AgmMarkerClustererModule"]]
         });
       })();
       /*@__PURE__*/
@@ -535,13 +541,13 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
           args: [{
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"], _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_26__["MainmenuComponent"], _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_27__["ViewRoutesComponent"], _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_28__["ViewHeatmapComponent"], _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_29__["ViewBinsComponent"], _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_30__["ViewFleetComponent"]],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_24__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_15__["MatProgressBarModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_16__["MatListModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__["MatSlideToggleModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__["MatDialogModule"], agm_direction__WEBPACK_IMPORTED_MODULE_22__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_26__["AppComponent"], _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_27__["MainmenuComponent"], _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_28__["ViewRoutesComponent"], _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_29__["ViewHeatmapComponent"], _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_30__["ViewBinsComponent"], _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_31__["ViewFleetComponent"]],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientJsonpModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_25__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButtonModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_12__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_15__["MatProgressBarModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_14__["MatSidenavModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_16__["MatListModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_17__["MatRippleModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_18__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__["MatSlideToggleModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"], _agm_core__WEBPACK_IMPORTED_MODULE_22__["AgmCoreModule"].forRoot({
               apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
               libraries: ['visualization']
-            }), _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_23__["AgmMarkerClustererModule"]],
+            }), _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_24__["AgmMarkerClustererModule"]],
             providers: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["Title"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_25__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_26__["AppComponent"]]
           }]
         }], null, null);
       })();
@@ -4588,67 +4594,73 @@
       /* harmony import */
 
 
-      var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/snack-bar.js");
+      /* harmony import */
+
+
+      var _agm_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @agm/core */
       "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
       /* harmony import */
 
 
-      var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @agm/markerclusterer */
       "./node_modules/@agm/markerclusterer/__ivy_ngcc__/fesm2015/agm-markerclusterer.js");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
       "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/material/card */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/button */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/material/icon */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/material/form-field */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/input */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
       /* harmony import */
 
 
-      var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/material/progress-bar */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/progress-bar.js");
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/forms */
       "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
       /* harmony import */
 
 
-      var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/material/checkbox */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/checkbox.js");
 
@@ -4993,10 +5005,11 @@
       }
 
       var ViewBinsComponent = /*#__PURE__*/function () {
-        function ViewBinsComponent(binfetcher) {
+        function ViewBinsComponent(binfetcher, _snackBar) {
           _classCallCheck(this, ViewBinsComponent);
 
           this.binfetcher = binfetcher;
+          this._snackBar = _snackBar;
           this.start_lat = -37.8142588;
           this.start_lng = 144.9666622;
           this.start_zoom = 14;
@@ -5105,32 +5118,51 @@
         }, {
           key: "submitChanges",
           value: function submitChanges() {
+            var _this4 = this;
+
             this.findChanges();
             this.binfetcher.submitChanges(this.add_bins, this.mod_bins, this.del_bins).subscribe(function (x) {
-              return console.log(x);
+              console.log(x);
+
+              if (x.status == 201) {
+                _this4._snackBar.open("Edits were successfully received!", "", {
+                  duration: 2000
+                });
+
+                setTimeout(null, 1800);
+                location.reload();
+              } else if (x.status == 400) {
+                _this4._snackBar.open("Some edits did not pass - changes were not saved", "", {
+                  duration: 2000
+                });
+              } else {
+                _this4._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                  duration: 2000
+                });
+              }
             });
           } // Only calculated just before user submission of all edits
 
         }, {
           key: "findChanges",
           value: function findChanges() {
-            var _this4 = this;
+            var _this5 = this;
 
             var keys = ["serial", "smartSerial", "lat", "lng", "address", "capacity", "is_smart", "threshold", "fullness"]; // Check which records vary, to add to mod array
 
             var _loop = function _loop(_i) {
               var changed = false;
               keys.forEach(function (key) {
-                if (_this4.all_bins[_i][0][key] != _this4.orig_bins[_i][key]) {
+                if (_this5.all_bins[_i][0][key] != _this5.orig_bins[_i][key]) {
                   if (!changed) {
                     changed = true;
 
-                    _this4.mod_bins.push(_this4.all_bins[_i][0]);
+                    _this5.mod_bins.push(_this5.all_bins[_i][0]);
                   }
                 }
               });
 
-              while (_this4.all_bins[_i][0]["is_smart"]) {
+              while (_this5.all_bins[_i][0]["is_smart"]) {
                 _i++;
               }
 
@@ -5147,7 +5179,7 @@
       }();
 
       ViewBinsComponent.ɵfac = function ViewBinsComponent_Factory(t) {
-        return new (t || ViewBinsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_binfetcher_service__WEBPACK_IMPORTED_MODULE_1__["BinfetcherService"]));
+        return new (t || ViewBinsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_binfetcher_service__WEBPACK_IMPORTED_MODULE_1__["BinfetcherService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]));
       };
 
       ViewBinsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -5252,7 +5284,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx.all_bins.length, " bin(s) - ", ctx.add_bins.length, " new, ", ctx.del_bins.length, " deleted");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx.all_bins.length, " bin(s) - ", ctx.add_bins.length, " created, ", ctx.del_bins.length, " deleted");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
@@ -5263,7 +5295,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.selbin);
           }
         },
-        directives: [_agm_core__WEBPACK_IMPORTED_MODULE_2__["AgmMap"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_3__["AgmMarkerCluster"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCard"], _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _agm_core__WEBPACK_IMPORTED_MODULE_2__["AgmMarker"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatTextareaAutosize"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatSuffix"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_10__["MatProgressBar"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NgModel"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__["NumberValueAccessor"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_12__["MatCheckbox"]],
+        directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_4__["AgmMarkerCluster"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMarker"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInput"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatTextareaAutosize"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatSuffix"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_11__["MatProgressBar"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["NgModel"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["NumberValueAccessor"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckbox"]],
         styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100vh - 50px);\n    width: calc(100vw - 401px);\n    float: left;\n}\n\nh2[_ngcontent-%COMP%] {\n    font-weight: lighter;\n}\n\nmat-card[_ngcontent-%COMP%] {\n    height: calc(100vh - 50px);\n    width: 400px;\n    position: fixed;\n}\n\nmat-form-field[_ngcontent-%COMP%], mat-checkbox[_ngcontent-%COMP%] {\n    padding-left: 15px;\n}\n\nmat-progress-bar[_ngcontent-%COMP%] {\n    padding-left: 15px;\n    width: 320px;\n}\n\n.editmenu[_ngcontent-%COMP%] {\n    height: calc(100vh - 50px);\n    width: 400px;\n    top: 0px;\n    float: right;\n    position: relative;\n    background-color: lightgrey;\n}\n\n.submitbutton[_ngcontent-%COMP%] {\n    position: absolute;\n    right: 60px;\n}\n\n.newbutton[_ngcontent-%COMP%] {\n    position: absolute;\n    right: 60px;\n    bottom: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1iaW5zL3ZpZXctYmlucy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksMEJBQTBCO0lBQzFCLDBCQUEwQjtJQUMxQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSwwQkFBMEI7SUFDMUIsWUFBWTtJQUNaLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLDBCQUEwQjtJQUMxQixZQUFZO0lBQ1osUUFBUTtJQUNSLFlBQVk7SUFDWixrQkFBa0I7SUFDbEIsMkJBQTJCO0FBQy9COztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsWUFBWTtBQUNoQiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctYmlucy92aWV3LWJpbnMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImFnbS1tYXAge1xuICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDUwcHgpO1xuICAgIHdpZHRoOiBjYWxjKDEwMHZ3IC0gNDAxcHgpO1xuICAgIGZsb2F0OiBsZWZ0O1xufVxuXG5oMiB7XG4gICAgZm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XG59XG5cbm1hdC1jYXJkIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwdmggLSA1MHB4KTtcbiAgICB3aWR0aDogNDAwcHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xufVxuXG5tYXQtZm9ybS1maWVsZCwgbWF0LWNoZWNrYm94IHtcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XG59XG5cbm1hdC1wcm9ncmVzcy1iYXIge1xuICAgIHBhZGRpbmctbGVmdDogMTVweDtcbiAgICB3aWR0aDogMzIwcHg7XG59XG5cbi5lZGl0bWVudSB7XG4gICAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNTBweCk7XG4gICAgd2lkdGg6IDQwMHB4O1xuICAgIHRvcDogMHB4O1xuICAgIGZsb2F0OiByaWdodDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmV5O1xufVxuXG4uc3VibWl0YnV0dG9uIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgcmlnaHQ6IDYwcHg7XG59XG5cbi5uZXdidXR0b24ge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICByaWdodDogNjBweDtcbiAgICBib3R0b206IDUwcHg7XG59XG4iXX0= */"]
       });
       /*@__PURE__*/
@@ -5279,6 +5311,8 @@
         }], function () {
           return [{
             type: _binfetcher_service__WEBPACK_IMPORTED_MODULE_1__["BinfetcherService"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]
           }];
         }, null);
       })();
@@ -5332,73 +5366,79 @@
       /* harmony import */
 
 
-      var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/material/snack-bar */
+      "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/snack-bar.js");
+      /* harmony import */
+
+
+      var _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../view-routes/view-routes.component */
       "./src/app/view-routes/view-routes.component.ts");
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/material/card */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/material/button */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
       /* harmony import */
 
 
-      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/material/icon */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
       "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
       /* harmony import */
 
 
-      var _angular_material_list__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_material_list__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/material/list */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/list.js");
       /* harmony import */
 
 
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/core */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/core.js");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/material/form-field */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/material/input */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
       /* harmony import */
 
 
-      var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/forms */
       "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
       /* harmony import */
 
 
-      var _angular_material_select__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! @angular/material/select */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
       /* harmony import */
 
 
-      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @angular/material/slide-toggle */
       "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/slide-toggle.js");
 
@@ -5416,7 +5456,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx_r0.all_fleet.length, " vehicle(s) - ", ctx_r0.add_vehicles.length, " new, ", ctx_r0.del_vehicles.length, " deleted ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx_r0.all_fleet.length, " vehicle(s) - ", ctx_r0.add_vehicles.length, " created, ", ctx_r0.del_vehicles.length, " deleted ");
         }
       }
 
@@ -5725,11 +5765,12 @@
       }
 
       var ViewFleetComponent = /*#__PURE__*/function () {
-        function ViewFleetComponent(fleetfetcher, dialog) {
+        function ViewFleetComponent(fleetfetcher, dialog, _snackBar) {
           _classCallCheck(this, ViewFleetComponent);
 
           this.fleetfetcher = fleetfetcher;
-          this.dialog = dialog; // Array of icon names corresponding to the 12 possible icons
+          this.dialog = dialog;
+          this._snackBar = _snackBar; // Array of icon names corresponding to the 12 possible icons
 
           this.veh_icons = ["delete", "airport_shuttle", "local_shipping", "agriculture", "electric_car", "two_wheeler", "electric_bike", "pedal_bike", "directions_boat", "airplanemode_active", "rv_hookup", "biotech"];
           this.all_fleet = []; // Array of all vehicles
@@ -5746,17 +5787,17 @@
         _createClass(ViewFleetComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this5 = this;
+            var _this6 = this;
 
             this.fleetfetcher.getAllFleet().subscribe(function (fleet_in) {
               return (// add all fetched fleet vehicles to array with a spot for their extra data
                 fleet_in.forEach(function (v) {
-                  _this5.all_fleet.push([JSON.parse(JSON.stringify(v)), {
+                  _this6.all_fleet.push([JSON.parse(JSON.stringify(v)), {
                     "rego": v.rego,
                     "selected": false
                   }]);
 
-                  _this5.orig_fleet.push( // seperate push for more efficient deep copy
+                  _this6.orig_fleet.push( // seperate push for more efficient deep copy
                   [v, {
                     "rego": v.rego,
                     "selected": false
@@ -5765,7 +5806,7 @@
               );
             });
             this.fleetfetcher.getAllDepots().subscribe(function (depots_in) {
-              return _this5.all_depots = depots_in;
+              return _this6.all_depots = depots_in;
             });
           } // Triggered whenever user clicks on a vehicle in list view
 
@@ -5844,28 +5885,46 @@
         }, {
           key: "submitChanges",
           value: function submitChanges() {
+            var _this7 = this;
+
             this.findChanges();
             this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(function (x) {
-              return console.log(x);
+              console.log(x);
+
+              if (x.status == 201) {
+                _this7._snackBar.open("Edits were successfully received!", "", {
+                  duration: 2000
+                });
+
+                setTimeout(null, 1800);
+
+                _this7.reloadPage();
+              } else if (x.status == 400) {
+                _this7._snackBar.open("Some edits did not pass - changes were not saved", "", {
+                  duration: 2000
+                });
+              } else {
+                _this7._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                  duration: 2000
+                });
+              }
             });
           } // Only calculated just before user submission of all edits
 
         }, {
           key: "findChanges",
           value: function findChanges() {
-            var _this6 = this;
+            var _this8 = this;
 
             var keys = ["_id", "rego", "capacity", "available", "icon", "homeDepot"]; // Check which records vary, to add to mod array
 
             var _loop2 = function _loop2(_i2) {
               var changed = false;
               keys.forEach(function (key) {
-                if (_this6.all_fleet[_i2][0][key] != _this6.orig_fleet[_i2][0][key]) if (!changed) {
+                if (_this8.all_fleet[_i2][0][key] != _this8.orig_fleet[_i2][0][key]) if (!changed) {
                   changed = true;
 
-                  _this6.mod_vehicles.push(_this6.all_fleet[_i2][0]);
-
-                  console.log(_this6.all_fleet[_i2][0]);
+                  _this8.mod_vehicles.push(_this8.all_fleet[_i2][0]);
                 }
               });
             };
@@ -5886,7 +5945,7 @@
       }();
 
       ViewFleetComponent.ɵfac = function ViewFleetComponent_Factory(t) {
-        return new (t || ViewFleetComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_fleetfetcher_service__WEBPACK_IMPORTED_MODULE_1__["FleetfetcherService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]));
+        return new (t || ViewFleetComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_fleetfetcher_service__WEBPACK_IMPORTED_MODULE_1__["FleetfetcherService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]));
       };
 
       ViewFleetComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -6002,7 +6061,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.selveh);
           }
         },
-        directives: [_view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_3__["ViewRoutesComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCard"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardTitle"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_material_list__WEBPACK_IMPORTED_MODULE_8__["MatList"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardSubtitle"], _angular_material_list__WEBPACK_IMPORTED_MODULE_8__["MatListItem"], _angular_material_core__WEBPACK_IMPORTED_MODULE_9__["MatRipple"], _angular_material_core__WEBPACK_IMPORTED_MODULE_9__["MatLine"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_11__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["NgModel"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardContent"], _angular_material_select__WEBPACK_IMPORTED_MODULE_13__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__["NumberValueAccessor"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__["MatSlideToggle"], _angular_material_core__WEBPACK_IMPORTED_MODULE_9__["MatOption"]],
+        directives: [_view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_4__["ViewRoutesComponent"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCard"], _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIcon"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardTitle"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_list__WEBPACK_IMPORTED_MODULE_9__["MatList"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardSubtitle"], _angular_material_list__WEBPACK_IMPORTED_MODULE_9__["MatListItem"], _angular_material_core__WEBPACK_IMPORTED_MODULE_10__["MatRipple"], _angular_material_core__WEBPACK_IMPORTED_MODULE_10__["MatLine"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_12__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NgModel"], _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardContent"], _angular_material_select__WEBPACK_IMPORTED_MODULE_14__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["NumberValueAccessor"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__["MatSlideToggle"], _angular_material_core__WEBPACK_IMPORTED_MODULE_10__["MatOption"]],
         styles: ["@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');\r\n\r\napp-view-routes[_ngcontent-%COMP%] {\r\n    height: calc(100vh - 65px);\r\n    width: calc(100vw - 401px);\r\n    float: left;\r\n}\r\n\r\nmat-list-item[_ngcontent-%COMP%] {\r\n    float: left;\r\n}\r\n\r\n.vehiclelist[_ngcontent-%COMP%] {\r\n    max-height: calc(100vh - 132px);\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    margin-top: 0%;\r\n    top: 0;\r\n}\r\n\r\n.editmenu[_ngcontent-%COMP%] {\r\n    height: calc(100vh - 50px);\r\n    width: 400px;\r\n    right: 0px;\r\n    bottom: 0px;\r\n    position: fixed;\r\n    background-color: lightgrey;\r\n}\r\n\r\n.editmenu_card[_ngcontent-%COMP%] {\r\n    position: relative;\r\n    height: 100%;\r\n    width: 400px;\r\n}\r\n\r\n.infobar[_ngcontent-%COMP%] {\r\n    height: 65px;\r\n    width: calc(100vw - 401px);\r\n    position: fixed;\r\n    bottom: 0px;\r\n    overflow: hidden;\r\n}\r\n\r\n.infobar_card[_ngcontent-%COMP%] {\r\n    height: 65px;\r\n    min-width: 900px;\r\n}\r\n\r\n.infobar1[_ngcontent-%COMP%] {\r\n    float: left; \r\n    width: 250px;\r\n    position: relative;\r\n    bottom: 12px;\r\n}\r\n\r\n.infobar2[_ngcontent-%COMP%] {\r\n    position: relative; \r\n    float: left;\r\n    bottom: 8px;\r\n}\r\n\r\n.regotxt[_ngcontent-%COMP%] {\r\n    font-family: 'DM Mono';\r\n}\r\n\r\n.regotxt_main[_ngcontent-%COMP%] {\r\n    font-family: 'DM Mono';\r\n    font-size: medium;\r\n    position: relative;\r\n    left: 8px;\r\n}\r\n\r\n.submitbutton[_ngcontent-%COMP%] {\r\n    position: absolute;\r\n    right: 60px;\r\n}\r\n\r\n.clicktext[_ngcontent-%COMP%] {\r\n    position: relative;\r\n    -moz-user-select: none; \r\n    -webkit-user-select: none; \r\n    -ms-user-select:none; \r\n    user-select:none;\r\n    -o-user-select:none;\r\n    cursor: pointer;\r\n    scale: 2;\r\n    right: 20px;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1mbGVldC92aWV3LWZsZWV0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEscUZBQXFGOztBQUVyRjtJQUNJLDBCQUEwQjtJQUMxQiwwQkFBMEI7SUFDMUIsV0FBVztBQUNmOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksK0JBQStCO0lBQy9CLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsY0FBYztJQUNkLE1BQU07QUFDVjs7QUFFQTtJQUNJLDBCQUEwQjtJQUMxQixZQUFZO0lBQ1osVUFBVTtJQUNWLFdBQVc7SUFDWCxlQUFlO0lBQ2YsMkJBQTJCO0FBQy9COztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLDBCQUEwQjtJQUMxQixlQUFlO0lBQ2YsV0FBVztJQUNYLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxzQkFBc0I7QUFDMUI7O0FBRUE7SUFDSSxzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLGtCQUFrQjtJQUNsQixTQUFTO0FBQ2I7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztBQUNmOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLHNCQUFzQjtJQUN0Qix5QkFBeUI7SUFDekIsb0JBQW9CO0lBQ3BCLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLFFBQVE7SUFDUixXQUFXO0FBQ2YiLCJmaWxlIjoic3JjL2FwcC92aWV3LWZsZWV0L3ZpZXctZmxlZXQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PURNK01vbm86d2dodEA1MDAmZGlzcGxheT1zd2FwJyk7XHJcblxyXG5hcHAtdmlldy1yb3V0ZXMge1xyXG4gICAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNjVweCk7XHJcbiAgICB3aWR0aDogY2FsYygxMDB2dyAtIDQwMXB4KTtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG5tYXQtbGlzdC1pdGVtIHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4udmVoaWNsZWxpc3Qge1xyXG4gICAgbWF4LWhlaWdodDogY2FsYygxMDB2aCAtIDEzMnB4KTtcclxuICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbiAgICBtYXJnaW4tdG9wOiAwJTtcclxuICAgIHRvcDogMDtcclxufVxyXG5cclxuLmVkaXRtZW51IHtcclxuICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDUwcHgpO1xyXG4gICAgd2lkdGg6IDQwMHB4O1xyXG4gICAgcmlnaHQ6IDBweDtcclxuICAgIGJvdHRvbTogMHB4O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRncmV5O1xyXG59XHJcblxyXG4uZWRpdG1lbnVfY2FyZCB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB3aWR0aDogNDAwcHg7XHJcbn1cclxuXHJcbi5pbmZvYmFyIHtcclxuICAgIGhlaWdodDogNjVweDtcclxuICAgIHdpZHRoOiBjYWxjKDEwMHZ3IC0gNDAxcHgpO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgYm90dG9tOiAwcHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcblxyXG4uaW5mb2Jhcl9jYXJkIHtcclxuICAgIGhlaWdodDogNjVweDtcclxuICAgIG1pbi13aWR0aDogOTAwcHg7XHJcbn1cclxuXHJcbi5pbmZvYmFyMSB7XHJcbiAgICBmbG9hdDogbGVmdDsgXHJcbiAgICB3aWR0aDogMjUwcHg7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3R0b206IDEycHg7XHJcbn1cclxuXHJcbi5pbmZvYmFyMiB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7IFxyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICBib3R0b206IDhweDtcclxufVxyXG5cclxuLnJlZ290eHQge1xyXG4gICAgZm9udC1mYW1pbHk6ICdETSBNb25vJztcclxufVxyXG5cclxuLnJlZ290eHRfbWFpbiB7XHJcbiAgICBmb250LWZhbWlseTogJ0RNIE1vbm8nO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBsZWZ0OiA4cHg7XHJcbn1cclxuXHJcbi5zdWJtaXRidXR0b24ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgcmlnaHQ6IDYwcHg7XHJcbn1cclxuXHJcbi5jbGlja3RleHQge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgLW1vei11c2VyLXNlbGVjdDogbm9uZTsgXHJcbiAgICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOyBcclxuICAgIC1tcy11c2VyLXNlbGVjdDpub25lOyBcclxuICAgIHVzZXItc2VsZWN0Om5vbmU7XHJcbiAgICAtby11c2VyLXNlbGVjdDpub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgc2NhbGU6IDI7XHJcbiAgICByaWdodDogMjBweDtcclxufVxyXG5cclxuIl19 */"]
       });
       /*@__PURE__*/
@@ -6020,6 +6079,8 @@
             type: _fleetfetcher_service__WEBPACK_IMPORTED_MODULE_1__["FleetfetcherService"]
           }, {
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
+          }, {
+            type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"]
           }];
         }, null);
       })(); // This export is the dialog box that pops to verify user changes
@@ -6134,10 +6195,10 @@
         _createClass(ViewHeatmapComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this7 = this;
+            var _this9 = this;
 
             this.binfetcher.getAllBins().subscribe(function (bins_in) {
-              return _this7.process_markers(bins_in);
+              return _this9.process_markers(bins_in);
             });
           }
         }, {
@@ -6150,11 +6211,11 @@
         }, {
           key: "process_markers",
           value: function process_markers(bins) {
-            var _this8 = this;
+            var _this10 = this;
 
             this.all_bins = bins;
             bins.forEach(function (bin) {
-              return _this8.datapoints.push({
+              return _this10.datapoints.push({
                 location: new google.maps.LatLng(bin.lat, bin.lng),
                 weight: 30
               });
@@ -6383,42 +6444,43 @@
         _createClass(ViewRoutesComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this9 = this;
+            var _this11 = this;
 
             this.routefetcher.getAllRoutes().subscribe(function (routes_in) {
-              _this9.all_routes = routes_in;
+              _this11.all_routes = routes_in;
               routes_in.binCollectionSchedules.forEach(function (r) {
                 return r.routes.forEach(function (p) {
-                  return _this9.waypoints.push(Object(_route__WEBPACK_IMPORTED_MODULE_1__["navToWaypoint"])(p));
+                  return _this11.waypoints.push(Object(_route__WEBPACK_IMPORTED_MODULE_1__["navToWaypoint"])(p));
                 });
               });
+              console.log(_this11.all_routes);
 
-              _this9.waypoints.forEach(function (w) {
+              _this11.waypoints.forEach(function (w) {
                 // Get target array
-                var index = _this9.render_waypoints.find(function (x) {
+                var index = _this11.render_waypoints.find(function (x) {
                   return x.veh === w.vehicle;
                 });
 
                 if (!index) {
-                  _this9.render_waypoints.push({
+                  _this11.render_waypoints.push({
                     "veh": w.vehicle,
                     "arr": []
                   });
 
-                  index = _this9.render_waypoints.length - 1;
+                  index = _this11.render_waypoints.length - 1;
                 }
 
                 while (w.waypoints.length > 0) {
                   var newchunk = w.waypoints.splice(0, 14);
 
-                  _this9.render_waypoints[index].arr.push(newchunk);
+                  _this11.render_waypoints[index].arr.push(newchunk);
                 } // Partition into start, end, waypoints
 
 
-                for (var p = 0; p < _this9.render_waypoints[index].arr.length; p++) {
+                for (var p = 0; p < _this11.render_waypoints[index].arr.length; p++) {
                   var starttemp = void 0;
                   var endtemp = void 0;
-                  var waypointtemp = _this9.render_waypoints[index].arr[p];
+                  var waypointtemp = _this11.render_waypoints[index].arr[p];
 
                   if (waypointtemp.length === 1) {
                     starttemp = waypointtemp[0];
@@ -6427,14 +6489,14 @@
                   } else {
                     starttemp = waypointtemp.splice(0, 1); // Is final leg?
 
-                    if (p == _this9.render_waypoints[index].arr.length - 1) {
+                    if (p == _this11.render_waypoints[index].arr.length - 1) {
                       endtemp = waypointtemp.splice(waypointtemp.length - 1, 1)[0];
                     } else {
-                      endtemp = JSON.parse(JSON.stringify(_this9.render_waypoints[index].arr[p + 1][0]));
+                      endtemp = JSON.parse(JSON.stringify(_this11.render_waypoints[index].arr[p + 1][0]));
                     }
                   }
 
-                  _this9.render_waypoints[index].arr[p] = {
+                  _this11.render_waypoints[index].arr[p] = {
                     "start": starttemp.location ? starttemp.location : starttemp[0].location,
                     "end": endtemp.location ? endtemp.location : endtemp[0].location,
                     "waypoints": waypointtemp
@@ -6442,9 +6504,7 @@
                 }
               });
 
-              console.log(_this9.all_routes);
-              console.log(_this9.render_waypoints);
-              if (_this9.map !== null) _this9.setupRenderer();
+              if (_this11.map !== null) _this11.setupRenderer();
             });
           } // Handles clicks on the map
 
