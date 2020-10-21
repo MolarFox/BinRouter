@@ -4523,7 +4523,8 @@ class ViewBinsComponent {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please. try again", "", {duration: 2000})
             }
         });
     }
@@ -4933,7 +4934,8 @@ class ViewFleetComponent {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
             }
         });
     }

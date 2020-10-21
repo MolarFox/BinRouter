@@ -5154,9 +5154,10 @@
                   duration: 2000
                 });
               } else {
-                _this4._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                _this4._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please. try again", "", {duration: 2000})
+
               }
             });
           } // Only calculated just before user submission of all edits
@@ -5932,9 +5933,10 @@
                   duration: 2000
                 });
               } else {
-                _this7._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                _this7._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+
               }
             });
           } // Only calculated just before user submission of all edits
