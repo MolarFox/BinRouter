@@ -167,6 +167,7 @@ export class ViewFleetComponent implements OnInit {
     ).subscribe(
       x => {
         console.log(x);
+        console.log(x.status)
         if (x.status == 201) {
           this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
           setTimeout(null, 1800);

@@ -4513,6 +4513,7 @@ class ViewBinsComponent {
         }
         this.binfetcher.submitChanges(this.add_bins, this.mod_bins, this.del_bins).subscribe(x => {
             console.log(x);
+            console.log(x.status);
             if (x.status == 201) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
                 setTimeout(null, 1800);
@@ -4922,6 +4923,7 @@ class ViewFleetComponent {
         }
         this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(x => {
             console.log(x);
+            console.log(x.status);
             if (x.status == 201) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
                 setTimeout(null, 1800);
