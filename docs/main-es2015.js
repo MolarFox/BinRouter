@@ -4950,7 +4950,7 @@ class ViewFleetComponent {
             }
             else {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
             }
         }, y => {
             console.log(y);

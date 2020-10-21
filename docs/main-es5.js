@@ -5956,11 +5956,8 @@
               } else {
                 _this7._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
 
-                _this7._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
-                  duration: 2000
-                });
               }
             }, function (y) {
               console.log(y);
