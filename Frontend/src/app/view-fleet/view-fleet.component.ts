@@ -153,6 +153,13 @@ export class ViewFleetComponent implements OnInit {
   // Attempts to submit changes, flashes error message if server reports any fails
   submitChanges(): void {
     this.findChanges();
+
+    // Pop a message and do nothing if nothing to submit
+    if ((this.mod_vehicles.length==0)&&(this.add_vehicles.length==0)&&(this.del_vehicles.length==0)){
+      this._snackBar.open("No changes to submit", "", {duration: 2000})
+      return;
+    }
+
     this.fleetfetcher.submitChanges(
       this.add_vehicles,
       this.mod_vehicles,

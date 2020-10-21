@@ -117,6 +117,13 @@ export class ViewBinsComponent implements OnInit {
   // Attempts to submit changes, flashes error message if server reports any fails
   submitChanges(): void {
     this.findChanges();
+
+    // Pop a message and do nothing if nothing to submit
+    if ((this.mod_bins.length==0)&&(this.add_bins.length==0)&&(this.del_bins.length==0)){
+      this._snackBar.open("No changes to submit", "", {duration: 2000})
+      return;
+    }
+
     this.binfetcher.submitChanges(
       this.add_bins,
       this.mod_bins,

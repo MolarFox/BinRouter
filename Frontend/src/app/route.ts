@@ -1,4 +1,5 @@
 import { Output } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { DepotRaw } from './depot';
 
 export interface NavRoute {
@@ -23,20 +24,28 @@ export interface NavRouteWaypointed {
 }
 
 export function navToWaypoint(nav: NavRoute): NavRouteWaypointed {
-    let waypointed: google.maps.DirectionsWaypoint[] = []
-    nav.visitingOrder.forEach(x =>
-        waypointed.push(
-            {
-                location: new google.maps.LatLng(
-                    {lat: x.latitude, lng:x.longitude}
-                ),
-                stopover: true
-            }
-        )    
-    )
-    return {
-        vehicle: nav.vehicle,
-        waypoints: waypointed
+    try{
+        let waypointed: google.maps.DirectionsWaypoint[] = []
+        nav.visitingOrder.forEach(x =>
+            waypointed.push(
+                {
+                    location: new google.maps.LatLng(
+                        {lat: x.latitude, lng:x.longitude}
+                    ),
+                    stopover: true
+                }
+            )    
+        )
+        return {
+            vehicle: nav.vehicle,
+            waypoints: waypointed
+        }
+    }catch(err){
+        if (err.name == 'ReferenceError'){
+            location.reload();
+        }else{
+            throw err;
+        }
     }
 }
 

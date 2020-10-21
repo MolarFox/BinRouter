@@ -35,13 +35,21 @@ export class ViewHeatmapComponent implements OnInit {
 
   // Set instance bins variable, convert all to markers and display
   process_markers(bins: Bin[]){
-    this.all_bins = bins;
-    bins.forEach(bin =>
-      this.datapoints.push(
-        {location: new google.maps.LatLng(bin.lat, bin.lng), weight: 30}
+    try{
+      this.all_bins = bins;
+      bins.forEach(bin =>
+        this.datapoints.push(
+          {location: new google.maps.LatLng(bin.lat, bin.lng), weight: 30}
+        )
       )
-    )
-    this.renderHeatmap();
+      this.renderHeatmap();
+    }catch(err){
+      if (err.name == 'ReferenceError'){
+        location.reload();
+      }else{
+          throw err;
+      }
+    }
   }
 
   // Render heatmap (to be called after map loaded)
