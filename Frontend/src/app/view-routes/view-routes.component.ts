@@ -13,7 +13,7 @@ export class ViewRoutesComponent implements OnInit {
 
   private directionsService: google.maps.DirectionsService;
   private directionsRenderer: google.maps.DirectionsRenderer;
-  private map: google.maps.Map = null;
+  map: google.maps.Map = null;
 
   waypoints: NavRouteWaypointed[] = [];
 

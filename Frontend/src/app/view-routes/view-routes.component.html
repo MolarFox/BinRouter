@@ -7,7 +7,7 @@
     (mapClick)="mapClicked($event)"
     (mapReady)="onMapLoad($event)">
 
-    <div *ngIf="waypoints.length>0">
+    <div *ngIf="(waypoints.length>0)&&(map)">
         <div *ngFor="let veh of render_waypoints">
             <div *ngFor="let routeset of veh.arr; let i=index">
                 <agm-direction
