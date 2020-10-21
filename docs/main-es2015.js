@@ -4505,12 +4505,12 @@ class ViewBinsComponent {
         ];
         // Check which records vary, to add to mod array
         for (let i = 0; i < this.orig_bins.length; i++) {
-            let pushed = false;
+            let changed = false;
             keys.forEach(key => {
-                if (this.all_bins[i][0][key] !== this.orig_bins[i][key]) {
-                    if (!pushed) {
+                if (this.all_bins[i][0][key] != this.orig_bins[i][key]) {
+                    if (!changed) {
+                        changed = true;
                         this.mod_bins.push(this.all_bins[i][0]);
-                        pushed = true;
                     }
                 }
             });
@@ -4792,7 +4792,7 @@ class ViewFleetComponent {
         // add all fetched fleet vehicles to array with a spot for their extra data
         fleet_in.forEach(v => {
             this.all_fleet.push([
-                v,
+                JSON.parse(JSON.stringify(v)),
                 {
                     "rego": v.rego,
                     "selected": false
@@ -4890,9 +4890,14 @@ class ViewFleetComponent {
         ];
         // Check which records vary, to add to mod array
         for (let i = 0; i < this.orig_fleet.length; i++) {
+            let changed = false;
             keys.forEach(key => {
-                if (this.all_fleet[i][0][key] !== this.orig_fleet[i][0][key])
-                    this.mod_vehicles.push(this.all_fleet[i][0]);
+                if (this.all_fleet[i][0][key] != this.orig_fleet[i][0][key])
+                    if (!changed) {
+                        changed = true;
+                        this.mod_vehicles.push(this.all_fleet[i][0]);
+                        console.log(this.all_fleet[i][0]);
+                    }
             });
         }
     }

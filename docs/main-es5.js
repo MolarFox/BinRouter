@@ -5119,13 +5119,13 @@
             var keys = ["serial", "smartSerial", "lat", "lng", "address", "capacity", "is_smart", "threshold", "fullness"]; // Check which records vary, to add to mod array
 
             var _loop = function _loop(_i) {
-              var pushed = false;
+              var changed = false;
               keys.forEach(function (key) {
-                if (_this4.all_bins[_i][0][key] !== _this4.orig_bins[_i][key]) {
-                  if (!pushed) {
-                    _this4.mod_bins.push(_this4.all_bins[_i][0]);
+                if (_this4.all_bins[_i][0][key] != _this4.orig_bins[_i][key]) {
+                  if (!changed) {
+                    changed = true;
 
-                    pushed = true;
+                    _this4.mod_bins.push(_this4.all_bins[_i][0]);
                   }
                 }
               });
@@ -5751,7 +5751,7 @@
             this.fleetfetcher.getAllFleet().subscribe(function (fleet_in) {
               return (// add all fetched fleet vehicles to array with a spot for their extra data
                 fleet_in.forEach(function (v) {
-                  _this5.all_fleet.push([v, {
+                  _this5.all_fleet.push([JSON.parse(JSON.stringify(v)), {
                     "rego": v.rego,
                     "selected": false
                   }]);
@@ -5858,8 +5858,15 @@
             var keys = ["_id", "rego", "capacity", "available", "icon", "homeDepot"]; // Check which records vary, to add to mod array
 
             var _loop2 = function _loop2(_i2) {
+              var changed = false;
               keys.forEach(function (key) {
-                if (_this6.all_fleet[_i2][0][key] !== _this6.orig_fleet[_i2][0][key]) _this6.mod_vehicles.push(_this6.all_fleet[_i2][0]);
+                if (_this6.all_fleet[_i2][0][key] != _this6.orig_fleet[_i2][0][key]) if (!changed) {
+                  changed = true;
+
+                  _this6.mod_vehicles.push(_this6.all_fleet[_i2][0]);
+
+                  console.log(_this6.all_fleet[_i2][0]);
+                }
               });
             };
 

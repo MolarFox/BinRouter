@@ -139,13 +139,13 @@ export class ViewBinsComponent implements OnInit {
 
     // Check which records vary, to add to mod array
     for (let i=0; i < this.orig_bins.length; i++){
-      let pushed = false;
+      let changed = false
       keys.forEach(key => {
-        if (this.all_bins[i][0][key] !== this.orig_bins[i][key]){
-          if (!pushed){
+        if (this.all_bins[i][0][key] != this.orig_bins[i][key]){
+          if (!changed){
+            changed = true
             this.mod_bins.push(this.all_bins[i][0]);
-            pushed = true;
-          } 
+          }  
         }
       });
 

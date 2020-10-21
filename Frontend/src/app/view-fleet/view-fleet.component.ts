@@ -48,7 +48,7 @@ export class ViewFleetComponent implements OnInit {
         fleet_in.forEach(v => {
           this.all_fleet.push(
             [
-              v,
+              JSON.parse(JSON.stringify(v)),
               {
                 "rego":     v.rego,
                 "selected": false
@@ -172,9 +172,14 @@ export class ViewFleetComponent implements OnInit {
 
     // Check which records vary, to add to mod array
     for (let i=0; i < this.orig_fleet.length; i++){
+      let changed = false
       keys.forEach(key => {
-        if (this.all_fleet[i][0][key] !== this.orig_fleet[i][0][key])
-          this.mod_vehicles.push(this.all_fleet[i][0])
+        if (this.all_fleet[i][0][key] != this.orig_fleet[i][0][key])
+          if (!changed){
+            changed = true
+            this.mod_vehicles.push(this.all_fleet[i][0])
+            console.log(this.all_fleet[i][0])
+          }
       });
     }
   }
