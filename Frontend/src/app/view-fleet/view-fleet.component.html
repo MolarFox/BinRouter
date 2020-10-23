@@ -1,6 +1,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Map is passthrough to routes view (intended to eventually take inputs to link w/ editor selection) -->
 <app-view-routes></app-view-routes>
 
+<!-- Menu on the RHS of screen -->
 <div class=editmenu>
     <mat-card class=editmenu_card>
         <button mat-mini-fab 
@@ -49,10 +51,12 @@
     </mat-card>
 </div>
 
+<!-- Editor bar at bottom of screen -->
 <div class=infobar>
     <mat-card class=infobar_card>
         <mat-card-header>
             
+            <!-- Placeholder when no vehicle is selected -->
             <mat-card-title *ngIf="!selveh">
                 <mat-icon style="top: 4px; position: relative;">
                     view_carousel
@@ -60,9 +64,11 @@
                 No vehicle selected
             </mat-card-title>
 
+            <!-- Vehicle editor, show on selection of a vehicle - 2-way binds -->
             <div *ngIf="selveh">
             <div class=infobar1>
                 <mat-card-title style="overflow: visible;">
+                    <!-- Clicking icon cycles it without TS loopback needed -->
                     <mat-icon 
                     (click)="selveh[0].icon = (selveh[0].icon+1)%12"
                     unselectable="on"
@@ -119,6 +125,7 @@
             </div>
             </div>
 
+            <!-- Add vehicle button shows regardless of selection state -->
             <button mat-mini-fab 
             color="accent"
             style="position: absolute; top: 14px; right: 12px;"

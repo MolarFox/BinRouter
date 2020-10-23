@@ -5,10 +5,11 @@
     [zoom]="start_zoom"
     (mapClick)="mapClicked($event)">
 
+    <!-- Clusterer for bin markers wraps bins -->
     <agm-marker-cluster 
-        [averageCenter]=true 
         [imagePath]="'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'"
-    >
+        [averageCenter]=true>
+        <!-- Iterates all bins, 1 way bind of marker coords to bin coords -->
         <agm-marker
             *ngFor="let bin of all_bins; let i=index"
             (markerClick)="clickedMarker(i)"
@@ -20,9 +21,11 @@
 
 </agm-map>
 
+<!-- Menu on RHS of screen -->
 <div class=editmenu>
     <mat-card>
 
+        <!-- Button to submit changes to the backend for validation -->
         <button mat-mini-fab 
         color="primary"
         class="submitbutton"
@@ -30,6 +33,7 @@
             <mat-icon>done_all</mat-icon>
         </button>
 
+        <!-- Button to create a new bin, spawns at coord in the CBD -->
         <button mat-mini-fab 
             color="accent"
             class="newbutton"
@@ -37,6 +41,7 @@
                 <mat-icon>add</mat-icon>
         </button>
 
+        <!-- Header contains info about bins currently loaded -->
         <mat-card-header>
             <mat-card-title>Bin Manager</mat-card-title>
             <mat-card-subtitle>
@@ -44,9 +49,11 @@
 
             </mat-card-subtitle>
         </mat-card-header>
+        <!-- Main editor body - only displays if a bin is selected, see subdivs-->
         <mat-card-content>
             <div *ngIf="selbin">
 
+                <!-- Slightly different editor with read-only fields for smart-bins -->
                 <div *ngIf="selbin[0].is_smart">
                     <h2 style="padding-left: 15px;">Smart Bin ID: {{selbin[0].smartSerial}}</h2>
                     
@@ -91,6 +98,7 @@
                     <span style="padding-left: 15px;">Fullness: {{selbin[0].fullness}}%</span>
                 </div>
 
+                <!-- Full editor for non-smart ("dumb") bins -->
                 <div *ngIf="!selbin[0].is_smart">
                     <h2 style="padding-left: 15px;">Selected Bin is not Smart</h2>
                     
@@ -136,6 +144,7 @@
                 </div>
 
             </div>
+            <!-- Placeholder when no bin is selected -->
             <div *ngIf="!(selbin)" style="position: relative; left: 16px;">
                 Pick a bin to begin editing
             </div>

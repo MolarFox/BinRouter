@@ -7,6 +7,7 @@
     (mapClick)="mapClicked($event)"
     (mapReady)="onMapLoad($event)">
 
+    <!-- Uses nested ngFors to give each routeset its own agm-direction renderer object -->
     <div *ngIf="(waypoints.length>0)&&(map)">
         <div *ngFor="let veh of render_waypoints">
             <div *ngFor="let routeset of veh.arr; let i=index">
@@ -18,11 +19,6 @@
                 </agm-direction>
             </div>
 
-        </div>
-    </div>
-
-    <div *ngIf="waypoints.length>0">
-        <div *ngFor="let veh of render_waypoints">
         </div>
     </div>
 </agm-map>
