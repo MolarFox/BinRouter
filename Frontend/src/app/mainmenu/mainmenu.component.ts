@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainmenuComponent implements OnInit {
 
+  // This name started as an off-the-cuff placeholder, looks like it stuck :p
   title = 'BinRouter';
   
   constructor() { }

@@ -10,16 +10,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './view-bins.component.html',
   styleUrls: ['./view-bins.component.css']
 })
+// Code for bin editor view
 export class ViewBinsComponent implements OnInit {
 
+  // Start coords and zoom for map - these coords are in the CBD
   start_lat = -37.8142588;
   start_lng = 144.9666622;
   start_zoom = 14;
 
+  // Bin arrays and current bin selection
   all_bins: [Bin, BinExtra][] = [];   // Array of all bins
   orig_bins: Bin[] = [];  // Unmodified array of all bins
   selbin: [Bin, BinExtra];
 
+  // Arrays to track modifications made during editing
   del_bins: string[] = [];  // Array of dumb bins staged for deletion
   mod_bins: Bin[] = [];     // Array of dumb bins to modify with new values
   add_bins: Bin[] = [];     // Array of dumb bins to create
@@ -33,12 +37,14 @@ export class ViewBinsComponent implements OnInit {
     private _snackBar: MatSnackBar
     ) { }
 
+  // Retrieve and process bins into live storage once available
   ngOnInit(): void {
     this.binfetcher.getAllBins()
       .subscribe(bins_in => this.process_markers(bins_in));
   }
 
   // Set instance bins variable, convert all to markers and display
+  // Note deep copy of full bin array stored into the reference / backup array
   process_markers(bins: Bin[]){
     this.orig_bins = JSON.parse(JSON.stringify(bins));  // deep copy
     bins.forEach(bin => 
@@ -60,13 +66,21 @@ export class ViewBinsComponent implements OnInit {
 
   // handles drag completions of marker
   draggedMarker(e: any): void {
-    
+    // Does nothing anymore
+    /**
+     * Due to the way markers take input for their lat/lng,
+     * it is not possible to do a 2-way bind, only a 1-way bind
+     * Dragging a marker therefore cannot update the bin coords when using agm
+     * 
+     * My fix for this is that the user can pick a point on the map to move the marker to,
+     * and that will set the new coords. See below.
+     */
   }
 
   // Handles clicks to a marker
   clickedMarker(index: number): void {
-    this.selbin = this.all_bins[index];
-    this.picker_active = false;
+    this.selbin = this.all_bins[index]; // Make clicked bin the active bin
+    this.picker_active = false;         // Deactivate bin loc picker, if it was active
   }
 
   // triggered whenever user deletes a dumb bin from editor view
@@ -74,7 +88,7 @@ export class ViewBinsComponent implements OnInit {
     // Add bin to deletion array if not a newly created and staged bin
     if (bindel[0].serial) this.del_bins.push(bindel[0].serial);
 
-    // Remove bin from main array
+    // Remove bin from main arrays using splice
     let remindex = this.all_bins.findIndex(b => 
       (b[0].serial === bindel[0].serial) && (b[0].lat === bindel[0].lat) && (b[0].lng === bindel[0].lng)
     );
@@ -108,6 +122,7 @@ export class ViewBinsComponent implements OnInit {
       { "draggable": false }
     ]
 
+    // Push bin to live and add array, set active, disable picker if it was active
     this.all_bins.push(newbin);
     this.add_bins.push(newbin[0]);
     this.selbin = this.all_bins[this.all_bins.length-1];
@@ -124,6 +139,7 @@ export class ViewBinsComponent implements OnInit {
       return;
     }
 
+    // Submit changes to backend, helper function will format the three passed arrays below
     this.binfetcher.submitChanges(
       this.add_bins,
       this.mod_bins,
@@ -166,6 +182,7 @@ export class ViewBinsComponent implements OnInit {
   }
 
   // Only calculated just before user submission of all edits
+  // Checks live array with backup array to determine what changes were made
   findChanges(): void {
     let keys = [
       "serial",
@@ -197,10 +214,18 @@ export class ViewBinsComponent implements OnInit {
 
 }
 
+// Extra parameters maintained for each bin record
+// Note that even this param is no longer in use as 
+// Dragging is not a useable coord update method
+// It is here for future use, as it is already implemented and integrated
 interface BinExtra {
   draggable: boolean
 }
 
+// Unused struct made to hold result of any failures in validation
+// See fleet editor for an idea of how I planned to use this
+// By passing an array of these to a popup box module via ng input decorators,
+// The popup could clearly show the user which edits failed and need to be fixed up
 interface ChkFail {
   arrtype:  (0 | 1 | 2),  // 0 = new | 1 = modify | 2 = delete
   error:    string,

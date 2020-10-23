@@ -9,37 +9,45 @@ import { NavRoute, NavRouteResponse, NavRouteWaypointed, navToWaypoint } from '.
   templateUrl: './view-routes.component.html',
   styleUrls: ['./view-routes.component.css']
 })
+// This is the code for bin viewer / editor view
 export class ViewRoutesComponent implements OnInit {
 
+  // These are no longer used - needed in case of vanilla gmaps JS api hook
   private directionsService: google.maps.DirectionsService;
   private directionsRenderer: google.maps.DirectionsRenderer;
   map: google.maps.Map = null;
 
-  waypoints: NavRouteWaypointed[] = [];
+  waypoints: NavRouteWaypointed[] = []; // Raw list of all waypoints, sorted by vehicle
 
+  // Contains nicely formatted object for each chunk of each route
+  // start and end points are of type lat/lon, waypoints are gmaps type as per method spec
   render_waypoints = [];
 
+  // Initial params of the map (typically overwritten once routes are rendered)
   start_lat = -37.8142588;
   start_lng = 144.9666622;
   start_zoom = 14;
 
-  all_routes: NavRouteResponse
+  all_routes: NavRouteResponse  // Raw response from backend containing all routes
 
+  // Known stable origin and destination for use in testing
   origin: google.maps.LatLngLiteral = {
     lat: -37.907803,
     lng: 145.133957
   };
-
   destination: google.maps.LatLngLiteral = {
     lat: -37.8997609,
     lng: 145.1292176
   };
 
-  displayDirections = true;
+  displayDirections = true; // Legacy param for use in directions API hook
 
   constructor(private routefetcher: RoutefetcherService) { }
 
+  // On init, perform some actions - format waypoint data and prime map for usage
   ngOnInit(): void {
+    // Subscribe to observable containing HTTP raw response from backend
+    // Will save the response and format it before sending to the renderer
     this.routefetcher.getAllRoutes()
       .subscribe(routes_in => {
         this.all_routes = routes_in;
@@ -49,8 +57,9 @@ export class ViewRoutesComponent implements OnInit {
           )
         );
 
-        console.log(this.all_routes)
-
+        //console.log(this.all_routes)
+        
+        // Formatting functions, happens after all the waypoints are received
         this.waypoints.forEach(w => {
           // Get target array
           let index = this.render_waypoints.find(x => x.veh === w.vehicle)
@@ -59,6 +68,7 @@ export class ViewRoutesComponent implements OnInit {
             index = this.render_waypoints.length-1
           }
 
+          // Chunk the waypoints into groups of 15 max points
           while (w.waypoints.length > 0){
             let newchunk=w.waypoints.splice(0, 14)
             this.render_waypoints[index].arr.push(
@@ -66,7 +76,7 @@ export class ViewRoutesComponent implements OnInit {
             )
           }
 
-          // Partition into start, end, waypoints
+          // Partition into start, end, waypoints, for use by renderer
           for (let p=0; p < this.render_waypoints[index].arr.length; p++){
             let starttemp;
             let endtemp;
@@ -87,6 +97,7 @@ export class ViewRoutesComponent implements OnInit {
               }
             }
 
+            // This is the format that the renderer sees for each leg of the route of each vehicle
             this.render_waypoints[index].arr[p] = {
               "start":    starttemp.location ? starttemp.location : starttemp[0].location,
               "end":      (endtemp.location) ? endtemp.location : endtemp[0].location,
@@ -96,6 +107,7 @@ export class ViewRoutesComponent implements OnInit {
           }
         })
         
+        // Legacy - init the vanilla JS renderer hook if in use (now using agm renderer instead)
         if (this.map !== null) this.setupRenderer();
       });
   }
@@ -106,11 +118,16 @@ export class ViewRoutesComponent implements OnInit {
     console.log(this.waypoints);
   }
 
+  // Gains pointer to the map instance once it loads, using agm event
   onMapLoad(mapInstance: google.maps.Map) {
     this.map = mapInstance;
     if (this.all_routes) this.setupRenderer();
   }
 
+  // Will initialise the renderer with the map instance and begin drawing
+  // Some of the code below can also perform raw requests from gmaps API, used for debugging only
+  // The format expected by the vanilla renderer, gmaps api spec, and backend response being sent through all differ
+  // ... it's a mess, but the code is clean. See the type definition file for more details on these format discrepancies
   setupRenderer(): void {
 
     /*

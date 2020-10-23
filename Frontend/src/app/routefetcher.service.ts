@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { NavRoute, NavRouteResponse } from './route';
-import { DUMMY_ROUTES } from './mock-data';
+import { DUMMY_ROUTES } from './mock-data'; // This can be deleted now
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { catchError, map } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { handleError } from './httpHelpers';
 @Injectable({
   providedIn: 'root'
 })
+// Service performs fetching of routes
 export class RoutefetcherService {
 
   // Use appropriate url based on environment variable
@@ -23,6 +24,7 @@ export class RoutefetcherService {
     private http: HttpClient
   ) { }
 
+  // Fetches the routes if not already cached, returns observable for HTTP response
   getAllRoutes(): Observable<NavRouteResponse> {
       if (this.routecache === undefined){  // not yet fetched, fetch it
 

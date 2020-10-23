@@ -31,6 +31,7 @@ export class BinfetcherService {
   }
   */
 
+  // Fetches all bins and returns as observable
   getAllBins(): Observable<Bin[]> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_BINS);
@@ -63,6 +64,7 @@ export class BinfetcherService {
   }
 
   /*
+  // Depreciated and not used anymore
   getBin(serial: number): Observable<Bin> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_BINS.find(chk_bin => chk_bin.serial === serial))

@@ -1,5 +1,6 @@
 // This file is pretending to be data - it should be fetched from a server in final product
 // Service is using observables to make transition to prod setup seamless
+// THIS FILE IS KEPT FOR LEGACY PURPOSES - FRONTEND NOW EITHER FETCHES FROM STATIC JSON OR FULL BACKEND STACK
 
 import { Bin } from './bin';
 import { Vehicle } from './vehicle';

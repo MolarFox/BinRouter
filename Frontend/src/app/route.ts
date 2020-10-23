@@ -2,6 +2,7 @@ import { Output } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { DepotRaw } from './depot';
 
+// Latest internal struct for actual route data
 export interface NavRoute {
     vehicle: string,
     visitingOrder: {
@@ -10,6 +11,7 @@ export interface NavRoute {
     }[]
 }
 
+// Raw response from backend with route data
 export interface NavRouteResponse {
     depots: DepotRaw[],
     binCollectionSchedules: {
@@ -18,11 +20,13 @@ export interface NavRouteResponse {
     }[]
 }
 
+// Same info as Navroute, formatted for use with agm-directions renderer object
 export interface NavRouteWaypointed {
     vehicle: string,
     waypoints: google.maps.DirectionsWaypoint[]
 }
 
+// Converts NavRoute to NavRouteWaypointed, for use with agm-directions renderer
 export function navToWaypoint(nav: NavRoute): NavRouteWaypointed {
     try{
         let waypointed: google.maps.DirectionsWaypoint[] = []

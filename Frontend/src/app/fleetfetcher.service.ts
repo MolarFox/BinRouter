@@ -11,6 +11,7 @@ import { handleError } from './httpHelpers';
 @Injectable({
   providedIn: 'root'
 })
+// Service to handle fetching of fleet data, and posting of any changes made with editor
 export class FleetfetcherService {
 
   // Use appropriate url based on environment variable
@@ -25,6 +26,7 @@ export class FleetfetcherService {
     private http: HttpClient
   ) { }
 
+  // Fetches all depots
   getAllDepots(): Observable<Depot[]> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_DEPOTS);
@@ -42,6 +44,8 @@ export class FleetfetcherService {
     }
   }
 
+  // Fetches an individual depot, minimising network traffic
+  // Depreciated method - backend modified, no longer works
   getDepot(id: string): Observable<Depot> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_DEPOTS.find(chk_depot => chk_depot.id === id))
@@ -52,7 +56,7 @@ export class FleetfetcherService {
 
       //return of(this.depotcache.find(chk_depot => chk_depot.id === id));
 
-      // TODO: FIX WITH YI-SONG IMPLEMENTATION
+      // TODO: FIX WITH YI-SONG NEW IMPLEMENTATION (AAAAA??)
       return this.http.get<Depot>(`${this.fleetUrl}/${id}`)
       .pipe(
         catchError(handleError<Depot>(`getDepot id=${id}`))
@@ -61,6 +65,7 @@ export class FleetfetcherService {
     }
   }
 
+  // Fetches all vehicles in the fleet
   getAllFleet(): Observable<Vehicle[]> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_VEHICLES);
@@ -78,6 +83,8 @@ export class FleetfetcherService {
     }
   }
 
+  // Fetches individual vehicle from fleet database
+  // As above, this method is now depreciated
   getVehicle(rego: string): Observable<Vehicle> {
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_VEHICLES.find(chk_vehicle => chk_vehicle.rego === rego));

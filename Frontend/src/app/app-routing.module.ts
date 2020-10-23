@@ -8,6 +8,7 @@ import { ViewFleetComponent   } from './view-fleet/view-fleet.component';
 
 const appTitle: String = "BinRouter";
 
+// All possible routes in the app are defined here
 const routes: Routes = [
   { path: '', redirectTo: '/routes', pathMatch: 'full' },
   { path: 'routes',   component: ViewRoutesComponent,    
@@ -35,6 +36,7 @@ const routes: Routes = [
   }
 ];
 
+// The whole module has a higher precedence due to the job it performs, loads in on main app view
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]

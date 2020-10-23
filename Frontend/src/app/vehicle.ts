@@ -10,6 +10,7 @@ export interface Vehicle {
     homeDepot:  string
 }
 
+// Struct for raw response from backend on vehicle request
 export interface VehicleDepotResponse {
     depots: DepotRaw[],
     fleetVehicles: Vehicle[]

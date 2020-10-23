@@ -11,6 +11,7 @@ export interface Bin {
     fullness:   number
 }
 
+// Struct for bin response from backend, matches latest changes
 export interface BinRaw {
     _id:                 string,
     serialNumber:       number,
@@ -23,6 +24,7 @@ export interface BinRaw {
     isSmart:            boolean
 }
 
+// Struct for bin response back to server, only contains dumb bin params
 export interface BinOut {
     _id:        string,
     latitude:   number,
@@ -31,10 +33,12 @@ export interface BinOut {
     capacity:   number
 }
 
+// Struct for overall response from backend (nested array of binraws)
 export interface BinResponse {
     bins:   BinRaw[]
 }
 
+// Converts binraw to bin, for use in translating received data from backend
 export function jsonToBins(res: BinRaw[]): Bin[] {
     let outarray: Bin[] = []
     for (let i=0; i < res.length; i++){
@@ -56,6 +60,7 @@ export function jsonToBins(res: BinRaw[]): Bin[] {
     return outarray
 }
 
+// Converts from bin to binout, for use in translating user edits to puts req format
 export function binsToJson(bins: Bin[]): BinOut[] {
     let outarray: BinOut[] = [];
     for (let i=0; i < bins.length; i++){

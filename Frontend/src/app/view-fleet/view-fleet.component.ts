@@ -15,6 +15,7 @@ import { timeInterval } from 'rxjs/operators';
 export class ViewFleetComponent implements OnInit {
 
   // Array of icon names corresponding to the 12 possible icons
+  // Each string corresponds to icon in material design library
   veh_icons = [
     "delete",
     "airport_shuttle",
@@ -45,6 +46,8 @@ export class ViewFleetComponent implements OnInit {
     private _snackBar: MatSnackBar
     ) { }
 
+  // Loads live array (data the editor sees), and deep copy into backup array
+  // Modifications are determined by comparing live array with backup before edit submission
   ngOnInit(): void {
     this.fleetfetcher.getAllFleet()
       .subscribe(fleet_in =>
@@ -52,13 +55,14 @@ export class ViewFleetComponent implements OnInit {
         fleet_in.forEach(v => {
           this.all_fleet.push(
             [
-              JSON.parse(JSON.stringify(v)),
+              JSON.parse(JSON.stringify(v)),  // deep copy of all values
               {
                 "rego":     v.rego,
                 "selected": false
               }
             ]
           )
+          // add all vehicles to backup array
           this.orig_fleet.push(   // seperate push for more efficient deep copy
             [
               v,
@@ -70,7 +74,9 @@ export class ViewFleetComponent implements OnInit {
           )
         })
       );
-
+    
+    // Collect info about loc of all depots 
+    // (since routing view is nested, this call with need no network action)
     this.fleetfetcher.getAllDepots()
       .subscribe(depots_in => this.all_depots = depots_in)
   }
@@ -129,23 +135,25 @@ export class ViewFleetComponent implements OnInit {
       }
     ]
 
+    // Add vehicle to live view, to new vehicles array, and make it selected
     this.all_fleet.push(newveh);
     this.add_vehicles.push(newveh[0]);
     this.vehicleClick(newveh);
   }
 
   // Submits changes to the backend server, or notifies user of issues
+  // THIS IS INCOMPLETE AND I'M NO LONGER USING IT, IN FAVOR OF SNACKBAR BELOW
   openDialogue(): void {
     const dialogRef = this.dialog.open(ViewFleetPopup);
     let popupresult = undefined;
     dialogRef.afterClosed().subscribe(
       x => popupresult = x
     )
-
-
   }
 
   // Validates all changes made thus far - true if all pass
+  // This was not completed as it is low priority, already have validation on the backend
+  // Ideally should be implemented if time permits
   validateChanges(): boolean {
     return true // TODO
   }
@@ -160,6 +168,7 @@ export class ViewFleetComponent implements OnInit {
       return;
     }
 
+    // Submit the changes via the 3 modification types, arrays passed below
     this.fleetfetcher.submitChanges(
       this.add_vehicles,
       this.mod_vehicles,
@@ -202,6 +211,7 @@ export class ViewFleetComponent implements OnInit {
   }
 
   // Only calculated just before user submission of all edits
+  // Compares live array with original array to determine what edits were made
   findChanges(): void {
     let keys = [
       "_id",
@@ -233,6 +243,7 @@ export class ViewFleetComponent implements OnInit {
 
 
 // This export is the dialog box that pops to verify user changes
+// No longer in use as not completed - dormant module
 @Component({
   selector: './view-fleet-popup',
   templateUrl: './view-fleet-popup.html',
@@ -241,12 +252,15 @@ export class ViewFleetPopup {
   @Input() chk_result : ChkFail;
 }
 
-
+// Extra interface storing some extra editor info about each vehicle
+// Can be expanded as required
 interface VehicleExtra {
-  rego:     string,
+  rego:     string, // no longer used - was here to provide alternative rego formatting (eg "ABCDEF" vs "ABC DEF")
   selected: boolean
 }
 
+// Unused interface - I was going to use this to report any failures during validation of edits
+// Any errors could then be shown to the user in a popup window / messagebox, with detail of what failed
 interface ChkFail {
   arrtype:  (0 | 1 | 2),  // 0 = new | 1 = modify | 2 = delete
   error:    string,
@@ -255,6 +269,7 @@ interface ChkFail {
 }
 
 // Adapted from https://stackoverflow.com/a/1349426
+// Generates a random rego for use in newly created rego records
 function regoGen(length: number) {
   var result           = '';
   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

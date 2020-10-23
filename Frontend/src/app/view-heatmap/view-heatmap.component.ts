@@ -8,11 +8,13 @@ import { Bin } from '../bin';
   styleUrls: ['./view-heatmap.component.css']
 })
 export class ViewHeatmapComponent implements OnInit {
+  // Legacy - used for vanilla gmaps JS api hook
   private map: google.maps.Map = null;
   private heatmap: google.maps.visualization.HeatmapLayer = null;
 
   private mapOrPointsLoaded: boolean = false; // true if at least one has loaded
   
+  // Default centre point and zoom of mapview
   start_lat = -37.8142588;
   start_lng = 144.9666622;
   start_zoom = 14;
@@ -23,11 +25,13 @@ export class ViewHeatmapComponent implements OnInit {
 
   constructor(private binfetcher: BinfetcherService) { }
 
+  // Process and store bins when ready
   ngOnInit(): void {
     this.binfetcher.getAllBins()
       .subscribe(bins_in => this.process_markers(bins_in));
   }
 
+  // Renders the heatmap - only runs once heatmap is loaded
   onMapLoad(mapInstance: google.maps.Map) {
     this.map = mapInstance;
     this.renderHeatmap();
@@ -53,6 +57,7 @@ export class ViewHeatmapComponent implements OnInit {
   }
 
   // Render heatmap (to be called after map loaded)
+  // Uses bins and assosciated fullness levels to determine point weights
   renderHeatmap(){
     this.heatmap = new google.maps.visualization.HeatmapLayer({
         map: this.map,
