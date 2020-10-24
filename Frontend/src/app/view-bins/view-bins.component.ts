@@ -1,3 +1,15 @@
+/**
+ * Bin view / editor ts file
+ * 
+ * Handles all logic for the bin viewer and editor,
+ * most importantly handles sending of requests to backend and
+ * validation of these edits.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { BinfetcherService } from '../binfetcher.service';
@@ -39,13 +51,24 @@ export class ViewBinsComponent implements OnInit {
 
   // Retrieve and process bins into live storage once available
   ngOnInit(): void {
+    /**
+     * Called when the page has initialised fully
+     * @return {null}
+     */
     this.binfetcher.getAllBins()
       .subscribe(bins_in => this.process_markers(bins_in));
   }
 
   // Set instance bins variable, convert all to markers and display
   // Note deep copy of full bin array stored into the reference / backup array
-  process_markers(bins: Bin[]){
+  process_markers(bins: Bin[]): void{
+    /**
+     * Called after bins have been loaded
+     * Processes the input bins and formats them for placement into the live and original 
+     * bin tracking arrays in the class
+     * @param {Bin[]} bins Array of bins, raw response from the backend
+     * @return {void}
+     */
     this.orig_bins = JSON.parse(JSON.stringify(bins));  // deep copy
     bins.forEach(bin => 
       this.all_bins.push(
@@ -55,7 +78,14 @@ export class ViewBinsComponent implements OnInit {
   }
 
   // Handles clicks on the map
-  mapClicked(e: {coords: {lat: number, lng: number}}){
+  mapClicked(e: {coords: {lat: number, lng: number}}): void{
+    /**
+     * Called when the map is clicked anywhere
+     * If the bin location picker is active, sets new location for the active bin
+     * otherwise ignores the event
+     * @param {{{number, number}}} e map click event, containing map coordinates of click
+     * @return {void}
+     */
     // Update selected bin location if picker enabled
     if (this.picker_active){
       this.picker_active = false;
@@ -66,6 +96,12 @@ export class ViewBinsComponent implements OnInit {
 
   // handles drag completions of marker
   draggedMarker(e: any): void {
+    /**
+     * [nop adjacent] Handles end of a marker drag event
+     * No longer does anything, see below for explanation and new method to update locations
+     * @param e info about mouse drag event - does not contain map coords
+     * @return {void}
+     */
     // Does nothing anymore
     /**
      * Due to the way markers take input for their lat/lng,
@@ -79,12 +115,24 @@ export class ViewBinsComponent implements OnInit {
 
   // Handles clicks to a marker
   clickedMarker(index: number): void {
+    /**
+     * Called whenever a marker is clicked
+     * sets the clicked marker to be the active marker, and disable bin location picker
+     * @param {number} index index of the marker clicked, corresponds to the bin array
+     * @return {void}
+     */
     this.selbin = this.all_bins[index]; // Make clicked bin the active bin
     this.picker_active = false;         // Deactivate bin loc picker, if it was active
   }
 
   // triggered whenever user deletes a dumb bin from editor view
   binDelete(bindel: [Bin, BinExtra]): void {{
+    /**
+     * Delete the specified bin - only gets tracked if the 
+     * deleted bin was a pre-exising one, not one newly added in this edit session
+     * @param {[Bin, VehicleExtra]} bindel the specified bin to delete
+     * @return {void}
+     */
     // Add bin to deletion array if not a newly created and staged bin
     if (bindel[0].serial) this.del_bins.push(bindel[0].serial);
 
@@ -107,6 +155,11 @@ export class ViewBinsComponent implements OnInit {
 
   // triggered whenever user clicks 'new' on editor view
   binAdd(): void {
+    /**
+     * Create a new bin with starting coords in the CBD
+     * Also track it in the new bins array for later posting of edits to backend
+     * @return {void}
+     */
     let newbin: [Bin,BinExtra] = [
       {
         "serial":       undefined,
@@ -131,6 +184,12 @@ export class ViewBinsComponent implements OnInit {
 
   // Attempts to submit changes, flashes error message if server reports any fails
   submitChanges(): void {
+    /**
+     * Determine which existing records have been modified, then send all three edit arrays to the
+     * backend for validation and database update. Three arrays are additions, modifications, deletions
+     * Prompts user with a snackbar on success or failure
+     * @return {void}
+     */
     this.findChanges();
 
     // Pop a message and do nothing if nothing to submit
@@ -184,6 +243,11 @@ export class ViewBinsComponent implements OnInit {
   // Only calculated just before user submission of all edits
   // Checks live array with backup array to determine what changes were made
   findChanges(): void {
+    /**
+     * Determine any changes made to the original input array, vs the live array that is 2-way 
+     * bound to the visual editor, store them in the class variable for modifications
+     * @return {void}
+     */
     let keys = [
       "serial",
       "smartSerial",

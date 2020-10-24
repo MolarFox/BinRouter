@@ -1,3 +1,13 @@
+/**
+ * This is the component ts file for the root view / module.
+ * It's only direct job is to watch for, and act on any routing events
+ * that are raised. Actual routes are defined in the app-routing module .ts file.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -19,6 +29,10 @@ export class AppComponent implements OnInit{
 
   // Subscribe to router nav events
   ngOnInit() {
+    /**
+     * Called when the page has initialised fully
+     * @return {null}
+     */
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
     ).subscribe(() => {
@@ -32,7 +46,12 @@ export class AppComponent implements OnInit{
   }
 
   // Helper function to get active route at a given time
-  getChild(activeRouteLocal: ActivatedRoute){
+  getChild(activeRouteLocal: ActivatedRoute): ActivatedRoute{
+    /**
+     * Gets the active route (eg: in terms of app routing) at a given time
+     * @param {ActivatedRoute} activeRouteLocal the active route
+     * @return {ActivatedRoute} the child of the active route
+     */
     if (activeRouteLocal.firstChild){
       return this.getChild(activeRouteLocal.firstChild);
     }else{

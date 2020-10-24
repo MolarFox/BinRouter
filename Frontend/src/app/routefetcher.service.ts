@@ -1,3 +1,17 @@
+/**
+ * Service that performs fetching of route data
+ * 
+ * Note that due to difficulties in aligning the available gmaps responses
+ * to that expected by the renderer, there have been a number of major modifications to the way
+ * route data is sent by the backend and processed here in the frontend.
+ * In particular, see the routeview ts file for info on how routes are currently 
+ * being processed and rendered.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { NavRoute, NavRouteResponse } from './route';
@@ -16,6 +30,7 @@ export class RoutefetcherService {
   // Use appropriate url based on environment variable
   private routesUrl = (environment.serviceFetcherModes == 0) ? 'data/routes' : 
     'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes5.json';
+    // fetchermode 1 will HTTP fetch from Github raw - see https://github.com/MolarFox/BinRouter_JSONTest*
 
   // Rudimentary cache
   private routecache: NavRoute[] = undefined; // TODO: implement caching functionality
@@ -26,6 +41,10 @@ export class RoutefetcherService {
 
   // Fetches the routes if not already cached, returns observable for HTTP response
   getAllRoutes(): Observable<NavRouteResponse> {
+    /**
+     * Gets all route data, sourced from method specified in environment variables
+     * @return {Observable<NavRouteResponse>} Observable which resolves to the return data
+     */
       if (this.routecache === undefined){  // not yet fetched, fetch it
 
       }      

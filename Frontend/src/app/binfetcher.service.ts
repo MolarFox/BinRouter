@@ -1,3 +1,14 @@
+/**
+ * Service that performs fetching and posting of bin data
+ * 
+ * Methods must be adapted to changes in the interface specification. 
+ * Note that the method to request individual bins is now outdated below.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Bin, BinRaw, BinResponse, jsonToBins, binsToJson } from './bin';
@@ -15,6 +26,7 @@ export class BinfetcherService {
   // Use appropriate url based on environment variable
   private binsUrl = (environment.serviceFetcherModes === 0) ? 'data/bins' : 
     'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/bins1.json';
+    // fetchermode 1 will HTTP fetch from Github raw - see https://github.com/MolarFox/BinRouter_JSONTest*
 
   // Rudimentary cache
   private bincache: Bin[] = undefined; // TODO: implement caching functionality
@@ -33,6 +45,10 @@ export class BinfetcherService {
 
   // Fetches all bins and returns as observable
   getAllBins(): Observable<Bin[]> {
+    /**
+     * Gets all bin data, sourced from method specified in environment variables
+     * @return {Observable<Bin[]>} Observable which resolves to the return data
+     */
     if (environment.serviceFetcherModes === 2){  // fetch from static array
       return of(DUMMY_BINS);
     }else{  // HTTP fetch
@@ -53,6 +69,13 @@ export class BinfetcherService {
 
   // Submits any changes to the server and responds with the response
   submitChanges(newchg, modchg, delchg): Observable<any> {
+    /**
+     * Submits edits to the server - server will notify of any validation errors through response
+     * @param newchg  Array of new bin records
+     * @param modchg  Array of modified, existing bin records
+     * @param delchg  Array of deleted bin records
+     * @return {Observable<any>} Observable containing server response of any failed validation checks
+     */
     let output = {
       "dumbBinsDelete": delchg,
       "dumbBinsCreate": binsToJson(newchg),

@@ -1,3 +1,14 @@
+/**
+ * Routing file
+ * 
+ * All routes as well as their associated paths and titles are defined here.
+ * Actual routing (event listening) occurs in root app component file.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

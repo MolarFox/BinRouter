@@ -1,3 +1,14 @@
+/**
+ * Primary module file - this file is where all imports, declarations, etc. occur.
+ * 
+ * Note that majority of imports are just material design imports, there seems to be many 
+ * since each matdes element has its own module. 
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -67,8 +78,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     MatDialogModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
-      apiKey: GMAPS_API_KEY,
-      libraries: ['visualization']
+      apiKey: GMAPS_API_KEY,        // This will raise error if API key file is missing
+      libraries: ['visualization']  // Required for heatmap rendering
     }),
     AgmMarkerClustererModule
   ],

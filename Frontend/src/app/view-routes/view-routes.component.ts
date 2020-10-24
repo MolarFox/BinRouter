@@ -1,3 +1,16 @@
+/**
+ * Routes view ts file
+ * 
+ * Handles all logic for route view, including loading of all route waypoints 
+ * for each vehicle
+ * 
+ * Actual rendering happens though direct instantiation of renderer module in html file.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { GoogleMapsAPIWrapper } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { RoutefetcherService } from '../routefetcher.service'
@@ -46,6 +59,10 @@ export class ViewRoutesComponent implements OnInit {
 
   // On init, perform some actions - format waypoint data and prime map for usage
   ngOnInit(): void {
+    /**
+     * Called when the page has initialised fully
+     * @return {null}
+     */
     // Subscribe to observable containing HTTP raw response from backend
     // Will save the response and format it before sending to the renderer
     this.routefetcher.getAllRoutes()
@@ -114,12 +131,24 @@ export class ViewRoutesComponent implements OnInit {
 
    // Handles clicks on the map
    mapClicked(e: {coords: {lat: number, lng: number}}){
+     /**
+      * Called whenever the map is clicked
+      * Prints a log of all routes and parsed waypoints to console, for debug purposes
+      * Input is not utilised in latest build
+      * @param e event object, containing lat lng coordinates of the map location clicked
+      */
     console.log(this.all_routes);
     console.log(this.waypoints);
   }
 
   // Gains pointer to the map instance once it loads, using agm event
   onMapLoad(mapInstance: google.maps.Map) {
+    /** 
+     * Called when the agm-map instance is finished loading
+     * Informs the ts file of the map instance, and starts the renderer if bins have also been loaded [old]
+     * @param {google.maps.Map} map the map object that completed loading (should only be 1)
+     * @return {null}
+     */
     this.map = mapInstance;
     if (this.all_routes) this.setupRenderer();
   }
@@ -129,6 +158,11 @@ export class ViewRoutesComponent implements OnInit {
   // The format expected by the vanilla renderer, gmaps api spec, and backend response being sent through all differ
   // ... it's a mess, but the code is clean. See the type definition file for more details on these format discrepancies
   setupRenderer(): void {
+    /**
+     * [Depreciated] Method to initialise the renderer to begin passing routes to render
+     * No longer in use, now using agm-directions instead. Method is nop adjacent.
+     * @return {null}
+     */
 
     /*
     console.log(this.all_routes)
@@ -159,6 +193,4 @@ export class ViewRoutesComponent implements OnInit {
     );
     */
   }
-
-
 }

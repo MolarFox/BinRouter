@@ -1,3 +1,15 @@
+/**
+ * Heatmap view ts file
+ * 
+ * Handles all logic for heatmap, including loading of bin data,
+ * initalisation of map and timely rendering of heatmap itself once all
+ * components are loaded.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { BinfetcherService } from '../binfetcher.service'
 import { Bin } from '../bin';
@@ -21,24 +33,38 @@ export class ViewHeatmapComponent implements OnInit {
 
   all_bins: Bin[] = [];
   //datapoints: google.maps.LatLng[] = []; 
-  datapoints: any[] = []; // for mixed / weighted dataset
+  datapoints: any[] = []; // for mixed / weighted dataset (exact format keeps changing on backend)
 
   constructor(private binfetcher: BinfetcherService) { }
 
   // Process and store bins when ready
   ngOnInit(): void {
+    /**
+     * Called when the page has initialised fully
+     * @return {null}
+     */
     this.binfetcher.getAllBins()
       .subscribe(bins_in => this.process_markers(bins_in));
   }
 
   // Renders the heatmap - only runs once heatmap is loaded
   onMapLoad(mapInstance: google.maps.Map) {
+    /**
+     * Called once the map has loaded
+     * Sets the map instance and calls the heatmap renderer method
+     */
     this.map = mapInstance;
     this.renderHeatmap();
   }
 
   // Set instance bins variable, convert all to markers and display
-  process_markers(bins: Bin[]){
+  process_markers(bins: Bin[]): void{
+    /**
+     * Process the raw bin response from backend into the format used by the 
+     * map renderer - involves using a google maps LatLng type
+     * @param {Bin[]} bins array of raw bins
+     * @return {void}
+     */
     try{
       this.all_bins = bins;
       bins.forEach(bin =>
@@ -57,8 +83,13 @@ export class ViewHeatmapComponent implements OnInit {
   }
 
   // Render heatmap (to be called after map loaded)
-  // Uses bins and assosciated fullness levels to determine point weights
+  // Uses bins and associated fullness levels to determine point weights
   renderHeatmap(){
+    /**
+     * Should only be called once the map has loaded and bin data is ready
+     * Renders the heatmap on the targeted agm-maps map instance using bin data
+     * @return {void}
+     */
     this.heatmap = new google.maps.visualization.HeatmapLayer({
         map: this.map,
         data: this.datapoints,

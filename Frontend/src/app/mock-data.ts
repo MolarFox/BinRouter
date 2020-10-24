@@ -1,6 +1,16 @@
-// This file is pretending to be data - it should be fetched from a server in final product
-// Service is using observables to make transition to prod setup seamless
-// THIS FILE IS KEPT FOR LEGACY PURPOSES - FRONTEND NOW EITHER FETCHES FROM STATIC JSON OR FULL BACKEND STACK
+/**
+ * This file is pretending to be data - it should be fetched from a server in final product
+ * Service is using observables to make transition to prod setup seamless - all internal components
+ * will remain the same, regardless of whether services are fetching from a static URL, an actual backend db,
+ * or from this static file filled with dummy data.
+ * 
+ * Only the services will need to be modified later to support transition to full-functionality.
+ * THIS FILE IS KEPT FOR LEGACY PURPOSES - FRONTEND NOW EITHER FETCHES FROM STATIC JSON OR FULL BACKEND STACK
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 import { Bin } from './bin';
 import { Vehicle } from './vehicle';
@@ -3365,9 +3375,9 @@ export const DUMMY_DEPOTS: Depot[] = [
 ]
 
 export const DUMMY_VEHICLES: Vehicle[] = [
-    // TODO: populate with dummy vals
+    // Deleted to save space - no longer used, JSON fetches used instead
 ]
 
 export const DUMMY_ROUTES: NavRoute[] = [
-    // TODO: populate with dummy vals
+    // Deleted to save space - no longer used, JSON fetches used instead
 ]

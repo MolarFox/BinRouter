@@ -1,4 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+/**
+ * Main menu component
+ * 
+ * Very basic 50px high bar which has button toggles for navigating to the four
+ * views within the webapp. This component is always visible so long as the app is loaded.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
+ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mainmenu',
@@ -13,6 +24,10 @@ export class MainmenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    /**
+     * Called when the page has initialised fully
+     * @return {null}
+     */
   }
 
 }

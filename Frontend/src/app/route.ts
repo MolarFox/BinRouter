@@ -1,3 +1,29 @@
+/**
+ * Route interfaces definition file
+ * 
+ * The actual nature of these responses varies widely, though by centralising all definitions
+ * to a single file like below, it is possible to perform refactoring without affecting the 
+ * entire codebase of the frontend.
+ * 
+ * The format returned by the backend (following computation via OR tools), the format described in the 
+ * Google API specification, and the format that seems to actually be returned when calling the JS API
+ * renderer all seem to be completely different. Efforts to convert or reformat these structures for 
+ * compatibility were largely unsuccessful, as can be seen in the commented-out code below.
+ * 
+ * Combined with difficulties in feeding this data into either the vanilla JS endpoint or into the
+ * encapsulated agm-directions injectable renderer, I ultimately opted to recalculate this data for use.
+ * See the route display page for more information.
+ *
+ * Internal processes in frontend expect the regular Route type, though
+ * due to frequent updates and uncertainty in the type of response the backend
+ * may send, it may be necessary to maintain a separate interface for the actual response
+ * format and conversion functions to go between the two formats.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Output } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { DepotRaw } from './depot';
@@ -28,6 +54,11 @@ export interface NavRouteWaypointed {
 
 // Converts NavRoute to NavRouteWaypointed, for use with agm-directions renderer
 export function navToWaypoint(nav: NavRoute): NavRouteWaypointed {
+    /**
+     * Method to convert regular navroute to one using google maps embedded datatype
+     * @param {NavRoute} nav input navroute
+     * @return {NavRouteWaypointed} mutated input containing google.maps.DirectionsWaypoint[] type
+     */
     try{
         let waypointed: google.maps.DirectionsWaypoint[] = []
         nav.visitingOrder.forEach(x =>

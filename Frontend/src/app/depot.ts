@@ -1,4 +1,20 @@
-// Struct for vehicle depots
+/**
+ * Depot interfaces definition file
+ * 
+ * Since the backend sometimes sends depot info along with other requests (eg: routing, fleet),
+ * those interface definition files may need to import from this one.
+ *
+ * Internal processes in frontend expect the regular Depot type, though
+ * due to frequent updates and uncertainty in the type of response the backend
+ * may send, it may be necessary to maintain a separate interface for the actual response
+ * format and conversion functions to go between the two formats.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
+// Struct for vehicle depots (used in frontend)
 export interface Depot {
     id:         string,
     lat:        number,
@@ -22,6 +38,11 @@ export interface DepotResponse {
 
 // Convert depotraw to depot (backend format to frontend format)
 export function jsonToDepots(res: DepotRaw[]): Depot[] {
+    /**
+     * Converts raw json response from backend to format used by frontend
+     * @param {DepotRaw[]} res array of depot response from backend
+     * @return {Depot[]} the raw array with each element converted to frontend format
+     */
     let outarray: Depot[] = []
     for (let i=0; i < res.length; i++){
         let record = res[i];
@@ -34,5 +55,5 @@ export function jsonToDepots(res: DepotRaw[]): Depot[] {
             }
         )
     }
-    return outarray
+    return outarray;
 }

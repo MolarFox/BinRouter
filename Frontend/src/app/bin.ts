@@ -1,4 +1,17 @@
-// Struct for bins
+/**
+ * Bin interfaces definition file
+ *
+ * Internal processes in frontend expect the regular Bin type, though
+ * due to frequent updates and uncertainty in the type of response the backend
+ * may send, it may be necessary to maintain a separate interface for the actual response
+ * format and conversion functions to go between the two formats.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
+// Struct for bins (used throughout frontend)
 export interface Bin {
     serial:     string,
     smartSerial:number,
@@ -40,6 +53,11 @@ export interface BinResponse {
 
 // Converts binraw to bin, for use in translating received data from backend
 export function jsonToBins(res: BinRaw[]): Bin[] {
+    /**
+     * Converts raw json response from backend to format used by frontend
+     * @param {BinRaw[]} res array of bin response from backend
+     * @return {Bin[]} the raw array with each element converted to frontend format
+     */
     let outarray: Bin[] = []
     for (let i=0; i < res.length; i++){
         let record = res[i]
@@ -62,6 +80,11 @@ export function jsonToBins(res: BinRaw[]): Bin[] {
 
 // Converts from bin to binout, for use in translating user edits to puts req format
 export function binsToJson(bins: Bin[]): BinOut[] {
+    /**
+     * Converts frontend bin format ot partial backend format (specialised response type is expected)
+     * @param {Bin[]} bins array of bins to be converted
+     * @return {BinOut[]} input array converted to the format expected to be received at the backend
+     */
     let outarray: BinOut[] = [];
     for (let i=0; i < bins.length; i++){
         let record = bins[i];

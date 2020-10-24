@@ -1,3 +1,15 @@
+/**
+ * Fleet view / editor ts file
+ * 
+ * Handles all logic for the fleet viewer and editor,
+ * most importantly handles sending of requests to backend and
+ * validation of these edits.
+ * 
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FleetfetcherService } from '../fleetfetcher.service';
 import { Vehicle } from '../vehicle';
@@ -49,6 +61,10 @@ export class ViewFleetComponent implements OnInit {
   // Loads live array (data the editor sees), and deep copy into backup array
   // Modifications are determined by comparing live array with backup before edit submission
   ngOnInit(): void {
+    /**
+     * Called when the page has initialised fully
+     * @return {null}
+     */
     this.fleetfetcher.getAllFleet()
       .subscribe(fleet_in =>
         // add all fetched fleet vehicles to array with a spot for their extra data
@@ -83,6 +99,11 @@ export class ViewFleetComponent implements OnInit {
 
   // Triggered whenever user clicks on a vehicle in list view
   vehicleClick(veh: [Vehicle, VehicleExtra]): void {
+    /**
+     * Called whenever a vehicle is clicked in the RHS edit sidebar
+     * Sets that vehicle to be the active vehicle, and updates the internal param
+     * of it and the previously active vehicle as such (used by editor for button style rendering)
+     */
     // Reset selection of previously selected vehicle
     if (this.selveh){
       this.selveh[1].selected = false;
@@ -96,6 +117,12 @@ export class ViewFleetComponent implements OnInit {
 
   // triggered whenever user clicks 'delete' on a given vehicle
   vehicleDelete(veh: [Vehicle, VehicleExtra]): void {
+    /**
+     * Delete the specified vehicle - only gets tracked if the 
+     * deleted vehicle was a pre-exising one, not one newly added in this edit session
+     * @param {[Vehicle, VehicleExtra]} veh the specified vehicle to delete
+     * @return {void}
+     */
     // Is vehicle an exising one? (new vehicles will not have an id assigned)
     if (veh[0]._id){
       // Add vehicle to the deletion array, if not a new vehicle
@@ -119,6 +146,11 @@ export class ViewFleetComponent implements OnInit {
 
   // triggered whenever user clicks 'new' from the editor view
   vehicleAdd(): void {
+    /**
+     * Create a new vehicle with a random VIN, set it as the active vehicle
+     * Also track it in the new vehicles array for later posting of edits to backend
+     * @return {void}
+     */
     let newrego = regoGen(6);
     let newveh: [Vehicle, VehicleExtra] = [
       {
@@ -144,6 +176,11 @@ export class ViewFleetComponent implements OnInit {
   // Submits changes to the backend server, or notifies user of issues
   // THIS IS INCOMPLETE AND I'M NO LONGER USING IT, IN FAVOR OF SNACKBAR BELOW
   openDialogue(): void {
+    /**
+     * [Depreciated] will open a dialogue popup
+     * Intended as a structured method to show user the result of their most recent edit push
+     * @return {void}
+     */
     const dialogRef = this.dialog.open(ViewFleetPopup);
     let popupresult = undefined;
     dialogRef.afterClosed().subscribe(
@@ -154,12 +191,24 @@ export class ViewFleetComponent implements OnInit {
   // Validates all changes made thus far - true if all pass
   // This was not completed as it is low priority, already have validation on the backend
   // Ideally should be implemented if time permits
-  validateChanges(): boolean {
-    return true // TODO
+  validateChanges(): ChkFail[] {
+    /**
+     * [NOT IMPLEMENTED] A function to validate all proposed edits before sending them to the backend
+     * This was deemed low priority as we already had validation on backend working ahead of time, 
+     * and are instead relying on the backend response header to determine if edits are valid.
+     * @return {ChkFail[]} return array of validation issues found - empty if none
+     */
+    return [];
   }
 
   // Attempts to submit changes, flashes error message if server reports any fails
   submitChanges(): void {
+    /**
+     * Determine which existing records have been modified, then send all three edit arrays to the
+     * backend for validation and database update. Three arrays are additions, modifications, deletions
+     * Prompts user with a snackbar on success or failure
+     * @return {void}
+     */
     this.findChanges();
 
     // Pop a message and do nothing if nothing to submit
@@ -174,6 +223,7 @@ export class ViewFleetComponent implements OnInit {
       this.mod_vehicles,
       this.del_vehicles
     ).subscribe(
+      // Pop a snackbar on success
       x => {
         console.log(x);
         console.log(x.status)
@@ -190,6 +240,7 @@ export class ViewFleetComponent implements OnInit {
           //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
         }
       },
+      // Pop a snackbar on failure
       y => {
         console.log(y);
         console.log(y.status)
@@ -213,6 +264,11 @@ export class ViewFleetComponent implements OnInit {
   // Only calculated just before user submission of all edits
   // Compares live array with original array to determine what edits were made
   findChanges(): void {
+    /**
+     * Determine any changes made to the original input array, vs the live array that is 2-way 
+     * bound to the visual editor, store them in the class variable for modifications
+     * @return {void}
+     */
     let keys = [
       "_id",
       "rego",
@@ -237,13 +293,17 @@ export class ViewFleetComponent implements OnInit {
 
   // Reloads the page
   reloadPage(): void {
+    /**
+     * Reloads the page using reload - called in some HTML loopbacks
+     * @return {void}
+     */
     location.reload();
   }
 }
 
 
 // This export is the dialog box that pops to verify user changes
-// No longer in use as not completed - dormant module
+// No longer in use as not completed - dormant component and class declaration
 @Component({
   selector: './view-fleet-popup',
   templateUrl: './view-fleet-popup.html',
@@ -271,6 +331,11 @@ interface ChkFail {
 // Adapted from https://stackoverflow.com/a/1349426
 // Generates a random rego for use in newly created rego records
 function regoGen(length: number) {
+  /**
+   * Generates a random n letter VIN registration, for use as a placeholder
+   * @param {number} length length of the string to return
+   * @returns {string} string of desired length containing only numbers and upper-case alpha-glyphs
+   */
   var result           = '';
   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   var charactersLength = characters.length;
