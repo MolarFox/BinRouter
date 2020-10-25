@@ -1,6 +1,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- Map is passthrough to routes view (intended to eventually take inputs to link w/ editor selection) -->
-<app-view-routes></app-view-routes>
+<!-- Map is passthrough to routes view -->
+<app-view-routes
+[selvehid]="(selveh != undefined) ? selveh[0]._id : undefined"
+[showselector]="false">
+</app-view-routes>
 
 <!-- Menu on the RHS of screen -->
 <div class=editmenu>

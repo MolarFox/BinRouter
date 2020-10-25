@@ -29,7 +29,7 @@ export class RoutefetcherService {
 
   // Use appropriate url based on environment variable
   private routesUrl = (environment.serviceFetcherModes == 0) ? 'data/routes' : 
-    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes5.json';
+    'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes4.json';
     // fetchermode 1 will HTTP fetch from Github raw - see https://github.com/MolarFox/BinRouter_JSONTest*
 
   // Rudimentary cache

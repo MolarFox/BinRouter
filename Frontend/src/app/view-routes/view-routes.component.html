@@ -12,6 +12,7 @@
         <div *ngFor="let veh of render_waypoints">
             <div *ngFor="let routeset of veh.arr; let i=index">
                 <agm-direction
+                *ngIf="(selvehid == undefined) || (selvehid == routeset.vehicle_id)"
                 [origin]="routeset.start"
                 [destination]="routeset.end"
                 [waypoints]="routeset.waypoints">
@@ -22,3 +23,21 @@
         </div>
     </div>
 </agm-map>
+
+<!-- Selector for current vehicle -->
+<mat-form-field 
+appearance="fill" 
+*ngIf="showselector"
+style="position: absolute; right: 25px; top: 75px; background-color: whitesmoke;">
+    <mat-label>selected vehicle</mat-label>
+    <mat-select 
+    *ngIf="render_waypoints != []"
+    [(ngModel)]="selvehid" 
+    name="Sel_veh_selector">
+      <mat-option 
+      *ngFor="let veh of render_waypoints; let j=index" 
+      [value]="veh.arr[0].vehicle_id">
+        {{j}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>

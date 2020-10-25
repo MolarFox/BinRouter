@@ -39,6 +39,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./view-heatmap/view-heatmap.component */ "./src/app/view-heatmap/view-heatmap.component.ts");
 /* harmony import */ var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view-bins/view-bins.component */ "./src/app/view-bins/view-bins.component.ts");
 /* harmony import */ var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./view-fleet/view-fleet.component */ "./src/app/view-fleet/view-fleet.component.ts");
+/**
+ * Routing file
+ *
+ * All routes as well as their associated paths and titles are defined here.
+ * Actual routing (event listening) occurs in root app component file.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -48,6 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const appTitle = "BinRouter";
+// All possible routes in the app are defined here
 const routes = [
     { path: '', redirectTo: '/routes', pathMatch: 'full' },
     { path: 'routes', component: _view_routes_view_routes_component__WEBPACK_IMPORTED_MODULE_2__["ViewRoutesComponent"],
@@ -71,6 +82,7 @@ const routes = [
         }
     }
 ];
+// The whole module has a higher precedence due to the job it performs, loads in on main app view
 class AppRoutingModule {
 }
 AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
@@ -102,6 +114,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 /* harmony import */ var _mainmenu_mainmenu_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mainmenu/mainmenu.component */ "./src/app/mainmenu/mainmenu.component.ts");
+/**
+ * This is the component ts file for the root view / module.
+ * It's only direct job is to watch for, and act on any routing events
+ * that are raised. Actual routes are defined in the app-routing module .ts file.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -118,7 +139,12 @@ class AppComponent {
     }
     // Subscribe to router nav events
     ngOnInit() {
+        /**
+         * Called when the page has initialised fully
+         * @return {null}
+         */
         this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(event => event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"])).subscribe(() => {
+            console.log(`Navigated to route ${this.activeRoute} at time ${new Date()}`);
             const crt = this.getChild(this.activeRoute);
             crt.data.subscribe(data => {
                 this.titleService.setTitle(data.title);
@@ -127,6 +153,11 @@ class AppComponent {
     }
     // Helper function to get active route at a given time
     getChild(activeRouteLocal) {
+        /**
+         * Gets the active route (eg: in terms of app routing) at a given time
+         * @param {ActivatedRoute} activeRouteLocal the active route
+         * @return {ActivatedRoute} the child of the active route
+         */
         if (activeRouteLocal.firstChild) {
             return this.getChild(activeRouteLocal.firstChild);
         }
@@ -194,6 +225,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _view_heatmap_view_heatmap_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./view-heatmap/view-heatmap.component */ "./src/app/view-heatmap/view-heatmap.component.ts");
 /* harmony import */ var _view_bins_view_bins_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./view-bins/view-bins.component */ "./src/app/view-bins/view-bins.component.ts");
 /* harmony import */ var _view_fleet_view_fleet_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./view-fleet/view-fleet.component */ "./src/app/view-fleet/view-fleet.component.ts");
+/**
+ * Primary module file - this file is where all imports, declarations, etc. occur.
+ *
+ * Note that majority of imports are just material design imports, there seems to be many
+ * since each matdes element has its own module.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -257,7 +298,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"],
             _agm_core__WEBPACK_IMPORTED_MODULE_22__["AgmCoreModule"].forRoot({
                 apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
-                libraries: ['visualization']
+                libraries: ['visualization'] // Required for heatmap rendering
             }),
             _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_24__["AgmMarkerClustererModule"]
         ]] });
@@ -326,7 +367,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     agm_direction__WEBPACK_IMPORTED_MODULE_23__["AgmDirectionModule"],
                     _agm_core__WEBPACK_IMPORTED_MODULE_22__["AgmCoreModule"].forRoot({
                         apiKey: _gmaps_apikey__WEBPACK_IMPORTED_MODULE_5__["GMAPS_API_KEY"],
-                        libraries: ['visualization']
+                        libraries: ['visualization'] // Required for heatmap rendering
                     }),
                     _agm_markerclusterer__WEBPACK_IMPORTED_MODULE_24__["AgmMarkerClustererModule"]
                 ],
@@ -349,7 +390,25 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jsonToBins", function() { return jsonToBins; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "binsToJson", function() { return binsToJson; });
+/**
+ * Bin interfaces definition file
+ *
+ * Internal processes in frontend expect the regular Bin type, though
+ * due to frequent updates and uncertainty in the type of response the backend
+ * may send, it may be necessary to maintain a separate interface for the actual response
+ * format and conversion functions to go between the two formats.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+// Converts binraw to bin, for use in translating received data from backend
 function jsonToBins(res) {
+    /**
+     * Converts raw json response from backend to format used by frontend
+     * @param {BinRaw[]} res array of bin response from backend
+     * @return {Bin[]} the raw array with each element converted to frontend format
+     */
     let outarray = [];
     for (let i = 0; i < res.length; i++) {
         let record = res[i];
@@ -367,7 +426,13 @@ function jsonToBins(res) {
     }
     return outarray;
 }
+// Converts from bin to binout, for use in translating user edits to puts req format
 function binsToJson(bins) {
+    /**
+     * Converts frontend bin format ot partial backend format (specialised response type is expected)
+     * @param {Bin[]} bins array of bins to be converted
+     * @return {BinOut[]} input array converted to the format expected to be received at the backend
+     */
     let outarray = [];
     for (let i = 0; i < bins.length; i++) {
         let record = bins[i];
@@ -403,6 +468,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _httpHelpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./httpHelpers */ "./src/app/httpHelpers.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/**
+ * Service that performs fetching and posting of bin data
+ *
+ * Methods must be adapted to changes in the interface specification.
+ * Note that the method to request individual bins is now outdated below.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -418,6 +493,7 @@ class BinfetcherService {
         // Use appropriate url based on environment variable
         this.binsUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes === 0) ? 'data/bins' :
             'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/bins1.json';
+        // fetchermode 1 will HTTP fetch from Github raw - see https://github.com/MolarFox/BinRouter_JSONTest*
         // Rudimentary cache
         this.bincache = undefined; // TODO: implement caching functionality
     }
@@ -428,7 +504,12 @@ class BinfetcherService {
       )
     }
     */
+    // Fetches all bins and returns as observable
     getAllBins() {
+        /**
+         * Gets all bin data, sourced from method specified in environment variables
+         * @return {Observable<Bin[]>} Observable which resolves to the return data
+         */
         if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes === 2) { // fetch from static array
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_mock_data__WEBPACK_IMPORTED_MODULE_3__["DUMMY_BINS"]);
         }
@@ -437,17 +518,26 @@ class BinfetcherService {
             }
             // return of(this.binscache);
             return this.http.get(this.binsUrl)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(x => Object(_bin__WEBPACK_IMPORTED_MODULE_2__["jsonToBins"])(x.bins)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])('getAllBins', [])));
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(x => { console.log("Bins received:"); console.log(x); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(x => Object(_bin__WEBPACK_IMPORTED_MODULE_2__["jsonToBins"])(x.bins)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])('getAllBins', [])));
         }
     }
     // Submits any changes to the server and responds with the response
     submitChanges(newchg, modchg, delchg) {
+        /**
+         * Submits edits to the server - server will notify of any validation errors through response
+         * @param newchg  Array of new bin records
+         * @param modchg  Array of modified, existing bin records
+         * @param delchg  Array of deleted bin records
+         * @return {Observable<any>} Observable containing server response of any failed validation checks
+         */
         let output = {
             "dumbBinsDelete": delchg,
             "dumbBinsCreate": Object(_bin__WEBPACK_IMPORTED_MODULE_2__["binsToJson"])(newchg),
             "dumbBinsUpdate": Object(_bin__WEBPACK_IMPORTED_MODULE_2__["binsToJson"])(modchg)
         };
         output.dumbBinsCreate.forEach(x => delete x._id); // id undefined - irrelevant to backend
+        console.log("Bin edits sent:");
+        console.log(output); // log for debug purposes
         return this.http.put(this.binsUrl, output);
     }
 }
@@ -473,7 +563,28 @@ BinfetcherService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jsonToDepots", function() { return jsonToDepots; });
+/**
+ * Depot interfaces definition file
+ *
+ * Since the backend sometimes sends depot info along with other requests (eg: routing, fleet),
+ * those interface definition files may need to import from this one.
+ *
+ * Internal processes in frontend expect the regular Depot type, though
+ * due to frequent updates and uncertainty in the type of response the backend
+ * may send, it may be necessary to maintain a separate interface for the actual response
+ * format and conversion functions to go between the two formats.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+// Convert depotraw to depot (backend format to frontend format)
 function jsonToDepots(res) {
+    /**
+     * Converts raw json response from backend to format used by frontend
+     * @param {DepotRaw[]} res array of depot response from backend
+     * @return {Depot[]} the raw array with each element converted to frontend format
+     */
     let outarray = [];
     for (let i = 0; i < res.length; i++) {
         let record = res[i];
@@ -508,6 +619,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _httpHelpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./httpHelpers */ "./src/app/httpHelpers.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/**
+ * Service that performs fetching and posting of vehicle data
+ *
+ * Methods must be adapted to changes in the interface specification.
+ * Note that the method to request individual vehicles is now outdated below.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -517,17 +638,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Service to handle fetching of fleet data, and posting of any changes made with editor
 class FleetfetcherService {
     constructor(http) {
         this.http = http;
         // Use appropriate url based on environment variable
         this.fleetUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes == 0) ? 'data/vehicles' :
             'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/vehicles1.json';
+        // fetchermode 1 will HTTP fetch from Github raw - see https://github.com/MolarFox/BinRouter_JSONTest*
         // Rudimentary caches
         this.depotcache = undefined; // TODO: implement caching functionality
         this.fleetcache = undefined; // TODO: implement caching functionality
     }
+    // Fetches all depots
     getAllDepots() {
+        /**
+         * Gets all depot data, sourced from method specified in environment variables
+         * @return {Observable<Depot[]>} Observable which resolves to the return data
+         */
         if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes === 2) { // fetch from static array
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_mock_data__WEBPACK_IMPORTED_MODULE_3__["DUMMY_DEPOTS"]);
         }
@@ -535,10 +663,17 @@ class FleetfetcherService {
             if (this.depotcache === undefined) { // not yet fetched, fetch it
             }
             return this.http.get(this.fleetUrl)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(x => Object(_depot__WEBPACK_IMPORTED_MODULE_2__["jsonToDepots"])(x.depots)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])('getAllDepots', [])));
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(x => { console.log("Depots received:"); console.log(x); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(x => Object(_depot__WEBPACK_IMPORTED_MODULE_2__["jsonToDepots"])(x.depots)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])('getAllDepots', [])));
         }
     }
+    // Fetches an individual depot, minimising network traffic
+    // Depreciated method - backend modified, no longer works
     getDepot(id) {
+        /**
+         * [Depreciated] Gets the specified depot only
+         * @param {string} id id of the depot to retrieve
+         * @return {Observable<Depot>} Observable which resolves to the specified depot
+         */
         if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes === 2) { // fetch from static array
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_mock_data__WEBPACK_IMPORTED_MODULE_3__["DUMMY_DEPOTS"].find(chk_depot => chk_depot.id === id));
         }
@@ -546,12 +681,17 @@ class FleetfetcherService {
             if (this.depotcache === undefined) { // not yet fetched, fetch it
             }
             //return of(this.depotcache.find(chk_depot => chk_depot.id === id));
-            // TODO: FIX WITH YI-SONG IMPLEMENTATION
+            // TODO: FIX WITH YI-SONG NEW IMPLEMENTATION (AAAAA??)
             return this.http.get(`${this.fleetUrl}/${id}`)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])(`getDepot id=${id}`)));
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(x => { console.log("Depot received:"); console.log(x); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])(`getDepot id=${id}`)));
         }
     }
+    // Fetches all vehicles in the fleet
     getAllFleet() {
+        /**
+         * Gets all fleet data, sourced from method specified in environment variables
+         * @return {Observable<Vehicle[]>} Observable which resolves to the return data
+         */
         if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes === 2) { // fetch from static array
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_mock_data__WEBPACK_IMPORTED_MODULE_3__["DUMMY_VEHICLES"]);
         }
@@ -559,10 +699,17 @@ class FleetfetcherService {
             if (this.fleetcache === undefined) { // not yet fetched, fetch it
             }
             return this.http.get(this.fleetUrl)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(x => x.fleetVehicles), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])('getAllFleet', [])));
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(x => { console.log("Vehicles received:"); console.log(x); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(x => x.fleetVehicles), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])('getAllFleet', [])));
         }
     }
+    // Fetches individual vehicle from fleet database
+    // As above, this method is now depreciated
     getVehicle(rego) {
+        /**
+         * [Depreciated] Gets the specified vehicle only
+         * @param {string} rego rego of the vehicle to retrieve
+         * @return {Observable<Vehicle>} Observable which resolves to the specified vehicle
+         */
         if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].serviceFetcherModes === 2) { // fetch from static array
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(_mock_data__WEBPACK_IMPORTED_MODULE_3__["DUMMY_VEHICLES"].find(chk_vehicle => chk_vehicle.rego === rego));
         }
@@ -571,18 +718,27 @@ class FleetfetcherService {
             }
             // TODO: FIX WITH YI-SONG IMPLEMENTATION
             return this.http.get(`${this.fleetUrl}/${rego}`)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])(`getVehicle rego=${rego}`)));
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(x => { console.log("Vehicle received:"); console.log(x); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_6__["handleError"])(`getVehicle rego=${rego}`)));
             //return of(this.fleetcache.find(chk_vehicle => chk_vehicle.rego === rego));
         }
     }
     // Submits any changes to the server and responds with the response
     submitChanges(newchg, modchg, delchg) {
+        /**
+         * Submits edits to the server - server will notify of any validation errors through response
+         * @param newchg  Array of new vehicle records
+         * @param modchg  Array of modified, existing vehicle records
+         * @param delchg  Array of deleted vehicle records
+         * @return {Observable<any>} Observable containing server response of any failed validation checks
+         */
         let output = {
             "fleetVehiclesDelete": delchg,
             "fleetVehiclesCreate": newchg,
             "fleetVehiclesUpdate": modchg
         };
         output.fleetVehiclesCreate.forEach(x => delete x._id); // id undefined - irrelevant to backend
+        console.log("Bin edits sent:");
+        console.log(output); // log for debug purposes
         return this.http.put(this.fleetUrl, output);
     }
 }
@@ -608,6 +764,17 @@ FleetfetcherService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GMAPS_API_KEY", function() { return GMAPS_API_KEY; });
+/**
+ * This is my google maps API key. Key is needed for frontend to function, can be replaced with another
+ * Replacement key should have the appropriate JS and directions API enabled in GCP console
+ * NB: This key is restricted, and will necessarily be included in the transpiled build files
+ *
+ * It will be necessary to include this file in the final build - it is intentionally git-ignored
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 const GMAPS_API_KEY = "AIzaSyBkb7M2-KAlddjBYQrmDrh8G6QKmptfEDc";
 
 
@@ -624,8 +791,22 @@ const GMAPS_API_KEY = "AIzaSyBkb7M2-KAlddjBYQrmDrh8G6QKmptfEDc";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleError", function() { return handleError; });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/**
+ * File for any generic HTTP functions and snippets
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
+// Generalised HTTP error handler I made to deal with any response failures
 function handleError(operation = 'operation', result) {
+    /**
+     * Logs a HTTP method failure and returns the server response
+     * @param {string} operation name of the operation attempted, which failed
+     * @param {result?} result result of the operation, if any
+     * @return {result?} Returns response, if available, whatever type it may be
+     */
     return (error) => {
         console.error(error); // log error to console
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(result);
@@ -650,6 +831,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
+/**
+ * Main menu component
+ *
+ * Very basic 50px high bar which has button toggles for navigating to the four
+ * views within the webapp. This component is always visible so long as the app is loaded.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -658,9 +849,15 @@ __webpack_require__.r(__webpack_exports__);
 
 class MainmenuComponent {
     constructor() {
+        // This name started as an off-the-cuff placeholder, looks like it stuck :p
         this.title = 'BinRouter';
     }
     ngOnInit() {
+        /**
+         * Called when the page has initialised fully
+         * @return {null}
+         */
+        console.log(`Main menu loaded at time ${new Date()}`);
     }
 }
 MainmenuComponent.ɵfac = function MainmenuComponent_Factory(t) { return new (t || MainmenuComponent)(); };
@@ -748,8 +945,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DUMMY_DEPOTS", function() { return DUMMY_DEPOTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DUMMY_VEHICLES", function() { return DUMMY_VEHICLES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DUMMY_ROUTES", function() { return DUMMY_ROUTES; });
-// This file is pretending to be data - it should be fetched from a server in final product
-// Service is using observables to make transition to prod setup seamless
+/**
+ * This file is pretending to be data - it should be fetched from a server in final product
+ * Service is using observables to make transition to prod setup seamless - all internal components
+ * will remain the same, regardless of whether services are fetching from a static URL, an actual backend db,
+ * or from this static file filled with dummy data.
+ *
+ * Only the services will need to be modified later to support transition to full-functionality.
+ * THIS FILE IS KEPT FOR LEGACY PURPOSES - FRONTEND NOW EITHER FETCHES FROM STATIC JSON OR FULL BACKEND STACK
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 const DUMMY_BINS = [
     {
         "serial": String(0),
@@ -4106,10 +4314,10 @@ const DUMMY_DEPOTS = [
     }
 ];
 const DUMMY_VEHICLES = [
-// TODO: populate with dummy vals
+// Deleted to save space - no longer used, JSON fetches used instead
 ];
 const DUMMY_ROUTES = [
-// TODO: populate with dummy vals
+// Deleted to save space - no longer used, JSON fetches used instead
 ];
 
 
@@ -4125,7 +4333,38 @@ const DUMMY_ROUTES = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navToWaypoint", function() { return navToWaypoint; });
+/**
+ * Route interfaces definition file
+ *
+ * The actual nature of these responses varies widely, though by centralising all definitions
+ * to a single file like below, it is possible to perform refactoring without affecting the
+ * entire codebase of the frontend.
+ *
+ * The format returned by the backend (following computation via OR tools), the format described in the
+ * Google API specification, and the format that seems to actually be returned when calling the JS API
+ * renderer all seem to be completely different. Efforts to convert or reformat these structures for
+ * compatibility were largely unsuccessful, as can be seen in the commented-out code below.
+ *
+ * Combined with difficulties in feeding this data into either the vanilla JS endpoint or into the
+ * encapsulated agm-directions injectable renderer, I ultimately opted to recalculate this data for use.
+ * See the route display page for more information.
+ *
+ * Internal processes in frontend expect the regular Route type, though
+ * due to frequent updates and uncertainty in the type of response the backend
+ * may send, it may be necessary to maintain a separate interface for the actual response
+ * format and conversion functions to go between the two formats.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
+// Converts NavRoute to NavRouteWaypointed, for use with agm-directions renderer
 function navToWaypoint(nav) {
+    /**
+     * Method to convert regular navroute to one using google maps embedded datatype
+     * @param {NavRoute} nav input navroute
+     * @return {NavRouteWaypointed} mutated input containing google.maps.DirectionsWaypoint[] type
+     */
     try {
         let waypointed = [];
         nav.visitingOrder.forEach(x => waypointed.push({
@@ -4205,26 +4444,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _httpHelpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./httpHelpers */ "./src/app/httpHelpers.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/**
+ * Service that performs fetching of route data
+ *
+ * Note that due to difficulties in aligning the available gmaps responses
+ * to that expected by the renderer, there have been a number of major modifications to the way
+ * route data is sent by the backend and processed here in the frontend.
+ * In particular, see the routeview ts file for info on how routes are currently
+ * being processed and rendered.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
 
 
 
+// Service performs fetching of routes
 class RoutefetcherService {
     constructor(http) {
         this.http = http;
         // Use appropriate url based on environment variable
         this.routesUrl = (_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].serviceFetcherModes == 0) ? 'data/routes' :
-            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes5.json';
+            'https://raw.githubusercontent.com/MolarFox/BinRouter_JSONTest/main/routes4.json';
+        // fetchermode 1 will HTTP fetch from Github raw - see https://github.com/MolarFox/BinRouter_JSONTest*
         // Rudimentary cache
         this.routecache = undefined; // TODO: implement caching functionality
     }
+    // Fetches the routes if not already cached, returns observable for HTTP response
     getAllRoutes() {
+        /**
+         * Gets all route data, sourced from method specified in environment variables
+         * @return {Observable<NavRouteResponse>} Observable which resolves to the return data
+         */
         if (this.routecache === undefined) { // not yet fetched, fetch it
         }
         return this.http.get(this.routesUrl)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(x => { console.log("Routes received:"); console.log(x); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(Object(_httpHelpers__WEBPACK_IMPORTED_MODULE_3__["handleError"])('getAllRoutes')));
     }
 }
 RoutefetcherService.ɵfac = function RoutefetcherService_Factory(t) { return new (t || RoutefetcherService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"])); };
@@ -4263,6 +4522,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/progress-bar */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/progress-bar.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/checkbox */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/checkbox.js");
+/**
+ * Bin view / editor ts file
+ *
+ * Handles all logic for the bin viewer and editor,
+ * most importantly handles sending of requests to backend and
+ * validation of these edits.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -4423,15 +4693,19 @@ function ViewBinsComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Pick a bin to begin editing ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
+// Code for bin editor view
 class ViewBinsComponent {
     constructor(binfetcher, _snackBar) {
         this.binfetcher = binfetcher;
         this._snackBar = _snackBar;
+        // Start coords and zoom for map - these coords are in the CBD
         this.start_lat = -37.8142588;
         this.start_lng = 144.9666622;
         this.start_zoom = 14;
+        // Bin arrays and current bin selection
         this.all_bins = []; // Array of all bins
         this.orig_bins = []; // Unmodified array of all bins
+        // Arrays to track modifications made during editing
         this.del_bins = []; // Array of dumb bins staged for deletion
         this.mod_bins = []; // Array of dumb bins to modify with new values
         this.add_bins = []; // Array of dumb bins to create
@@ -4439,17 +4713,38 @@ class ViewBinsComponent {
         this.subtitle = "Pick a bin to begin editing";
         this.picker_active = false;
     }
+    // Retrieve and process bins into live storage once available
     ngOnInit() {
+        /**
+         * Called when the page has initialised fully
+         * @return {null}
+         */
         this.binfetcher.getAllBins()
             .subscribe(bins_in => this.process_markers(bins_in));
+        console.log(`Bin view loaded at time ${new Date()}`);
     }
     // Set instance bins variable, convert all to markers and display
+    // Note deep copy of full bin array stored into the reference / backup array
     process_markers(bins) {
+        /**
+         * Called after bins have been loaded
+         * Processes the input bins and formats them for placement into the live and original
+         * bin tracking arrays in the class
+         * @param {Bin[]} bins Array of bins, raw response from the backend
+         * @return {void}
+         */
         this.orig_bins = JSON.parse(JSON.stringify(bins)); // deep copy
         bins.forEach(bin => this.all_bins.push([bin, { "draggable": false }]));
     }
     // Handles clicks on the map
     mapClicked(e) {
+        /**
+         * Called when the map is clicked anywhere
+         * If the bin location picker is active, sets new location for the active bin
+         * otherwise ignores the event
+         * @param {{{number, number}}} e map click event, containing map coordinates of click
+         * @return {void}
+         */
         // Update selected bin location if picker enabled
         if (this.picker_active) {
             this.picker_active = false;
@@ -4459,19 +4754,46 @@ class ViewBinsComponent {
     }
     // handles drag completions of marker
     draggedMarker(e) {
+        /**
+         * [nop adjacent] Handles end of a marker drag event
+         * No longer does anything, see below for explanation and new method to update locations
+         * @param e info about mouse drag event - does not contain map coords
+         * @return {void}
+         */
+        // Does nothing anymore
+        /**
+         * Due to the way markers take input for their lat/lng,
+         * it is not possible to do a 2-way bind, only a 1-way bind
+         * Dragging a marker therefore cannot update the bin coords when using agm
+         *
+         * My fix for this is that the user can pick a point on the map to move the marker to,
+         * and that will set the new coords. See below.
+         */
     }
     // Handles clicks to a marker
     clickedMarker(index) {
-        this.selbin = this.all_bins[index];
-        this.picker_active = false;
+        /**
+         * Called whenever a marker is clicked
+         * sets the clicked marker to be the active marker, and disable bin location picker
+         * @param {number} index index of the marker clicked, corresponds to the bin array
+         * @return {void}
+         */
+        this.selbin = this.all_bins[index]; // Make clicked bin the active bin
+        this.picker_active = false; // Deactivate bin loc picker, if it was active
     }
     // triggered whenever user deletes a dumb bin from editor view
     binDelete(bindel) {
         {
+            /**
+             * Delete the specified bin - only gets tracked if the
+             * deleted bin was a pre-exising one, not one newly added in this edit session
+             * @param {[Bin, VehicleExtra]} bindel the specified bin to delete
+             * @return {void}
+             */
             // Add bin to deletion array if not a newly created and staged bin
             if (bindel[0].serial)
                 this.del_bins.push(bindel[0].serial);
-            // Remove bin from main array
+            // Remove bin from main arrays using splice
             let remindex = this.all_bins.findIndex(b => (b[0].serial === bindel[0].serial) && (b[0].lat === bindel[0].lat) && (b[0].lng === bindel[0].lng));
             this.all_bins.splice(remindex, 1);
             if (bindel[0].serial)
@@ -4484,6 +4806,11 @@ class ViewBinsComponent {
     }
     // triggered whenever user clicks 'new' on editor view
     binAdd() {
+        /**
+         * Create a new bin with starting coords in the CBD
+         * Also track it in the new bins array for later posting of edits to backend
+         * @return {void}
+         */
         let newbin = [
             {
                 "serial": undefined,
@@ -4498,6 +4825,7 @@ class ViewBinsComponent {
             },
             { "draggable": false }
         ];
+        // Push bin to live and add array, set active, disable picker if it was active
         this.all_bins.push(newbin);
         this.add_bins.push(newbin[0]);
         this.selbin = this.all_bins[this.all_bins.length - 1];
@@ -4505,46 +4833,55 @@ class ViewBinsComponent {
     }
     // Attempts to submit changes, flashes error message if server reports any fails
     submitChanges() {
+        /**
+         * Determine which existing records have been modified, then send all three edit arrays to the
+         * backend for validation and database update. Three arrays are additions, modifications, deletions
+         * Prompts user with a snackbar on success or failure
+         * @return {void}
+         */
         this.findChanges();
         // Pop a message and do nothing if nothing to submit
         if ((this.mod_bins.length == 0) && (this.add_bins.length == 0) && (this.del_bins.length == 0)) {
             this._snackBar.open("No changes to submit", "", { duration: 2000 });
             return;
         }
+        // Submit changes to backend, helper function will format the three passed arrays below
         this.binfetcher.submitChanges(this.add_bins, this.mod_bins, this.del_bins).subscribe(x => {
             console.log(x);
             console.log(x.status);
             if (x.status == 201) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                setTimeout(null, 1800);
-                location.reload();
+                setTimeout(_ => location.reload(), 1900);
             }
             else if (x.status == 400) {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                //this._snackBar.open("An unknown error occurred, changes were not saved. Please. try again", "", {duration: 2000})
+                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
             }
         }, y => {
             console.log(y);
             console.log(y.status);
             if (y.status == 201) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                setTimeout(null, 1800);
-                location.reload();
+                setTimeout(_ => location.reload(), 1900);
             }
             else if (y.status == 400) {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                //this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
                 this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
             }
         });
     }
     // Only calculated just before user submission of all edits
+    // Checks live array with backup array to determine what changes were made
     findChanges() {
+        /**
+         * Determine any changes made to the original input array, vs the live array that is 2-way
+         * bound to the visual editor, store them in the class variable for modifications
+         * @return {void}
+         */
         let keys = [
             "serial",
             "smartSerial",
@@ -4573,7 +4910,7 @@ class ViewBinsComponent {
     }
 }
 ViewBinsComponent.ɵfac = function ViewBinsComponent_Factory(t) { return new (t || ViewBinsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_binfetcher_service__WEBPACK_IMPORTED_MODULE_1__["BinfetcherService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"])); };
-ViewBinsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewBinsComponent, selectors: [["app-view-bins"]], decls: 21, vars: 11, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick"], [3, "averageCenter", "imagePath"], [3, "latitude", "longitude", "markerClick", "dragEnd", 4, "ngFor", "ngForOf"], [1, "editmenu"], ["mat-mini-fab", "", "color", "primary", 1, "submitbutton", 3, "click"], ["mat-mini-fab", "", "color", "accent", 1, "newbutton", 3, "click"], [4, "ngIf"], ["style", "position: relative; left: 16px;", 4, "ngIf"], [3, "latitude", "longitude", "markerClick", "dragEnd"], [2, "padding-left", "15px"], ["appearance", "outline"], ["matInput", "", "readonly", "true", 3, "value"], ["appearance", "fill"], ["matInput", "", "readonly", "true", 3, "mat-autosize", "value"], ["matInput", "", "type", "number", "readonly", "true", 3, "value"], ["matSuffix", ""], [1, "example-margin", 3, "color", "mode", "value"], ["matInput", "", 3, "ngModel", "ngModelChange"], ["matInput", "", 3, "mat-autosize", "ngModel", "ngModelChange"], ["matInput", "", "type", "number", "min", "1", "max", "256", 3, "ngModel", "ngModelChange"], [3, "ngModel", "checked", "colour", "ngModelChange"], ["mat-raised-button", "", "color", "warn", 1, "newbutton", 2, "right", "120px", 3, "click"], [2, "position", "relative", "left", "16px"]], template: function ViewBinsComponent_Template(rf, ctx) { if (rf & 1) {
+ViewBinsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewBinsComponent, selectors: [["app-view-bins"]], decls: 21, vars: 11, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick"], [3, "imagePath", "averageCenter"], [3, "latitude", "longitude", "markerClick", "dragEnd", 4, "ngFor", "ngForOf"], [1, "editmenu"], ["mat-mini-fab", "", "color", "primary", 1, "submitbutton", 3, "click"], ["mat-mini-fab", "", "color", "accent", 1, "newbutton", 3, "click"], [4, "ngIf"], ["style", "position: relative; left: 16px;", 4, "ngIf"], [3, "latitude", "longitude", "markerClick", "dragEnd"], [2, "padding-left", "15px"], ["appearance", "outline"], ["matInput", "", "readonly", "true", 3, "value"], ["appearance", "fill"], ["matInput", "", "readonly", "true", 3, "mat-autosize", "value"], ["matInput", "", "type", "number", "readonly", "true", 3, "value"], ["matSuffix", ""], [1, "example-margin", 3, "color", "mode", "value"], ["matInput", "", 3, "ngModel", "ngModelChange"], ["matInput", "", 3, "mat-autosize", "ngModel", "ngModelChange"], ["matInput", "", "type", "number", "min", "1", "max", "256", 3, "ngModel", "ngModelChange"], [3, "ngModel", "checked", "colour", "ngModelChange"], ["mat-raised-button", "", "color", "warn", 1, "newbutton", 2, "right", "120px", 3, "click"], [2, "position", "relative", "left", "16px"]], template: function ViewBinsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "agm-map", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewBinsComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); });
@@ -4614,7 +4951,7 @@ ViewBinsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("latitude", ctx.start_lat)("longitude", ctx.start_lng)("zoom", ctx.start_zoom);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("averageCenter", true)("imagePath", "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("imagePath", "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m")("averageCenter", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.all_bins);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
@@ -4663,6 +5000,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
 /* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/slide-toggle */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/slide-toggle.js");
+/**
+ * Fleet view / editor ts file
+ *
+ * Handles all logic for the fleet viewer and editor,
+ * most importantly handles sending of requests to backend and
+ * validation of these edits.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -4680,7 +5028,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ViewFleetComponent_mat_card_subtitle_10_Template(rf, ctx) { if (rf & 1) {
+function ViewFleetComponent_mat_card_subtitle_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card-subtitle");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4689,36 +5037,36 @@ function ViewFleetComponent_mat_card_subtitle_10_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate3"](" ", ctx_r0.all_fleet.length, " vehicle(s) - ", ctx_r0.add_vehicles.length, " created, ", ctx_r0.del_vehicles.length, " deleted ");
 } }
-function ViewFleetComponent_mat_card_subtitle_11_Template(rf, ctx) { if (rf & 1) {
+function ViewFleetComponent_mat_card_subtitle_14_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card-subtitle");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No vehicles currently loaded ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "(or all deleted) ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ViewFleetComponent_div_13_Template(rf, ctx) { if (rf & 1) {
+function ViewFleetComponent_div_16_Template(rf, ctx) { if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_13_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.reloadPage(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_16_Template_button_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.reloadPage(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Click to Refresh ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ViewFleetComponent_mat_list_item_14_Template(rf, ctx) { if (rf & 1) {
+function ViewFleetComponent_mat_list_item_17_Template(rf, ctx) { if (rf & 1) {
     const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-list-item", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_mat_list_item_14_Template_mat_list_item_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const vehicle_r8 = ctx.$implicit; const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r9.vehicleClick(vehicle_r8); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-list-item", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_mat_list_item_17_Template_mat_list_item_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const vehicle_r8 = ctx.$implicit; const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r9.vehicleClick(vehicle_r8); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4734,16 +5082,16 @@ function ViewFleetComponent_mat_list_item_14_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Cap: ", vehicle_r8[0].capacity, " ");
 } }
-function ViewFleetComponent_mat_card_title_18_Template(rf, ctx) { if (rf & 1) {
+function ViewFleetComponent_mat_card_title_21_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card-title");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " view_carousel ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " No vehicle selected ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function ViewFleetComponent_div_19_mat_option_15_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 29);
+function ViewFleetComponent_div_22_mat_option_15_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -4752,50 +5100,50 @@ function ViewFleetComponent_div_19_mat_option_15_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", depot_r12.address, " ");
 } }
-function ViewFleetComponent_div_19_Template(rf, ctx) { if (rf & 1) {
+function ViewFleetComponent_div_22_Template(rf, ctx) { if (rf & 1) {
     const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card-title", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_19_Template_mat_icon_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r13.selveh[0].icon = (ctx_r13.selveh[0].icon + 1) % 12; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card-title", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_22_Template_mat_icon_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r13.selveh[0].icon = (ctx_r13.selveh[0].icon + 1) % 12; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-form-field", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-form-field", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "VIN");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "input", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_19_Template_input_ngModelChange_8_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r15.selveh[0].rego = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "input", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_22_Template_input_ngModelChange_8_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r15.selveh[0].rego = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card-content");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-form-field", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-form-field", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "home depot");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-select", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_19_Template_mat_select_ngModelChange_14_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r16.selveh[0].homeDepot = $event; });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, ViewFleetComponent_div_19_mat_option_15_Template, 2, 2, "mat-option", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-select", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_22_Template_mat_select_ngModelChange_14_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r16.selveh[0].homeDepot = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, ViewFleetComponent_div_22_mat_option_15_Template, 2, 2, "mat-option", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-form-field", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-form-field", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "capacity");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "input", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_19_Template_input_ngModelChange_19_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r17.selveh[0].capacity = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "input", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_22_Template_input_ngModelChange_19_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r17.selveh[0].capacity = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-slide-toggle", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_19_Template_mat_slide_toggle_ngModelChange_20_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r18.selveh[0].available = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-slide-toggle", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewFleetComponent_div_22_Template_mat_slide_toggle_ngModelChange_20_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r18.selveh[0].available = $event; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, " available ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "button", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_19_Template_button_click_22_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r19.vehicleDelete(ctx_r19.selveh); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "button", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_div_22_Template_button_click_22_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r19.vehicleDelete(ctx_r19.selveh); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, " Delete ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4822,6 +5170,7 @@ class ViewFleetComponent {
         this.dialog = dialog;
         this._snackBar = _snackBar;
         // Array of icon names corresponding to the 12 possible icons
+        // Each string corresponds to icon in material design library
         this.veh_icons = [
             "delete",
             "airport_shuttle",
@@ -4842,7 +5191,13 @@ class ViewFleetComponent {
         this.mod_vehicles = []; // Array of vehicles to modify with new values
         this.add_vehicles = []; // Array of vehicles to create
     }
+    // Loads live array (data the editor sees), and deep copy into backup array
+    // Modifications are determined by comparing live array with backup before edit submission
     ngOnInit() {
+        /**
+         * Called when the page has initialised fully
+         * @return {null}
+         */
         this.fleetfetcher.getAllFleet()
             .subscribe(fleet_in => 
         // add all fetched fleet vehicles to array with a spot for their extra data
@@ -4854,6 +5209,7 @@ class ViewFleetComponent {
                     "selected": false
                 }
             ]);
+            // add all vehicles to backup array
             this.orig_fleet.push(// seperate push for more efficient deep copy
             [
                 v,
@@ -4863,11 +5219,19 @@ class ViewFleetComponent {
                 }
             ]);
         }));
+        // Collect info about loc of all depots 
+        // (since routing view is nested, this call with need no network action)
         this.fleetfetcher.getAllDepots()
             .subscribe(depots_in => this.all_depots = depots_in);
+        console.log(`Fleet view loaded at time ${new Date()}`);
     }
     // Triggered whenever user clicks on a vehicle in list view
     vehicleClick(veh) {
+        /**
+         * Called whenever a vehicle is clicked in the RHS edit sidebar
+         * Sets that vehicle to be the active vehicle, and updates the internal param
+         * of it and the previously active vehicle as such (used by editor for button style rendering)
+         */
         // Reset selection of previously selected vehicle
         if (this.selveh) {
             this.selveh[1].selected = false;
@@ -4878,6 +5242,12 @@ class ViewFleetComponent {
     }
     // triggered whenever user clicks 'delete' on a given vehicle
     vehicleDelete(veh) {
+        /**
+         * Delete the specified vehicle - only gets tracked if the
+         * deleted vehicle was a pre-exising one, not one newly added in this edit session
+         * @param {[Vehicle, VehicleExtra]} veh the specified vehicle to delete
+         * @return {void}
+         */
         // Is vehicle an exising one? (new vehicles will not have an id assigned)
         if (veh[0]._id) {
             // Add vehicle to the deletion array, if not a new vehicle
@@ -4900,6 +5270,11 @@ class ViewFleetComponent {
     }
     // triggered whenever user clicks 'new' from the editor view
     vehicleAdd() {
+        /**
+         * Create a new vehicle with a random VIN, set it as the active vehicle
+         * Also track it in the new vehicles array for later posting of edits to backend
+         * @return {void}
+         */
         let newrego = regoGen(6);
         let newveh = [
             {
@@ -4915,62 +5290,90 @@ class ViewFleetComponent {
                 "selected": true
             }
         ];
+        // Add vehicle to live view, to new vehicles array, and make it selected
         this.all_fleet.push(newveh);
         this.add_vehicles.push(newveh[0]);
         this.vehicleClick(newveh);
     }
     // Submits changes to the backend server, or notifies user of issues
+    // THIS IS INCOMPLETE AND I'M NO LONGER USING IT, IN FAVOR OF SNACKBAR BELOW
     openDialogue() {
+        /**
+         * [Depreciated] will open a dialogue popup
+         * Intended as a structured method to show user the result of their most recent edit push
+         * @return {void}
+         */
         const dialogRef = this.dialog.open(ViewFleetPopup);
         let popupresult = undefined;
         dialogRef.afterClosed().subscribe(x => popupresult = x);
     }
     // Validates all changes made thus far - true if all pass
+    // This was not completed as it is low priority, already have validation on the backend
+    // Ideally should be implemented if time permits
     validateChanges() {
-        return true; // TODO
+        /**
+         * [NOT IMPLEMENTED] A function to validate all proposed edits before sending them to the backend
+         * This was deemed low priority as we already had validation on backend working ahead of time,
+         * and are instead relying on the backend response header to determine if edits are valid.
+         * @return {ChkFail[]} return array of validation issues found - empty if none
+         */
+        return [];
     }
     // Attempts to submit changes, flashes error message if server reports any fails
     submitChanges() {
+        /**
+         * Determine which existing records have been modified, then send all three edit arrays to the
+         * backend for validation and database update. Three arrays are additions, modifications, deletions
+         * Prompts user with a snackbar on success or failure
+         * @return {void}
+         */
         this.findChanges();
         // Pop a message and do nothing if nothing to submit
         if ((this.mod_vehicles.length == 0) && (this.add_vehicles.length == 0) && (this.del_vehicles.length == 0)) {
             this._snackBar.open("No changes to submit", "", { duration: 2000 });
             return;
         }
-        this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(x => {
+        // Submit the changes via the 3 modification types, arrays passed below
+        this.fleetfetcher.submitChanges(this.add_vehicles, this.mod_vehicles, this.del_vehicles).subscribe(
+        // Pop a snackbar on success
+        x => {
             console.log(x);
             console.log(x.status);
             if (x.status == 201) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                setTimeout(null, 1800);
-                this.reloadPage();
+                setTimeout(_ => location.reload(), 1900);
             }
             else if (x.status == 400) {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
             }
-        }, y => {
+        }, 
+        // Pop a snackbar on failure
+        y => {
             console.log(y);
             console.log(y.status);
             if (y.status == 201) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
-                setTimeout(null, 1800);
-                this.reloadPage();
+                setTimeout(_ => location.reload(), 1900);
             }
             else if (y.status == 400) {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                //this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
                 this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
             }
         });
     }
     // Only calculated just before user submission of all edits
+    // Compares live array with original array to determine what edits were made
     findChanges() {
+        /**
+         * Determine any changes made to the original input array, vs the live array that is 2-way
+         * bound to the visual editor, store them in the class variable for modifications
+         * @return {void}
+         */
         let keys = [
             "_id",
             "rego",
@@ -4993,50 +5396,56 @@ class ViewFleetComponent {
     }
     // Reloads the page
     reloadPage() {
+        /**
+         * Reloads the page using reload - called in some HTML loopbacks
+         * @return {void}
+         */
         location.reload();
     }
 }
 ViewFleetComponent.ɵfac = function ViewFleetComponent_Factory(t) { return new (t || ViewFleetComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_fleetfetcher_service__WEBPACK_IMPORTED_MODULE_1__["FleetfetcherService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"])); };
-ViewFleetComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewFleetComponent, selectors: [["app-view-fleet"]], decls: 23, vars: 6, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [1, "editmenu"], [1, "editmenu_card"], ["mat-mini-fab", "", "color", "primary", 1, "submitbutton", 3, "click"], [4, "ngIf"], [1, "vehiclelist"], ["matRipple", "", "style", "cursor: pointer;", 3, "matRippleColor", "disabled", "click", 4, "ngFor", "ngForOf"], [1, "infobar"], [1, "infobar_card"], ["mat-mini-fab", "", "color", "accent", 2, "position", "absolute", "top", "14px", "right", "12px", 3, "click"], ["mat-stroked-button", "", "color", "warn", 3, "click"], ["matRipple", "", 2, "cursor", "pointer", 3, "matRippleColor", "disabled", "click"], [2, "padding-left", "4px"], ["mat-line", ""], [1, "regotxt"], [2, "top", "4px", "position", "relative"], [1, "infobar1"], [2, "overflow", "visible"], ["unselectable", "on", "onselectstart", "return false;", "onselectstart", "return false;", "onmousedown", "return false;", 1, "clicktext", 3, "click"], ["appearance", "fill", 1, "regotxt_main"], ["matInput", "", 3, "ngModel", "ngModelChange"], [1, "infobar2"], ["appearance", "fill"], [3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [2, "padding-left", "20px"], ["matInput", "", "type", "number", "min", "0", "max", "999999999", "step", "5", 3, "ngModel", "ngModelChange"], ["color", "primary", 2, "padding-left", "20px", "bottom", "4px", 3, "ngModel", "ngModelChange"], ["mat-raised-button", "", "color", "warn", 2, "bottom", "6px", "left", "20px", 3, "click"], [3, "value"]], template: function ViewFleetComponent_Template(rf, ctx) { if (rf & 1) {
+ViewFleetComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewFleetComponent, selectors: [["app-view-fleet"]], decls: 23, vars: 8, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "selvehid", "showselector"], [1, "editmenu"], [1, "editmenu_card"], ["mat-mini-fab", "", "color", "primary", 1, "submitbutton", 3, "click"], ["mat-mini-fab", "", "color", "accent", 2, "position", "absolute", "bottom", "50px", "right", "60px", 3, "click"], [4, "ngIf"], [1, "vehiclelist"], ["matRipple", "", "style", "cursor: pointer;", 3, "matRippleColor", "disabled", "click", 4, "ngFor", "ngForOf"], [1, "infobar"], [1, "infobar_card"], ["mat-stroked-button", "", "color", "warn", 3, "click"], ["matRipple", "", 2, "cursor", "pointer", 3, "matRippleColor", "disabled", "click"], [2, "padding-left", "4px"], ["mat-line", ""], [1, "regotxt"], [2, "top", "4px", "position", "relative"], [1, "infobar1"], [2, "overflow", "visible"], ["unselectable", "on", "onselectstart", "return false;", "onselectstart", "return false;", "onmousedown", "return false;", 1, "clicktext", 3, "click"], ["appearance", "fill", 1, "regotxt_main"], ["matInput", "", 3, "ngModel", "ngModelChange"], [1, "infobar2"], ["appearance", "fill"], [3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [2, "padding-left", "20px"], ["matInput", "", "type", "number", "min", "0", "max", "999999999", "step", "5", 3, "ngModel", "ngModelChange"], ["color", "primary", 2, "padding-left", "20px", "bottom", "4px", 3, "ngModel", "ngModelChange"], ["mat-raised-button", "", "color", "warn", 2, "bottom", "6px", "left", "20px", 3, "click"], [3, "value"]], template: function ViewFleetComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-view-routes");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-view-routes", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_Template_button_click_4_listener() { return ctx.submitChanges(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "done_all");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-card-header");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-card-title");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Fleet Manager");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, ViewFleetComponent_mat_card_subtitle_10_Template, 2, 3, "mat-card-subtitle", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, ViewFleetComponent_mat_card_subtitle_11_Template, 4, 0, "mat-card-subtitle", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-list", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, ViewFleetComponent_div_13_Template, 3, 0, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ViewFleetComponent_mat_list_item_14_Template, 9, 5, "mat-list-item", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_Template_button_click_7_listener() { return ctx.vehicleAdd(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "add");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card-header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-title");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Fleet Manager");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-card", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-card-header");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, ViewFleetComponent_mat_card_title_18_Template, 4, 0, "mat-card-title", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, ViewFleetComponent_div_19_Template, 24, 6, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "button", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ViewFleetComponent_Template_button_click_20_listener() { return ctx.vehicleAdd(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "mat-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "add");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, ViewFleetComponent_mat_card_subtitle_13_Template, 2, 3, "mat-card-subtitle", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ViewFleetComponent_mat_card_subtitle_14_Template, 4, 0, "mat-card-subtitle", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "mat-list", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, ViewFleetComponent_div_16_Template, 3, 0, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, ViewFleetComponent_mat_list_item_17_Template, 9, 5, "mat-list-item", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-card", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-card-header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](21, ViewFleetComponent_mat_card_title_21_Template, 4, 0, "mat-card-title", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, ViewFleetComponent_div_22_Template, 24, 6, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("selvehid", ctx.selveh != undefined ? ctx.selveh[0]._id : undefined)("showselector", false);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.all_fleet.length > 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.all_fleet.length < 1);
@@ -5058,6 +5467,7 @@ ViewFleetComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
             }]
     }], function () { return [{ type: _fleetfetcher_service__WEBPACK_IMPORTED_MODULE_1__["FleetfetcherService"] }, { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }, { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"] }]; }, null); })();
 // This export is the dialog box that pops to verify user changes
+// No longer in use as not completed - dormant component and class declaration
 class ViewFleetPopup {
 }
 ViewFleetPopup.ɵfac = function ViewFleetPopup_Factory(t) { return new (t || ViewFleetPopup)(); };
@@ -5072,7 +5482,13 @@ ViewFleetPopup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }] }); })();
 // Adapted from https://stackoverflow.com/a/1349426
+// Generates a random rego for use in newly created rego records
 function regoGen(length) {
+    /**
+     * Generates a random n letter VIN registration, for use as a placeholder
+     * @param {number} length length of the string to return
+     * @returns {string} string of desired length containing only numbers and upper-case alpha-glyphs
+     */
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     var charactersLength = characters.length;
@@ -5098,6 +5514,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _binfetcher_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../binfetcher.service */ "./src/app/binfetcher.service.ts");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
+/**
+ * Heatmap view ts file
+ *
+ * Handles all logic for heatmap, including loading of bin data,
+ * initalisation of map and timely rendering of heatmap itself once all
+ * components are loaded.
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 
 
 
@@ -5105,26 +5532,45 @@ __webpack_require__.r(__webpack_exports__);
 class ViewHeatmapComponent {
     constructor(binfetcher) {
         this.binfetcher = binfetcher;
+        // Legacy - used for vanilla gmaps JS api hook
         this.map = null;
         this.heatmap = null;
         this.mapOrPointsLoaded = false; // true if at least one has loaded
+        // Default centre point and zoom of mapview
         this.start_lat = -37.8142588;
         this.start_lng = 144.9666622;
         this.start_zoom = 14;
         this.all_bins = [];
         //datapoints: google.maps.LatLng[] = []; 
-        this.datapoints = []; // for mixed / weighted dataset
+        this.datapoints = []; // for mixed / weighted dataset (exact format keeps changing on backend)
     }
+    // Process and store bins when ready
     ngOnInit() {
+        /**
+         * Called when the page has initialised fully
+         * @return {null}
+         */
         this.binfetcher.getAllBins()
             .subscribe(bins_in => this.process_markers(bins_in));
+        console.log(`Heatmap view loaded at time ${new Date()}`);
     }
+    // Renders the heatmap - only runs once heatmap is loaded
     onMapLoad(mapInstance) {
+        /**
+         * Called once the map has loaded
+         * Sets the map instance and calls the heatmap renderer method
+         */
         this.map = mapInstance;
         this.renderHeatmap();
     }
     // Set instance bins variable, convert all to markers and display
     process_markers(bins) {
+        /**
+         * Process the raw bin response from backend into the format used by the
+         * map renderer - involves using a google maps LatLng type
+         * @param {Bin[]} bins array of raw bins
+         * @return {void}
+         */
         try {
             this.all_bins = bins;
             bins.forEach(bin => this.datapoints.push({ location: new google.maps.LatLng(bin.lat, bin.lng), weight: 30 }));
@@ -5140,7 +5586,13 @@ class ViewHeatmapComponent {
         }
     }
     // Render heatmap (to be called after map loaded)
+    // Uses bins and associated fullness levels to determine point weights
     renderHeatmap() {
+        /**
+         * Should only be called once the map has loaded and bin data is ready
+         * Renders the heatmap on the targeted agm-maps map instance using bin data
+         * @return {void}
+         */
         this.heatmap = new google.maps.visualization.HeatmapLayer({
             map: this.map,
             data: this.datapoints,
@@ -5184,6 +5636,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /* harmony import */ var agm_direction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! agm-direction */ "./node_modules/agm-direction/__ivy_ngcc__/fesm2015/agm-direction.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/core.js");
 
 
 
@@ -5191,18 +5647,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+function ViewRoutesComponent_div_2_div_1_div_1_agm_direction_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "agm-direction", 6);
+} if (rf & 2) {
+    const routeset_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5.start)("destination", routeset_r5.end)("waypoints", routeset_r5.waypoints);
+} }
 function ViewRoutesComponent_div_2_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "agm-direction", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_agm_direction_1_Template, 1, 3, "agm-direction", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const routeset_r5 = ctx.$implicit;
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("origin", routeset_r5.start)("destination", routeset_r5.end)("waypoints", routeset_r5.waypoints);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r4.selvehid == undefined || ctx_r4.selvehid == routeset_r5.vehicle_id);
 } }
 function ViewRoutesComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 2, 3, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_div_1_Template, 2, 1, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const veh_r3 = ctx.$implicit;
@@ -5211,34 +5678,65 @@ function ViewRoutesComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
 } }
 function ViewRoutesComponent_div_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_Template, 2, 1, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_2_div_1_Template, 2, 1, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.render_waypoints);
 } }
-function ViewRoutesComponent_div_3_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div");
+function ViewRoutesComponent_mat_form_field_3_mat_select_3_mat_option_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const veh_r11 = ctx.$implicit;
+    const j_r12 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", veh_r11.arr[0].vehicle_id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", j_r12, " ");
 } }
-function ViewRoutesComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_div_3_div_1_Template, 1, 0, "div", 3);
+function ViewRoutesComponent_mat_form_field_3_mat_select_3_Template(rf, ctx) { if (rf & 1) {
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ViewRoutesComponent_mat_form_field_3_mat_select_3_Template_mat_select_ngModelChange_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r13.selvehid = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ViewRoutesComponent_mat_form_field_3_mat_select_3_mat_option_1_Template, 2, 2, "mat-option", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r9.selvehid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r9.render_waypoints);
+} }
+const _c0 = function () { return []; };
+function ViewRoutesComponent_mat_form_field_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "selected vehicle");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ViewRoutesComponent_mat_form_field_3_mat_select_3_Template, 2, 2, "mat-select", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.render_waypoints);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.render_waypoints != _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](1, _c0));
 } }
+// This is the code for bin viewer / editor view
 class ViewRoutesComponent {
     constructor(routefetcher) {
         this.routefetcher = routefetcher;
+        this.selvehid = undefined; // Currently selected vehicle - only shows routes for this vehicle
+        this.showselector = true; // Hides selector if true (for use as an embed in fleetview page)
         this.map = null;
-        this.waypoints = [];
+        this.waypoints = []; // Raw list of all waypoints, sorted by vehicle
+        // Contains nicely formatted object for each chunk of each route
+        // start and end points are of type lat/lon, waypoints are gmaps type as per method spec
         this.render_waypoints = [];
+        // Initial params of the map (typically overwritten once routes are rendered)
         this.start_lat = -37.8142588;
         this.start_lng = 144.9666622;
         this.start_zoom = 14;
+        // Known stable origin and destination for use in testing
         this.origin = {
             lat: -37.907803,
             lng: 145.133957
@@ -5247,14 +5745,22 @@ class ViewRoutesComponent {
             lat: -37.8997609,
             lng: 145.1292176
         };
-        this.displayDirections = true;
+        this.displayDirections = true; // Legacy param for use in directions API hook
     }
+    // On init, perform some actions - format waypoint data and prime map for usage
     ngOnInit() {
+        /**
+         * Called when the page has initialised fully
+         * @return {null}
+         */
+        // Subscribe to observable containing HTTP raw response from backend
+        // Will save the response and format it before sending to the renderer
         this.routefetcher.getAllRoutes()
             .subscribe(routes_in => {
             this.all_routes = routes_in;
             routes_in.binCollectionSchedules.forEach(r => r.routes.forEach(p => this.waypoints.push(Object(_route__WEBPACK_IMPORTED_MODULE_1__["navToWaypoint"])(p))));
-            console.log(this.all_routes);
+            //console.log(this.all_routes)
+            // Formatting functions, happens after all the waypoints are received
             this.waypoints.forEach(w => {
                 // Get target array
                 let index = this.render_waypoints.find(x => x.veh === w.vehicle);
@@ -5262,11 +5768,12 @@ class ViewRoutesComponent {
                     this.render_waypoints.push({ "veh": w.vehicle, "arr": [] });
                     index = this.render_waypoints.length - 1;
                 }
+                // Chunk the waypoints into groups of 15 max points
                 while (w.waypoints.length > 0) {
-                    let newchunk = w.waypoints.splice(0, 14);
+                    let newchunk = w.waypoints.splice(0, 24);
                     this.render_waypoints[index].arr.push(newchunk);
                 }
-                // Partition into start, end, waypoints
+                // Partition into start, end, waypoints, for use by renderer
                 for (let p = 0; p < this.render_waypoints[index].arr.length; p++) {
                     let starttemp;
                     let endtemp;
@@ -5286,28 +5793,54 @@ class ViewRoutesComponent {
                             endtemp = JSON.parse(JSON.stringify(this.render_waypoints[index].arr[p + 1][0]));
                         }
                     }
+                    // This is the format that the renderer sees for each leg of the route of each vehicle
                     this.render_waypoints[index].arr[p] = {
                         "start": starttemp.location ? starttemp.location : starttemp[0].location,
                         "end": (endtemp.location) ? endtemp.location : endtemp[0].location,
-                        "waypoints": waypointtemp
+                        "waypoints": waypointtemp,
+                        "vehicle_id": w.vehicle
                     };
                 }
             });
+            // Legacy - init the vanilla JS renderer hook if in use (now using agm renderer instead)
             if (this.map !== null)
                 this.setupRenderer();
         });
+        console.log(`Routing view loaded at time ${new Date()}`);
     }
     // Handles clicks on the map
     mapClicked(e) {
+        /**
+         * Called whenever the map is clicked
+         * Prints a log of all routes and parsed waypoints to console, for debug purposes
+         * Input is not utilised in latest build
+         * @param e event object, containing lat lng coordinates of the map location clicked
+         */
         console.log(this.all_routes);
         console.log(this.waypoints);
     }
+    // Gains pointer to the map instance once it loads, using agm event
     onMapLoad(mapInstance) {
+        /**
+         * Called when the agm-map instance is finished loading
+         * Informs the ts file of the map instance, and starts the renderer if bins have also been loaded [old]
+         * @param {google.maps.Map} map the map object that completed loading (should only be 1)
+         * @return {null}
+         */
         this.map = mapInstance;
         if (this.all_routes)
             this.setupRenderer();
     }
+    // Will initialise the renderer with the map instance and begin drawing
+    // Some of the code below can also perform raw requests from gmaps API, used for debugging only
+    // The format expected by the vanilla renderer, gmaps api spec, and backend response being sent through all differ
+    // ... it's a mess, but the code is clean. See the type definition file for more details on these format discrepancies
     setupRenderer() {
+        /**
+         * [Depreciated] Method to initialise the renderer to begin passing routes to render
+         * No longer in use, now using agm-directions instead. Method is nop adjacent.
+         * @return {null}
+         */
         /*
         console.log(this.all_routes)
         this.directionsRenderer = new google.maps.DirectionsRenderer();
@@ -5339,21 +5872,21 @@ class ViewRoutesComponent {
     }
 }
 ViewRoutesComponent.ɵfac = function ViewRoutesComponent_Factory(t) { return new (t || ViewRoutesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_routefetcher_service__WEBPACK_IMPORTED_MODULE_2__["RoutefetcherService"])); };
-ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], decls: 4, vars: 5, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
+ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewRoutesComponent, selectors: [["app-view-routes"]], inputs: { selvehid: "selvehid", showselector: "showselector" }, decls: 4, vars: 5, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], [3, "latitude", "longitude", "zoom", "mapClick", "mapReady"], [4, "ngIf"], ["appearance", "fill", "style", "position: absolute; right: 25px; top: 75px; background-color: whitesmoke;", 4, "ngIf"], [4, "ngFor", "ngForOf"], [3, "origin", "destination", "waypoints", 4, "ngIf"], [3, "origin", "destination", "waypoints"], ["appearance", "fill", 2, "position", "absolute", "right", "25px", "top", "75px", "background-color", "whitesmoke"], ["name", "Sel_veh_selector", 3, "ngModel", "ngModelChange", 4, "ngIf"], ["name", "Sel_veh_selector", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]], template: function ViewRoutesComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "agm-map", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mapClick", function ViewRoutesComponent_Template_agm_map_mapClick_1_listener($event) { return ctx.mapClicked($event); })("mapReady", function ViewRoutesComponent_Template_agm_map_mapReady_1_listener($event) { return ctx.onMapLoad($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ViewRoutesComponent_div_2_Template, 2, 1, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ViewRoutesComponent_div_3_Template, 2, 1, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ViewRoutesComponent_mat_form_field_3_Template, 4, 2, "mat-form-field", 3);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("latitude", ctx.start_lat)("longitude", ctx.start_lng)("zoom", ctx.start_zoom);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0 && ctx.map);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.waypoints.length > 0);
-    } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], agm_direction__WEBPACK_IMPORTED_MODULE_5__["AgmDirection"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showselector);
+    } }, directives: [_agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmMap"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], agm_direction__WEBPACK_IMPORTED_MODULE_5__["AgmDirection"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatLabel"], _angular_material_select__WEBPACK_IMPORTED_MODULE_7__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["NgModel"], _angular_material_core__WEBPACK_IMPORTED_MODULE_9__["MatOption"]], styles: ["agm-map[_ngcontent-%COMP%] {\n    height: calc(100% - 50px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlldy1yb3V0ZXMvdmlldy1yb3V0ZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJzcmMvYXBwL3ZpZXctcm91dGVzL3ZpZXctcm91dGVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUwcHgpO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewRoutesComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -5361,7 +5894,11 @@ ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
                 templateUrl: './view-routes.component.html',
                 styleUrls: ['./view-routes.component.css']
             }]
-    }], function () { return [{ type: _routefetcher_service__WEBPACK_IMPORTED_MODULE_2__["RoutefetcherService"] }]; }, null); })();
+    }], function () { return [{ type: _routefetcher_service__WEBPACK_IMPORTED_MODULE_2__["RoutefetcherService"] }]; }, { selvehid: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }], showselector: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
 
 
 /***/ }),
@@ -5376,11 +5913,22 @@ ViewRoutesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/**
+ * Definition of environment variables - this is the default definition file used during building,
+ * and should be treated as the one targeted by development builds (such as the GH Pages build)
+ *
+ * Servicefetcher mode should be 1 or 2 (eg: not expecting an actual backend to query from)
+ *
+ * Author name:   Rithesh R Jayaram "MolarFox"
+ * Student ID:    29687284
+ * Last modified: 24-10-2020
+ */
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
+    // Service fetcher mode is used by services to determine how they should source data to serve requests
     serviceFetcherModes: 1 // 0 = fetch from actual server, 1 = fetch from github, 2 = use static dummy data
 };
 /*

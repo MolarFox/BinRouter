@@ -12,10 +12,11 @@
  */
 
 import { GoogleMapsAPIWrapper } from '@agm/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RoutefetcherService } from '../routefetcher.service'
 import { GoogleMap } from '@angular/google-maps';
 import { NavRoute, NavRouteResponse, NavRouteWaypointed, navToWaypoint } from '../route';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-view-routes',
@@ -24,6 +25,9 @@ import { NavRoute, NavRouteResponse, NavRouteWaypointed, navToWaypoint } from '.
 })
 // This is the code for bin viewer / editor view
 export class ViewRoutesComponent implements OnInit {
+
+  @Input() selvehid: string = undefined;   // Currently selected vehicle - only shows routes for this vehicle
+  @Input() showselector: boolean = true; // Hides selector if true (for use as an embed in fleetview page)
 
   // These are no longer used - needed in case of vanilla gmaps JS api hook
   private directionsService: google.maps.DirectionsService;
@@ -87,7 +91,7 @@ export class ViewRoutesComponent implements OnInit {
 
           // Chunk the waypoints into groups of 15 max points
           while (w.waypoints.length > 0){
-            let newchunk=w.waypoints.splice(0, 14)
+            let newchunk=w.waypoints.splice(0, 24)
             this.render_waypoints[index].arr.push(
               newchunk
             )
@@ -118,7 +122,8 @@ export class ViewRoutesComponent implements OnInit {
             this.render_waypoints[index].arr[p] = {
               "start":    starttemp.location ? starttemp.location : starttemp[0].location,
               "end":      (endtemp.location) ? endtemp.location : endtemp[0].location,
-              "waypoints":waypointtemp
+              "waypoints":waypointtemp,
+              "vehicle_id" : w.vehicle
             }
 
           }

@@ -230,15 +230,13 @@ export class ViewFleetComponent implements OnInit {
         console.log(x.status)
         if (x.status == 201) {
           this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
-          setTimeout(null, 1800);
-          this.reloadPage()
+          setTimeout(_ => location.reload(), 1900);
         }
         else if (x.status == 400){
           this._snackBar.open("Some edits did not pass - changes were not saved", "", {duration: 2000})
         }
         else{
-          this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
-          //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+          this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
         }
       },
       // Pop a snackbar on failure
@@ -247,14 +245,12 @@ export class ViewFleetComponent implements OnInit {
         console.log(y.status)
         if (y.status == 201) {
           this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
-          setTimeout(null, 1800);
-          this.reloadPage()
+          setTimeout(_ => location.reload(), 1900);
         }
         else if (y.status == 400){
           this._snackBar.open("Some edits did not pass - changes were not saved", "", {duration: 2000})
         }
         else{
-          //this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
           this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
         }
       }
