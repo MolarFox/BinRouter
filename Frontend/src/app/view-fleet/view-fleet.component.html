@@ -5,11 +5,20 @@
 <!-- Menu on the RHS of screen -->
 <div class=editmenu>
     <mat-card class=editmenu_card>
+
         <button mat-mini-fab 
         color="primary"
         class="submitbutton"
         (click)="submitChanges()">
             <mat-icon>done_all</mat-icon>
+        </button>
+
+        <!-- Add vehicle button shows regardless of selection state -->
+        <button mat-mini-fab 
+        color="accent"
+        style="position: absolute; bottom: 50px; right: 60px;"
+        (click)="vehicleAdd()">
+            <mat-icon>add</mat-icon>
         </button>
 
         <mat-card-header>
@@ -124,14 +133,6 @@
                 </mat-card-content>
             </div>
             </div>
-
-            <!-- Add vehicle button shows regardless of selection state -->
-            <button mat-mini-fab 
-            color="accent"
-            style="position: absolute; top: 14px; right: 12px;"
-            (click)="vehicleAdd()">
-                <mat-icon>add</mat-icon>
-            </button>
         </mat-card-header>
     
     </mat-card>

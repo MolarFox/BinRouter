@@ -127,6 +127,7 @@ export class ViewRoutesComponent implements OnInit {
         // Legacy - init the vanilla JS renderer hook if in use (now using agm renderer instead)
         if (this.map !== null) this.setupRenderer();
       });
+    console.log(`Routing view loaded at time ${new Date()}`);
   }
 
    // Handles clicks on the map

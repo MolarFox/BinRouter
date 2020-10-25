@@ -94,7 +94,8 @@ export class ViewFleetComponent implements OnInit {
     // Collect info about loc of all depots 
     // (since routing view is nested, this call with need no network action)
     this.fleetfetcher.getAllDepots()
-      .subscribe(depots_in => this.all_depots = depots_in)
+      .subscribe(depots_in => this.all_depots = depots_in);
+    console.log(`Fleet view loaded at time ${new Date()}`);
   }
 
   // Triggered whenever user clicks on a vehicle in list view

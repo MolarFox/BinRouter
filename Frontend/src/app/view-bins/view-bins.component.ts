@@ -57,6 +57,7 @@ export class ViewBinsComponent implements OnInit {
      */
     this.binfetcher.getAllBins()
       .subscribe(bins_in => this.process_markers(bins_in));
+    console.log(`Bin view loaded at time ${new Date()}`);
   }
 
   // Set instance bins variable, convert all to markers and display

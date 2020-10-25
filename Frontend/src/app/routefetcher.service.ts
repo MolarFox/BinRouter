@@ -18,7 +18,7 @@ import { NavRoute, NavRouteResponse } from './route';
 import { DUMMY_ROUTES } from './mock-data'; // This can be deleted now
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { handleError } from './httpHelpers';
 
 @Injectable({
@@ -50,6 +50,7 @@ export class RoutefetcherService {
       }      
       return this.http.get<NavRouteResponse>(this.routesUrl)
       .pipe(
+        tap(x => {console.log("Routes received:"); console.log(x)}),
         catchError(handleError<NavRouteResponse>('getAllRoutes'))
       )
   }

@@ -16,7 +16,7 @@ import { Depot, jsonToDepots } from './depot';
 import { DUMMY_VEHICLES, DUMMY_DEPOTS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { handleError } from './httpHelpers';
 
 @Injectable({
@@ -53,6 +53,7 @@ export class FleetfetcherService {
 
       return this.http.get<VehicleDepotResponse>(this.fleetUrl)
       .pipe(
+        tap(x => {console.log("Depots received:"); console.log(x)}),
         map(x => jsonToDepots(x.depots)),
         catchError(handleError<Depot[]>('getAllDepots', []))
       )
@@ -80,6 +81,7 @@ export class FleetfetcherService {
       // TODO: FIX WITH YI-SONG NEW IMPLEMENTATION (AAAAA??)
       return this.http.get<Depot>(`${this.fleetUrl}/${id}`)
       .pipe(
+        tap(x => {console.log("Depot received:"); console.log(x)}),
         catchError(handleError<Depot>(`getDepot id=${id}`))
       )
       
@@ -101,6 +103,7 @@ export class FleetfetcherService {
 
       return this.http.get<VehicleDepotResponse>(this.fleetUrl)
       .pipe(
+        tap(x => {console.log("Vehicles received:"); console.log(x)}),
         map(x => x.fleetVehicles),
         catchError(handleError<Vehicle[]>('getAllFleet', []))
       )
@@ -127,6 +130,7 @@ export class FleetfetcherService {
       // TODO: FIX WITH YI-SONG IMPLEMENTATION
       return this.http.get<Vehicle>(`${this.fleetUrl}/${rego}`)
       .pipe(
+        tap(x => {console.log("Vehicle received:"); console.log(x)}),
         catchError(handleError<Vehicle>(`getVehicle rego=${rego}`))
       )
 
@@ -151,6 +155,7 @@ export class FleetfetcherService {
     }
     output.fleetVehiclesCreate.forEach(x => delete x._id);   // id undefined - irrelevant to backend
 
+    console.log("Bin edits sent:"); console.log(output);  // log for debug purposes
     return this.http.put<any>(this.fleetUrl, output)
   }
 }

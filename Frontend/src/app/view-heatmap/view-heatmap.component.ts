@@ -45,6 +45,7 @@ export class ViewHeatmapComponent implements OnInit {
      */
     this.binfetcher.getAllBins()
       .subscribe(bins_in => this.process_markers(bins_in));
+    console.log(`Heatmap view loaded at time ${new Date()}`);
   }
 
   // Renders the heatmap - only runs once heatmap is loaded

@@ -28,6 +28,7 @@ export class MainmenuComponent implements OnInit {
      * Called when the page has initialised fully
      * @return {null}
      */
+    console.log(`Main menu loaded at time ${new Date()}`)
   }
 
 }

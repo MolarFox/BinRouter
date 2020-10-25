@@ -11,7 +11,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';  
+import { filter, tap } from 'rxjs/operators';  
 
 @Component({
   selector: 'app-root',
@@ -36,6 +36,7 @@ export class AppComponent implements OnInit{
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
     ).subscribe(() => {
+      console.log(`Navigated to route ${this.activeRoute} at time ${new Date()}`)
       const crt = this.getChild(this.activeRoute);
       crt.data.subscribe(
         data => {

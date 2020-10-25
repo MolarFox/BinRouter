@@ -15,7 +15,7 @@ import { Bin, BinRaw, BinResponse, jsonToBins, binsToJson } from './bin';
 import { DUMMY_BINS } from './mock-data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment'
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { handleError } from './httpHelpers';
 
 @Injectable({
@@ -60,6 +60,7 @@ export class BinfetcherService {
 
       return this.http.get<BinResponse>(this.binsUrl)
       .pipe(
+        tap(x => {console.log("Bins received:"); console.log(x)}),
         map(x => jsonToBins(x.bins)),
         catchError(handleError<Bin[]>('getAllBins', []))
       )
@@ -82,7 +83,8 @@ export class BinfetcherService {
       "dumbBinsUpdate": binsToJson(modchg)
     }
     output.dumbBinsCreate.forEach(x => delete x._id);   // id undefined - irrelevant to backend
-
+    
+    console.log("Bin edits sent:"); console.log(output);  // log for debug purposes
     return this.http.put<any>(this.binsUrl, output)
   }
 
