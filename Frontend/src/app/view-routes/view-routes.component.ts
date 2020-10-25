@@ -140,7 +140,7 @@ export class ViewRoutesComponent implements OnInit {
      /**
       * Called whenever the map is clicked
       * Prints a log of all routes and parsed waypoints to console, for debug purposes
-      * Input is not utilised in latest build
+      * Input e is not utilised in latest build
       * @param e event object, containing lat lng coordinates of the map location clicked
       */
     console.log(this.all_routes);

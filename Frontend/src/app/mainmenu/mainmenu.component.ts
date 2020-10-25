@@ -10,6 +10,7 @@
  */
 
  import { Component, OnInit } from '@angular/core';
+ import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-mainmenu',
@@ -21,7 +22,7 @@ export class MainmenuComponent implements OnInit {
   // This name started as an off-the-cuff placeholder, looks like it stuck :p
   title = 'BinRouter';
   
-  constructor() { }
+  constructor(public dialog: MatDialog,) { }
 
   ngOnInit(): void {
     /**
@@ -31,4 +32,30 @@ export class MainmenuComponent implements OnInit {
     console.log(`Main menu loaded at time ${new Date()}`)
   }
 
+  // Shows popup with team credits
+  showCredits(): void {
+    /**
+     * Displays a popup with details of our team
+     * @return {void}
+     */
+    const dialogRef = this.dialog.open(CreditsPopup);
+    // We don't actually take input from dialogue, don't care when it closes
+  }
+
+}
+
+
+@Component({
+  selector: './credits-popup',
+  templateUrl: './credits-popup.html',
+})
+export class CreditsPopup { 
+
+  redirectTo(url: string): void {
+    /**
+     * Opens a new tab to the given webpage
+     * @return {void}
+     */
+    window.open(url, "_blank");
+  }
 }

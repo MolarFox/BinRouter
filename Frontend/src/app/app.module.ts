@@ -38,7 +38,7 @@ import { AgmMarkerClustererModule } from '@agm/markerclusterer'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { CreditsPopup, MainmenuComponent } from './mainmenu/mainmenu.component';
 import { ViewRoutesComponent } from './view-routes/view-routes.component';
 import { ViewHeatmapComponent } from './view-heatmap/view-heatmap.component';
 import { ViewBinsComponent } from './view-bins/view-bins.component';
@@ -51,7 +51,8 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     ViewRoutesComponent,
     ViewHeatmapComponent,
     ViewBinsComponent,
-    ViewFleetComponent
+    ViewFleetComponent,
+    CreditsPopup
   ],
   imports: [
     BrowserModule,
@@ -83,6 +84,7 @@ import { ViewFleetComponent } from './view-fleet/view-fleet.component';
     }),
     AgmMarkerClustererModule
   ],
+  entryComponents: [CreditsPopup],
   providers: [Title],
   bootstrap: [AppComponent]
 })

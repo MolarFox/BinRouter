@@ -1,0 +1,55 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- This is the content of the 'team credits' popup -->
+<h1 mat-dialog-title>Created by Team 14 <br><h2>FIT3162 - 2020</h2></h1>
+
+
+<div mat-dialog-content>
+
+    <mat-list>
+
+        <!-- Team mates -->
+        <div mat-subheader>Team members</div>
+
+        <mat-list-item matRipple
+        (click)="redirectTo('https://github.com/MolarFox')">
+          <mat-icon mat-list-icon>design_services</mat-icon>
+          <div mat-line><b>Rithesh Jayaram</b></div>
+          <div mat-line>Frontend Developer</div>
+        </mat-list-item>
+
+        <mat-list-item matRipple
+        (click)="redirectTo('https://github.com/YuuYouYoo')">
+            <mat-icon mat-list-icon>dns</mat-icon>
+            <div mat-line><b>Yisong Yu</b></div>
+            <div mat-line>Backend + Database Developer</div>
+        </mat-list-item>
+
+        <mat-list-item matRipple
+        (click)="redirectTo('https://github.com/AnthonyMG')">
+            <mat-icon mat-list-icon>alt_route</mat-icon>
+            <div mat-line><b>Anthony Grainger</b></div>
+            <div mat-line>Routing Algorithm Designer</div>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <!-- Project links -->
+        <div mat-subheader>Project Links</div>
+
+        <mat-list-item matRipple
+        (click)="redirectTo('https://github.com/MolarFox/BinRouter')">
+          <mat-icon mat-list-icon>code</mat-icon>
+          <div mat-line>Github Repository</div>
+        </mat-list-item>
+
+        <mat-list-item matRipple
+        (click)="redirectTo('https://molarfox.github.io/BinRouter')">
+          <mat-icon mat-list-icon>web</mat-icon>
+          <div mat-line>Live Build (Frontend Only)</div>
+        </mat-list-item>
+
+      </mat-list>
+      
+</div>
+  
