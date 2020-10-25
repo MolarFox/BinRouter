@@ -65,9 +65,9 @@ namespace operations_research {
 		}
 
 		// parse distance matrix
-		vector<int64> tempVec = {};
-		string tempStr = "";
-		char ch;
+		vector<int64> tempVec = {};		// Holds parsed input temporarily
+		string tempStr = "";			// Holds input temporarily, before being added to tempVec
+		char ch;						// Holds the current character being looked at
 		for (int i = 0; i < strlen(argv[1]); i++)
 		{
 			ch = argv[1][i];
@@ -195,14 +195,6 @@ namespace operations_research {
 	*/
 	void VrpCapacity(DataModel data, int metaheuristic = -1) {
 
-		// TODO: remove after testing
-		auto start = std::chrono::high_resolution_clock::now();
-
-		bool validInput = true;
-		if (data.numVehicles != data.vehicleCapacities.size() || data.distanceMatrix.size() != data.demands.size()) {
-			validInput = false;
-		}
-
 		// Create Routing Index Manager
 		RoutingIndexManager manager(data.distanceMatrix.size(), data.numVehicles,
 			data.depot);
@@ -265,10 +257,6 @@ namespace operations_research {
 		// Solve the problem.
 		const Assignment* solution = routing.SolveWithParameters(searchParameters);
 
-		// TODO: remove after testing
-		auto finish = std::chrono::high_resolution_clock::now();
-		//cout << "Time taken: " << std::chrono::duration_cast<std::chrono::seconds>(finish - start).count() << endl;
-
 		// Print solution on console.
 		OutputSolution(data, manager, routing, *solution);
 	}
@@ -288,7 +276,7 @@ namespace operations_research {
 		std::uniform_int_distribution<int> distribution(0, 1000);
 		std::uniform_int_distribution<int> distribution2(0, 10);
 
-		vector<int64> line = {};
+		vector<int64> line = {};	// Holds the current line, before being finalized & pushed to the relevant variable
 		for (int i = 0; i < n; i++) {
 			line.clear();
 			for (int j = 0; j < n; j++) {
@@ -315,7 +303,7 @@ namespace operations_research {
 
 	/*
 	PrintParams will print all of the parameters that are stored within a given DataModel.
-	Used for testing only
+	Used for testing only.
 
 	INPUTS
 	data: Holds the parameters that will be printed
@@ -361,11 +349,12 @@ namespace operations_research {
 
 int main(int argc, char* argv[]) {
 	operations_research::DataModel data;
-	int metaheuristic = -1;
+	int metaheuristic = -1;		// Default metaheuristic - maps to AUTOMATIC
 	
 	// Get the parameters and given them to VrpCapacity in order to be solved
 	if (operations_research::ReadInput(argc, argv, &data, &metaheuristic)) {
 		operations_research::VrpCapacity(data, metaheuristic);
 	}
+
 	return EXIT_SUCCESS;
 }

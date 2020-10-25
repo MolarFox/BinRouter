@@ -1,3 +1,9 @@
+"""
+Author: Anthony Grainger
+Date: Oct 2020
+
+This is a testing file, and is used to generate bins in a JSON format
+"""
 from random import *
 from math import ceil
 from geopy.geocoders import Nominatim as geo
@@ -11,12 +17,21 @@ class Bin:
     minCap = 100
     maxCap = 500
 
+    locations = set()
+
     def __init__(self):
 
-        self.lat = randrange(round(Bin.minLat * 10000), round(Bin.maxLat * 10000), 1) / 10000
-        self.long = randrange(round(Bin.minLong * 10000), round(Bin.maxLong * 10000), 1) / 10000
-        self.address = str(geolocator.reverse(str(self.lat) + ", " + str(self.long)))
-        l = geolocator.geocode(self.address)
+        # Get initial random location
+        self.lat = randrange(round(Bin.minLat * 100000), round(Bin.maxLat * 100000), 1) / 100000
+        self.long = randrange(round(Bin.minLong * 100000), round(Bin.maxLong * 100000), 1) / 100000
+
+        # Keep getting random location
+        while ((round(self.lat), 4), (round(self.long), 4)) in Bin.locations:
+            self.lat = randrange(round(Bin.minLat * 100000), round(Bin.maxLat * 100000), 1) / 100000
+            self.long = randrange(round(Bin.minLong * 100000), round(Bin.maxLong * 100000), 1) / 100000
+
+        self.address = str(geolocator.reverse(str(self.lat) + ", " + str(self.long)))   # Get nearest address
+        l = geolocator.geocode(self.address)    #
         self.lat = l.latitude
         self.long = l.longitude
         self.capacity = randrange(Bin.minCap, Bin.maxCap, 1)
@@ -25,6 +40,7 @@ class Bin:
         return '{"location" : { "type" : "Point", "coordinates" : [' + str(self.long) + ',' + str(self.lat) + ']}, "address" : "' + self.address + '","capacity" : ' + str(self.capacity) + '}'
 
 
+# Unused in this implementation
 class SmartBin(Bin):
     sNums = set()
     id_ = 0
@@ -53,28 +69,18 @@ if __name__ == "__main__":
 
     while True:
         x = input("Number of regular bins to generate: ")
-        #y = input("Number of smart bins to generate: ")
         y = 0
         try:
             x = max(0, int(x))
-            #y = max(0, int(y))
         except:
             print("Couldn't convert to integer. Try again.")
             continue
 
-        print('"dumbBins" : [', end="")
+        print('{"dumbBins" : [', end="")
         for i in range(x):
             b = Bin()
             print(b, end="")
             if x - i != 1 or (x - i == 1 and y > 0):
                 print(",")
 
-        print("]\n")
-"""
-        for i in range(y):
-            b = SmartBin()
-            print(b, end="")
-            if y - i != 1:
-                print(",")
-        print("]")
-"""
+        print("]}\n")
