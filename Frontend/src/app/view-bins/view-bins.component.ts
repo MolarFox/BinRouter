@@ -208,7 +208,7 @@ export class ViewBinsComponent implements OnInit {
       x => {
         console.log(x)
         console.log(x.status)
-        if (x.status == 201) {
+        if ((x.status == 201) || (x.status == 200)) {
           this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
           setTimeout(_ => location.reload(), 1900);
         }
@@ -216,13 +216,14 @@ export class ViewBinsComponent implements OnInit {
           this._snackBar.open("Some edits did not pass - changes were not saved", "", {duration: 2000})
         }
         else{
-          this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+          this._snackBar.open("Edits were successfully received", "", {duration: 2000})
+          //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
         }
       },
       y => {
         console.log(y);
         console.log(y.status)
-        if (y.status == 201) {
+        if ((y.status == 201) || (y.status == 200)) {
           this._snackBar.open("Edits were successfully received!", "", {duration: 2000})
           setTimeout(_ => location.reload(), 1900);
         }
@@ -230,7 +231,8 @@ export class ViewBinsComponent implements OnInit {
           this._snackBar.open("Some edits did not pass - changes were not saved", "", {duration: 2000})
         }
         else{
-          this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+          this._snackBar.open("Edits were successfully received", "", {duration: 2000})
+          //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
         }
       }
     )

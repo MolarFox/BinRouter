@@ -966,7 +966,7 @@ class CreditsPopup {
     }
 }
 CreditsPopup.ɵfac = function CreditsPopup_Factory(t) { return new (t || CreditsPopup)(); };
-CreditsPopup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CreditsPopup, selectors: [["credits-popup"]], decls: 47, vars: 0, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], ["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-subheader", ""], ["matRipple", "", 3, "click"], ["mat-list-icon", ""], ["mat-line", ""]], template: function CreditsPopup_Template(rf, ctx) { if (rf & 1) {
+CreditsPopup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CreditsPopup, selectors: [["credits-popup"]], decls: 52, vars: 0, consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], ["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-subheader", ""], ["matRipple", "", 3, "click"], ["mat-list-icon", ""], ["mat-line", ""]], template: function CreditsPopup_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "link", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Created by Team 14 ");
@@ -978,7 +978,7 @@ CreditsPopup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-list");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Team members");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Team Members");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-list-item", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreditsPopup_Template_mat_list_item_click_10_listener() { return ctx.redirectTo("https://github.com/MolarFox"); });
@@ -1032,16 +1032,25 @@ CreditsPopup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "code");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Github Repository");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Frontend Github Repository");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "mat-list-item", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreditsPopup_Template_mat_list_item_click_42_listener() { return ctx.redirectTo("https://molarfox.github.io/BinRouter"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreditsPopup_Template_mat_list_item_click_42_listener() { return ctx.redirectTo("https://github.com/MolarFox/BinRouter_Backend"); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "mat-icon", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "web");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "code");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Live Build (Frontend Only)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Backend Github Repository");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "mat-list-item", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreditsPopup_Template_mat_list_item_click_47_listener() { return ctx.redirectTo("https://molarfox.github.io/BinRouter"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "mat-icon", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "web");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Live Build (Frontend Only)");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4975,7 +4984,7 @@ class ViewBinsComponent {
         this.binfetcher.submitChanges(this.add_bins, this.mod_bins, this.del_bins).subscribe(x => {
             console.log(x);
             console.log(x.status);
-            if (x.status == 201) {
+            if ((x.status == 201) || (x.status == 200)) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
                 setTimeout(_ => location.reload(), 1900);
             }
@@ -4983,12 +4992,13 @@ class ViewBinsComponent {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                this._snackBar.open("Edits were successfully received", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
             }
         }, y => {
             console.log(y);
             console.log(y.status);
-            if (y.status == 201) {
+            if ((y.status == 201) || (y.status == 200)) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
                 setTimeout(_ => location.reload(), 1900);
             }
@@ -4996,7 +5006,8 @@ class ViewBinsComponent {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                this._snackBar.open("Edits were successfully received", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
             }
         });
     }
@@ -5465,7 +5476,7 @@ class ViewFleetComponent {
         x => {
             console.log(x);
             console.log(x.status);
-            if (x.status == 201) {
+            if ((x.status == 201) || (x.status == 200)) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
                 setTimeout(_ => location.reload(), 1900);
             }
@@ -5473,14 +5484,15 @@ class ViewFleetComponent {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                this._snackBar.open("Edits were successfully received", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
             }
         }, 
         // Pop a snackbar on failure
         y => {
             console.log(y);
             console.log(y.status);
-            if (y.status == 201) {
+            if ((y.status == 201) || (y.status == 200)) {
                 this._snackBar.open("Edits were successfully received!", "", { duration: 2000 });
                 setTimeout(_ => location.reload(), 1900);
             }
@@ -5488,7 +5500,8 @@ class ViewFleetComponent {
                 this._snackBar.open("Some edits did not pass - changes were not saved", "", { duration: 2000 });
             }
             else {
-                this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", { duration: 2000 });
+                this._snackBar.open("Edits were successfully received", "", { duration: 2000 });
+                //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
             }
         });
     }

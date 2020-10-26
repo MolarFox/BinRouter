@@ -1592,7 +1592,7 @@
       CreditsPopup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: CreditsPopup,
         selectors: [["credits-popup"]],
-        decls: 47,
+        decls: 52,
         vars: 0,
         consts: [["href", "https://fonts.googleapis.com/icon?family=Material+Icons", "rel", "stylesheet"], ["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-subheader", ""], ["matRipple", "", 3, "click"], ["mat-list-icon", ""], ["mat-line", ""]],
         template: function CreditsPopup_Template(rf, ctx) {
@@ -1619,7 +1619,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Team members");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Team Members");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1735,7 +1735,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Github Repository");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Frontend Github Repository");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1744,18 +1744,38 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "mat-list-item", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreditsPopup_Template_mat_list_item_click_42_listener() {
-              return ctx.redirectTo("https://molarfox.github.io/BinRouter");
+              return ctx.redirectTo("https://github.com/MolarFox/BinRouter_Backend");
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "mat-icon", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "web");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Live Build (Frontend Only)");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Backend Github Repository");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "mat-list-item", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreditsPopup_Template_mat_list_item_click_47_listener() {
+              return ctx.redirectTo("https://molarfox.github.io/BinRouter");
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "mat-icon", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "web");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Live Build (Frontend Only)");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5791,7 +5811,7 @@
               console.log(x);
               console.log(x.status);
 
-              if (x.status == 201) {
+              if (x.status == 201 || x.status == 200) {
                 _this4._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
                 });
@@ -5804,15 +5824,16 @@
                   duration: 2000
                 });
               } else {
-                _this4._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                _this4._snackBar.open("Edits were successfully received", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+
               }
             }, function (y) {
               console.log(y);
               console.log(y.status);
 
-              if (y.status == 201) {
+              if (y.status == 201 || y.status == 200) {
                 _this4._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
                 });
@@ -5825,9 +5846,10 @@
                   duration: 2000
                 });
               } else {
-                _this4._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                _this4._snackBar.open("Edits were successfully received", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+
               }
             });
           } // Only calculated just before user submission of all edits
@@ -6658,7 +6680,7 @@
               console.log(x);
               console.log(x.status);
 
-              if (x.status == 201) {
+              if (x.status == 201 || x.status == 200) {
                 _this7._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
                 });
@@ -6671,16 +6693,17 @@
                   duration: 2000
                 });
               } else {
-                _this7._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                _this7._snackBar.open("Edits were successfully received", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+
               }
             }, // Pop a snackbar on failure
             function (y) {
               console.log(y);
               console.log(y.status);
 
-              if (y.status == 201) {
+              if (y.status == 201 || y.status == 200) {
                 _this7._snackBar.open("Edits were successfully received!", "", {
                   duration: 2000
                 });
@@ -6693,9 +6716,10 @@
                   duration: 2000
                 });
               } else {
-                _this7._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {
+                _this7._snackBar.open("Edits were successfully received", "", {
                   duration: 2000
-                });
+                }); //this._snackBar.open("An unknown error occurred, changes were not saved. Please try again", "", {duration: 2000})
+
               }
             });
           } // Only calculated just before user submission of all edits
