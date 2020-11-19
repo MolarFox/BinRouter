@@ -1,2 +1,11 @@
-# antrityis_CS_Project
-Final year project repository
+# Project BinRouter 
+## Frontend and Routing Solver
+A final year computer science project by FIT3162 Team 14 2020. 
+
+* [Yisong Yu](https://github.com/YuuYouYoo)
+* [Rithesh Jayaram](https://github.com/MolarFox)
+* [Anthony Grainger](https://github.com/AnthonyMG)
+
+
+Note: This project uses a number of frameworks and libraries such as Angular.js and Angular Google Maps that are licensed under the MIT license.
+
